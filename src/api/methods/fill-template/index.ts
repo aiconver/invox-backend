@@ -2,6 +2,7 @@ import { preprocessTranscript } from './preprocess';
 import { inferWithGemini } from './inferGemini';
 import { validateAndPostProcess } from './validate';
 import { EnhancedTemplateDefinition, ExtractionResult, TemplateDefinition } from './types';
+import { inferWithOpenAI } from './inferWithOpenAI';
 
 export const fillTemplate = async ({
   transcript,
@@ -31,7 +32,7 @@ export const fillTemplate = async ({
 
   while (attempt <= retries) {
     try {
-      const raw = await inferWithGemini(preprocessed, enhanced);
+      const raw = await inferWithOpenAI(preprocessed, enhanced);
       const result = await validateAndPostProcess(raw, enhanced, options.confidenceThreshold ?? 0.7);
       return result;
     } catch (err) {
