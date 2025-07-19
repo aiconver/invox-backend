@@ -1,10 +1,10 @@
-import { Sequelize } from 'sequelize';
-import CombinedConfig from '@/lib/config/CombinedConfig';
+import { Sequelize } from "sequelize";
+import CombinedConfig from "@/lib/config/CombinedConfig";
+import Form from "./models/form";
+import FormTemplate from "./models/formTemplate";
 
-// Load environment config
 const config = new CombinedConfig(process.env);
 
-// Initialize Sequelize instance
 export const sequelize = new Sequelize(
   config.dbName,
   config.dbUser,
@@ -12,18 +12,21 @@ export const sequelize = new Sequelize(
   {
     host: config.dbHost,
     port: config.dbPort,
-    dialect: 'postgres',
+    dialect: "postgres",
     logging: !config.isProd,
   }
 );
 
-// Optional: hook to add models in future
 export const initDatabase = async () => {
   try {
     await sequelize.authenticate();
-    console.log('✅ Database connection established.');
+    console.log("✅ Database connection established.");
+
+    // Models already initialized with sequelize, just sync
+    await sequelize.sync({ alter: true });
+    console.log("✅ Models synced to DB");
   } catch (err) {
-    console.error('❌ Unable to connect to the database:', err);
+    console.error("❌ Database init failed:", err);
     process.exit(1);
   }
 };

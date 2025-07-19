@@ -2,6 +2,7 @@ import express from 'express';
 import CombinedConfig from '@/lib/config/CombinedConfig';
 import { initDatabase } from './db';
 import { rpcMethods } from '@/api';
+import { registerCronJobs } from './jobs';
 
 const jsonrpcRouter = require('express-json-rpc-router');
 const config = new CombinedConfig(process.env);
@@ -9,6 +10,7 @@ const config = new CombinedConfig(process.env);
 export const startServer = async () => {
   try {
     await initDatabase();
+    await registerCronJobs();
 
     const app = express();
     app.use(express.json());
