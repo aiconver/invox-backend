@@ -18,16 +18,22 @@ export async function getDepartmentsWithTemplateCount() {
 
 
 export async function getFormTemplate(input: unknown) {
-  const { id } = getFormTemplateSchema.parse(input);
+	const { id, department } = getFormTemplateSchema.parse(input);
 
-  if (id) {
-    const template = await FormTemplate.findByPk(id);
-    if (!template) throw new Error(`FormTemplate with id "${id}" not found`);
-    return template;
-  }
+	if (id) {
+		const template = await FormTemplate.findByPk(id);
+		if (!template) throw new Error(`FormTemplate with id "${id}" not found`);
+		return template; // no renaming needed
+	}
 
-  return await FormTemplate.findAll({
-    attributes: ["id", "name", "department", "structure", "createdAt", "updatedAt"],
-    order: [["createdAt", "DESC"]],
-  });
+	const where: any = {};
+	if (department) {
+		where.department = department;
+	}
+
+	return await FormTemplate.findAll({
+		where,
+		attributes: ["id", "name", "department", "structure", "createdAt", "updatedAt"],
+		order: [["createdAt", "DESC"]],
+	});
 }
