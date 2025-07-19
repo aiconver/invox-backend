@@ -1,5 +1,4 @@
 import { preprocessTranscript } from './preprocess';
-import { inferWithGemini } from './inferGemini';
 import { validateAndPostProcess } from './validate';
 import { EnhancedTemplateDefinition, ExtractionResult, TemplateDefinition } from './types';
 import { inferWithOpenAI } from './inferWithOpenAI';
