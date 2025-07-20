@@ -1,3 +1,5 @@
+import { ProcessingType } from "@/db/models/enums";
+
 export interface FieldDefinition {
   type: string;
   required?: boolean;
@@ -13,6 +15,7 @@ export interface FieldDefinition {
 export interface EnhancedTemplateDefinition {
   templateName: string;
   fields: Record<string, FieldDefinition | string>;
+  processingType: ProcessingType;
   context?: string;
   priority?: string[];
 }

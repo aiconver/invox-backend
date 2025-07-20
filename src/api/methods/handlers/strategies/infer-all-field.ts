@@ -1,5 +1,5 @@
-import { EnhancedTemplateDefinition } from "../types";
-import { buildPrompt } from "../utils/promptBuilder";
+import { EnhancedTemplateDefinition } from "../../types";
+import { buildPrompt } from "../../utils/promptBuilder";
 
 export const inferWithOpenAI = async (
   transcript: string,

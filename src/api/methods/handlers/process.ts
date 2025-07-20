@@ -16,6 +16,7 @@ const schema = z.object({
 function mapToEnhancedTemplateDefinition(template: any): EnhancedTemplateDefinition {
   return {
     templateName: template.name,
+    processingType: template.processingType,
     fields: template.structure?.fields ?? {},
     context: template.context ?? undefined,
     priority: template.priority ?? undefined,
