@@ -1,12 +1,15 @@
-import { EnhancedTemplateDefinition } from './types';
+import { EnhancedTemplateDefinition } from "../types";
 
-export const buildPrompt = (transcript: string, template: EnhancedTemplateDefinition): string => {
+export const buildPrompt = (
+  transcript: string,
+  template: EnhancedTemplateDefinition
+): string => {
   const fieldDescriptions = Object.entries(template.fields)
     .map(([key, value]) => {
-      const def = typeof value === 'string' ? { type: value } : value;
-      return `- "${key}": ${def.type}${def.required ? ' (REQUIRED)' : ''}${def.description ? ' – ' + def.description : ''}`;
+      const def = typeof value === "string" ? { type: value } : value;
+      return `- "${key}": ${def.type}${def.required ? " (REQUIRED)" : ""}${def.description ? " – " + def.description : ""}`;
     })
-    .join('\n');
+    .join("\n");
 
   return `You are an expert information extraction system.
 

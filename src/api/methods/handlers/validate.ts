@@ -1,4 +1,4 @@
-import { ExtractionResult, EnhancedTemplateDefinition } from './types';
+import { ExtractionResult, EnhancedTemplateDefinition } from "../types";
 
 export const validateAndPostProcess = async (
   extracted: Record<string, any>,
@@ -12,7 +12,7 @@ export const validateAndPostProcess = async (
 
   for (const [key, def] of Object.entries(template.fields)) {
     const val = extracted[key];
-    const d = typeof def === 'string' ? { type: def } : def;
+    const d = typeof def === "string" ? { type: def } : def;
 
     if (!val) {
       if (d.required) missing.push(key);

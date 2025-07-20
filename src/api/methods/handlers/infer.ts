@@ -1,5 +1,5 @@
-import { EnhancedTemplateDefinition } from './types';
-import { buildPrompt } from './promptBuilder';
+import { EnhancedTemplateDefinition } from "../types";
+import { buildPrompt } from "../utils/promptBuilder";
 
 export const inferWithOpenAI = async (
   transcript: string,
@@ -8,24 +8,24 @@ export const inferWithOpenAI = async (
   const prompt = buildPrompt(transcript, template);
 
   const payload = {
-    model: 'gpt-4o',
+    model: "gpt-4o",
     messages: [
       {
-        role: 'user',
-        content: `Extract the structured fields from the text below and respond ONLY with a valid JSON object.\n\n${prompt}`
-      }
+        role: "user",
+        content: `Extract the structured fields from the text below and respond ONLY with a valid JSON object.\n\n${prompt}`,
+      },
     ],
     temperature: 0.1,
     max_tokens: 2048,
   };
 
   const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) throw new Error('OPENAI_API_KEY is not set');
+  if (!apiKey) throw new Error("OPENAI_API_KEY is not set");
 
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify(payload),
@@ -39,14 +39,12 @@ export const inferWithOpenAI = async (
 
   const data = await res.json();
   const content = data.choices?.[0]?.message?.content;
+  if (!content) throw new Error("No valid response from OpenAI");
 
-  if (!content) throw new Error('No valid response from OpenAI');
-
-  // 🔧 Strip Markdown wrapping if present
   const cleaned = content.trim()
-    .replace(/^```json\s*/i, '')  // Remove leading ```json
-    .replace(/^```\s*/i, '')      // Or just ```
-    .replace(/\s*```$/, '');      // Remove trailing ```
+    .replace(/^```json\s*/i, "")
+    .replace(/^```\s*/i, "")
+    .replace(/\s*```$/, "");
 
   try {
     return JSON.parse(cleaned);

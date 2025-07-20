@@ -1,7 +1,7 @@
-import { preprocessTranscript } from './preprocess';
-import { validateAndPostProcess } from './validate';
-import { EnhancedTemplateDefinition, ExtractionResult, TemplateDefinition } from './types';
-import { inferWithOpenAI } from './inferWithOpenAI';
+import { preprocessTranscript } from "./preprocess";
+import { inferWithOpenAI } from "./infer";
+import { validateAndPostProcess } from "./validate";
+import { EnhancedTemplateDefinition, TemplateDefinition, ExtractionResult } from "../types";
 
 export const fillTemplate = async ({
   transcript,
@@ -15,9 +15,9 @@ export const fillTemplate = async ({
     confidenceThreshold?: number;
   };
 }): Promise<ExtractionResult> => {
-  if (!transcript?.trim()) throw new Error('Transcript is required');
+  if (!transcript?.trim()) throw new Error("Transcript is required");
   if (!templateDefinition?.fields || Object.keys(templateDefinition.fields).length === 0)
-    throw new Error('Template fields are required');
+    throw new Error("Template fields are required");
 
   const enhanced: EnhancedTemplateDefinition = {
     ...templateDefinition,
@@ -32,8 +32,7 @@ export const fillTemplate = async ({
   while (attempt <= retries) {
     try {
       const raw = await inferWithOpenAI(preprocessed, enhanced);
-      const result = await validateAndPostProcess(raw, enhanced, options.confidenceThreshold ?? 0.7);
-      return result;
+      return await validateAndPostProcess(raw, enhanced, options.confidenceThreshold ?? 0.7);
     } catch (err) {
       if (attempt === retries) throw err;
       await new Promise(r => setTimeout(r, Math.pow(2, attempt) * 1000));
@@ -41,5 +40,5 @@ export const fillTemplate = async ({
     }
   }
 
-  throw new Error('All attempts failed');
+  throw new Error("All attempts failed");
 };
