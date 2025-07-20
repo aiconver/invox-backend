@@ -19,7 +19,7 @@ export async function startOneTimeImportForm() {
 
   await Form.create({
     templateId: template.id,
-    values: {
+    answers: {
       rating: 5,
       comments: "Great service!",
     },

@@ -13,7 +13,7 @@ export class Form extends Model<
 > {
   declare id: CreationOptional<string>;
   declare templateId: string;
-  declare values: object;
+  declare answers: object;
 
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
@@ -35,7 +35,7 @@ Form.init(
       },
       onDelete: "CASCADE",
     },
-    values: {
+    answers: {
       type: DataTypes.JSONB,
       allowNull: false,
     },

@@ -2,7 +2,7 @@
 
 // Import individual RPC methods
 import { processForm as processForm } from './methods/process-form';
-import { submit as formSubmit } from './methods/form';
+import { add as formCreate, get as formGet } from './methods/form';
 import { fillTemplate as aiFillTemplate } from './methods/fill-template';
 import { departmentsWithTemplateCount, get as formTemplateGet } from "./methods/form-template";
 
@@ -22,7 +22,8 @@ export const rpcMethods = {
   "formTemplate.departmentsWithTemplateCount": departmentsWithTemplateCount,
   "formTemplate.get": formTemplateGet,
   "form.processForm": processForm,
-  "form.submit": formSubmit,
+  "form.add": formCreate,
+  "form.get": formGet,
 
 
   // AI orchestration methods
