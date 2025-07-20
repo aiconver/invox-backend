@@ -6,7 +6,7 @@ import {
   TemplateDefinition,
   EnhancedTemplateDefinition,
   ExtractionResult,
-} from "@/api/methods/fill-template/types";
+} from "@/api/methods/types";
 
 const schema = z.object({
   formTemplateId: z.string(),

@@ -6,6 +6,7 @@ import {
   Model,
 } from "sequelize";
 import { sequelize } from "..";
+import { ProcessingType } from "./enums";
 
 export class FormTemplate extends Model<
   InferAttributes<FormTemplate>,
@@ -14,6 +15,7 @@ export class FormTemplate extends Model<
   declare id: CreationOptional<string>;
   declare name: string;
   declare department: string;
+  declare processingType: ProcessingType;
   declare structure: object;
 
   declare createdAt: CreationOptional<Date>;
@@ -33,6 +35,10 @@ FormTemplate.init(
     },
     department: {
       type: DataTypes.STRING(50),
+      allowNull: false,
+    },
+    processingType: {
+      type: DataTypes.ENUM(...Object.values(ProcessingType)),
       allowNull: false,
     },
     structure: {

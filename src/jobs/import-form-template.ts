@@ -1,3 +1,4 @@
+import { ProcessingType } from "@/db/models/enums";
 import FormTemplate from "@/db/models/formTemplate";
 
 function transformFields(fields: { name: string; type: string }[]) {
@@ -15,10 +16,13 @@ export async function startOneTimeImportFormTemplate() {
     return;
   }
 
+  const defaultProcessingType = ProcessingType.OneModelAllQuestion;
+
   const templates = [
     {
       name: "Onboarding Checklist",
       department: "HR",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "employeeName", type: "text" },
@@ -30,6 +34,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Exit Interview",
       department: "HR",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "employeeId", type: "text" },
@@ -41,6 +46,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Client Visit Summary",
       department: "Sales",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "clientName", type: "text" },
@@ -52,6 +58,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Sales Lead Intake",
       department: "Sales",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "leadName", type: "text" },
@@ -63,6 +70,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Monthly Sales Report",
       department: "Sales",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "month", type: "month" },
@@ -74,6 +82,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Daily Operations Log",
       department: "Operations",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "shiftLead", type: "text" },
@@ -84,6 +93,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Equipment Maintenance Record",
       department: "Operations",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "equipmentId", type: "text" },
@@ -95,6 +105,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Inventory Check",
       department: "Operations",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "item", type: "text" },
@@ -106,6 +117,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Incident Report",
       department: "Operations",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "incidentDate", type: "date" },
@@ -117,6 +129,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Delivery Confirmation",
       department: "Logistics",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "deliveryId", type: "text" },
@@ -128,6 +141,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Route Planning Sheet",
       department: "Logistics",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "driver", type: "text" },
@@ -139,6 +153,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Logistics Daily Summary",
       department: "Logistics",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "supervisor", type: "text" },
@@ -149,6 +164,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Vehicle Inspection Checklist",
       department: "Logistics",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "vehicleId", type: "text" },
@@ -160,6 +176,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Customer Feedback",
       department: "Customer Service",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "rating", type: "number" },
@@ -170,6 +187,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Issue Ticket",
       department: "Customer Service",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "ticketId", type: "text" },
@@ -181,6 +199,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Support Call Summary",
       department: "Customer Service",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "callerName", type: "text" },
@@ -192,6 +211,7 @@ export async function startOneTimeImportFormTemplate() {
     {
       name: "Service Recovery Report",
       department: "Customer Service",
+      processingType: defaultProcessingType,
       structure: {
         fields: transformFields([
           { name: "incident", type: "text" },
