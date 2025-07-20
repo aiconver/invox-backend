@@ -1,8 +1,7 @@
 // src/api/index.ts
 
 // Import individual RPC methods
-import { processForm as processForm } from './methods/process-form';
-import { add as formCreate, get as formGet } from './methods/form';
+import { add as formCreate, get as formGet, process as formProcess } from './methods/form';
 import { fillTemplate as aiFillTemplate } from './methods/fill-template';
 import { departmentsWithTemplateCount, get as formTemplateGet } from "./methods/form-template";
 
@@ -18,13 +17,14 @@ export const rpcMethods = {
     return "pong";
   },
   
-  // Form processing methods
+  // Form Template methods
   "formTemplate.departmentsWithTemplateCount": departmentsWithTemplateCount,
   "formTemplate.get": formTemplateGet,
-  "form.processForm": processForm,
+  "form.processForm": formProcess,
+
+  // Form methods
   "form.add": formCreate,
   "form.get": formGet,
-
 
   // AI orchestration methods
   "ai.fillTemplate": aiFillTemplate,

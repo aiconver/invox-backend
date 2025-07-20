@@ -1,21 +1,18 @@
 import { z } from "zod";
-import { fillTemplate } from "./fill-template";
-import { getTemplateById } from "./handlers/form-template";
-import { transcribeAudio } from "./transcription";
+import { fillTemplate } from "../fill-template";
+import { getTemplateById } from "./form-template";
+import { transcribeAudio } from "../transcription";
 import {
   TemplateDefinition,
   EnhancedTemplateDefinition,
   ExtractionResult,
-} from "@/api/methods/fill-template/types"; // <== adjust path if needed
+} from "@/api/methods/fill-template/types";
 
 const schema = z.object({
   formTemplateId: z.string(),
   audio: z.string(),
 });
 
-/**
- * Maps a Sequelize FormTemplate model to a plain EnhancedTemplateDefinition.
- */
 function mapToEnhancedTemplateDefinition(template: any): EnhancedTemplateDefinition {
   return {
     templateName: template.name,
@@ -25,20 +22,17 @@ function mapToEnhancedTemplateDefinition(template: any): EnhancedTemplateDefinit
   };
 }
 
-export const processForm = async (params: any): Promise<{
+export const processForm = async (params: unknown): Promise<{
   transcript: string;
   extracted: ExtractionResult;
 }> => {
   const { formTemplateId, audio } = schema.parse(params);
 
-  // Step 1: Transcribe audio
   const transcript = await transcribeAudio(audio);
 
-  // Step 2: Load form template
   const template = await getTemplateById(formTemplateId);
   if (!template) throw new Error("Form template not found");
 
-  // Step 3: Fill form using AI
   const extracted = await fillTemplate({
     transcript,
     templateDefinition: mapToEnhancedTemplateDefinition(template),
