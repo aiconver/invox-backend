@@ -1,8 +1,7 @@
 // src/api/index.ts
 
 // Import individual RPC methods
-import { register as userRegister, login as userLogin } from './methods/user';
-import { transcribe as audioTranscribe } from './methods/audio';
+import { processForm as processForm } from './methods/process-form';
 import { submit as formSubmit } from './methods/form';
 import { fillTemplate as aiFillTemplate } from './methods/fill-template';
 import { departmentsWithTemplateCount, get as formTemplateGet } from "./methods/form-template";
@@ -18,15 +17,14 @@ export const rpcMethods = {
   "ping": () => {
     return "pong";
   },
-  // User management methods
-  "user.register": userRegister,
-  "user.login": userLogin,
-  // Audio processing methods
-  "audio.transcribe": audioTranscribe,
+  
   // Form processing methods
   "formTemplate.departmentsWithTemplateCount": departmentsWithTemplateCount,
   "formTemplate.get": formTemplateGet,
+  "form.processForm": processForm,
   "form.submit": formSubmit,
+
+
   // AI orchestration methods
   "ai.fillTemplate": aiFillTemplate,
 };

@@ -1,30 +1,34 @@
-// src/types/index.ts
-
 /**
- * Interface for a User object.
+ * A flexible key-value representation of a filled form.
  */
-export interface User {
-  id: string;
-  username: string;
-  password?: string; // Password can be optional for fetched users, but required for creation
+export interface Form {
+  [key: string]: any; // Use Zod/validation to enforce strict types elsewhere
 }
 
 /**
- * Interface for generic Form Data.
- * You should expand this with specific fields relevant to your application's forms.
+ * Represents a single form field in a template.
  */
-export interface FormData {
-  [key: string]: any; // Allows for flexible form data structure
-  // Example:
-  // name?: string;
-  // age?: number;
-  // email?: string;
+export interface TemplateField {
+  type: "text" | "number" | "date" | "boolean"; // extend as needed
+  question: string;
+  required: boolean;
 }
 
 /**
  * Interface for a Template Definition, used to guide the AI in filling forms.
  */
 export interface TemplateDefinition {
-  templateName: string;
-  fields: { [key: string]: string }; // Example: { "patientName": "string", "diagnosis": "string" }
+  id?: string;
+  name: string;
+  structure: {
+    fields: TemplateField[];
+  };
+}
+
+/**
+ * Optional extension that includes AI context or prioritization.
+ */
+export interface EnhancedTemplateDefinition extends TemplateDefinition {
+  context?: string;
+  priority?: string;
 }

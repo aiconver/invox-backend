@@ -13,7 +13,7 @@ export const startServer = async () => {
     await registerCronJobs();
 
     const app = express();
-    app.use(express.json());
+    app.use(express.json({ limit: "20mb" }));
 
     // 🪵 Log rpcMethods info
     console.log('🔍 Checking rpcMethods...');
