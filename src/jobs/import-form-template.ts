@@ -1,5 +1,13 @@
 import FormTemplate from "@/db/models/formTemplate";
 
+function transformFields(fields: { name: string; type: string }[]) {
+  return fields.map((field) => ({
+    question: field.name,
+    type: field.type,
+    required: true,
+  }));
+}
+
 export async function startOneTimeImportFormTemplate() {
   const existing = await FormTemplate.count();
   if (existing > 0) {
@@ -8,197 +16,188 @@ export async function startOneTimeImportFormTemplate() {
   }
 
   const templates = [
-    // 🏢 HR
     {
       name: "Onboarding Checklist",
       department: "HR",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "employeeName", type: "text" },
           { name: "startDate", type: "date" },
           { name: "manager", type: "text" },
-        ],
+        ]),
       },
     },
     {
       name: "Exit Interview",
       department: "HR",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "employeeId", type: "text" },
           { name: "reasonForLeaving", type: "text" },
           { name: "feedback", type: "textarea" },
-        ],
+        ]),
       },
     },
-
-    // 🛍️ Sales
     {
       name: "Client Visit Summary",
       department: "Sales",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "clientName", type: "text" },
           { name: "visitDate", type: "date" },
           { name: "summary", type: "textarea" },
-        ],
+        ]),
       },
     },
     {
       name: "Sales Lead Intake",
       department: "Sales",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "leadName", type: "text" },
           { name: "company", type: "text" },
           { name: "potentialValue", type: "number" },
-        ],
+        ]),
       },
     },
     {
       name: "Monthly Sales Report",
       department: "Sales",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "month", type: "month" },
           { name: "totalSales", type: "number" },
           { name: "region", type: "text" },
-        ],
+        ]),
       },
     },
-
-    // 🛠️ Operations
     {
       name: "Daily Operations Log",
       department: "Operations",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "shiftLead", type: "text" },
           { name: "issues", type: "textarea" },
-        ],
+        ]),
       },
     },
     {
       name: "Equipment Maintenance Record",
       department: "Operations",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "equipmentId", type: "text" },
           { name: "maintenanceDate", type: "date" },
           { name: "performedBy", type: "text" },
-        ],
+        ]),
       },
     },
     {
       name: "Inventory Check",
       department: "Operations",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "item", type: "text" },
           { name: "quantity", type: "number" },
           { name: "checkedBy", type: "text" },
-        ],
+        ]),
       },
     },
     {
       name: "Incident Report",
       department: "Operations",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "incidentDate", type: "date" },
           { name: "description", type: "textarea" },
           { name: "actionTaken", type: "textarea" },
-        ],
+        ]),
       },
     },
-
-    // 📦 Logistics
     {
       name: "Delivery Confirmation",
       department: "Logistics",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "deliveryId", type: "text" },
           { name: "receivedBy", type: "text" },
           { name: "date", type: "date" },
-        ],
+        ]),
       },
     },
     {
       name: "Route Planning Sheet",
       department: "Logistics",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "driver", type: "text" },
           { name: "route", type: "text" },
           { name: "departureTime", type: "time" },
-        ],
+        ]),
       },
     },
     {
       name: "Logistics Daily Summary",
       department: "Logistics",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "supervisor", type: "text" },
           { name: "notes", type: "textarea" },
-        ],
+        ]),
       },
     },
     {
       name: "Vehicle Inspection Checklist",
       department: "Logistics",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "vehicleId", type: "text" },
           { name: "inspectionDate", type: "date" },
           { name: "status", type: "text" },
-        ],
+        ]),
       },
     },
-
-    // 🎧 Customer Service
     {
       name: "Customer Feedback",
       department: "Customer Service",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "rating", type: "number" },
           { name: "comments", type: "textarea" },
-        ],
+        ]),
       },
     },
     {
       name: "Issue Ticket",
       department: "Customer Service",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "ticketId", type: "text" },
           { name: "issue", type: "textarea" },
           { name: "priority", type: "text" },
-        ],
+        ]),
       },
     },
     {
       name: "Support Call Summary",
       department: "Customer Service",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "callerName", type: "text" },
           { name: "callDuration", type: "number" },
           { name: "resolution", type: "textarea" },
-        ],
+        ]),
       },
     },
     {
       name: "Service Recovery Report",
       department: "Customer Service",
       structure: {
-        fields: [
+        fields: transformFields([
           { name: "incident", type: "text" },
           { name: "apologySent", type: "boolean" },
           { name: "resolutionSteps", type: "textarea" },
-        ],
+        ]),
       },
     },
   ];
