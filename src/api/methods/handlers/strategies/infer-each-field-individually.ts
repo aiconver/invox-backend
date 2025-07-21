@@ -65,7 +65,7 @@ function normalizeFields(fields: any): Record<string, any> {
 export async function inferEachFieldIndividually(
   transcript: string,
   template: EnhancedTemplateDefinition
-): Promise<ExtractionResult> {
+): Promise<Record<string, any>> {
   const filledTemplate: Record<string, any> = {};
   const missingFields: string[] = [];
   const warnings: string[] = [];
@@ -80,6 +80,8 @@ export async function inferEachFieldIndividually(
   }
 
   console.log(`🔍 Starting per-field inference for template fields: ${JSON.stringify(template.fields)}`);
+
+  const questionKeys = Object.keys(template.fields);
 
   for (const [key, def] of Object.entries(template.fields)) {
     try {
@@ -97,19 +99,11 @@ export async function inferEachFieldIndividually(
     }
   }
 
-const indexedTemplate = Array.isArray(template.fields)
-  ? Object.fromEntries(
-      template.fields.map((field: any, i: number) => [i, filledTemplate[field.question]])
-    )
-  : filledTemplate;
+  // 🧠 Convert filledTemplate to numeric index-based keys
+  const indexed = Object.fromEntries(
+    questionKeys.map((key, i) => [i.toString(), filledTemplate[key]])
+  );
 
-return {
-  message: "Per-field inference complete",
-  filledTemplate: indexedTemplate,
-  confidence: 0.9,
-  missingFields,
-  warnings,
-};
-
-
+  console.log("📦 Inference result:", indexed);
+  return indexed;
 }
