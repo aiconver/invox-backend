@@ -5,6 +5,12 @@ export const inferWithOpenAI = async (
   transcript: string,
   template: EnhancedTemplateDefinition
 ): Promise<Record<string, any>> => {
+  // Only supported for "all-question" types
+  const supportedTypes = ["OneModelAllQuestion", "MultiModelAllQuestion", "HybridFeedback"];
+  if (!supportedTypes.includes(template.processingType)) {
+    throw new Error(`inferWithOpenAI does not support processingType: ${template.processingType}`);
+  }
+
   const prompt = buildPrompt(transcript, template);
 
   const payload = {
@@ -12,7 +18,7 @@ export const inferWithOpenAI = async (
     messages: [
       {
         role: "user",
-        content: `Extract the structured fields from the text below and respond ONLY with a valid JSON object.\n\n${prompt}`,
+        content: prompt,
       },
     ],
     temperature: 0.1,
@@ -38,10 +44,10 @@ export const inferWithOpenAI = async (
   }
 
   const data = await res.json();
-  const content = data.choices?.[0]?.message?.content;
+  const content = data.choices?.[0]?.message?.content?.trim();
   if (!content) throw new Error("No valid response from OpenAI");
 
-  const cleaned = content.trim()
+  const cleaned = content
     .replace(/^```json\s*/i, "")
     .replace(/^```\s*/i, "")
     .replace(/\s*```$/, "");
