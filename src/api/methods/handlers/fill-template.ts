@@ -67,8 +67,10 @@ export const fillTemplate = async ({
           break;
 
         case ProcessingType.MultiModelAllQuestion:
+          console.log("Processing with MultiModelAllQuestion strategy", preprocessed, enhanced);
           // Example: run multiple models or prompts on entire field set
           raw = await inferWithEnsembleStrategy(preprocessed, enhanced);
+          console.log("Inference result:", raw);
           break;
 
         case ProcessingType.HybridFeedback:
