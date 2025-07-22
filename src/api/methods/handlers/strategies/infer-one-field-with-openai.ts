@@ -4,7 +4,7 @@ import { buildPrompt } from "../../utils/promptBuilder";
 const apiKey = process.env.OPENAI_API_KEY;
 if (!apiKey) throw new Error("OPENAI_API_KEY is not set");
 
-async function askFieldFromOpenAI(
+export async function askFieldFromOpenAI(
   transcript: string,
   template: EnhancedTemplateDefinition,
   fieldKey: string
@@ -37,7 +37,7 @@ async function askFieldFromOpenAI(
 
   const data = await res.json();
   const content = data.choices?.[0]?.message?.content?.trim();
-  console.log(`🔍 Response for field "${fieldKey}":`, content);
+  console.log(`📥 Response for field "${fieldKey}":\n${content}\n`);
 
   try {
     return JSON.parse(
@@ -67,11 +67,9 @@ export async function inferEachFieldIndividually(
     );
   }
 
-  console.log(`🔍 Starting per-field inference for template structure: ${JSON.stringify(template.structure)}`);
+  console.log(`🧠 Starting per-field inference for fields: ${Object.keys(template.structure).join(", ")}`);
 
-  const fieldKeys = Object.keys(template.structure);
-
-  for (const key of fieldKeys) {
+  for (const key of Object.keys(template.structure)) {
     try {
       const value = await askFieldFromOpenAI(transcript, template, key);
 
@@ -81,12 +79,12 @@ export async function inferEachFieldIndividually(
         filledTemplate[key] = value;
       }
     } catch (err) {
-      console.error(`❌ Failed inference for "${key}":`, err);
+      console.error(`❌ Inference failed for "${key}":`, err);
       warnings.push(`Error on field "${key}": ${err instanceof Error ? err.message : err}`);
       missingFields.push(key);
     }
   }
 
-  console.log("📦 Inference result:", filledTemplate);
+  console.log("✅ Per-field inference complete:", filledTemplate);
   return filledTemplate;
 }

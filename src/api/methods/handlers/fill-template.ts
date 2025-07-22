@@ -6,7 +6,7 @@ import {
   TemplateDefinition,
   ExtractionResult,
 } from "../types";
-import { inferEachFieldIndividually } from "./strategies/infer-each-field-individually";
+import { inferEachFieldIndividually } from "./strategies/infer-one-field-with-openai";
 import { inferWithVotingStrategy } from "./strategies/infer-with-voting-strategy";
 import { inferWithEnsembleStrategy } from "./strategies/infer-with-ensemble-strategy";
 import { inferWithHybridStrategy } from "./strategies/infer-with-hybrid-strategy";
@@ -62,8 +62,10 @@ export const fillTemplate = async ({
           break;
 
         case ProcessingType.MultiModelOneQuestion:
+          console.log("Processing with MultiModelOneQuestion strategy", preprocessed, enhanced);
           // Example: run multiple prompts per field, choose best answer
           raw = await inferWithVotingStrategy(preprocessed, enhanced);
+          console.log("Inference result:", raw);
           break;
 
         case ProcessingType.MultiModelAllQuestion:
