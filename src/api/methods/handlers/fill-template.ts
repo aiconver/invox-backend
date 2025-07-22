@@ -1,5 +1,5 @@
 import { preprocessTranscript } from "./preprocess";
-import { inferWithOpenAI } from "./strategies/infer-all-field";
+import { inferWithOpenAI } from "./strategies/infer-all-field-with-openai";
 import { validateAndPostProcess } from "./validate";
 import {
   EnhancedTemplateDefinition,
@@ -11,6 +11,7 @@ import { inferWithVotingStrategy } from "./strategies/infer-with-voting-strategy
 import { inferWithEnsembleStrategy } from "./strategies/infer-with-ensemble-strategy";
 import { inferWithHybridStrategy } from "./strategies/infer-with-hybrid-strategy";
 import { ProcessingType } from "@/db/models/enums";
+import { inferWithGemini } from "./strategies/infer-all-field-with-gemini";
 
 export const fillTemplate = async ({
   transcript,
@@ -50,7 +51,7 @@ export const fillTemplate = async ({
       switch (processingType) {
         case ProcessingType.OneModelAllQuestion:
           console.log("Processing with OneModelAllQuestion strategy", preprocessed, enhanced);
-          raw = await inferWithOpenAI(preprocessed, enhanced);
+          raw = await inferWithGemini(preprocessed, enhanced);
           console.log("Inference result:", raw);
           break;
 

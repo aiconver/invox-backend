@@ -1,4 +1,5 @@
 import { EnhancedTemplateDefinition } from "../../types";
+import { buildPrompt } from "../../utils/promptBuilder";
 
 export const inferWithOpenAI = async (
   transcript: string,
@@ -64,19 +65,3 @@ export const inferWithOpenAI = async (
     throw new Error(`Failed to parse JSON: ${err}\nRaw content: ${cleaned}`);
   }
 };
-
-function buildPrompt(
-  transcript: string,
-  template: EnhancedTemplateDefinition
-): string {
-  const fieldDescriptions = Object.entries(template.structure)
-    .map(([name, def]) => {
-      const type = def.type;
-      const required = def.required ? "required" : "optional";
-      const description = def.description ? ` - ${def.description}` : "";
-      return `- ${name} (${type}, ${required})${description}`;
-    })
-    .join("\n");
-
-  return `You are given the following transcript:\n\n"${transcript}"\n\nExtract the following fields:\n${fieldDescriptions}\n\nReturn a JSON object with field names as keys.`;
-}
