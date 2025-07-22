@@ -57,7 +57,6 @@ export async function inferEachFieldIndividually(
   const missingFields: string[] = [];
   const warnings: string[] = [];
 
-  // 🛡️ Validate template.structure
   if (
     !template.structure ||
     typeof template.structure !== "object" ||
@@ -70,9 +69,9 @@ export async function inferEachFieldIndividually(
 
   console.log(`🔍 Starting per-field inference for template structure: ${JSON.stringify(template.structure)}`);
 
-  const questionKeys = Object.keys(template.structure);
+  const fieldKeys = Object.keys(template.structure);
 
-  for (const key of questionKeys) {
+  for (const key of fieldKeys) {
     try {
       const value = await askFieldFromOpenAI(transcript, template, key);
 
@@ -88,11 +87,6 @@ export async function inferEachFieldIndividually(
     }
   }
 
-  // 🧠 Convert filledTemplate to numeric index-based keys
-  const indexed = Object.fromEntries(
-    questionKeys.map((key, i) => [i.toString(), filledTemplate[key]])
-  );
-
-  console.log("📦 Inference result:", indexed);
-  return indexed;
+  console.log("📦 Inference result:", filledTemplate);
+  return filledTemplate;
 }
