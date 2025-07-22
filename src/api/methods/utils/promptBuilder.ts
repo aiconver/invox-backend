@@ -8,24 +8,25 @@ export const buildPrompt = (
 ): string => {
   const processingType = template.processingType;
 
-  // Reuse shared logic for field metadata
-  const fieldEntries = Object.entries(template.fields);
+  // Use new structure format
+  const fieldEntries = Object.entries(template.structure ?? {});
   const fieldDescriptions = fieldEntries
-    .map(([key, value]) => {
-      const def = typeof value === "string" ? { type: value } : value;
+    .map(([key, def]) => {
       return `  "${key}": ${def.type}${def.required ? " (REQUIRED)" : ""}${def.description ? " – " + def.description : ""}`;
     })
     .join("\n");
 
-  // Single field (e.g. for OneModelOneQuestion)
+  // Single-field prompt (OneModelOneQuestion / MultiModelOneQuestion)
   if (
     processingType === ProcessingType.OneModelOneQuestion ||
     processingType === ProcessingType.MultiModelOneQuestion
   ) {
-    if (!singleFieldKey) throw new Error("singleFieldKey is required for per-field prompt");
+    if (!singleFieldKey) {
+      throw new Error("singleFieldKey is required for per-field prompt");
+    }
 
-    const fieldDefRaw = template.fields[singleFieldKey];
-    const def = typeof fieldDefRaw === "string" ? { type: fieldDefRaw } : fieldDefRaw;
+    const def = template.structure?.[singleFieldKey];
+    if (!def) throw new Error(`Field "${singleFieldKey}" not found in template structure`);
 
     return `
 You are a precise information extractor.
@@ -53,7 +54,7 @@ Raw JSON value only, like:
 `.trim();
   }
 
-  // All-field prompt (default for OneModelAllQuestion, MultiModelAllQuestion, HybridFeedback)
+  // All-fields prompt (OneModelAllQuestion, MultiModelAllQuestion, HybridFeedback)
   return `
 You are a reliable and precise information extraction system.
 

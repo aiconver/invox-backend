@@ -12,17 +12,15 @@ export interface FieldDefinition {
   };
 }
 
-export interface EnhancedTemplateDefinition {
+export interface TemplateDefinition {
   templateName: string;
-  fields: Record<string, FieldDefinition | string>;
+  structure: Record<string, FieldDefinition>;
+}
+
+export interface EnhancedTemplateDefinition extends TemplateDefinition {
   processingType: ProcessingType;
   context?: string;
   priority?: string[];
-}
-
-export interface TemplateDefinition {
-  templateName: string;
-  fields: Record<string, FieldDefinition | string>;
 }
 
 export interface ExtractionResult {

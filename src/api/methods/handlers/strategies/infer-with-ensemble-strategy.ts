@@ -28,11 +28,11 @@ export async function inferWithEnsembleStrategy(
   const missingFields: string[] = [];
   const warnings: string[] = [];
 
-  for (const [key, def] of Object.entries(template.fields)) {
-    const fieldDef = typeof def === "string" ? { type: def } : def;
-    const value = mockAnswerFor(fieldDef.type);
-    filledTemplate[key] = value;
-  }
+  // for (const [key, def] of Object.entries(template.fields)) {
+  //   const fieldDef = typeof def === "string" ? { type: def } : def;
+  //   const value = mockAnswerFor(fieldDef.type);
+  //   filledTemplate[key] = value;
+  // }
 
   return {
     message: "Mock ensemble inference complete",

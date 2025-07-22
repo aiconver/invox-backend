@@ -25,8 +25,8 @@ export const fillTemplate = async ({
   };
 }): Promise<ExtractionResult> => {
   if (!transcript?.trim()) throw new Error("Transcript is required");
-  if (!templateDefinition?.fields || Object.keys(templateDefinition.fields).length === 0)
-    throw new Error("Template fields are required");
+  if (!templateDefinition?.structure || Object.keys(templateDefinition.structure).length === 0)
+  throw new Error("Template structure is required");
 
   const processingType = (templateDefinition as EnhancedTemplateDefinition).processingType ?? ProcessingType.OneModelAllQuestion;
 

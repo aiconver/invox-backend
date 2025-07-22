@@ -10,43 +10,36 @@ export const validateAndPostProcess = async (
   const missing: string[] = [];
   let confidence = 1.0;
 
-  const fieldEntries = Array.isArray(template.fields)
-    ? template.fields
-    : Object.entries(template.fields);
+  const structure = template.structure ?? {};
+  const fieldKeys = Object.keys(structure);
 
-  const fieldKeys = Array.isArray(template.fields)
-    ? template.fields.map((field: any) => field.question)
-    : Object.keys(template.fields);
+  fieldKeys.forEach((fieldName) => {
+    const def = structure[fieldName] ?? {};
+    const val = extracted[fieldName];
 
-  fieldKeys.forEach((fieldName, i) => {
-    const def = template.fields[fieldName] ?? {};
-    const d = typeof def === "string" ? { type: def } : def;
-    const val = extracted[i.toString()];
+    console.log(`Validating field: ${fieldName} With value: ${val}`);
 
-    if (!val) {
-      if (d.required) missing.push(fieldName);
+    if (val === null || val === undefined || val === "") {
+      if (def.required) missing.push(fieldName);
       confidence *= 0.8;
     } else {
       validated[fieldName] = val;
     }
   });
 
+  console.log(`Validated fields: ${JSON.stringify(validated)}`);
+
   const completeness = Object.keys(validated).length / fieldKeys.length;
   confidence = Math.min(confidence, 0.3 + completeness * 0.7);
 
-  console.log(JSON.stringify({
-    message: `Filled with confidence ${(confidence * 100).toFixed(1)}%`,
-    filledTemplate: validated,
-    confidence: Math.round(confidence * 100) / 100,
-    missingFields: missing,
-    warnings,
-  }, null, 2));
-
-  return {
+  const result: ExtractionResult = {
     message: `Filled with confidence ${(confidence * 100).toFixed(1)}%`,
     filledTemplate: validated,
     confidence: Math.round(confidence * 100) / 100,
     missingFields: missing,
     warnings,
   };
+
+  console.log(JSON.stringify(result, null, 2));
+  return result;
 };

@@ -1,4 +1,4 @@
-import { EnhancedTemplateDefinition, ExtractionResult } from "../../types";
+import { EnhancedTemplateDefinition } from "../../types";
 import { buildPrompt } from "../../utils/promptBuilder";
 
 const apiKey = process.env.OPENAI_API_KEY;
@@ -49,19 +49,6 @@ async function askFieldFromOpenAI(
   }
 }
 
-function normalizeFields(fields: any): Record<string, any> {
-  if (Array.isArray(fields)) {
-    return Object.fromEntries(
-      fields.map((field: any) => {
-        const key = field.question ?? field.name ?? "field_" + Math.random().toString(36).slice(2);
-        return [key, field];
-      })
-    );
-  }
-  return fields;
-}
-
-
 export async function inferEachFieldIndividually(
   transcript: string,
   template: EnhancedTemplateDefinition
@@ -70,20 +57,22 @@ export async function inferEachFieldIndividually(
   const missingFields: string[] = [];
   const warnings: string[] = [];
 
-  template.fields = normalizeFields(template.fields);
-
-  // 🛡️ Validate fields structure
-  if (!template.fields || typeof template.fields !== "object" || Array.isArray(template.fields)) {
+  // 🛡️ Validate template.structure
+  if (
+    !template.structure ||
+    typeof template.structure !== "object" ||
+    Array.isArray(template.structure)
+  ) {
     throw new Error(
-      `Invalid template.fields format. Expected an object, but got: ${JSON.stringify(template.fields)}`
+      `Invalid template.structure format. Expected an object, but got: ${JSON.stringify(template.structure)}`
     );
   }
 
-  console.log(`🔍 Starting per-field inference for template fields: ${JSON.stringify(template.fields)}`);
+  console.log(`🔍 Starting per-field inference for template structure: ${JSON.stringify(template.structure)}`);
 
-  const questionKeys = Object.keys(template.fields);
+  const questionKeys = Object.keys(template.structure);
 
-  for (const [key, def] of Object.entries(template.fields)) {
+  for (const key of questionKeys) {
     try {
       const value = await askFieldFromOpenAI(transcript, template, key);
 
