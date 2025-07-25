@@ -37,7 +37,7 @@ export async function getFormTemplate(input: unknown) {
 
 	return await FormTemplate.findAll({
 		where,
-		attributes: ["id", "name", "department", "structure", "createdAt", "updatedAt"],
+		attributes: ["id", "name", "department", "processingType", "structure", "createdAt", "updatedAt"],
 		order: [["createdAt", "DESC"]],
 	});
 }
