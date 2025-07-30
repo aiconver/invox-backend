@@ -1,8 +1,11 @@
+// server.ts
 import express from 'express';
 import CombinedConfig from '@/lib/config/CombinedConfig';
 import { initDatabase } from './db';
 import { rpcMethods } from '@/api';
 import { registerCronJobs } from './jobs';
+import { requireRole } from './middlewares/requireRole';
+import { verifyJwt } from './middlewares/verifyJwt';
 
 const jsonrpcRouter = require('express-json-rpc-router');
 const config = new CombinedConfig(process.env);
@@ -21,11 +24,11 @@ export const startServer = async () => {
     console.log('➡️ rpcMethods:', rpcMethods);
 
     if (!rpcMethods || typeof rpcMethods !== 'object' || Array.isArray(rpcMethods)) {
-      console.error('❌ rpcMethods must be a plain object');
-      throw new Error('rpcMethods must be a plain object');
+      throw new Error('❌ rpcMethods must be a plain object');
     }
 
-    app.post('/rpc', jsonrpcRouter({ methods: rpcMethods }));
+    // 🔐 Protect the RPC route with JWT (and optionally roles)
+    app.post('/rpc', verifyJwt, requireRole('operator', 'merchandiser'), jsonrpcRouter({ methods: rpcMethods }));
 
     app.listen(config.port, () => {
       console.log(`🚀 Invox backend running at http://localhost:${config.port}`);
