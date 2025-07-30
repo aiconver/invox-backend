@@ -17,6 +17,8 @@ const envSchema = z
     // Keycloak config
     keycloakServerUrl: z.string().url(),
     keycloakRealm: z.string(),
+    keycloakClientId:z.string(),
+    keycloakSecret: z.string(),
   })
   .transform((env) => ({
     ...env,
@@ -43,6 +45,8 @@ export default class CombinedConfig {
 
       keycloakServerUrl: rawEnv.KEYCLOAK_SERVER_URL,
       keycloakRealm: rawEnv.KEYCLOAK_REALM,
+      keycloakClientId: rawEnv.KEYCLOAK_CLIENT_ID,
+      keycloakSecret: rawEnv.KEYCLOAK_SECRET,
     });
 
     if (!result.success) {
@@ -91,5 +95,11 @@ export default class CombinedConfig {
   }
   get keycloakRealm() {
     return this.env.keycloakRealm;
+  }
+  get keycloakClientId() {
+    return this.env.keycloakClientId;
+  }
+  get keycloakSecret() {
+    return this.env.keycloakSecret;
   }
 }
