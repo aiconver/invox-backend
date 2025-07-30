@@ -1,14 +1,18 @@
+// src/api/methods/form.ts
 import { addForm, getForm } from "./handlers/form";
 import { processForm } from "./handlers/process";
+import { JwtUser } from "@/types/typed-request";
 
-export const add = async (params: unknown) => {
-  return await addForm(params);
+type Context = { user: JwtUser };
+
+export const add = async (params: unknown, context: Context) => {
+  return await addForm(params, context.user);
 };
 
-export const get = async (params: unknown) => {
-  return await getForm(params);
+export const get = async (params: unknown, context: Context) => {
+  return await getForm(params, context.user);
 };
 
-export const process = async (params: unknown) => {
-  return await processForm(params);
+export const process = async (params: unknown, context: Context) => {
+  return await processForm(params, context.user);
 };

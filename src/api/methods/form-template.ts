@@ -1,28 +1,21 @@
 // src/api/methods/formTemplate.ts
-import { getDepartmentsWithTemplateCount, getFormTemplate, saveFormTemplate } from "./handlers/form-template";
+import {
+  getDepartmentsWithTemplateCount,
+  getFormTemplate,
+  saveFormTemplate,
+} from "./handlers/form-template";
+import { JwtUser } from "@/types/typed-request";
 
-/**
- * Method to get the department count along with associated templates.
- * @returns {Promise} The department count with template info.
- */
-export const departmentsWithTemplateCount = async () => {
-  return await getDepartmentsWithTemplateCount();
+type Context = { user: JwtUser };
+
+export const departmentsWithTemplateCount = async (_params: any, context: Context) => {
+  return await getDepartmentsWithTemplateCount(context.user);
 };
 
-/**
- * Method to get form templates based on parameters (ID or department).
- * @param {any} params - The parameters for fetching form templates.
- * @returns {Promise} A list of form templates.
- */
-export const get = async (params: any) => {
-  return await getFormTemplate(params);
+export const get = async (params: any, context: Context) => {
+  return await getFormTemplate(params, context.user);
 };
 
-/**
- * Method to create a new form template.
- * @param {any} params - The template data to save.
- * @returns {Promise} The saved form template.
- */
-export const create = async (params: any) => {
-  return await saveFormTemplate(params);
+export const create = async (params: any, context: Context) => {
+  return await saveFormTemplate(params, context.user);
 };
