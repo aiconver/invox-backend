@@ -14,7 +14,6 @@ const client = jwksClient({
 });
 
 function getKey(header: jwt.JwtHeader, callback: jwt.SigningKeyCallback) {
-  console.log("Client: ", client)
   client.getSigningKey(header.kid!, (err, key) => {
     const signingKey = key?.getPublicKey();
     callback(err, signingKey);
@@ -30,10 +29,6 @@ export function verifyJwt(req: Request, res: Response, next: NextFunction) {
   const token = authHeader.split(" ")[1];
   
   jwt.verify(token, getKey, { algorithms: ["RS256"] }, (err, decoded) => {
-    console.log("Auth Header:", authHeader)
-    console.log("Auth Token:", token)
-    console.log("Decoded:", decoded, err)
-
     if (err || !decoded) {
       return res.status(403).json({ message: "Token verification failed", error: err });
     }
