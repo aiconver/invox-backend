@@ -14,9 +14,6 @@ export const getUserSchema = z
   .object({
     id: z.string().uuid().optional(),
     email: z.string().email().optional(),
-  })
-  .refine((data) => data.id || data.email, {
-    message: "Either 'id' or 'email' must be provided",
   });
 
 export const updateUserSchema = z.object({
