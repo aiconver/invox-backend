@@ -6,6 +6,7 @@ import {
   Model,
 } from "sequelize";
 import { sequelize } from "..";
+import User from "./user";
 
 export class Form extends Model<
   InferAttributes<Form>,
@@ -15,6 +16,7 @@ export class Form extends Model<
   declare templateId: string;
   declare answers: object;
 
+  declare createdBy: string;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
 }
@@ -39,6 +41,15 @@ Form.init(
       type: DataTypes.JSONB,
       allowNull: false,
     },
+     createdBy: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      references: {
+        model: "users", // assumes a users table exists
+        key: "id",
+      },
+      onDelete: "CASCADE",
+    },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   },
@@ -48,5 +59,11 @@ Form.init(
     tableName: "forms",
   }
 );
+
+Form.belongsTo(User, {
+  foreignKey: "createdBy",
+  as: "creator",
+});
+
 
 export default Form;
