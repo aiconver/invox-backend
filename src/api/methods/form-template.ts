@@ -1,10 +1,12 @@
 // src/api/methods/formTemplate.ts
 import {
   assignUsersToTemplate,
+  createFormTemplate,
   getAssignableUsers as getAssignableUsersHandler,
   getDepartmentsWithTemplateCount,
   getFormTemplate,
-  saveFormTemplate,
+  updateFormTemplate,
+  deleteFormTemplate
 } from "./handlers/form-template";
 import { JwtUser } from "@/types/typed-request";
 
@@ -19,8 +21,16 @@ export const get = async (params: any, context: Context) => {
 };
 
 export const create = async (params: any, context: Context) => {
-  return await saveFormTemplate(params, context.user)
-};
+  return await createFormTemplate(params, context.user)
+}
+
+export const update = async (params: any, context: Context) => {
+  return await updateFormTemplate(params, context.user)
+}
+
+export const remove = async (params:any, context: Context) => {
+  return await deleteFormTemplate(params, context.user)
+}
 
 export const getAssignableUsers = async (params: any, context: Context)=> {
   return await getAssignableUsersHandler(params, context.user);

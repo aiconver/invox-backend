@@ -3,7 +3,7 @@
 // Import individual RPC methods
 import { add as formCreate, get as formGet, process as formProcess } from './methods/form';
 import { fillTemplate as aiFillTemplate } from './methods/fill-template';
-import { departmentsWithTemplateCount, get as formTemplateGet, create as formTemplateCreate, getAssignableUsers, assignUsers } from "./methods/form-template";
+import { departmentsWithTemplateCount, get as formTemplateGet, create as formTemplateCreate, update as formTemplateUpdate, remove as formTemplateDelete, getAssignableUsers, assignUsers } from "./methods/form-template";
 import {
   add as userAdd,
   get as userGet,
@@ -33,6 +33,8 @@ export const rpcMethods = {
   "formTemplate.departmentsWithTemplateCount": departmentsWithTemplateCount,
   "formTemplate.get": formTemplateGet,
   "formTemplate.create": formTemplateCreate,
+  "formTemplate.update": formTemplateUpdate,
+  "formTemplate.delete": formTemplateDelete,
   "formTemplate.getAssignableUsers": getAssignableUsers,
   "formTemplate.assignUsers": assignUsers,
   

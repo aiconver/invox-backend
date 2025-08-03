@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import FormTemplate from "@/db/models/formTemplate";
-import { assignUsersSchema, getAssignableUsersSchema, getFormTemplateSchema, saveFormTemplateSchema } from "../schemas/form-template";
+import { assignUsersSchema, createFormTemplateSchema, deleteFormTemplateSchema, getAssignableUsersSchema, getFormTemplateSchema, updateFormTemplateSchema } from "../schemas/form-template";
 import { ProcessingType } from "@/db/models/enums";
 import { JwtUser } from "@/types/typed-request";
 import User from "@/db/models/user";
@@ -42,22 +42,49 @@ export async function getFormTemplate(input: unknown, user: JwtUser) {
   });
 }
 
-export async function saveFormTemplate(input: unknown, user: JwtUser) {
-  const { name, department, processingType, structure } = saveFormTemplateSchema.parse(input);
+export async function createFormTemplate(input: unknown, user: JwtUser) {
+  const { name, department, processingType, structure, domainKnowledge } =
+    createFormTemplateSchema.parse(input)
 
-  try {
-    return await FormTemplate.create({
-      name,
-      department,
-      processingType: processingType as ProcessingType,
-      structure,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    });
-  } catch (error) {
-    console.error("Error saving form template:", error);
-    throw new Error("Failed to save the form template");
-  }
+  const template = await FormTemplate.create({
+    name,
+    department,
+    processingType: processingType as ProcessingType,
+    structure,
+    // domainKnowledge,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  })
+
+  return { message: "Template created", templateId: template.id }
+}
+
+export async function updateFormTemplate(input: unknown, user: JwtUser) {
+  const { id, name, department, processingType, structure, domainKnowledge } =
+    updateFormTemplateSchema.parse(input)
+
+  const template = await FormTemplate.findByPk(id)
+  if (!template) throw new Error("Template not found")
+
+  await template.update({
+    name,
+    department,
+    processingType: processingType as ProcessingType,
+    structure,
+    // domainKnowledge,
+    updatedAt: new Date(),
+  })
+
+  return { message: "Template updated", templateId: id }
+}
+
+export async function deleteFormTemplate(input: unknown, user: JwtUser) {
+  const { id } = deleteFormTemplateSchema.parse(input)
+
+  const deleted = await FormTemplate.destroy({ where: { id } })
+  if (!deleted) throw new Error("Template not found or already deleted")
+
+  return { success: true }
 }
 
 export async function getTemplateById(id: string) {

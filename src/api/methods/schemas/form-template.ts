@@ -8,17 +8,34 @@ export const getFormTemplateSchema = z.object({
 
 // Define the structure schema to validate the fields
 const fieldSchema = z.object({
-  type: z.enum(["textarea", "text", "date", "select"]), // Allowed field types
+  type: z.enum(["textarea",
+    "text",
+    "date",
+    "select",
+    "email",
+    "number",
+    "radio",
+    "checkbox",]), // Allowed field types
   required: z.boolean(),
 });
 
 // Define the save form template schema with JSON structure validation
-export const saveFormTemplateSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  department: z.string().min(1, "Department is required"),
-  processingType: z.string().min(1, "Processing type is required"),
-  structure: z.record(z.string(), fieldSchema), // Allow dynamic keys and ensure each field is validated
-});
+export const createFormTemplateSchema = z.object({
+  name: z.string().min(1),
+  department: z.string().min(1),
+  processingType: z.string().min(1),
+  structure: z.record(z.string(), fieldSchema),
+  domainKnowledge: z.string().optional(),
+})
+
+export const updateFormTemplateSchema = createFormTemplateSchema.extend({
+  id: z.string().uuid(),
+})
+
+export const deleteFormTemplateSchema = z.object({
+  id: z.string().uuid(),
+})
+
 
 export const getAssignableUsersSchema = z.object({
   formTemplateId: z.string().uuid(),

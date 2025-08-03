@@ -17,7 +17,7 @@ export class FormTemplate extends Model<
   declare department: string;
   declare processingType: ProcessingType;
   declare structure: object;
-
+  
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
 }
