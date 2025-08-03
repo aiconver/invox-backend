@@ -16,6 +16,7 @@ export class FormTemplate extends Model<
   declare name: string;
   declare department: string;
   declare processingType: ProcessingType;
+  declare domainKnowledge: string;
   declare structure: object;
   
   declare createdAt: CreationOptional<Date>;
@@ -39,6 +40,10 @@ FormTemplate.init(
     },
     processingType: {
       type: DataTypes.ENUM(...Object.values(ProcessingType)),
+      allowNull: false,
+    },
+    domainKnowledge:{
+      type: DataTypes.STRING(2000),
       allowNull: false,
     },
     structure: {

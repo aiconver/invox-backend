@@ -19,6 +19,7 @@ function mapToEnhancedTemplateDefinition(template: any): EnhancedTemplateDefinit
   return {
     templateName: template.name,
     processingType: template.processingType,
+    domainKnowledge: template.domainKnowledge,
     structure: template.structure ?? {},
     context: template.context ?? undefined,
     priority: template.priority ?? undefined,

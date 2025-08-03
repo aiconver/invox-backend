@@ -17,6 +17,7 @@ export const inferWithGemini = async (
   }
 
   const prompt = buildPrompt(transcript, template);
+  console.log(prompt)
 
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("GEMINI_API_KEY is not set");

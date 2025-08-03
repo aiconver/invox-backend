@@ -51,7 +51,7 @@ export async function createFormTemplate(input: unknown, user: JwtUser) {
     department,
     processingType: processingType as ProcessingType,
     structure,
-    // domainKnowledge,
+    domainKnowledge: domainKnowledge || "",
     createdAt: new Date(),
     updatedAt: new Date(),
   })
@@ -71,7 +71,7 @@ export async function updateFormTemplate(input: unknown, user: JwtUser) {
     department,
     processingType: processingType as ProcessingType,
     structure,
-    // domainKnowledge,
+    domainKnowledge,
     updatedAt: new Date(),
   })
 

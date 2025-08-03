@@ -14,6 +14,7 @@ export interface FieldDefinition {
 
 export interface TemplateDefinition {
   templateName: string;
+  domainKnowledge: string;
   structure: Record<string, FieldDefinition>;
 }
 

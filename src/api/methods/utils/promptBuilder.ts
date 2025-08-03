@@ -8,6 +8,8 @@ export const buildPrompt = (
 ): string => {
   const processingType = template.processingType;
 
+  const domainKnowledge = template.domainKnowledge
+
   // Use new structure format
   const fieldEntries = Object.entries(template.structure ?? {});
   const fieldDescriptions = fieldEntries
@@ -30,6 +32,9 @@ export const buildPrompt = (
 
     return `
 You are a precise information extractor.
+
+${domainKnowledge && (`Domain Knowledge: ${domainKnowledge} 
+So try answer and user terminolgy of that field`)}
 
 Your task is to extract the field "${singleFieldKey}" from the transcript below.
 Expected type: ${def.type}${def.required ? " (REQUIRED)" : ""}${def.description ? " – " + def.description : ""}
@@ -57,6 +62,9 @@ Raw JSON value only, like:
   // All-fields prompt (OneModelAllQuestion, MultiModelAllQuestion, HybridFeedback)
   return `
 You are a reliable and precise information extraction system.
+
+${domainKnowledge && (`The Form is about ${domainKnowledge} 
+So try answer and user terminolgy of that field`)}
 
 Your task is to extract structured data from the transcript below using the provided field definitions. Output a valid, minified JSON object.
 
