@@ -19,3 +19,12 @@ export const saveFormTemplateSchema = z.object({
   processingType: z.string().min(1, "Processing type is required"),
   structure: z.record(z.string(), fieldSchema), // Allow dynamic keys and ensure each field is validated
 });
+
+export const getAssignableUsersSchema = z.object({
+  formTemplateId: z.string().uuid(),
+})
+
+export const assignUsersSchema = z.object({
+  formTemplateId: z.string().uuid(),
+  userIds: z.array(z.string().uuid()),
+})

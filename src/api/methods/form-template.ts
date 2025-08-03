@@ -1,5 +1,7 @@
 // src/api/methods/formTemplate.ts
 import {
+  assignUsersToTemplate,
+  getAssignableUsers as getAssignableUsersHandler,
   getDepartmentsWithTemplateCount,
   getFormTemplate,
   saveFormTemplate,
@@ -17,5 +19,13 @@ export const get = async (params: any, context: Context) => {
 };
 
 export const create = async (params: any, context: Context) => {
-  return await saveFormTemplate(params, context.user);
+  return await saveFormTemplate(params, context.user)
 };
+
+export const getAssignableUsers = async (params: any, context: Context)=> {
+  return await getAssignableUsersHandler(params, context.user);
+};
+
+export const assignUsers = async (params: any, context: Context) => {
+  return await assignUsersToTemplate(params, context.user)
+}
