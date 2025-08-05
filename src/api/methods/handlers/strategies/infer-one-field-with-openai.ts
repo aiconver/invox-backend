@@ -1,9 +1,14 @@
+import OpenAI from "openai";
 import { EnhancedTemplateDefinition } from "../../types";
 import { buildPrompt } from "../../utils/promptBuilder";
 
-const apiKey = process.env.OPENAI_API_KEY;
-if (!apiKey) throw new Error("OPENAI_API_KEY is not set");
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
+/**
+ * Asks OpenAI to fill a single field using a field-specific prompt.
+ */
 export async function askFieldFromOpenAI(
   transcript: string,
   template: EnhancedTemplateDefinition,
@@ -11,33 +16,19 @@ export async function askFieldFromOpenAI(
 ): Promise<any> {
   const prompt = buildPrompt(transcript, template, fieldKey);
 
-  const payload = {
+  console.log(`🔍 Asking OpenAI for field "${fieldKey}" with prompt:\n${prompt}\n`);
+
+  const completion = await openai.chat.completions.create({
     model: "gpt-4o",
     messages: [{ role: "user", content: prompt }],
     temperature: 0.1,
     max_tokens: 128,
-  };
-
-  console.log(`🔍 Asking OpenAI for field "${fieldKey}" with prompt:\n${prompt}\n`);
-
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify(payload),
   });
 
-  if (!res.ok) {
-    const errorText = await res.text();
-    console.error(`❌ OpenAI error for field "${fieldKey}":`, errorText);
-    throw new Error(`OpenAI request failed for "${fieldKey}"`);
-  }
-
-  const data = await res.json();
-  const content = data.choices?.[0]?.message?.content?.trim();
+  const content = completion.choices?.[0]?.message?.content?.trim();
   console.log(`📥 Response for field "${fieldKey}":\n${content}\n`);
+
+  if (!content) return null;
 
   try {
     return JSON.parse(
@@ -49,6 +40,9 @@ export async function askFieldFromOpenAI(
   }
 }
 
+/**
+ * Infers each field in a template individually using OpenAI.
+ */
 export async function inferEachFieldIndividually(
   transcript: string,
   template: EnhancedTemplateDefinition
@@ -63,11 +57,15 @@ export async function inferEachFieldIndividually(
     Array.isArray(template.structure)
   ) {
     throw new Error(
-      `Invalid template.structure format. Expected an object, but got: ${JSON.stringify(template.structure)}`
+      `Invalid template.structure format. Expected an object, but got: ${JSON.stringify(
+        template.structure
+      )}`
     );
   }
 
-  console.log(`🧠 Starting per-field inference for fields: ${Object.keys(template.structure).join(", ")}`);
+  console.log(
+    `🧠 Starting per-field inference for fields: ${Object.keys(template.structure).join(", ")}`
+  );
 
   for (const key of Object.keys(template.structure)) {
     try {
