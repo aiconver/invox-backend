@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const validRoles = ["operator", "merchandiser"] as const;
+const validRoles = ["admin", "employee"] as const;
 
 export const addUserSchema = z.object({
   username: z.string().min(3),

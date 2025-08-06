@@ -24,7 +24,7 @@ export const startServer = async () => {
     }
 
     // ✅ Custom JSON-RPC route with JWT and role checks
-    app.post('/rpc', verifyJwt, requireRole('operator', 'merchandiser'), async (req: Request, res: Response) => {
+    app.post('/rpc', verifyJwt, requireRole('admin', 'employee'), async (req: Request, res: Response) => {
       const { jsonrpc, method, params, id } = req.body;
       const user = (req as any).user as JwtUser;
 

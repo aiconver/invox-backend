@@ -44,7 +44,7 @@ export const processForm = async (
   if (!template) throw new Error("Form template not found");
 
   // 🔐 Optional: restrict access to certain roles or templates
-  // if (!user.realm_access?.roles.includes("operator")) {
+  // if (!user.realm_access?.roles.includes("admin")) {
   //   throw new Error("Access denied: only operators may process forms");
   // }
 

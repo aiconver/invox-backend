@@ -100,14 +100,14 @@ export async function getAssignableUsers(input: unknown, user: JwtUser) {
   const { formTemplateId } = getAssignableUsersSchema.parse(input)
 
   // ❌ Only non-operators can fetch assignable users
-  console.log(hasRole(user, "operator"));
-  if (!hasRole(user, "operator")) {
+  console.log(hasRole(user, "admin"));
+  if (!hasRole(user, "admin")) {
     throw new Error("Unauthorized")
   }
 
   const allUsers = await User.findAll({
     attributes: ["id", "username", "email", "role"],
-    where: { role: "merchandiser" },
+    where: { role: "employee" },
   })
 
   const assignments = await UserFormTemplate.findAll({
@@ -127,7 +127,7 @@ export async function assignUsersToTemplate(input: unknown, user: JwtUser) {
   const { formTemplateId, userIds } = assignUsersSchema.parse(input)
 
   // ✅ Only allow operators to assign users
-  if (!hasRole(user, "operator")) {
+  if (!hasRole(user, "admin")) {
     throw new Error("Unauthorized")
   }
 

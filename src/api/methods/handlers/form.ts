@@ -17,7 +17,7 @@ export const addForm = async (params: unknown, user: JwtUser) => {
 		email: user.email,
 		firstName: user.given_name ?? "Aiconver",
 		lastName: user.family_name ?? "Admin",
-		role: user.realm_access?.roles?.[0] ?? "operator", // choose your logic
+		role: user.realm_access?.roles?.[0] ?? "admin", // choose your logic
 	});
 	}
 
