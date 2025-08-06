@@ -51,7 +51,7 @@ export const fillTemplate = async ({
       switch (processingType) {
         case ProcessingType.OneModelAllQuestion:
           console.log("Processing with OneModelAllQuestion strategy", preprocessed, enhanced);
-          raw = await inferWithGemini(preprocessed, enhanced);
+          raw = await inferWithOpenAI(preprocessed, enhanced);
           console.log("Inference result:", raw);
           break;
 

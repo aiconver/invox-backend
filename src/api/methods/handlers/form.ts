@@ -9,18 +9,6 @@ export const addForm = async (params: unknown, user: JwtUser) => {
 
 	console.log(`📝 User ${user.preferred_username} is submitting a form`);
 
-	const existingUser = await User.findByPk(user.sub);
-	if (!existingUser) {
-	await User.create({
-		id: user.sub,
-		username: user.preferred_username,
-		email: user.email,
-		firstName: user.given_name ?? "Aiconver",
-		lastName: user.family_name ?? "Admin",
-		role: user.realm_access?.roles?.[0] ?? "admin", // choose your logic
-	});
-	}
-
 	const form = await Form.create({
 		templateId: formData.templateId,
 		answers: formData.answers,
