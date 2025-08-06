@@ -11,7 +11,7 @@ const envSchema = z
     dbHost: z.string(),
     dbPort: z.string().regex(/^\d+$/).transform(Number),
 
-    port: z.string().regex(/^\d+$/).transform(Number).default('3000'),
+    port: z.string().regex(/^\d+$/).transform(Number).default('3001'),
     logDir: z.string().optional(),
 
     // Keycloak config
