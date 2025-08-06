@@ -9,10 +9,15 @@ export const addForm = async (params: unknown, user: JwtUser) => {
 
 	console.log(`📝 User ${user.preferred_username} is submitting a form`);
 
+	const existingUser = await User.findOne({ where: { email: user.email } });
+	if (!existingUser) {
+	throw new Error(`User with email ${user.email} not found in database`);
+	}
+
 	const form = await Form.create({
 		templateId: formData.templateId,
 		answers: formData.answers,
-		createdBy: user.sub,
+		createdBy: existingUser.id,
 	});
 
 	return {
