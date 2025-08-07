@@ -5,3 +5,10 @@ export enum ProcessingType {
   MultiModelOneQuestion = "MultiModelOneQuestion",
   HybridFeedback = "HybridFeedback",
 }
+
+
+export const FormStatusEnums = {
+  Submitted: "submitted",
+  Approved: "approved",
+  Rejected: "rejected",
+} as const;

@@ -1,7 +1,7 @@
 // src/api/index.ts
 
 // Import individual RPC methods
-import { add as formCreate, get as formGet, process as formProcess } from './methods/form';
+import { add as formCreate, get as formGet, process as formProcess, update as formUpdate} from './methods/form';
 import { fillTemplate as aiFillTemplate } from './methods/fill-template';
 import { departmentsWithTemplateCount, get as formTemplateGet, create as formTemplateCreate, update as formTemplateUpdate, remove as formTemplateDelete, getAssignableUsers, assignUsers } from "./methods/form-template";
 import {
@@ -43,6 +43,7 @@ export const rpcMethods = {
   // Form methods
   "form.add": formCreate,
   "form.get": formGet,
+  "form.update": formUpdate,
 
   // AI orchestration methods
   "ai.fillTemplate": aiFillTemplate,

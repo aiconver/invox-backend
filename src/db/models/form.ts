@@ -7,6 +7,8 @@ import {
 } from "sequelize";
 import { sequelize } from "..";
 import User from "./user";
+import { FormStatusEnums } from "./enums";
+import FormTemplate from "./formTemplate";
 
 export class Form extends Model<
   InferAttributes<Form>,
@@ -15,6 +17,7 @@ export class Form extends Model<
   declare id: CreationOptional<string>;
   declare templateId: string;
   declare answers: object;
+  declare status: string;
 
   declare createdBy: string;
   declare createdAt: CreationOptional<Date>;
@@ -50,6 +53,11 @@ Form.init(
       },
       onDelete: "CASCADE",
     },
+    status: {
+      type: DataTypes.ENUM(...Object.values(FormStatusEnums)),
+      allowNull: false,
+      defaultValue: FormStatusEnums.Submitted, 
+    },
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   },
@@ -65,5 +73,9 @@ Form.belongsTo(User, {
   as: "creator",
 });
 
+Form.belongsTo(FormTemplate, {
+  foreignKey: "templateId",
+  as: "template",
+});
 
 export default Form;
