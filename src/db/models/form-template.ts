@@ -62,11 +62,13 @@ FormTemplate.init(
 );
 
 FormTemplate.hasMany(Form, { 
-  foreignKey: "templateId" 
+  foreignKey: "templateId",
+  as: "forms"
 });
 
 Form.belongsTo(FormTemplate, { 
-  foreignKey: "templateId" 
+  foreignKey: "templateId",
+  as: "template"
 });
 
 export default FormTemplate;
