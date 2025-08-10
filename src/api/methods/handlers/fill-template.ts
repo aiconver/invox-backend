@@ -39,7 +39,7 @@ export const fillTemplate = async ({
   };
 
   const preprocessed = preprocessTranscript(transcript);
-  const retries = options.maxRetries ?? 2;
+  const retries = options.maxRetries ?? 1;
   const confidenceThreshold = options.confidenceThreshold ?? 0.7;
 
   let attempt = 0;

@@ -12,6 +12,7 @@ import { JwtUser } from "@/types/typed-request";
 
 const schema = z.object({
   formTemplateId: z.string(),
+  previousTranscript: z.string().optional(),
   audio: z.string(),
 });
 
@@ -33,12 +34,12 @@ export const processForm = async (
   transcript: string;
   extracted: ExtractionResult;
 }> => {
-  const { formTemplateId, audio } = schema.parse(params);
+  const { formTemplateId, audio, previousTranscript } = schema.parse(params);
 
   // 🔐 Log who's processing what
   console.log(`🎙️ User ${user.preferred_username} is processing form template ${formTemplateId}`);
 
-  const transcript = await transcribeAudio(audio);
+  const transcript = previousTranscript ? previousTranscript + "\n" + await transcribeAudio(audio) : await transcribeAudio(audio);
 
   const template = await getTemplateById(formTemplateId);
   if (!template) throw new Error("Form template not found");
