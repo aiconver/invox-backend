@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 import { EnhancedTemplateDefinition } from "../../types";
-import { buildPrompt } from "../../utils/promptBuilder";
+import { buildPrompt } from "../../utils/prompt-builder";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,

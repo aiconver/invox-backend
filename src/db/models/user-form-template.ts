@@ -9,7 +9,7 @@ import {
   DataTypes,
 } from "sequelize";
 import { sequelize } from "..";
-import FormTemplate from "./formTemplate";
+import FormTemplate from "./form-template";
 import User from "./user";
 
 export class UserFormTemplate extends Model<

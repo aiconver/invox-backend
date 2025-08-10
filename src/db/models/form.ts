@@ -8,7 +8,7 @@ import {
 import { sequelize } from "..";
 import User from "./user";
 import { FormStatusEnums } from "./enums";
-import FormTemplate from "./formTemplate";
+import FormTemplate from "./form-template";
 
 export class Form extends Model<
   InferAttributes<Form>,
@@ -77,5 +77,12 @@ Form.belongsTo(FormTemplate, {
   foreignKey: "templateId",
   as: "template",
 });
+
+User.hasMany(Form, {
+  foreignKey: "createdBy", 
+  as: "forms" 
+});
+
+
 
 export default Form;

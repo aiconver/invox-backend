@@ -4,7 +4,7 @@ import { z } from "zod";
 import { addFormSchema, getFormSchema, updateFormStatusSchema } from "../schemas/form";
 import { JwtUser } from "@/types/typed-request";
 import { FormStatusEnums } from "@/db/models/enums";
-import FormTemplate from "@/db/models/formTemplate";
+import FormTemplate from "@/db/models/form-template";
 
 export const addForm = async (params: unknown, user: JwtUser) => {
 	const { formData } = addFormSchema.parse(params);

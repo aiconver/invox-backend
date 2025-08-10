@@ -1,5 +1,5 @@
 import { ProcessingType } from "@/db/models/enums"
-import FormTemplate from "@/db/models/formTemplate"
+import FormTemplate from "@/db/models/form-template"
 
 function transformFields(fields: { name: string; type: string }[]) {
   const structure: Record<string, { type: string; required: boolean }> = {}

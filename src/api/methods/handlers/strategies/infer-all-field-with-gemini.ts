@@ -1,5 +1,5 @@
 import { EnhancedTemplateDefinition } from "../../types";
-import { buildPrompt } from "../../utils/promptBuilder";
+import { buildPrompt } from "../../utils/prompt-builder";
 
 export const inferWithGemini = async (
   transcript: string,

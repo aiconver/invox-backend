@@ -4,8 +4,8 @@ import CombinedConfig from '@/lib/config/CombinedConfig';
 import { initDatabase } from './db';
 import { rpcMethods } from '@/api';
 import { registerCronJobs } from './jobs';
-import { verifyJwt } from './middlewares/verifyJwt';
-import { requireRole } from './middlewares/requireRole';
+import { verifyJwt } from './middlewares/verify-jwt';
+import { requireRole } from './middlewares/require-role';
 import { JwtUser } from '@/types/typed-request';
 
 const config = new CombinedConfig(process.env);

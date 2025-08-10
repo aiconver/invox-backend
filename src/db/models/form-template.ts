@@ -7,6 +7,7 @@ import {
 } from "sequelize";
 import { sequelize } from "..";
 import { ProcessingType } from "./enums";
+import Form from "./form";
 
 export class FormTemplate extends Model<
   InferAttributes<FormTemplate>,
@@ -59,5 +60,13 @@ FormTemplate.init(
     tableName: "form_templates",
   }
 );
+
+FormTemplate.hasMany(Form, { 
+  foreignKey: "templateId" 
+});
+
+Form.belongsTo(FormTemplate, { 
+  foreignKey: "templateId" 
+});
 
 export default FormTemplate;

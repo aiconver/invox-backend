@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize";
-import FormTemplate from "@/db/models/formTemplate";
+import FormTemplate from "@/db/models/form-template";
 import { assignUsersSchema, createFormTemplateSchema, deleteFormTemplateSchema, getAssignableUsersSchema, getFormTemplateSchema, updateFormTemplateSchema } from "../schemas/form-template";
 import { ProcessingType } from "@/db/models/enums";
 import { JwtUser } from "@/types/typed-request";
 import User from "@/db/models/user";
-import { UserFormTemplate } from "@/db/models/UserFormTemplate";
+import { UserFormTemplate } from "@/db/models/user-form-template";
 import z from "zod";
 
 export async function getDepartmentsWithTemplateCount(user: JwtUser) {

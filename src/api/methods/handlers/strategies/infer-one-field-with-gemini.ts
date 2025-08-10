@@ -1,5 +1,5 @@
 import { EnhancedTemplateDefinition } from "../../types";
-import { buildPrompt } from "../../utils/promptBuilder";
+import { buildPrompt } from "../../utils/prompt-builder";
 
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) throw new Error("GEMINI_API_KEY is not set");

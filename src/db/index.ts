@@ -1,7 +1,5 @@
 import { Sequelize } from "sequelize";
 import CombinedConfig from "@/lib/config/CombinedConfig";
-import Form from "./models/form";
-import FormTemplate from "./models/formTemplate";
 
 const config = new CombinedConfig(process.env);
 
