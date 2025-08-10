@@ -73,11 +73,6 @@ Form.belongsTo(User, {
   as: "creator",
 });
 
-Form.belongsTo(FormTemplate, {
-  foreignKey: "templateId",
-  as: "template",
-});
-
 User.hasMany(Form, {
   foreignKey: "createdBy", 
   as: "forms" 
