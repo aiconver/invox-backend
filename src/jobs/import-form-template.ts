@@ -110,7 +110,7 @@ export async function startOneTimeImportFormTemplate() {
         { name: "Detailed Problem Description", type: "textarea" },
         { name: "When did the issue occur?", type: "date" },
         { name: "Affected Machine or Production Line", type: "text" },
-        { name: "What immediate actions were taken?", type: "textarea" },
+        { name: "What immediate actions were taken then?", type: "textarea" },
         { name: "Describe the containment actions", type: "textarea" },
         { name: "Which analysis method was used?", type: "select" },
         { name: "What was the identified root cause?", type: "textarea" },
