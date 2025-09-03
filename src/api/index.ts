@@ -23,27 +23,27 @@ export const rpcMethods = {
     return "pong";
   },
 
-  // User CRUD
-  "user.add": userAdd,
-  "user.get": userGet,
-  "user.update": userUpdate,
-  "user.delete": userDelete,
+  // // User CRUD
+  // "user.add": userAdd,
+  // "user.get": userGet,
+  // "user.update": userUpdate,
+  // "user.delete": userDelete,
   
-  // Form Template methods
-  "formTemplate.departmentsWithTemplateCount": departmentsWithTemplateCount,
-  "formTemplate.get": formTemplateGet,
-  "formTemplate.create": formTemplateCreate,
-  "formTemplate.update": formTemplateUpdate,
-  "formTemplate.delete": formTemplateDelete,
-  "formTemplate.getAssignableUsers": getAssignableUsers,
-  "formTemplate.assignUsers": assignUsers,
+  // // Form Template methods
+  // "formTemplate.departmentsWithTemplateCount": departmentsWithTemplateCount,
+  // "formTemplate.get": formTemplateGet,
+  // "formTemplate.create": formTemplateCreate,
+  // "formTemplate.update": formTemplateUpdate,
+  // "formTemplate.delete": formTemplateDelete,
+  // "formTemplate.getAssignableUsers": getAssignableUsers,
+  // "formTemplate.assignUsers": assignUsers,
   
-  "form.processForm": formProcess,
+  // // "form.processForm": formProcess,
 
-  // Form methods
-  "form.add": formCreate,
-  "form.get": formGet,
-  "form.update": formUpdate,
+  // // Form methods
+  // "form.add": formCreate,
+  // "form.get": formGet,
+  // "form.update": formUpdate,
 
   // AI orchestration methods
   "ai.fillTemplate": aiFillTemplate,
