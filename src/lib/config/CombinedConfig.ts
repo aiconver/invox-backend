@@ -3,6 +3,10 @@ import { z } from 'zod';
 const envSchema = z
   .object({
     nodeEnv: z.string().default('development'),
+    port: z
+      .string()
+      .transform((val) => parseInt(val, 10))
+      .default('3001'),
   })
   .transform((env) => ({
     ...env,
@@ -16,6 +20,7 @@ export default class CombinedConfig {
   constructor(rawEnv: NodeJS.ProcessEnv) {
     const result = envSchema.safeParse({
       nodeEnv: rawEnv.NODE_ENV,
+      port: rawEnv.PORT,
     });
 
     if (!result.success) {
@@ -29,6 +34,10 @@ export default class CombinedConfig {
 
   get nodeEnv() {
     return this.env.nodeEnv;
+  }
+
+  get port() {
+    return this.env.port;
   }
 
 }
