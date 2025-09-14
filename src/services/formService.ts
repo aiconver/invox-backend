@@ -1,182 +1,25 @@
-// src/services/formService.ts
 import { experimental_transcribe as transcribe, generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
-import { z } from "zod";
 
-/** ---------- existing types ---------- */
-export type TranscribeResponse = {
-  transcript: string;
-  language?: string;
-  durationInSeconds?: number;
-};
-
-type UploadFile = {
-  buffer: Buffer;
-  originalname: string;
-  mimetype: string;
-};
-
-/** ---------- new types for template filling ---------- */
-export type FieldType = "text" | "textarea" | "date" | "number" | "enum";
-
-export type FormTemplateField = {
-  id: string;
-  label: string;
-  type: FieldType;
-  required?: boolean;
-  /** for enum */
-  options?: string[];
-  /** optional regex pattern for text fields */
-  pattern?: string;
-};
-
-export type CurrentFieldValue = {
-  value: string | number | null;
-  source?: "user" | "ai";
-  locked?: boolean; // if true, never overwrite
-};
-
-export type GetFilledTemplateInput = {
-  templateId?: string;
-  fields: FormTemplateField[];
-  transcript: string;
-  currentValues?: Record<string, CurrentFieldValue>;
-  locale?: string;
-  timezone?: string;
-  options?: {
-    mode?: "incremental" | "fresh";
-    fillOnlyEmpty?: boolean; // only fill if current value is empty/null
-    preserveUserEdits?: boolean; // prefer user source values
-    returnEvidence?: boolean; // ask model to include a short snippet
-  };
-};
-
-export type FilledField = {
-  value: string | number | null;
-  confidence?: number;
-  changed?: boolean;
-  previousValue?: string | number | null;
-  source: "ai" | "user";
-  evidence?: {
-    transcriptSnippet?: string;
-    startChar?: number;
-    endChar?: number;
-  };
-};
-
-export type GetFilledTemplateResult = {
-  filled: Record<string, FilledField>;
-  model: string;
-  traceId?: string;
-};
-
-/** ---------- helpers: dynamic schema & prompt ---------- */
-
-function zodFieldValueSchema(field: FormTemplateField): z.ZodTypeAny {
-  switch (field.type) {
-    case "date":
-      // ISO 8601 date (YYYY-MM-DD) or null
-      return z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable();
-    case "number":
-      return z.number().finite().nullable();
-    case "enum":
-      if (field.options?.length) {
-        return z.enum(field.options as [string, ...string[]]).nullable();
-      }
-      return z.string().nullable(); // fallback
-    case "text":
-    case "textarea":
-    default:
-      if (field.pattern) {
-        try {
-          const re = new RegExp(field.pattern);
-          return z.string().regex(re).nullable();
-        } catch {
-          // invalid pattern: fall back to plain string
-          return z.string().nullable();
-        }
-      }
-      return z.string().nullable();
-  }
-}
-
-function buildResultSchema(fields: FormTemplateField[]) {
-  // For each field, expect { value, confidence?, evidence? }
-  const entries = Object.fromEntries(
-    fields.map((f) => [
-      f.id,
-      z.object({
-        value: zodFieldValueSchema(f),
-        confidence: z.number().min(0).max(1).optional(),
-        // model returns a short snippet; we'll compute offsets server-side
-        evidence: z
-          .object({
-            transcriptSnippet: z.string().min(1).max(280).optional(),
-          })
-          .optional(),
-      }),
-    ])
-  );
-  return z.object(entries);
-}
-
-function isEmptyValue(v: unknown): boolean {
-  return v == null || (typeof v === "string" && v.trim() === "");
-}
-
-function formatTemplateForPrompt(fields: FormTemplateField[]): string {
-  return fields
-    .map((f) => {
-      const base = `- id: ${f.id} | label: ${f.label} | type: ${f.type}${
-        f.required ? " (required)" : ""
-      }`;
-      if (f.type === "enum" && f.options?.length) {
-        return `${base} | options: [${f.options.join(", ")}]`;
-      }
-      return base;
-    })
-    .join("\n");
-}
-
-function formatCurrentValuesForPrompt(
-  currentValues: Record<string, CurrentFieldValue> | undefined
-): string {
-  if (!currentValues) return "(none)";
-  const lines = Object.entries(currentValues).map(([id, v]) => {
-    const val =
-      typeof v?.value === "string" || typeof v?.value === "number"
-        ? JSON.stringify(v.value)
-        : "null";
-    return `- ${id}: ${val} (source: ${v.source ?? "ai"}, locked: ${
-      v.locked ? "true" : "false"
-    })`;
-  });
-  return lines.join("\n");
-}
-
-/** Computes start/end offsets for evidence snippet if present */
-function attachOffsetsFromSnippet(
-  transcript: string,
-  snippet?: string
-): { startChar?: number; endChar?: number } {
-  if (!snippet) return {};
-  const idx = transcript.indexOf(snippet);
-  if (idx < 0) return {};
-  return { startChar: idx, endChar: idx + snippet.length };
-}
-
-/** ---------- service ---------- */
+import {
+  type UploadFile,
+  type TranscribeResponse,
+  type GetFilledTemplateInput,
+  type GetFilledTemplateResult,
+  type FilledField,
+  buildResultSchema,
+  formatTemplateForPrompt,
+  formatCurrentValuesForPrompt,
+  attachOffsetsFromSnippet,
+  isEmptyValue,
+} from "./registry";
 
 export class formService {
-  /**
-   * Takes a raw uploaded audio file (buffer) and returns its transcript
-   * using Vercel AI SDK transcription.
-   */
+  /** Transcribe raw audio buffer using Vercel AI SDK */
   async getAudioTranscript(file: UploadFile): Promise<TranscribeResponse> {
     if (!file?.buffer?.length) throw new Error("No audio data provided.");
 
     const modelName = process.env.OPENAI_TRANSCRIBE_MODEL || "whisper-1";
-
     const result = await transcribe({
       model: openai.transcription(modelName as any),
       audio: file.buffer,
@@ -189,14 +32,7 @@ export class formService {
     };
   }
 
-  
-
-  /**
-   * Fill a template from a transcript + current values using Vercel AI SDK.
-   * - Respects locked fields (won't overwrite).
-   * - If preserveUserEdits, prefers values whose source === 'user'.
-   * - If fillOnlyEmpty, only proposes values for empty/null fields.
-   */
+  /** Fill template from transcript + (optional) current values — simple overwrite policy */
   async getFilledTemplate(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult> {
     const {
       transcript,
@@ -208,12 +44,8 @@ export class formService {
       templateId,
     } = input;
 
-    if (!transcript?.trim()) {
-      throw new Error("Transcript is required.");
-    }
-    if (!fields?.length) {
-      throw new Error("At least one template field is required.");
-    }
+    if (!transcript?.trim()) throw new Error("Transcript is required.");
+    if (!fields?.length) throw new Error("At least one template field is required.");
 
     const modelName = process.env.OPENAI_FILL_MODEL || "gpt-4.1";
     const schema = buildResultSchema(fields);
@@ -226,13 +58,6 @@ export class formService {
       "- Dates MUST be ISO format YYYY-MM-DD.",
       "- Numbers must be plain decimals/integers (no units).",
       "- For enums, ONLY use one of the provided options exactly.",
-      options?.fillOnlyEmpty
-        ? "- Fill ONLY fields that are currently empty/null."
-        : "- You MAY update existing values if the transcript clearly indicates a better value.",
-      options?.preserveUserEdits
-        ? "- If a field's source is 'user', prefer the user value unless the transcript explicitly contradicts it."
-        : "",
-      "- If a field is locked, DO NOT change it.",
       options?.returnEvidence
         ? "- When you change or set a value, include a SHORT supporting snippet from the transcript in evidence.transcriptSnippet (<= 200 chars)."
         : "- evidence.transcriptSnippet is optional.",
@@ -264,68 +89,65 @@ export class formService {
       prompt,
     });
 
-    // Post-process: enforce locked/fillOnlyEmpty/preserveUserEdits and compute changed/previous/evidence offsets
+    // Simple post-process: use AI proposal unless locked; if AI null/empty, keep current
     const filled: Record<string, FilledField> = {};
+    for (const f of fields) {
+      const proposed = extracted[f.id] as {
+        value: string | number | null;
+        confidence?: number;
+        evidence?: { transcriptSnippet?: string };
+      };
 
-for (const f of fields) {
-  const proposed = extracted[f.id] as {
-    value: string | number | null;
-    confidence?: number;
-    evidence?: { transcriptSnippet?: string };
-  };
+      const current = currentValues?.[f.id];
 
-  const current = currentValues?.[f.id];
+      const raw = proposed?.value ?? null;
+      const proposedValue = isEmptyValue(raw) ? null : (raw as string | number | null);
+      const currentValue = current?.value ?? null;
 
-  // Normalize proposed value: treat empty strings as null
-  const raw = proposed?.value ?? null;
-  const proposedValue =
-    raw == null || (typeof raw === "string" && raw.trim() === "") ? null : raw;
+      let finalValue: string | number | null;
+      let usedProposed = false;
 
-  const currentValue = current?.value ?? null;
+      if (current?.locked) {
+        finalValue = currentValue; // respect locks
+      } else {
+        if (proposedValue !== null) {
+          finalValue = proposedValue; // overwrite
+          usedProposed = true;
+        } else {
+          finalValue = currentValue; // keep what we have
+        }
+      }
 
-  let finalValue: string | number | null;
-  let usedProposed = false;
+      const changed = (currentValue ?? null) !== (finalValue ?? null);
+      const previousValue = changed ? (currentValue ?? null) : undefined;
 
-  if (current?.locked) {
-    // Respect hard locks only
-    finalValue = currentValue;
-  } else {
-    // Simple overwrite policy
-    if (proposedValue !== null) {
-      finalValue = proposedValue;
-      usedProposed = true;
-    } else {
-      // Model has no value -> keep what we already have
-      finalValue = currentValue;
-    }
-  }
+      const offsets = attachOffsetsFromSnippet(
+        transcript,
+        proposed?.evidence?.transcriptSnippet
+      );
 
-  const changed = (currentValue ?? null) !== (finalValue ?? null);
-  const previousValue = changed ? (currentValue ?? null) : undefined;
-
-  const offsets = attachOffsetsFromSnippet(
-    transcript,
-    proposed?.evidence?.transcriptSnippet
-  );
-
-  filled[f.id] = {
-    value: finalValue,
-    confidence: usedProposed ? proposed?.confidence : undefined,
-    changed,
-    previousValue,
-    source: usedProposed ? "ai" : (current?.source === "user" ? "user" : "ai"),
-    evidence: {
-      transcriptSnippet: proposed?.evidence?.transcriptSnippet,
-      ...offsets,
-    },
-  };
+      filled[f.id] = {
+        value: finalValue,
+        confidence: usedProposed ? proposed?.confidence : undefined,
+        changed,
+        previousValue,
+        source: usedProposed ? "ai" : (current?.source === "user" ? "user" : "ai"),
+        evidence: {
+          transcriptSnippet: proposed?.evidence?.transcriptSnippet,
+          ...offsets,
+        },
+      };
     }
 
-    return {
-      filled,
-      model: modelName,
-    };
+    return { filled, model: modelName };
   }
-
-  /// more service for form yet
 }
+
+/** Re-export types so existing imports from "@/services/formService" keep working */
+export type {
+  TranscribeResponse,
+  UploadFile,
+  GetFilledTemplateInput,
+  GetFilledTemplateResult,
+  FilledField,
+} from "./registry";
