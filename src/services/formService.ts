@@ -1,5 +1,6 @@
 import { experimental_transcribe as transcribe, generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
+import { z } from "zod";
 
 import {
   type UploadFile,
@@ -7,9 +8,9 @@ import {
   type GetFilledTemplateInput,
   type GetFilledTemplateResult,
   type FilledField,
-  buildResultSchema,
-  formatTemplateForPrompt,
-  formatCurrentValuesForPrompt,
+  type FormTemplateField,
+  type CurrentFieldValue,
+  zodFieldValueSchema,
   attachOffsetsFromSnippet,
   isEmptyValue,
 } from "./registry";
@@ -32,7 +33,7 @@ export class formService {
     };
   }
 
-  /** Fill template from transcript + (optional) current values — simple overwrite policy */
+  /** Simple per-field fill: one call per field (parallel). Overwrite unless locked; null/empty keeps current. */
   async getFilledTemplate(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult> {
     const {
       transcript,
@@ -48,98 +49,96 @@ export class formService {
     if (!fields?.length) throw new Error("At least one template field is required.");
 
     const modelName = process.env.OPENAI_FILL_MODEL || "gpt-4.1";
-    const schema = buildResultSchema(fields);
 
-    const guidance = [
-      "You are a careful information extraction engine.",
-      "Task: produce values for each field from the transcript.",
-      "Rules:",
-      "- If a field is unknown or not present, set value to null.",
-      "- Dates MUST be ISO format YYYY-MM-DD.",
-      "- Numbers must be plain decimals/integers (no units).",
-      "- For enums, ONLY use one of the provided options exactly.",
-      options?.returnEvidence
-        ? "- When you change or set a value, include a SHORT supporting snippet from the transcript in evidence.transcriptSnippet (<= 200 chars)."
-        : "- evidence.transcriptSnippet is optional.",
-      "- confidence should be between 0 and 1.",
-    ]
-      .filter(Boolean)
-      .join("\n");
+    const runField = async (field: FormTemplateField, current?: CurrentFieldValue) => {
+      // Per-field schema
+      const fieldSchema = z.object({
+        value: zodFieldValueSchema(field),
+        confidence: z.number().min(0).max(1).optional(),
+        evidence: z.object({ transcriptSnippet: z.string().min(1).max(280).optional() }).optional(),
+      });
 
-    const prompt = [
-      `Template ID: ${templateId ?? "(unspecified)"}`,
-      `Locale: ${locale} | Timezone: ${timezone}`,
-      "",
-      "Template fields:",
-      formatTemplateForPrompt(fields),
-      "",
-      "Current values:",
-      formatCurrentValuesForPrompt(currentValues),
-      "",
-      "Transcript:",
-      transcript,
-      "",
-      "Instructions:",
-      guidance,
-    ].join("\n");
+      // Minimal, focused prompt for this single field
+      const lines: string[] = [
+        `You fill exactly ONE field from the transcript.`,
+        `If unknown or not stated, set value to null.`,
+        `Dates MUST be ISO YYYY-MM-DD.`,
+        `Numbers must be plain decimals/integers (no units).`,
+      ];
+      if (field.type === "enum" && field.options?.length) {
+        lines.push(`For enums, ONLY use one of the provided options exactly.`);
+        lines.push(`Options: ${field.options.join(", ")}`);
+      }
+      if (options?.returnEvidence) {
+        lines.push(`Include a SHORT supporting snippet in evidence.transcriptSnippet (<= 200 chars) when setting a value.`);
+      }
 
-    const { object: extracted } = await generateObject({
-      model: openai(modelName),
-      schema,
-      prompt,
-    });
+      const prompt = [
+        `Template ID: ${templateId ?? "(unspecified)"} | Locale: ${locale} | Timezone: ${timezone}`,
+        ``,
+        `Field: ${field.label} (id: ${field.id}, type: ${field.type}${field.required ? ", required" : ""})`,
+        current
+          ? `Current value: ${JSON.stringify(current.value)} (source: ${current.source ?? "ai"}, locked: ${!!current.locked})`
+          : `Current value: null`,
+        ``,
+        ...lines,
+        ``,
+        `Transcript:`,
+        transcript,
+      ].join("\n");
 
-    // Simple post-process: use AI proposal unless locked; if AI null/empty, keep current
-    const filled: Record<string, FilledField> = {};
-    for (const f of fields) {
-      const proposed = extracted[f.id] as {
-        value: string | number | null;
-        confidence?: number;
-        evidence?: { transcriptSnippet?: string };
-      };
+      const { object } = await generateObject({
+        model: openai(modelName),
+        schema: fieldSchema,
+        prompt,
+      });
 
-      const current = currentValues?.[f.id];
+      // Normalize + overwrite policy
+      const raw = object?.value ?? null;
+      const proposed = isEmptyValue(raw) ? null : raw;
+      const currentVal = current?.value ?? null;
 
-      const raw = proposed?.value ?? null;
-      const proposedValue = isEmptyValue(raw) ? null : (raw as string | number | null);
-      const currentValue = current?.value ?? null;
-
-      let finalValue: string | number | null;
+      let finalVal: string | number | null;
       let usedProposed = false;
 
       if (current?.locked) {
-        finalValue = currentValue; // respect locks
+        finalVal = currentVal;
       } else {
-        if (proposedValue !== null) {
-          finalValue = proposedValue; // overwrite
+        if (proposed !== null) {
+          finalVal = proposed;  // overwrite
           usedProposed = true;
         } else {
-          finalValue = currentValue; // keep what we have
+          finalVal = currentVal; // keep existing if model has nothing
         }
       }
 
-      const changed = (currentValue ?? null) !== (finalValue ?? null);
-      const previousValue = changed ? (currentValue ?? null) : undefined;
+      const changed = (currentVal ?? null) !== (finalVal ?? null);
+      const previousValue = changed ? (currentVal ?? null) : undefined;
+      const offsets = attachOffsetsFromSnippet(transcript, object?.evidence?.transcriptSnippet);
 
-      const offsets = attachOffsetsFromSnippet(
-        transcript,
-        proposed?.evidence?.transcriptSnippet
-      );
-
-      filled[f.id] = {
-        value: finalValue,
-        confidence: usedProposed ? proposed?.confidence : undefined,
+      const filled: FilledField = {
+        value: finalVal,
+        confidence: usedProposed ? object?.confidence : undefined,
         changed,
         previousValue,
         source: usedProposed ? "ai" : (current?.source === "user" ? "user" : "ai"),
         evidence: {
-          transcriptSnippet: proposed?.evidence?.transcriptSnippet,
+          transcriptSnippet: object?.evidence?.transcriptSnippet,
           ...offsets,
         },
       };
-    }
 
-    return { filled, model: modelName };
+      return [field.id, filled] as const;
+    };
+
+    // Run all fields in parallel
+    const tasks = fields.map((f) => runField(f, currentValues?.[f.id]));
+    const entries = await Promise.all(tasks);
+
+    return {
+      filled: Object.fromEntries(entries),
+      model: modelName,
+    };
   }
 }
 
