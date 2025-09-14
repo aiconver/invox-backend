@@ -120,6 +120,10 @@ function buildResultSchema(fields: FormTemplateField[]) {
   return z.object(entries);
 }
 
+function isEmptyValue(v: unknown): boolean {
+  return v == null || (typeof v === "string" && v.trim() === "");
+}
+
 function formatTemplateForPrompt(fields: FormTemplateField[]): string {
   return fields
     .map((f) => {
@@ -184,6 +188,8 @@ export class formService {
       durationInSeconds: result.durationInSeconds,
     };
   }
+
+  
 
   /**
    * Fill a template from a transcript + current values using Vercel AI SDK.
@@ -268,46 +274,54 @@ export class formService {
       };
 
       const current = currentValues?.[f.id];
-      let finalValue = proposed?.value ?? null;
-      let changed = false;
-      let previousValue: string | number | null | undefined = undefined;
+const proposedValRaw = proposed?.value ?? null;
+const proposedValue = isEmptyValue(proposedValRaw) ? null : proposedValRaw;
+const currentValue = current?.value ?? null;
+const currentEmpty = isEmptyValue(currentValue);
 
-      // Respect locked
-      if (current?.locked) {
-        finalValue = current.value ?? null;
-      } else {
-        // preserve user edits
-        if (options?.preserveUserEdits && current?.source === "user" && current.value != null) {
-          finalValue = current.value;
-        }
-        // fill only empty
-        if (options?.fillOnlyEmpty && current?.value != null && current.value !== "") {
-          finalValue = current.value;
-        }
-      }
+let finalValue = proposedValue;
+let usedProposed = true;
 
-      // detect change
-      if ((current?.value ?? null) !== (finalValue ?? null)) {
-        changed = true;
-        previousValue = current?.value ?? null;
-      }
+// Respect locked
+if (current?.locked) {
+  finalValue = currentValue;
+  usedProposed = false;
+} else {
+  // Preserve user edits only if they are non-empty
+  if (options?.preserveUserEdits && current?.source === "user" && !currentEmpty) {
+    finalValue = currentValue;
+    usedProposed = false;
+  }
+  // Fill only empty fields (if requested)
+  else if (options?.fillOnlyEmpty && !currentEmpty) {
+    finalValue = currentValue;
+    usedProposed = false;
+  }
+}
 
-      const offsets = attachOffsetsFromSnippet(
-        transcript,
-        proposed?.evidence?.transcriptSnippet
-      );
+// Detect change
+const changed = (currentValue ?? null) !== (finalValue ?? null);
+const previousValue = changed ? (currentValue ?? null) : undefined;
 
-      filled[f.id] = {
-        value: finalValue,
-        confidence: proposed?.confidence,
-        changed,
-        previousValue,
-        source: current?.source === "user" ? "user" : "ai",
-        evidence: {
-          transcriptSnippet: proposed?.evidence?.transcriptSnippet,
-          ...offsets,
-        },
-      };
+const offsets = attachOffsetsFromSnippet(
+  transcript,
+  proposed?.evidence?.transcriptSnippet
+);
+
+// Mark source based on which value we kept
+const source: "ai" | "user" = usedProposed ? "ai" : (current?.source === "user" ? "user" : "ai");
+
+filled[f.id] = {
+  value: finalValue,
+  confidence: proposed?.confidence,
+  changed,
+  previousValue,
+  source,
+  evidence: {
+    transcriptSnippet: proposed?.evidence?.transcriptSnippet,
+    ...offsets,
+  },
+};
     }
 
     return {
