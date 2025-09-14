@@ -33,20 +33,44 @@ export class formService {
     };
   }
 
-  /** Simple per-field fill: one call per field (parallel). Overwrite unless locked; null/empty keeps current. */
-  async getFilledTemplate(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult> {
+  /**
+   * Per-field fill. Minimal changes:
+   * - Supports oldTranscript/newTranscript; still works if only `transcript` is passed.
+   * - Prompts the model to use NEW transcript as the ONLY extraction source (old = context).
+   * - Validates evidence: snippet MUST be found in NEW transcript, else treat as null.
+   * - Returns `transcript: { old, new, combined }` in result (optional field to keep BC).
+   */
+  async getFilledTemplate(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult & {
+    transcript?: { old: string; new: string; combined: string };
+  }> {
     const {
-      transcript,
+      // existing fields
+      transcript: legacyTranscript,
       fields,
       currentValues,
       locale = "en-US",
       timezone = "Europe/Berlin",
       options,
       templateId,
-    } = input;
 
-    if (!transcript?.trim()) throw new Error("Transcript is required.");
+      // NEW (optional) — won’t break callers that don’t send these:
+      oldTranscript,
+      newTranscript,
+    } = input as GetFilledTemplateInput & {
+      oldTranscript?: string | undefined;
+      newTranscript?: string | undefined;
+    };
+
+    // Back-compat inputs:
+    // - If caller provides new/old, use them.
+    // - Else fall back to the single `transcript` as NEW (and OLD empty).
+    const oldText = (oldTranscript ?? "").trim();
+    const newText = (newTranscript ?? legacyTranscript ?? "").trim();
+
     if (!fields?.length) throw new Error("At least one template field is required.");
+    if (!newText) throw new Error("Transcript is required."); // remain strict: we only extract from NEW
+
+    const combinedTranscript = oldText ? `${oldText}\n${newText}` : newText;
 
     const modelName = process.env.OPENAI_FILL_MODEL || "gpt-4.1";
 
@@ -58,19 +82,19 @@ export class formService {
         evidence: z.object({ transcriptSnippet: z.string().min(1).max(280).optional() }).optional(),
       });
 
-      // Minimal, focused prompt for this single field
-      const lines: string[] = [
-        `You fill exactly ONE field from the transcript.`,
-        `If unknown or not stated, set value to null.`,
-        `Dates MUST be ISO YYYY-MM-DD.`,
-        `Numbers must be plain decimals/integers (no units).`,
+      // Clear, minimal instructions emphasizing NEW vs OLD
+      const rules: string[] = [
+        `You must ONLY extract values from the NEW transcript.`,
+        `The OLD transcript is context only; do NOT create or change values using OLD text.`,
+        `If the NEW transcript does not mention this field, set value to null.`,
+        `If you set a non-null value, include a literal snippet from the NEW transcript in evidence.transcriptSnippet (<= 200 chars).`,
+        `Dates MUST be ISO YYYY-MM-DD. Numbers must be plain decimals/integers (no units).`,
       ];
       if (field.type === "enum" && field.options?.length) {
-        lines.push(`For enums, ONLY use one of the provided options exactly.`);
-        lines.push(`Options: ${field.options.join(", ")}`);
+        rules.push(`For enums, ONLY use one of the provided options exactly: ${field.options.join(", ")}`);
       }
       if (options?.returnEvidence) {
-        lines.push(`Include a SHORT supporting snippet in evidence.transcriptSnippet (<= 200 chars) when setting a value.`);
+        rules.push(`Always include evidence.transcriptSnippet when value is non-null.`);
       }
 
       const prompt = [
@@ -81,10 +105,14 @@ export class formService {
           ? `Current value: ${JSON.stringify(current.value)} (source: ${current.source ?? "ai"}, locked: ${!!current.locked})`
           : `Current value: null`,
         ``,
-        ...lines,
+        `Rules:`,
+        ...rules.map((r) => `- ${r}`),
         ``,
-        `Transcript:`,
-        transcript,
+        `OLD transcript (context only; do not extract from this):`,
+        oldText || "(empty)",
+        ``,
+        `NEW transcript (extract ONLY from this):`,
+        newText,
       ].join("\n");
 
       const { object } = await generateObject({
@@ -93,11 +121,24 @@ export class formService {
         prompt,
       });
 
-      // Normalize + overwrite policy
+      // Proposed value from the model
       const raw = object?.value ?? null;
-      const proposed = isEmptyValue(raw) ? null : raw;
-      const currentVal = current?.value ?? null;
+      let proposed = isEmptyValue(raw) ? null : raw;
 
+      // Evidence must be a snippet from NEW transcript (enforced here)
+      const snippet = object?.evidence?.transcriptSnippet?.trim() || "";
+      const snippetFoundInNew =
+        proposed !== null &&
+        !!snippet &&
+        newText.toLowerCase().includes(snippet.toLowerCase());
+
+      if (proposed !== null && !snippetFoundInNew) {
+        // Reject updates not grounded in NEW transcript
+        proposed = null;
+      }
+
+      // Overwrite policy (unchanged): if current is locked, keep it; else overwrite only with non-null proposed
+      const currentVal = current?.value ?? null;
       let finalVal: string | number | null;
       let usedProposed = false;
 
@@ -105,16 +146,19 @@ export class formService {
         finalVal = currentVal;
       } else {
         if (proposed !== null) {
-          finalVal = proposed;  // overwrite
+          finalVal = proposed;  // overwrite only when grounded in NEW
           usedProposed = true;
         } else {
-          finalVal = currentVal; // keep existing if model has nothing
+          finalVal = currentVal; // keep existing if no grounded update
         }
       }
 
       const changed = (currentVal ?? null) !== (finalVal ?? null);
       const previousValue = changed ? (currentVal ?? null) : undefined;
-      const offsets = attachOffsetsFromSnippet(transcript, object?.evidence?.transcriptSnippet);
+
+      // For offsets, use the combined transcript so UI can highlight accurately;
+      // snippet is from NEW, but combined makes searching robust either way.
+      const offsets = attachOffsetsFromSnippet(combinedTranscript, snippet || undefined);
 
       const filled: FilledField = {
         value: finalVal,
@@ -123,7 +167,7 @@ export class formService {
         previousValue,
         source: usedProposed ? "ai" : (current?.source === "user" ? "user" : "ai"),
         evidence: {
-          transcriptSnippet: object?.evidence?.transcriptSnippet,
+          transcriptSnippet: snippet || undefined,
           ...offsets,
         },
       };
@@ -131,13 +175,17 @@ export class formService {
       return [field.id, filled] as const;
     };
 
-    // Run all fields in parallel
+    // Run all fields in parallel (kept as-is)
     const tasks = fields.map((f) => runField(f, currentValues?.[f.id]));
     const entries = await Promise.all(tasks);
 
+    // Keep original shape; add transcript summary optionally (minimizes ripple)
     return {
       filled: Object.fromEntries(entries),
       model: modelName,
+      transcript: { old: oldText, new: newText, combined: combinedTranscript },
+    } as GetFilledTemplateResult & {
+      transcript: { old: string; new: string; combined: string };
     };
   }
 }
