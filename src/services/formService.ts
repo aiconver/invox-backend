@@ -266,62 +266,59 @@ export class formService {
 
     // Post-process: enforce locked/fillOnlyEmpty/preserveUserEdits and compute changed/previous/evidence offsets
     const filled: Record<string, FilledField> = {};
-    for (const f of fields) {
-      const proposed = extracted[f.id] as {
-        value: string | number | null;
-        confidence?: number;
-        evidence?: { transcriptSnippet?: string };
-      };
 
-      const current = currentValues?.[f.id];
-const proposedValRaw = proposed?.value ?? null;
-const proposedValue = isEmptyValue(proposedValRaw) ? null : proposedValRaw;
-const currentValue = current?.value ?? null;
-const currentEmpty = isEmptyValue(currentValue);
+for (const f of fields) {
+  const proposed = extracted[f.id] as {
+    value: string | number | null;
+    confidence?: number;
+    evidence?: { transcriptSnippet?: string };
+  };
 
-let finalValue = proposedValue;
-let usedProposed = true;
+  const current = currentValues?.[f.id];
 
-// Respect locked
-if (current?.locked) {
-  finalValue = currentValue;
-  usedProposed = false;
-} else {
-  // Preserve user edits only if they are non-empty
-  if (options?.preserveUserEdits && current?.source === "user" && !currentEmpty) {
+  // Normalize proposed value: treat empty strings as null
+  const raw = proposed?.value ?? null;
+  const proposedValue =
+    raw == null || (typeof raw === "string" && raw.trim() === "") ? null : raw;
+
+  const currentValue = current?.value ?? null;
+
+  let finalValue: string | number | null;
+  let usedProposed = false;
+
+  if (current?.locked) {
+    // Respect hard locks only
     finalValue = currentValue;
-    usedProposed = false;
+  } else {
+    // Simple overwrite policy
+    if (proposedValue !== null) {
+      finalValue = proposedValue;
+      usedProposed = true;
+    } else {
+      // Model has no value -> keep what we already have
+      finalValue = currentValue;
+    }
   }
-  // Fill only empty fields (if requested)
-  else if (options?.fillOnlyEmpty && !currentEmpty) {
-    finalValue = currentValue;
-    usedProposed = false;
-  }
-}
 
-// Detect change
-const changed = (currentValue ?? null) !== (finalValue ?? null);
-const previousValue = changed ? (currentValue ?? null) : undefined;
+  const changed = (currentValue ?? null) !== (finalValue ?? null);
+  const previousValue = changed ? (currentValue ?? null) : undefined;
 
-const offsets = attachOffsetsFromSnippet(
-  transcript,
-  proposed?.evidence?.transcriptSnippet
-);
+  const offsets = attachOffsetsFromSnippet(
+    transcript,
+    proposed?.evidence?.transcriptSnippet
+  );
 
-// Mark source based on which value we kept
-const source: "ai" | "user" = usedProposed ? "ai" : (current?.source === "user" ? "user" : "ai");
-
-filled[f.id] = {
-  value: finalValue,
-  confidence: proposed?.confidence,
-  changed,
-  previousValue,
-  source,
-  evidence: {
-    transcriptSnippet: proposed?.evidence?.transcriptSnippet,
-    ...offsets,
-  },
-};
+  filled[f.id] = {
+    value: finalValue,
+    confidence: usedProposed ? proposed?.confidence : undefined,
+    changed,
+    previousValue,
+    source: usedProposed ? "ai" : (current?.source === "user" ? "user" : "ai"),
+    evidence: {
+      transcriptSnippet: proposed?.evidence?.transcriptSnippet,
+      ...offsets,
+    },
+  };
     }
 
     return {
