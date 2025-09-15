@@ -1,9 +1,10 @@
 import { Application } from 'express';
 import v1Routes from './v1';
+import { hasAnyRole, verifyJwt } from '@/middleware/verifyJwt';
 
 export const setupRoutes = (app: Application): void => {
   // API versioning
-  app.use('/api/v1', v1Routes);
+  app.use('/api/v1', verifyJwt, hasAnyRole, v1Routes);
   
   // Root endpoint
   app.get('/', (req, res) => {

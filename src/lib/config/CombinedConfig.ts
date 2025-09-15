@@ -7,6 +7,13 @@ const envSchema = z
       .string()
       .transform((val) => parseInt(val, 10))
       .default('3001'),
+
+    // Keycloak config
+    keycloakClientId: z.string(),
+    keycloakServerUrl: z.string().url(),
+    keycloakRealm: z.string(),
+    keycloakSecret: z.string(),
+    keycloakSessionSecret: z.string(),
   })
   .transform((env) => ({
     ...env,
@@ -21,6 +28,12 @@ export default class CombinedConfig {
     const result = envSchema.safeParse({
       nodeEnv: rawEnv.NODE_ENV,
       port: rawEnv.PORT,
+
+      keycloakClientId: rawEnv.KEYCLOAK_CLIENT_ID,
+      keycloakServerUrl: rawEnv.KEYCLOAK_SERVER_URL,
+      keycloakRealm: rawEnv.KEYCLOAK_REALM,
+      keycloakSecret: rawEnv.KEYCLOAK_SECRET,
+      keycloakSessionSecret: rawEnv.KEYCLOAK_SESSION_SECRET,
     });
 
     if (!result.success) {
@@ -38,6 +51,22 @@ export default class CombinedConfig {
 
   get port() {
     return this.env.port;
+  }
+
+  get keycloakClientId() {
+    return this.env.keycloakClientId;
+  }
+  get keycloakServerUrl() {
+    return this.env.keycloakServerUrl;
+  }
+  get keycloakRealm() {
+    return this.env.keycloakRealm;
+  }
+  get keycloakSecret() {
+    return this.env.keycloakSecret;
+  }
+  get keycloakSessionSecret() {
+    return this.env.keycloakSessionSecret;
   }
 
 }
