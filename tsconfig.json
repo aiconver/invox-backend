@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "typeRoots": ["./src/types", "./node_modules/@types"],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },

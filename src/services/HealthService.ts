@@ -1,4 +1,4 @@
-import { HealthStatus } from '@/types/HealthStatus';
+import { HealthStatus } from '../types/HealthStatus';
 import os from 'os';
 
 export class HealthService {

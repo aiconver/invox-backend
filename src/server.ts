@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
-import CombinedConfig from '@/lib/config/CombinedConfig';
-import { setupMiddleware } from '@/middleware';
-import { setupRoutes } from '@/routes';
-import { errorHandler, notFoundHandler } from '@/middleware/errorHandler';
+import CombinedConfig from './lib/config/CombinedConfig';
+import { setupMiddleware } from './middleware';
+import { setupRoutes } from './routes';
+import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 
 const config = new CombinedConfig(process.env);
 

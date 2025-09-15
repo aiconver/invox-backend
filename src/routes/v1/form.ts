@@ -1,7 +1,7 @@
 // src/routes/v1/form.ts
 import { Router } from "express";
 import multer from "multer";
-import { formController } from "@/controllers/v1/formController";
+import { formController } from "../../controllers/v1/formController";
 
 const router = Router();
 const controller = new formController();

@@ -5,8 +5,8 @@ import {
   TranscribeResponse,
   GetFilledTemplateInput,
   GetFilledTemplateResult,
-} from "@/services/formService";
-import { ApiResponse } from "@/types/ApiResponse";
+} from "../../services/formService";
+import { ApiResponse } from "../../types/ApiResponse";
 
 export class formController {
   private formService: formService;

@@ -4,7 +4,7 @@ import jwksClient from "jwks-rsa";
 import { JwtUser } from "../types/typed-request";
 import { hasRole } from "../utils/has-role";
 import { AppRoles } from "../types/app-roles";
-import config from "@/lib/config";
+import config from "../lib/config";
 
 
 const client = jwksClient({

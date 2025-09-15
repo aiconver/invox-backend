@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { HealthService } from '@/services/HealthService';
-import { ApiResponse } from '@/types/ApiResponse';
-import { HealthStatus } from '@/types/HealthStatus';
+import { HealthService } from '../../services/HealthService';
+import { ApiResponse } from '../../types/ApiResponse';
+import { HealthStatus } from '../../types/HealthStatus';
 
 export class HealthController {
   private healthService: HealthService;

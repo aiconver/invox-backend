@@ -1,5 +1,5 @@
-import { AppRoles } from "@/types/app-roles";
-import { JwtUser } from "@/types/typed-request";
+import { AppRoles } from "../types/app-roles";
+import { JwtUser } from "../types/typed-request";
 
 // Accept either JwtUser or DB User model
 export function hasRole(
