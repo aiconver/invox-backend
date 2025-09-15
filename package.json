@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "nodemon --require tsconfig-paths/register src/index.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node -r tsconfig-paths/register dist/server.js"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.1.13",
