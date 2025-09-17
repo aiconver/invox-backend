@@ -23,6 +23,7 @@ export type FormTemplateField = {
   required?: boolean;
   options?: string[];   // for enum
   pattern?: string;     // optional regex for text fields
+  description?: string;
 };
 
 export type CurrentFieldValue = {
