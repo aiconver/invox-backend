@@ -32,6 +32,14 @@ export type CurrentFieldValue = {
   locked?: boolean;     // if true, never overwrite
 };
 
+
+export type FewShotExample = {
+  id: string;
+  text: string;
+  expected: Record<string, string | number | null>;
+};
+
+
 export type GetFilledTemplateInput = {
   templateId?: string;
   fields: FormTemplateField[];
@@ -39,6 +47,7 @@ export type GetFilledTemplateInput = {
   currentValues?: Record<string, CurrentFieldValue>;
   locale?: string;
   timezone?: string;
+  fewShots?: FewShotExample[];
   options?: {
     mode?: "incremental" | "fresh";
     fillOnlyEmpty?: boolean;
