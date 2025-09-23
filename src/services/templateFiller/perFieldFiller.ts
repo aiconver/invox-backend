@@ -6,12 +6,11 @@ import {
   CurrentFieldValue,
 } from "../registry";
 
-export async function perFieldFiller(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult & {
-  transcript: { old: string; new: string; combined: string };
-}> {
+export async function perFieldFiller(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult> {
   const {
     transcript: legacyTranscript,
     fields,
+    lang,
     currentValues,
     locale = "en-US",
     timezone = "Europe/Berlin",
@@ -40,6 +39,7 @@ export async function perFieldFiller(input: GetFilledTemplateInput): Promise<Get
       oldText,
       newText,
       combinedTranscript,
+      lang,
       templateId,
       locale,
       timezone,

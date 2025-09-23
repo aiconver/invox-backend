@@ -11,12 +11,17 @@ import {
 } from "../registry";
 import { buildPrompt } from "./promptBuilder";
 
+function isDE(lang?: string) {
+  return (lang ?? "en").toLowerCase().startsWith("de");
+}
+
 export async function runField({
   field,
   oldText,
   newText,
   combinedTranscript,
   templateId,
+  lang,
   locale,
   timezone,
   fewShots,
@@ -29,6 +34,7 @@ export async function runField({
   newText: string;
   combinedTranscript: string;
   templateId?: string;
+  lang: string;          // "en" | "de"
   locale: string;
   timezone: string;
   fewShots?: any[];
@@ -42,37 +48,64 @@ export async function runField({
     evidence: z.object({ transcriptSnippet: z.string().min(1).max(200).optional() }).optional(),
   });
 
-  // Build examples
+  const de = isDE(lang);
+
+  // Build localized few-shot examples
   const perFieldDemos = (fewShots ?? [])
-    .filter(ex => ex.expected?.hasOwnProperty(field.id))
+    .filter(ex => ex?.expected?.hasOwnProperty(field.id))
     .slice(0, 3)
     .map(ex => {
       const expectedVal = ex.expected[field.id];
       const txt = String(ex.text).trim().slice(0, 500);
       const expectedStr = expectedVal === null ? "null" : JSON.stringify(expectedVal);
-      return `Example\nNEW transcript: ${txt}\nExpected ${field.label}: ${expectedStr}`;
+      const exampleLabel = de ? "Beispiel" : "Example";
+      const newLabel = de ? "NEUES Transkript" : "NEW transcript";
+      const expectedLabel = de ? "Erwartet" : "Expected";
+      return `${exampleLabel}
+${newLabel}: ${txt}
+${expectedLabel} ${field.label}: ${expectedStr}`;
     });
 
-  const rules = [
-    `You must ONLY extract values from the NEW transcript.`,
-    `The OLD transcript is context only; do NOT use it.`,
-    `If the NEW transcript does not mention this field, set value to null.`,
-    `Dates MUST be ISO YYYY-MM-DD. Numbers must be plain decimals/integers.`,
-  ];
+  // Localized rules
+  const rules: string[] = de
+    ? [
+        "Werte NUR aus dem NEUEN Transkript extrahieren.",
+        "Das ALTE Transkript dient nur als Kontext; NICHT daraus ableiten.",
+        "Wenn das NEUE Transkript dieses Feld nicht erwähnt, setze value auf null.",
+        "Datumsangaben MÜSSEN im ISO-Format YYYY-MM-DD sein. Zahlen als reine Dezimal-/Ganzzahlen (ohne Einheiten).",
+      ]
+    : [
+        "You must ONLY extract values from the NEW transcript.",
+        "The OLD transcript is context only; do NOT use it.",
+        "If the NEW transcript does not mention this field, set value to null.",
+        "Dates MUST be ISO YYYY-MM-DD. Numbers must be plain decimals/integers (no units).",
+      ];
+
   if (field.type === "enum" && field.options?.length) {
-    rules.push(`For enums, ONLY use one of: ${field.options.join(", ")}`);
+    rules.push(
+      de
+        ? `Für Enums NUR eine der vorgegebenen Optionen exakt verwenden: ${field.options.join(", ")}`
+        : `For enums, ONLY use one of the provided options exactly: ${field.options.join(", ")}`
+    );
   }
   if (options?.returnEvidence) {
-    rules.push(`When value is non-null, include transcriptSnippet from NEW transcript (<=200 chars).`);
+    rules.push(
+      de
+        ? "Wenn value nicht null ist, füge ein wörtliches Snippet aus dem NEUEN Transkript in evidence.transcriptSnippet ein (≤ 200 Zeichen)."
+        : "When value is non-null, include a literal snippet from the NEW transcript in evidence.transcriptSnippet (≤ 200 chars)."
+    );
   }
 
-  const descLine = field.description ? `Field description: ${field.description.slice(0, 240)}` : null;
+  const descLine = field.description
+    ? (de ? "Feldbeschreibung: " : "Field description: ") + field.description.slice(0, 240)
+    : null;
 
   const prompt = buildPrompt({
     field,
     oldText,
     newText,
     templateId,
+    lang,
     locale,
     timezone,
     descLine,
@@ -87,18 +120,22 @@ export async function runField({
     prompt,
   });
 
+  // Proposed value
   const raw = object?.value ?? null;
   let proposed = isEmptyValue(raw) ? null : raw;
 
+  // Evidence must come from NEW transcript
   const snippet = object?.evidence?.transcriptSnippet?.trim() || "";
   const snippetFoundInNew =
     proposed !== null &&
     !!snippet &&
     newText.toLowerCase().includes(snippet.toLowerCase());
+
   if (proposed !== null && !snippetFoundInNew) {
     proposed = null;
   }
 
+  // Overwrite policy
   const currentVal = current?.value ?? null;
   let finalVal = currentVal;
   let usedProposed = false;
@@ -110,6 +147,7 @@ export async function runField({
   const changed = (currentVal ?? null) !== (finalVal ?? null);
   const previousValue = changed ? currentVal ?? null : undefined;
 
+  // Offsets (search across combined; snippet is from NEW)
   const offsets = attachOffsetsFromSnippet(combinedTranscript, snippet || undefined);
 
   return [
