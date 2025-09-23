@@ -45,6 +45,7 @@ export type GetFilledTemplateInput = {
   fields: FormTemplateField[];
   transcript: string;
   currentValues?: Record<string, CurrentFieldValue>;
+  lang: string;
   locale?: string;
   timezone?: string;
   fewShots?: FewShotExample[];
@@ -73,4 +74,6 @@ export type GetFilledTemplateResult = {
   filled: Record<string, FilledField>;
   model: string;
   traceId?: string;
+  transcript: { old: string; new: string; combined: string };
+  chatResponse?: unknown;
 };
