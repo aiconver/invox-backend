@@ -2,10 +2,10 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import jwksClient from "jwks-rsa";
-import { JwtUser } from "../types/typed-request";
-import { hasRole } from "../utils/has-role";
-import { AppRoles } from "../types/app-roles";
-import config from "../lib/config";
+import { JwtUser } from "../../types/typed-request";
+import { hasRole } from "../../utils/has-role";
+import { AppRoles } from "../../types/app-roles";
+import config from "../../lib/config";
 
 const client = jwksClient({
   jwksUri: `${config.keycloakServerUrl}/realms/${config.keycloakRealm}/protocol/openid-connect/certs`,

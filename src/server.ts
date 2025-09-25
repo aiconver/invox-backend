@@ -3,11 +3,11 @@ import * as trpcExpress from "@trpc/server/adapters/express";
 import express from "express";
 import cors from "cors";
 import CombinedConfig from "./lib/config/CombinedConfig";
-import { setupMiddleware } from "./middleware";
-import { errorHandler, notFoundHandler } from "./middleware/errorHandler";
+import { setupMiddleware } from "./api/middlewares";
+import { errorHandler, notFoundHandler } from "./api/middlewares/errorHandler";
 import { createContext } from "./api/trpc/context";
 import { appRouter } from "./api/trpc/router";
-import { verifyJwt, hasAnyRole } from "./middleware/verifyJwt"; // <-- verifyJwt too!
+import { verifyJwt, hasAnyRole } from "./api/middlewares/verifyJwt"; // <-- verifyJwt too!
 
 const config = new CombinedConfig(process.env);
 
