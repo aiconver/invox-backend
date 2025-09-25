@@ -1,8 +1,8 @@
 import { CurrentFieldValue, GetFilledTemplateInput, GetFilledTemplateResult } from "@/types/fill-form";
-import { runField } from "./run-field";
-import { generateChatResponse } from "./chatbot-helper";
+import { runField } from "./utils/run-field";
+import { generateChatResponse } from "./utils/chatbot-helper";
 
-export async function perFieldFiller(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult> {
+export async function singleLlmOneField(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult> {
   const {
     transcript: legacyTranscript,
     fields,

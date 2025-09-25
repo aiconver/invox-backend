@@ -1,10 +1,20 @@
 import { z } from "zod";
 import type { JwtUser } from "@/types/typed-request";
-import { GetFilledTemplateResult } from "@/types/fill-form";
-import { perFieldFiller } from "@/services/single-llm-one-field";
+import type { GetFilledTemplateResult } from "@/types/fill-form";
+import { singleLlmOneField } from "@/strategies/single-llm-one-field";
+import { singleLlmAllField } from "@/strategies/single-llm-all-field";
 
+/** CurrentFieldValue (loose) */
+const zCurrentFieldValue = z.object({
+  value: z.union([z.string(), z.number(), z.null()]).optional(),
+  source: z.enum(["ai", "user"]).optional(),
+  locked: z.boolean().optional(),
+});
 
-// Input schema (mimics old GetFilledTemplateInput + extras)
+/** Record of current values keyed by field id */
+const zCurrentValues = z.record(z.string(), zCurrentFieldValue).optional();
+
+// Input schema
 export const fillFormSchema = z.object({
   fields: z.array(
     z.object({
@@ -17,19 +27,23 @@ export const fillFormSchema = z.object({
       pattern: z.string().optional(),
     })
   ),
+
   // Transcript options
   newTranscript: z.string().optional(),
   transcript: z.string().optional(), // legacy
   oldTranscript: z.string().optional(),
 
-  // Few-shots (stringified or array)
+  // Few-shots
   fewShots: z.union([z.string(), z.array(z.unknown())]).optional(),
 
-  // Options (fill mode, preserve edits, etc.)
+  // Options
   options: z.record(z.unknown()).optional(),
 
-  // Approach: currently only perField supported
-  approach: z.enum(["perField"]).optional(),
+  // Approach
+  approach: z.enum(["singleLlmOneField", "singleLlmAllField"]).optional(),
+
+  // 🔴 NEW: pass previous values from client
+  currentValues: zCurrentValues,
 });
 
 export async function fillForm(
@@ -51,6 +65,13 @@ export async function fillForm(
         : input.fewShots,
   };
 
+  // Sanity logs (helps confirm currentValues is coming through)
+  console.log("[fillForm] fields:", normalized.fields?.length);
+  console.log(
+    "[fillForm] currentValues keys:",
+    normalized.currentValues ? Object.keys(normalized.currentValues).length : 0
+  );
+
   // Validate transcripts
   const hasNew = normalized.newTranscript?.trim();
   const hasLegacy = normalized.transcript?.trim();
@@ -65,13 +86,18 @@ export async function fillForm(
     throw new Error("fields array is required.");
   }
 
-  const approach = normalized.approach ?? "perField";
-  if (approach !== "perField") {
+  const approach = normalized.approach ?? "singleLlmAllField";
+
+  let result: GetFilledTemplateResult;
+  if (approach === "singleLlmOneField") {
+    // ensure currentValues is forwarded
+    result = await singleLlmOneField(normalized as any);
+  } else if (approach === "singleLlmAllField") {
+    // ensure currentValues is forwarded
+    result = await singleLlmAllField(normalized as any);
+  } else {
     throw new Error(`Unsupported filler approach: ${approach}`);
   }
-
-  // Directly call perFieldFiller (no service indirection)
-  const result = await perFieldFiller(normalized as any);
 
   return {
     success: true,
