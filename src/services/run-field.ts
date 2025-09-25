@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
-import { buildPrompt } from "./promptBuilder";
+import { buildPrompt } from "./prompt-builder";
 import {
   CurrentFieldValue,
   FilledField,
