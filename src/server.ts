@@ -4,7 +4,6 @@ import express from "express";
 import cors from "cors";
 import CombinedConfig from "./lib/config/CombinedConfig";
 import { setupMiddleware } from "./middleware";
-import { setupRoutes } from "./routes";
 import { errorHandler, notFoundHandler } from "./middleware/errorHandler";
 import { createContext } from "./api/trpc/context";
 import { appRouter } from "./api/trpc/router";
@@ -18,7 +17,6 @@ export const startServer = async () => {
 
     // Common middleware
     setupMiddleware(app);
-    setupRoutes(app);
 
     // Protect the /trpc mount with token verification & role check
     app.use(
@@ -37,8 +35,7 @@ export const startServer = async () => {
     app.use(errorHandler);
 
     app.listen(config.port, () => {
-      console.log(`🚀 Invox backend running at http://localhost:${config.port}`);
-      console.log(`📖 API docs at http://localhost:${config.port}/api/v1`);
+      console.log(`🚀 Invox backend running at http://localhost:${config.port}/trpc`);
     });
   } catch (err) {
     console.error("❌ Failed to start server:", err);
