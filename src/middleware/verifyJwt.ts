@@ -1,3 +1,4 @@
+// src/middleware/verifyJwt.ts
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import jwksClient from "jwks-rsa";
@@ -6,12 +7,11 @@ import { hasRole } from "../utils/has-role";
 import { AppRoles } from "../types/app-roles";
 import config from "../lib/config";
 
-
 const client = jwksClient({
   jwksUri: `${config.keycloakServerUrl}/realms/${config.keycloakRealm}/protocol/openid-connect/certs`,
   cache: true,
-  cacheMaxEntries: 8,      // How many keys to cache
-  cacheMaxAge: 30 * 60 * 1000 // 30 minutes
+  cacheMaxEntries: 8,
+  cacheMaxAge: 30 * 60 * 1000,
 });
 
 function getKey(header: jwt.JwtHeader, callback: jwt.SigningKeyCallback) {
@@ -29,28 +29,26 @@ export function verifyJwt(req: Request, res: Response, next: NextFunction) {
 
   const token = authHeader.split(" ")[1];
   jwt.verify(token, getKey, { algorithms: ["RS256"] }, (err, decoded) => {
-    if (err) return res.status(403).json({ message: "Token verification failed", error: err });
-    (req as any).user = decoded; // you can cast to `JwtUser` here too
+    if (err) {
+      return res.status(403).json({ message: "Token verification failed", error: err });
+    }
+    (req as any).user = decoded as JwtUser;
     next();
   });
 }
 
-export function hasAnyRole(req: ExtendedRequest | Request, res: Response, next: NextFunction) {
-    const reqCast = (<ExtendedRequest>req);
-    if (!reqCast.user) {
-      return res.status(403).json({ message: "User role missing." });
-    }
-    const user = reqCast.user;
-    if (
-      !user ||
-      // Check if user has at least one of the roles defined in AppRoles
-      !Object.values(AppRoles).some(role => hasRole(user, role))
-    ) {
-      return res.status(403).json({ message: "User role missing." });
-    }
-    next();
-  }
-
 interface ExtendedRequest extends Request {
   user: JwtUser;
+}
+
+export function hasAnyRole(req: ExtendedRequest | Request, res: Response, next: NextFunction) {
+  const reqCast = req as ExtendedRequest;
+  const user = reqCast.user;
+  if (!user) {
+    return res.status(403).json({ message: "User role missing." });
+  }
+  if (!Object.values(AppRoles).some((role) => hasRole(user, role))) {
+    return res.status(403).json({ message: "User lacks required role." });
+  }
+  next();
 }
