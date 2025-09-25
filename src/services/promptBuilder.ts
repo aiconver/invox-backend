@@ -1,4 +1,4 @@
-import { FormTemplateField } from "../registry";
+import { FormTemplateField } from "@/types/fill-form";
 
 function isDE(lang?: string) {
   return (lang ?? "en").toLowerCase().startsWith("de");

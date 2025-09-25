@@ -1,10 +1,6 @@
+import { CurrentFieldValue, GetFilledTemplateInput, GetFilledTemplateResult } from "@/types/fill-form";
 import { runField } from "./runField";
-import { generateChatResponse } from "../chatService";
-import {
-  GetFilledTemplateInput,
-  GetFilledTemplateResult,
-  CurrentFieldValue,
-} from "../registry";
+import { generateChatResponse } from "./chatService";
 
 export async function perFieldFiller(input: GetFilledTemplateInput): Promise<GetFilledTemplateResult> {
   const {

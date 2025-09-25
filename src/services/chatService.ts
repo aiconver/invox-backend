@@ -1,6 +1,6 @@
 import { generateText } from "ai";
 import { openai } from "@ai-sdk/openai";
-import { CurrentFieldValue, FilledField, FormTemplateField } from "./registry";
+import { CurrentFieldValue, FilledField, FormTemplateField } from "@/types/fill-form";
 
 
 type Entry = readonly [string, FilledField];

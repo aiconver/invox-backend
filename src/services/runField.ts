@@ -1,19 +1,64 @@
 import { z } from "zod";
 import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
+import { buildPrompt } from "./promptBuilder";
 import {
-  FormTemplateField,
   CurrentFieldValue,
   FilledField,
-  zodFieldValueSchema,
-  attachOffsetsFromSnippet,
-  isEmptyValue,
-} from "../registry";
-import { buildPrompt } from "./promptBuilder";
+  FormTemplateField,
+} from "@/types/fill-form";
+
+/** ───────── helpers (inlined) ───────── */
+
+function zodFieldValueSchema(field: FormTemplateField): z.ZodTypeAny {
+  switch (field.type) {
+    case "date":
+      // ISO date YYYY-MM-DD or null
+      return z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable();
+    case "number":
+      return z.number().finite().nullable();
+    case "enum":
+      if (field.options?.length) {
+        // use enum of provided options or null
+        return z.enum(field.options as [string, ...string[]]).nullable();
+      }
+      return z.string().nullable();
+    case "text":
+    case "textarea":
+    default: {
+      if (field.pattern) {
+        try {
+          const re = new RegExp(field.pattern);
+          return z.string().regex(re).nullable();
+        } catch {
+          // bad regex → fallback to free string/null
+          return z.string().nullable();
+        }
+      }
+      return z.string().nullable();
+    }
+  }
+}
+
+function attachOffsetsFromSnippet(
+  transcript: string,
+  snippet?: string
+): { startChar?: number; endChar?: number } {
+  if (!snippet) return {};
+  const idx = transcript.indexOf(snippet);
+  if (idx < 0) return {};
+  return { startChar: idx, endChar: idx + snippet.length };
+}
+
+function isEmptyValue(v: unknown): boolean {
+  return v == null || (typeof v === "string" && v.trim() === "");
+}
 
 function isDE(lang?: string) {
   return (lang ?? "en").toLowerCase().startsWith("de");
 }
+
+/** ───────── main function ───────── */
 
 export async function runField({
   field,
@@ -34,7 +79,7 @@ export async function runField({
   newText: string;
   combinedTranscript: string;
   templateId?: string;
-  lang: string;          // "en" | "de"
+  lang: string; // "en" | "de"
   locale: string;
   timezone: string;
   fewShots?: any[];
@@ -45,16 +90,18 @@ export async function runField({
   const fieldSchema = z.object({
     value: zodFieldValueSchema(field),
     confidence: z.number().min(0).max(1).optional(),
-    evidence: z.object({ transcriptSnippet: z.string().min(1).max(200).optional() }).optional(),
+    evidence: z
+      .object({ transcriptSnippet: z.string().min(1).max(200).optional() })
+      .optional(),
   });
 
   const de = isDE(lang);
 
-  // Build localized few-shot examples
+  // Localized few-shot demos for this field
   const perFieldDemos = (fewShots ?? [])
-    .filter(ex => ex?.expected?.hasOwnProperty(field.id))
+    .filter((ex: any) => ex?.expected?.hasOwnProperty(field.id))
     .slice(0, 3)
-    .map(ex => {
+    .map((ex: any) => {
       const expectedVal = ex.expected[field.id];
       const txt = String(ex.text).trim().slice(0, 500);
       const expectedStr = expectedVal === null ? "null" : JSON.stringify(expectedVal);
@@ -66,7 +113,7 @@ ${newLabel}: ${txt}
 ${expectedLabel} ${field.label}: ${expectedStr}`;
     });
 
-  // Localized rules
+  // Localized extraction rules
   const rules: string[] = de
     ? [
         "Werte NUR aus dem NEUEN Transkript extrahieren.",
@@ -84,7 +131,9 @@ ${expectedLabel} ${field.label}: ${expectedStr}`;
   if (field.type === "enum" && field.options?.length) {
     rules.push(
       de
-        ? `Für Enums NUR eine der vorgegebenen Optionen exakt verwenden: ${field.options.join(", ")}`
+        ? `Für Enums NUR eine der vorgegebenen Optionen exakt verwenden: ${field.options.join(
+            ", "
+          )}`
         : `For enums, ONLY use one of the provided options exactly: ${field.options.join(", ")}`
     );
   }
@@ -97,7 +146,8 @@ ${expectedLabel} ${field.label}: ${expectedStr}`;
   }
 
   const descLine = field.description
-    ? (de ? "Feldbeschreibung: " : "Field description: ") + field.description.slice(0, 240)
+    ? (de ? "Feldbeschreibung: " : "Field description: ") +
+      field.description.slice(0, 240)
     : null;
 
   const prompt = buildPrompt({
@@ -120,9 +170,9 @@ ${expectedLabel} ${field.label}: ${expectedStr}`;
     prompt,
   });
 
-  // Proposed value
+  // Proposed value from model
   const raw = object?.value ?? null;
-  let proposed = isEmptyValue(raw) ? null : raw;
+  let proposed = isEmptyValue(raw) ? null : (raw as FilledField["value"]);
 
   // Evidence must come from NEW transcript
   const snippet = object?.evidence?.transcriptSnippet?.trim() || "";
@@ -132,6 +182,7 @@ ${expectedLabel} ${field.label}: ${expectedStr}`;
     newText.toLowerCase().includes(snippet.toLowerCase());
 
   if (proposed !== null && !snippetFoundInNew) {
+    // reject evidence that can't be found in NEW transcript
     proposed = null;
   }
 
@@ -145,9 +196,9 @@ ${expectedLabel} ${field.label}: ${expectedStr}`;
   }
 
   const changed = (currentVal ?? null) !== (finalVal ?? null);
-  const previousValue = changed ? currentVal ?? null : undefined;
+  const previousValue = changed ? (currentVal ?? null) : undefined;
 
-  // Offsets (search across combined; snippet is from NEW)
+  // Offsets (search over combined; snippet is from NEW)
   const offsets = attachOffsetsFromSnippet(combinedTranscript, snippet || undefined);
 
   return [

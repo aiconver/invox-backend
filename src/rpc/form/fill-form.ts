@@ -1,41 +1,42 @@
-// src/api/form/handlers.ts
-import { JwtUser } from "@/types/typed-request";
-import z from "zod";
-import { FormService } from "@/services/formService";
+import { z } from "zod";
+import type { JwtUser } from "@/types/typed-request";
+import { GetFilledTemplateResult } from "@/types/fill-form";
+import { perFieldFiller } from "@/services/perFieldFiller";
 
-// ===== FILL =====
 
+// Input schema (mimics old GetFilledTemplateInput + extras)
 export const fillFormSchema = z.object({
-  // Keep in sync with your old GetFilledTemplateInput
-  // Required:
   fields: z.array(
     z.object({
       id: z.string(),
       label: z.string(),
-      type: z.string(), // or enum if you have one
-      // … add the rest per your Registry type
+      type: z.string(),
+      required: z.boolean().optional(),
+      options: z.array(z.string()).optional(),
+      description: z.string().optional(),
+      pattern: z.string().optional(),
     })
   ),
-  // Provide either newTranscript or legacy transcript:
+  // Transcript options
   newTranscript: z.string().optional(),
   transcript: z.string().optional(), // legacy
   oldTranscript: z.string().optional(),
 
-  // Optional fewShots (stringified or array):
+  // Few-shots (stringified or array)
   fewShots: z.union([z.string(), z.array(z.unknown())]).optional(),
 
-  // Optional knobs you had:
+  // Options (fill mode, preserve edits, etc.)
   options: z.record(z.unknown()).optional(),
 
-  // Optional, we’ll default to "perField" if not provided
-  approach: z.enum(["perField", "fullContext"]).optional(),
+  // Approach: currently only perField supported
+  approach: z.enum(["perField"]).optional(),
 });
 
 export async function fillForm(
   input: z.infer<typeof fillFormSchema>,
   { user }: { user: JwtUser }
-) {
-  // normalize fewShots if stringified:
+): Promise<{ success: true; data: GetFilledTemplateResult; timestamp: string }> {
+  // Normalize fewShots if it arrived as JSON string
   const normalized = {
     ...input,
     fewShots:
@@ -50,26 +51,27 @@ export async function fillForm(
         : input.fewShots,
   };
 
-  // Validate transcript presence like your controller did
-  const hasNew = typeof normalized.newTranscript === "string" && !!normalized.newTranscript.trim();
-  const hasLegacy = typeof normalized.transcript === "string" && !!normalized.transcript.trim();
+  // Validate transcripts
+  const hasNew = normalized.newTranscript?.trim();
+  const hasLegacy = normalized.transcript?.trim();
   if (!hasNew && !hasLegacy) {
     throw new Error(
       "Transcript is required. Provide `newTranscript` (preferred) or legacy `transcript`."
     );
   }
 
+  // Validate fields
   if (!Array.isArray(normalized.fields) || normalized.fields.length === 0) {
     throw new Error("fields array is required.");
   }
 
   const approach = normalized.approach ?? "perField";
+  if (approach !== "perField") {
+    throw new Error(`Unsupported filler approach: ${approach}`);
+  }
 
-  const service = new FormService();
-  const result = await service.getFilledTemplate(
-    normalized as any, // matches your existing GetFilledTemplateInput shape
-    approach as any
-  );
+  // Directly call perFieldFiller (no service indirection)
+  const result = await perFieldFiller(normalized as any);
 
   return {
     success: true,
@@ -77,4 +79,3 @@ export async function fillForm(
     timestamp: new Date().toISOString(),
   };
 }
-
