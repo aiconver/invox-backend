@@ -9,6 +9,7 @@ import { generateChatResponse } from "./utils/chatbot-helper";
 import { z } from "zod";
 import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
+import { runVerifier } from "./utils/verifier";
 
 /** ───────── types ───────── */
 type LlmFieldResult = {
@@ -127,8 +128,6 @@ function buildPrompt({
     newText,
   ].join("\n");
 }
-
-/** ───────── main ───────── */
 export async function singleLlmAllField(
   input: GetFilledTemplateInput
 ): Promise<GetFilledTemplateResult> {
@@ -140,10 +139,7 @@ export async function singleLlmAllField(
     oldTranscript,
     newTranscript,
     fewShots,
-  } = input as GetFilledTemplateInput & {
-    oldTranscript?: string;
-    newTranscript?: string;
-  };
+  } = input as GetFilledTemplateInput & { oldTranscript?: string; newTranscript?: string };
 
   const oldText = (oldTranscript ?? "").trim();
   const newText = (newTranscript ?? legacyTranscript ?? "").trim();
@@ -157,18 +153,17 @@ export async function singleLlmAllField(
   console.log("\n[=== singleLlmAllField START ===]");
   console.log("Model:", modelName);
   console.log("Fields:", fields.map(f => ({ id: f.id, label: f.label, type: f.type })));
-  console.log("Current values:", currentValues, formatCurrentValues(fields, currentValues));
+  console.log("Current values:", currentValues);
   console.log("Old transcript:", oldText);
   console.log("New transcript:", newText);
 
-  // Schema
+  // Extractor returns value (+ optional evidence); no confidence here.
   const schema = z.object(
     Object.fromEntries(
       fields.map((f) => [
         f.id,
         z.object({
           value: zodFieldValueSchema(f),
-          confidence: z.number().min(0).max(1).optional(),
           evidence: z.object({ transcriptSnippet: z.string().optional() }).optional(),
         }),
       ])
@@ -184,24 +179,22 @@ export async function singleLlmAllField(
     schema,
     prompt,
   });
-  const dt = Date.now() - t0;
-  console.log(`LLM responded in ${dt}ms`);
+  console.log(`LLM responded in ${Date.now() - t0}ms`);
   console.log("Raw LLM output:", JSON.stringify(object, null, 2));
 
-  const raw = object as LlmAllResult;
-
-  // Build filled fields
+  // Build filled map (no confidence yet)
+  const raw = object as Record<string, { value?: unknown | null; evidence?: { transcriptSnippet?: string } }>;
   const filled: Record<string, FilledField> = {};
   for (const f of fields) {
     const prev = currentValues?.[f.id];
     const prevVal = prev?.value ?? null;
     const r = raw?.[f.id] ?? {};
-    const finalVal = (r.value as FilledField["value"]) ?? prevVal ?? null;
-    const changed = finalVal !== prevVal;
+    const hasNew = r.value !== undefined; // undefined => not mentioned => keep previous
+    const finalVal = hasNew ? (r.value as FilledField["value"]) : prevVal;
+    const changed = hasNew ? finalVal !== prevVal : false;
 
     filled[f.id] = {
-      value: finalVal,
-      confidence: r.confidence,
+      value: finalVal ?? null,
       changed,
       previousValue: changed ? prevVal : undefined,
       source: changed ? "ai" : (prev?.source ?? "ai"),
@@ -211,23 +204,25 @@ export async function singleLlmAllField(
     if (changed) {
       console.log(`Field "${f.id}" changed:`, { from: prevVal, to: finalVal });
     } else {
-      console.log(`Field "${f.id}" unchanged:`, finalVal);
+      console.log(`Field "${f.id}" unchanged:`, finalVal ?? null);
     }
   }
 
-  const entries = Object.entries(filled) as [string, FilledField][];
-
-  const chatResponse = await generateChatResponse(
+  // Verifier pass (reusable util)
+  const verifiedFilled = await runVerifier({
     combinedTranscript,
     fields,
-    currentValues,
-    entries
-  );
+    filled,
+    lang: lang ?? "en",
+  });
+
+  const entries = Object.entries(verifiedFilled) as [string, FilledField][];
+  const chatResponse = await generateChatResponse(combinedTranscript, fields, currentValues, entries);
 
   console.log("[=== singleLlmAllField END ===]\n");
 
   return {
-    filled,
+    filled: verifiedFilled,
     model: modelName,
     transcript: { old: oldText, new: newText, combined: combinedTranscript },
     chatResponse,
