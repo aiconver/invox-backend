@@ -23,8 +23,16 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MANUEL RODRIGUEZ PATRIOTIC FRONT",
+          "FPMR"
+        ],
+        "PerpOrg": [
+          "COMMUNIST PARTY OF CHILE",
+          "COMMUNIST PARTY",
+          "MANUEL RODRIGUEZ PATRIOTIC FRONT",
+          "FPMR"
+        ],
         "Target": [
           "CONSULATE",
           "EMBASSY BUILDING",
@@ -45,8 +53,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "RUTH ESPERANZA AGUILAR MARROQUIN",
+          "WORKERS JUSTICE COMMAND"
+        ],
+        "PerpOrg": [
+          "PEOPLE'S REVOLUTIONARY ARMY",
+          "ERP"
+        ],
         "Target": [
           "URBAN PUBLIC BUS",
           "PUBLIC BUS",
@@ -59,8 +73,13 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "RUTH ESPERANZA AGUILAR MARROQUIN"
+        ],
+        "PerpOrg": [
+          "PEOPLE'S REVOLUTIONARY ARMY",
+          "ERP"
+        ],
         "Target": [],
         "Victim": [
           "STUDENTS",
@@ -72,15 +91,20 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "RUTH ESPERANA AGUILAR MARROQUIN"
+        ],
+        "PerpOrg": [
+          "PEOPLE'S REVOLUTIONARY ARMY",
+          "ERP"
+        ],
         "Target": [],
         "Victim": [
           "STUDENTS",
           "GROUP OF STUDENTS"
         ],
         "Weapon": [
-          "-"
+          "HAND GRENADES"
         ]
       }
     ]
@@ -91,8 +115,12 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "UNIDENTIFIED PERSON"
+        ],
+        "PerpOrg": [
+          "ZARATE WILLKA ARMED FORCES OF LIBERATION"
+        ],
         "Target": [
           "EMBASSY",
           "BOOK STORE",
@@ -104,7 +132,8 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "DYNAMITE CHARGE",
+          "DYNAMITE"
         ]
       }
     ]
@@ -147,7 +176,13 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS ON THE DRUG CARTEL'S PAYROLL",
+          "TERRORISTS",
+          "COCAINE TRAFFICKERS",
+          "DRUG TRAFFICKERS",
+          "PABLO ESCOBAR GAVIRIA"
+        ],
         "PerpOrg": [],
         "Target": [
           "TRUCK",
@@ -163,12 +198,17 @@
           "MEDELLIN POLICEMEN"
         ],
         "Weapon": [
-          "-"
+          "CAR BOMB",
+          "300 KG OF DYNAMITE",
+          "DYNAMITE"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "ADOLFO MESA MENESES",
+          "PABLO ESCOBAR GAVIRIA"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -243,8 +283,18 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "COLONEL GUILLERMO ALFREDO BENAVIDES MORENO",
+          "TWO LIEUTENANTS",
+          "LIEUTENANTS",
+          "SIX SOLDIERS",
+          "SOLDIERS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES",
+          "SALVADORAN ARMY",
+          "ARMY"
+        ],
         "Target": [],
         "Victim": [
           "JESUIT PRIESTS",
@@ -283,8 +333,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "ATTACKERS",
+          "ATTACKERS, WHO WORE FIELD UNIFORMS OF THE COLOMBIAN MILITARY"
+        ],
+        "PerpOrg": [
+          "COLOMBIAN MILITARY"
+        ],
         "Target": [
           "VESSEL",
           "FLAGSHIP",
@@ -300,13 +355,18 @@
           "PILOT"
         ],
         "Weapon": [
-          "-"
+          "AUTOMATIC WEAPONS"
         ]
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "ATTACKERS",
+          "ATTACKERS, WHO WORE FIELD UNIFORMS OF THE COLOMBIAN MILITARY"
+        ],
+        "PerpOrg": [
+          "COLOMBIAN MILITARY"
+        ],
         "Target": [],
         "Victim": [
           "SCOTT HEYNDAL",
@@ -340,15 +400,21 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TERRORIST"
+        ],
+        "PerpOrg": [
+          "MEDELLIN CARTEL"
+        ],
         "Target": [
           "BANCO CAFETERO BRANCHES AND ITS OFFICES",
           "BANK BRANCH OFFICES"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "OVER 55 KG OF DYNAMITE",
+          "55 KG OF DYNAMITE",
+          "DYNAMITE"
         ]
       }
     ]
@@ -384,7 +450,10 @@
           "PEOPLE"
         ],
         "Weapon": [
-          "-"
+          "TRUCK-BOMB",
+          "TRUCK",
+          "TRUCK RIGGED WITH DYNAMITE",
+          "DYNAMITE"
         ]
       }
     ]
@@ -395,8 +464,12 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "ASSASSINS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "ROMERO",
@@ -415,7 +488,10 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "ROBERTO ARMANDO RIVERA ESCOBAR",
@@ -424,7 +500,7 @@
           "NATIONAL FIRE DEPARTMENT DIRECTOR COLONEL"
         ],
         "Weapon": [
-          "-"
+          "MACHINEGUN"
         ]
       }
     ]
@@ -435,8 +511,15 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "COLOMBIAN DRUG KINGPINS",
+          "MAN WHO CALLED THE CARACOL NETWORK NEWS OFFICE",
+          "MAN"
+        ],
+        "PerpOrg": [
+          "THE EXTRADITABLES",
+          "EXTRADITABLES"
+        ],
         "Target": [
           "PLANE",
           "AVIANCA'S BOEING 727",
@@ -462,50 +545,58 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "REBELS"
+        ],
         "PerpOrg": [],
         "Target": [
           "ELECTRICITY POLES"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "DYNAMITE"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "REBELS"
+        ],
         "PerpOrg": [],
         "Target": [
           "ELECTRICITY POLES"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "DYNAMITE"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "REBELS"
+        ],
         "PerpOrg": [],
         "Target": [
           "ELECTRICITY POLES"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "DYNAMITE"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "REBELS"
+        ],
         "PerpOrg": [],
         "Target": [
           "ELECTRICITY POLES"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "DYNAMITE"
         ]
       }
     ]
@@ -516,7 +607,17 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "NARCOTRAFFICKING MAFIAS",
+          "NARCOTRAFFICKERS",
+          "DRUG MAFIAS",
+          "MAFIA LORDS",
+          "DRUG TERRORISTS",
+          "GUERRILLA GROUPS",
+          "GUERRILLAS",
+          "ARMED REBELS",
+          "REBELS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -549,7 +650,9 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "SOLDIERS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -570,20 +673,24 @@
       {
         "incident_type": "BOMBING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "RESIDENCES OF DEMOCRATIC LEADERS",
           "RESIDENCES OF DEMOCRATIC LEADERS SUCH AS RUBEN ZAMORA AND ARONETE DIAZ"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       },
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "RELATIVE OF COLONEL LOPEZ HUILA"
@@ -600,7 +707,9 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIFORMED MEN"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -624,8 +733,24 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SECTORS WHO SEEK TO DESTABILIZE THE COUNTRY",
+          "FIDEL CASTANO",
+          "HENRY PEREZ",
+          "HENRY PEREZ, HEADS OF THE EXTREME RIGHTIST PARAMILITARY MILITIAS",
+          "SOME ARMY",
+          "ARMY",
+          "POLICE MEMBERS",
+          "THE EXTRADITABLES",
+          "EXTRADITABLES"
+        ],
+        "PerpOrg": [
+          "THE EXTRADITABLES",
+          "EXTRADITABLES",
+          "MEDELLIN CARTEL",
+          "ARMY",
+          "POLICE"
+        ],
         "Target": [],
         "Victim": [
           "CARLOS PIZARRO",
@@ -641,8 +766,16 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FIDEL CASTANO",
+          "SOME ARMY",
+          "ARMY",
+          "POLICE MEMBERS"
+        ],
+        "PerpOrg": [
+          "ARMY",
+          "POLICE"
+        ],
         "Target": [],
         "Victim": [
           "BERNARDO JARAMILLO",
@@ -661,7 +794,9 @@
       {
         "incident_type": "KIDNAPPING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "YOUTHS"
@@ -673,7 +808,9 @@
       {
         "incident_type": "KIDNAPPING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "YOUTHS"
@@ -685,7 +822,9 @@
       {
         "incident_type": "KIDNAPPING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "YOUTHS"
@@ -703,7 +842,13 @@
       {
         "incident_type": "BOMBING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "NATIONALIST REPUBLICAN ALLIANCE [ARENA] GOVERNMENT",
+          "ALFREDO CRISTIANI'S GOVERNMENT",
+          "GOVERNMENT",
+          "ARMED FOCES",
+          "ARMED FOCES HIGH COMMAND"
+        ],
         "Target": [
           "CENTRAL AMERICAN UNIVERSITY",
           "UCA",
@@ -712,7 +857,7 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       }
     ]
@@ -755,8 +900,20 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "HONDURAN ARMY TROOPS",
+          "MEMBERS OF THE COUNTERINSURGENCY ARCE BATTALION",
+          "ARCE BATTALION"
+        ],
+        "PerpOrg": [
+          "HONDURAN ARMY",
+          "HONDURAN MILITARY",
+          "ARMY",
+          "SALVADORAN ARMIES",
+          "ARCE BATTALION",
+          "ARMIES",
+          "AIR FORCE"
+        ],
         "Target": [],
         "Victim": [
           "CIVILIANS",
@@ -780,7 +937,8 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "MACHINEGUNS",
+          "ROCKETS"
         ]
       }
     ]
@@ -791,8 +949,22 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MEDELLIN CARTEL BOSS PABLO ESCOBAR GAVIRIA",
+          "PABLO ESCOBAR GAVIRIA",
+          "ORGANIZATION OF HIRED ASSASSINS",
+          "HIRED ASSASSINS",
+          "16-YEAR-OLD YOUTH WHO CARRIED A FALSE IDENTIFICATION CARD UNDER THE NAME OF JAIRO ALBERTO RESTREPO POSADA",
+          "16-YEAR-OLD YOUTH",
+          "PAID ASSASSIN",
+          "SO-CALLED GONZALO RODRIGUEZ GACHA COMMANDO GROUP",
+          "GONZALO RODRIGUEZ GACHA COMMANDO GROUP",
+          "THIRD PERSON",
+          "THIRD PERSON LINKED TO THE PAID ASSASSIN WHO KILLED THE UP LEADER"
+        ],
+        "PerpOrg": [
+          "MEDELLIN CARTEL"
+        ],
         "Target": [],
         "Victim": [
           "BERNARDO JARAMILLO OSSA",
@@ -806,8 +978,13 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "CALLERS"
+        ],
+        "PerpOrg": [
+          "THE EXTRADITABLES",
+          "EXTRADITABLES"
+        ],
         "Target": [],
         "Victim": [
           "CESAR GAVIRIA TRUJILLO",
@@ -826,7 +1003,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS",
+          "CRIMINALS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -918,7 +1098,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "NATIONAL GUARD"
+        ],
         "Target": [],
         "Victim": [
           "MARIO FLORES",
@@ -930,8 +1112,13 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "NATIONAL POLICE MEMBERS WHO WERE DRESSED IN CIVILIAN CLOTHES",
+          "NATIONAL POLICE MEMBERS"
+        ],
+        "PerpOrg": [
+          "NATIONAL POLICE"
+        ],
         "Target": [],
         "Victim": [
           "HUGO MARTINEZ",
@@ -959,8 +1146,16 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "OROMONTIQUE BATTALION TROOPS OF THE 6TH INFANTRY BRIGADE COMMANDED BY LIEUTENANT PACHECHO",
+          "OROMONTIQUE BATTALION TROOPS OF THE 6TH INFANTRY BRIGADE",
+          "OROMONTIQUE BATTALION TROOPS",
+          "TROOPS",
+          "LIEUTENANT PACHECHO"
+        ],
+        "PerpOrg": [
+          "6TH INFANTRY BRIGADE"
+        ],
         "Target": [],
         "Victim": [
           "VICTOR MANUEL VASQUEZ",
@@ -974,8 +1169,15 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "ARMY TROOPS COMMANDED BY MURDERER COLONEL CANAS",
+          "ARMY TROOPS",
+          "MURDERER COLONEL CANAS",
+          "COLONEL CANAS"
+        ],
+        "PerpOrg": [
+          "ARMY"
+        ],
         "Target": [],
         "Victim": [
           "PEDRO GONZALEZ ERAZO",
@@ -989,8 +1191,15 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TROOPS OF COLONAL ORLANDO MONTANO OF THE 6TH INFANTRY BRIGADE",
+          "TROOPS OF COLONAL ORLANDO MONTANO",
+          "TROOPS",
+          "COLONAL ORLANDO MONTANO"
+        ],
+        "PerpOrg": [
+          "6TH INFANTRY BRIGADE"
+        ],
         "Target": [],
         "Victim": [
           "BARTOLO RODRIGUEZ",
@@ -1003,8 +1212,15 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TROOPS OF COLONAL ORLANDO MONTANO OF THE 6TH INFANTRY BRIGADE",
+          "TROOPS OF COLONAL ORLANDO MONTANO",
+          "TROOPS",
+          "COLONAL ORLANDO MONTANO"
+        ],
+        "PerpOrg": [
+          "6TH INFANTRY BRIGADE"
+        ],
         "Target": [],
         "Victim": [
           "PEASANTS",
@@ -1016,8 +1232,13 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MILITARY DETACHMENT NO 4 TROOPS",
+          "TROOPS"
+        ],
+        "PerpOrg": [
+          "MILITARY DETACHMENT NO 4"
+        ],
         "Target": [],
         "Victim": [
           "MACLOVIA GONZALEZ",
@@ -1030,8 +1251,13 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "ATONAL BATTALION TROOPS",
+          "TROOPS"
+        ],
+        "PerpOrg": [
+          "ATONAL BATTALION"
+        ],
         "Target": [],
         "Victim": [
           "ROBERTO MENA"
@@ -1080,8 +1306,14 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "NELSON MANDELA CELL OF THE ELN",
+          "NELSON MANDELA CELL"
+        ],
+        "PerpOrg": [
+          "ARMY OF NATIONAL LIBERATION",
+          "ELN"
+        ],
         "Target": [],
         "Victim": [
           "DAVID LECKY",
@@ -1095,8 +1327,14 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "NELSON MANDELA CELL OF THE ELN",
+          "NELSON MANDELA CELL"
+        ],
+        "PerpOrg": [
+          "ARMY OF NATIONAL LIBERATION",
+          "ELN"
+        ],
         "Target": [],
         "Victim": [
           "LESLIE KENT",
@@ -1118,7 +1356,10 @@
       {
         "incident_type": "KIDNAPPING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "THE EXTRADITABLES",
+          "EXTRADITABLES"
+        ],
         "Target": [],
         "Victim": [
           "PATRICIA ECHAVARRIA",
@@ -1158,8 +1399,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SPECIAL GROUPS"
+        ],
+        "PerpOrg": [
+          "NATIONAL POLICE",
+          "COLOMBIAN POLICE",
+          "POLICE"
+        ],
         "Target": [],
         "Victim": [
           "GONZALO RODRIGUEZ GACHA",
@@ -1201,8 +1448,16 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "COLOMBIAN GUERRILLAS",
+          "MEMBERS OF THE COLOMBIAN GUERRILLAS",
+          "DRUG TRAFFICKING GANGS",
+          "COLOMBIAN DRUG TRAFFICKING GANGS"
+        ],
+        "PerpOrg": [
+          "ARMY OF NATIONAL LIBERATION ARMY",
+          "NATIONAL LIBERATION ARMY"
+        ],
         "Target": [
           "NATIONAL GUARD JEEP",
           "JEEP",
@@ -1215,7 +1470,8 @@
           "NATIONAL GUARD PATROL"
         ],
         "Weapon": [
-          "-"
+          "VERY POWERFUL EXPLOSIVES",
+          "EXPLOSIVES"
         ]
       }
     ]
@@ -1242,7 +1498,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORIST"
+        ],
         "PerpOrg": [],
         "Target": [
           "AIRPLANE",
@@ -1282,8 +1540,16 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "URBAN GUERRILLAS",
+          "URBAN TERRORISTS",
+          "FMLN URBAN COMMANDOS",
+          "URBAN COMMANDOS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "VEHICLE",
           "CAR",
@@ -1297,13 +1563,18 @@
           "BODYGUARDS"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "MERINO'S HOME"
         ],
@@ -1314,7 +1585,7 @@
           "15-YEAR-OLD NIECE"
         ],
         "Weapon": [
-          "-"
+          "EXPLOSIVES"
         ]
       }
     ]
@@ -1344,7 +1615,7 @@
           "CHILD"
         ],
         "Weapon": [
-          "-"
+          "CAR BOMB"
         ]
       }
     ]
@@ -1409,7 +1680,9 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIDENTIFIED ASSAILANTS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -1429,8 +1702,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "ARMED FORCES ELEMENTS",
+          "MEMBERS OF THE ARMED FORCES"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "UCA PRIESTS",
@@ -1448,8 +1726,17 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "COMMANDO OF THE PRO-CHE GUEVARA GROUP TUPAC AMARU REVOLUTIONARY MOVEMENT (MRTA)",
+          "COMMANDO OF THE PRO-CHE GUEVARA GROUP TUPAC AMARU REVOLUTIONARY MOVEMENT",
+          "COMMANDO OF THE PRO-CHE GUEVARA GROUP",
+          "COMMANDO",
+          "MRTA ACTIVISTS"
+        ],
+        "PerpOrg": [
+          "TUPAC AMARU REVOLUTIONARY MOVEMENT",
+          "MRTA"
+        ],
         "Target": [],
         "Victim": [
           "HECTOR DELGADO PARKER",
@@ -1467,8 +1754,17 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "COMMANDO OF THE PRO-CHE GUEVARA GROUP TUPAC AMARU REVOLUTIONARY MOVEMENT (MRTA)",
+          "COMMANDO OF THE PRO-CHE GUEVARA GROUP TUPAC AMARU REVOLUTIONARY MOVEMENT",
+          "COMMANDO OF THE PRO-CHE GUEVARA GROUP",
+          "COMMANDO",
+          "MRTA ACTIVISTS"
+        ],
+        "PerpOrg": [
+          "TUPAC AMARU REVOLUTIONARY MOVEMENT",
+          "MRTA"
+        ],
         "Target": [],
         "Victim": [
           "HECTOR DELGADO PARKER",
@@ -1488,8 +1784,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUARDS",
+          "ARMED FORCES MEMBERS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "SALVADORANS",
@@ -1509,8 +1810,21 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "COLONEL RENE EMILIO PONCE",
+          "COLONEL RENE EMILIO PONCE, CHAIRMAN OF THE JOINTS CHIEFS OF STAFF",
+          "COLONEL ORLANDO ZEPEDA",
+          "COLONEL ORLANDO ZEPEDA, DEPUTY DEFENSE MINISTER",
+          "COLONEL HERIBERTO HERNANDEZ",
+          "COLONEL HERIBERTO HERNANDEZ, DIRECTOR OF THE TREASURY POLICE",
+          "CAPTAIN ALFONSO CHAVEZ GARCIA",
+          "TREASURY POLICE"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES HIGH COMMAND",
+          "ARMED FORCES",
+          "TREASURY POLICE"
+        ],
         "Target": [],
         "Victim": [
           "JESUIT PRIESTS",
@@ -1544,7 +1858,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "DRUG TRAFFICKERS"
+        ],
         "PerpOrg": [],
         "Target": [
           "HILTON HOTEL",
@@ -1560,12 +1876,18 @@
           "PASSERBY"
         ],
         "Weapon": [
-          "-"
+          "BOMB",
+          "DYNAMITE"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TWO INDIVIDUALS WHO WERE PASSING BY THE BUILDING",
+          "TWO INDIVIDUALS",
+          "INDIVIDUALS",
+          "DRUG TRAFFICKERS"
+        ],
         "PerpOrg": [],
         "Target": [
           "BRANCH OF THE CITY'S ELECTRIC ENERGY ENTERPRISE",
@@ -1578,7 +1900,7 @@
           "GUARD AT THE COMPANY"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       }
     ]
@@ -1605,7 +1927,11 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "ARMED INDIVIDUALS",
+          "INDIVIDUALS",
+          "INDIVIDUALS IN A BLUE RENAULT 12"
+        ],
         "PerpOrg": [],
         "Target": [
           "NEWSPAPER EL SIGLO'S FACILITIES"
@@ -1644,7 +1970,9 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "URBAN GUERRILLAS"
+        ],
         "PerpOrg": [],
         "Target": [
           "POWER SUBSTATION",
@@ -1682,7 +2010,9 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "DRUG TRAFFICKERS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -1739,8 +2069,13 @@
     "templates": [
       {
         "incident_type": "FORCED",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "TRANSPORTATION",
           "GAS STATION"
@@ -1755,8 +2090,13 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "POWER LINES"
         ],
@@ -1767,8 +2107,13 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "ELECTION OFFICIALS"
@@ -1785,8 +2130,17 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUATEMALAN ARMY TROOPS",
+          "SOLDIERS",
+          "NORTHEASTERN COBAN BASE TROOPS",
+          "ARMY TROOPS",
+          "TROOPS"
+        ],
+        "PerpOrg": [
+          "GUATEMALAN ARMY",
+          "ARMY"
+        ],
         "Target": [],
         "Victim": [
           "PEASANTS",
@@ -1822,7 +2176,10 @@
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TWO MEN",
+          "MEN"
+        ],
         "PerpOrg": [],
         "Target": [
           "FAST-FOOD RESTAURANT",
@@ -1834,7 +2191,8 @@
           "POLICEMAN"
         ],
         "Weapon": [
-          "-"
+          "BOMB",
+          "MEDIUM-SIZED BOMB"
         ]
       }
     ]
@@ -1845,8 +2203,14 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MEMBERS AND SYMPATHIZERS OF THE MSGR OSCAR ARNULFO ROMERO FEDERATION OF COMMITTEES OF MOTHERS AND RELATIVES (FECMAFAM) OF POLITICAL PRISONERS AND MURDERED AND MISSING PEOPLE"
+        ],
+        "PerpOrg": [
+          "FEDERATION OF COMMITTEES OF MOTHERS AND RELATIVES",
+          "FECMAFAM",
+          "MSGR OSCAR ARNULFO ROMERO FEDERATION OF COMMITTEES OF MOTHERS AND RELATIVES (FECMAFAM) OF POLITICAL PRISONERS AND MURDERED AND MISSING PEOPLE"
+        ],
         "Target": [],
         "Victim": [
           "JESUS FERNANDEZ",
@@ -1905,7 +2269,9 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "MILITARY"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -1925,8 +2291,25 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MID-LEVEL MILITARY OFFICERS",
+          "COLONELS",
+          "ARMED FORCES HIGH COMMAND",
+          "HIGH COMMAND",
+          "GENERAL STAFF OF THE ARMED FORCES",
+          "GENERAL STAFF",
+          "MEMBERS OF LA TANDONA",
+          "COL ORLANDO CEPEDA",
+          "COL RENE EMILIO PONCE",
+          "COL RENE EMILIO PONCE, CHIEF OF STAFF",
+          "COL GUILLERMO BENAVIDES",
+          "ALFREDO CRISTIANI",
+          "U.S. OFFICERS",
+          "ADVISERS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "JESUITS",
@@ -1939,8 +2322,16 @@
       },
       {
         "incident_type": "ROBBERY",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GENERAL STAFF OF THE ARMED FORCES",
+          "GENERAL STAFF",
+          "ALFREDO CRISTIANI",
+          "U.S. OFFICERS",
+          "ADVISERS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [
           "LABOR UNION OFFICES",
           "OFFICES OF HUMANITARIAN ORGANIZATIONS",
@@ -1973,7 +2364,7 @@
           "SEVERAL INJURED"
         ],
         "Weapon": [
-          "-"
+          "CAR BOMB"
         ]
       }
     ]
@@ -1984,7 +2375,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIDENTIFIED PERSONS"
+        ],
         "PerpOrg": [],
         "Target": [
           "U.S. STATE DEPARTMENT HERCULES C-123 CARGO PLANE",
@@ -1996,7 +2389,8 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "INCENDIARY BOMB",
+          "BOMB"
         ]
       }
     ]
@@ -2008,7 +2402,10 @@
       {
         "incident_type": "KIDNAPPING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "TUPAC AMARU REVOLUTIONARY MOVEMENT",
+          "MRTA"
+        ],
         "Target": [],
         "Victim": [
           "PEOPLE"
@@ -2020,7 +2417,10 @@
       {
         "incident_type": "KIDNAPPING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "TUPAC AMARU REVOLUTIONARY MOVEMENT",
+          "MRTA"
+        ],
         "Target": [],
         "Victim": [
           "CARLOS ENRIQUE FERREYROS",
@@ -2040,8 +2440,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN [FARABUNDO MARTI NATIONAL LIBERATION FRONT] FORCES"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "POWER LINES",
           "TRANSFORMERS"
@@ -2119,7 +2524,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIDENTIFIED PERSONS"
+        ],
         "PerpOrg": [],
         "Target": [
           "GOVERNMENT BANK BRANCHES",
@@ -2127,7 +2534,7 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "BOMBS"
         ]
       }
     ]
@@ -2294,7 +2701,7 @@
           "PERSONS"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       },
       {
@@ -2353,13 +2760,16 @@
       {
         "incident_type": "BOMBING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "AIR FORCE"
+        ],
         "Target": [],
         "Victim": [
           "CIVILIANS"
         ],
         "Weapon": [
-          "-"
+          "-",
+          "AERIAL BOMB"
         ]
       }
     ]
@@ -2386,7 +2796,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORIST"
+        ],
         "PerpOrg": [],
         "Target": [
           "AIR FORCE INSTALLATIONS",
@@ -2394,7 +2806,7 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "EXPLOSIVE DEVICES"
         ]
       }
     ]
@@ -2438,7 +2850,12 @@
       {
         "incident_type": "KIDNAPPING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "GUATEMALAN ARMY",
+          "ARMY",
+          "GOVERNMENT",
+          "CHRISTIAN DEMOCRATIC GOVERNMENT"
+        ],
         "Target": [],
         "Victim": [
           "STUDENT LEADERS",
@@ -2454,7 +2871,12 @@
       {
         "incident_type": "KIDNAPPING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "GUATEMALAN ARMY",
+          "ARMY",
+          "GOVERNMENT",
+          "CHRISTIAN DEMOCRATIC GOVERNMENT"
+        ],
         "Target": [],
         "Victim": [
           "ONE OF THE EXILED",
@@ -2472,8 +2894,15 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS",
+          "GUERRILLAS PRESUMED TO BE MEMBERS OF THE PRO-CASTRO ARMY OF NATIONAL LIBERATION (ELN)",
+          "GUERRILLAS PRESUMED TO BE MEMBERS OF THE PRO-CASTRO ARMY OF NATIONAL LIBERATION"
+        ],
+        "PerpOrg": [
+          "ARMY OF NATIONAL LIBERATION",
+          "ELN"
+        ],
         "Target": [
           "CANO LIMON-COVENAS OIL PIPELINE",
           "OIL PIPELINE"
@@ -2486,7 +2915,10 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "ELN",
+          "ARMY OF NATIONAL LIBERATION"
+        ],
         "Target": [
           "CANO LIMON-COVENAS OIL TERMINAL",
           "OIL TERMINAL"
@@ -2504,8 +2936,14 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "COLOMBIAN ARMY OF NATIONAL LIBERATION GUERRILLAS",
+          "ARMY OF NATIONAL LIBERATION GUERRILLAS",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "ARMY OF NATIONAL LIBERATION"
+        ],
         "Target": [],
         "Victim": [
           "CARLOS MARCELO",
@@ -2544,8 +2982,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MILITARY",
+          "MILITARY SUSPECTS",
+          "SOME MILITARY",
+          "ARMED FORCES MEMBERS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "JESUITS",
@@ -2563,8 +3008,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MEMBERS OF THE MAOIST TERRORIST ORGANIZATION SHINING PATH",
+          "CRIMINALS",
+          "GERARDO OLIVOS SILVA"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "ENRIQUE LOPEZ ALBUJAR TRINT",
@@ -2598,7 +3049,9 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
+        "PerpInd": [
+          "HEAVILY ARMED MEN"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -2622,7 +3075,10 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
+        "PerpInd": [
+          "HEAVILY ARMED MEN IN CIVILIAN CLOTHES",
+          "HEAVILY ARMED MEN"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -2639,7 +3095,13 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "SEVERAL PEOPLE",
+          "PEOPLE",
+          "SEVERAL PEOPLE WHO, THROUGH A GOVERNMENT RADIO NETWORK, HAD ACCUSED HIM OF BEING AN \\",
+          "OF THE REBELS",
+          "PEOPLE WHO, THROUGH A GOVERNMENT RADIO NETWORK, HAD ACCUSED HIM OF BEING AN \\"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -2660,7 +3122,9 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "ONE OF THE RESIDENCE GUARDS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -2673,8 +3137,13 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "JOSE JESUS PENA",
+          "JOSE JESUS PENA--ALLEGED CHIEF OF SECURITY FOR THE NICARAGUAN EMBASSY IN TEGUCIGALPA"
+        ],
+        "PerpOrg": [
+          "NICARAGUAN EMBASSY"
+        ],
         "Target": [],
         "Victim": [
           "MANUEL ANTONIO RUGAMA",
@@ -2724,7 +3193,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "CRIMINAL GROUPS"
+        ],
         "PerpOrg": [],
         "Target": [
           "THE COMMITTEE OF MOTHERS OF POLITICAL PRISONERS AND MISSING IN EL SALVADOR",
@@ -2735,13 +3206,17 @@
           "OTHERS"
         ],
         "Weapon": [
-          "-"
+          "EXPLOSIVES"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "CRIMINAL GROUPS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "ARMED FORCES STAFF INSTALLATIONS"
         ],
@@ -2761,8 +3236,14 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MEMBERS OF THE MANUEL GUSTAVO CHACON SOVEREIGNTY OPERATION",
+          "MANUEL GUSTAVO CHACON SOVEREIGNTY OPERATION"
+        ],
+        "PerpOrg": [
+          "ELN",
+          "ARMY OF NATIONAL LIBERATION"
+        ],
         "Target": [],
         "Victim": [
           "HONORARY CONSULS",
@@ -2797,8 +3278,23 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "CHIEF OF STAFF COL EMILIO PONCE",
+          "COLONEL PONCE",
+          "CRISTIANI",
+          "COLONEL ELENA FUENTE",
+          "MORBID DEATH SQUAD OF THE ARMY'S 1ST INFANTRY BRIGADE",
+          "MORBID DEATH SQUAD",
+          "DEATH SQUAD"
+        ],
+        "PerpOrg": [
+          "ARMY",
+          "ARMY'S 1ST INFANTRY BRIGADE",
+          "ARMED FORCES",
+          "NATIONALIST REPUBLICAN ALLIANCE",
+          "ARENA",
+          "GOVERNMENT"
+        ],
         "Target": [
           "SALVADORAN WORKERS NATIONAL UNION FEDERATION [FENASTRAS]",
           "SALVADORAN WORKERS NATIONAL UNION FEDERATION",
@@ -2817,8 +3313,15 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "ARENA ASSASSINS",
+          "ASSASSINS"
+        ],
+        "PerpOrg": [
+          "NATIONALIST REPUBLICAN ALLIANCE [ARENA]",
+          "NATIONALIST REPUBLICAN ALLIANCE",
+          "ARENA"
+        ],
         "Target": [],
         "Victim": [
           "MASON",
@@ -2832,7 +3335,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "GOVERNMENT"
+        ],
         "Target": [
           "RESIDENCES OF LEADERS OF THE SOCIAL CHRISTIAN PEOPLE'S MOVEMENT",
           "UDN [NATIONALIST DEMOCRATIC UNION]",
@@ -2859,20 +3364,28 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SHINING PATH MEMBERS"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "PEOPLE"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TERRORIST"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "WOMAN"
@@ -2884,7 +3397,9 @@
       {
         "incident_type": "FORCED",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [],
         "Weapon": [
@@ -2894,7 +3409,9 @@
       {
         "incident_type": "FORCED",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [],
         "Weapon": [
@@ -2903,7 +3420,10 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
+        "PerpInd": [
+          "FIVE UNIDENTIFIED INDIVIDUALS",
+          "UNIDENTIFIED INDIVIDUALS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -2978,8 +3498,16 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "URBAN COMMANDOS",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT [FMLN] URBAN COMMANDOS",
+          "MODESTO RAMIREZ CENTRAL FRONT",
+          "UNIDENTIFIED INDIVIDUALS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "VICE PRESIDENT-ELECT FRANCISCO MERINO'S HOME"
         ],
@@ -2990,13 +3518,18 @@
           "GUARDS"
         ],
         "Weapon": [
-          "-"
+          "THREE EXPLOSIVE DEVICES",
+          "EXPLOSIVE DEVICES"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "UNIDENTIFIED INDIVIDUALS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [
           "VICE PRESIDENT-ELECT FRANCISCO MERINO'S HOME"
         ],
@@ -3007,13 +3540,22 @@
           "GUARDS"
         ],
         "Weapon": [
-          "-"
+          "THREE EXPLOSIVE DEVICES",
+          "EXPLOSIVE DEVICES"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "URBAN COMMANDOS",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT [FMLN] URBAN COMMANDOS",
+          "MODESTO RAMIREZ CENTRAL FRONT",
+          "UNIDENTIFIED INDIVIDUALS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "GUARDS PROTECTING MERINO'S RESIDENCE",
@@ -3025,8 +3567,12 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "UNIDENTIFIED INDIVIDUALS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "GUARDS PROTECTING MERINO'S RESIDENCE",
@@ -3044,8 +3590,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN GUERRILLAS",
+          "GUERRILLAS",
+          "URBAN GUERRILLAS",
+          "TERRORISTS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "1ST INFANTRY BRIGADE",
           "1ST INFANTRY BRIGADE GARRISON",
@@ -3066,13 +3619,23 @@
           "CIVILIAN EMPLOYEES"
         ],
         "Weapon": [
+          "60-MM MORTARS",
+          "60-MM MORTAR",
+          "MORTARS",
+          "MORTAR",
+          "RPG-18 ROCKET LAUNCHERS",
+          "RPG-18 ROCKET",
+          "ROCKET",
+          "M-79",
           "-"
         ]
       },
       {
         "incident_type": "FORCED",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "TRANSPORTATION"
         ],
@@ -3108,7 +3671,12 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "FOUR PERUVIANS SUSPECTS",
+          "PERUVIANS SUSPECTS",
+          "FOUR PERUVIANS",
+          "PERUVIANS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -3144,8 +3712,17 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FOUR HOODED INDIVIDUALS",
+          "HOODED INDIVIDUALS",
+          "ALLEGED COMMANDO GROUPS",
+          "COMMANDO GROUPS",
+          "ALLEGED COMMANDO GROUPS OF THE MAOIST SHINING PATH",
+          "COMMANDO GROUPS OF THE MAOIST SHINING PATH"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "DOLORES HINOSTROZA",
@@ -3165,7 +3742,9 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "NARCOTICS MAFIA"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -3185,7 +3764,10 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIDENTIFIED TERRORISTS",
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [
           "OIL PIPELINE",
@@ -3194,7 +3776,7 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "DYNAMITE"
         ]
       },
       {
@@ -3213,7 +3795,9 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [
           "OIL PIPELINE",
@@ -3278,7 +3862,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "GROUP OF UNIDENTIFIED INDIVIDUALS",
+          "UNIDENTIFIED INDIVIDUALS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -3289,7 +3876,7 @@
           "LEADER OF THE RULING CHRISTIAN DEMOCRATIC PARTY"
         ],
         "Weapon": [
-          "-"
+          "MACHINEGUN"
         ]
       }
     ]
@@ -3332,7 +3919,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "TWO PEOPLE",
+          "PEOPLE"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -3347,7 +3937,10 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "MOTORIZED PAID ASSASINS",
+          "PAID ASSASINS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -3419,7 +4012,11 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "DRUG TRAFFICKERS",
+          "COLOMBIAN DRUG MAFIA",
+          "DRUG MAFIA"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -3438,8 +4035,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "JUBIZ HAZVUMB",
+          "ULTRARIGHT-WING PARAMILITARY GROUPS",
+          "PARAMILITARY GROUPS",
+          "DRUG-TRAFFICKING MAFIAS"
+        ],
+        "PerpOrg": [
+          "MEDELLIN CARTEL"
+        ],
         "Target": [],
         "Victim": [
           "LUIS CARLOS GALAN",
@@ -3462,8 +4066,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN MILITIAS",
+          "MILITIAS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "POWER LINES"
         ],
@@ -3480,7 +4089,9 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "PERSON OF ARAB ORIGIN"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -3541,7 +4152,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "DRUG TRAFFICKERS"
+        ],
         "PerpOrg": [],
         "Target": [
           "STATE-OWNED AGRARIAN BOARD",
@@ -3554,12 +4167,15 @@
           "PERSON"
         ],
         "Weapon": [
-          "-"
+          "BOMB",
+          "DYNAMITE"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "DRUG TRAFFICKERS"
+        ],
         "PerpOrg": [],
         "Target": [
           "AGRARIAN BOARD BRANCH",
@@ -3569,7 +4185,8 @@
           "PERSON"
         ],
         "Weapon": [
-          "-"
+          "BOMB",
+          "DYNAMITE"
         ]
       }
     ]
@@ -3641,7 +4258,11 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TWO MEN",
+          "MEN",
+          "DRUG TRAFFICKING CARTELS"
+        ],
         "PerpOrg": [],
         "Target": [
           "BANCO DE OCCIDENTE BRANCH",
@@ -3662,7 +4283,10 @@
           "SECURITY GUARD"
         ],
         "Weapon": [
-          "-"
+          "TWO BOMBS",
+          "BOMBS",
+          "BOMB",
+          "EXPLOSIVE DEVICES"
         ]
       },
       {
@@ -3676,7 +4300,8 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "10 BOMBS",
+          "BOMBS"
         ]
       }
     ]
@@ -3687,7 +4312,12 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TWO PEOPLE",
+          "PEOPLE",
+          "TWO PEOPLE WHO WERE KILLED",
+          "PEOPLE WHO WERE KILLED"
+        ],
         "PerpOrg": [],
         "Target": [
           "GAS STATION"
@@ -3701,7 +4331,9 @@
           "PEOPLE WHO WERE KILLED"
         ],
         "Weapon": [
-          "-"
+          "CAR BOMB",
+          "60 KG OF DYNAMITE",
+          "DYNAMITE"
         ]
       }
     ]
@@ -3760,7 +4392,7 @@
           "BEATRIZ IERO"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       }
     ]
@@ -3787,8 +4419,18 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TWO MEN ON MOTORCYCLES",
+          "MEN ON MOTORCYCLES",
+          "MEN",
+          "GUNMEN",
+          "UNIDENTIFIED INDIVIDUALS",
+          "THE EXTRADITABLES"
+        ],
+        "PerpOrg": [
+          "MEDELLIN CARTEL",
+          "THE EXTRADITABLES"
+        ],
         "Target": [],
         "Victim": [
           "MARTHA LUZ LOPEZ",
@@ -3805,8 +4447,13 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "THE EXTRADITABLES"
+        ],
+        "PerpOrg": [
+          "MEDELLIN CARTEL",
+          "THE EXTRADITABLES"
+        ],
         "Target": [],
         "Victim": [
           "ALL THE EDITORS",
@@ -3819,7 +4466,9 @@
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "DRUG TRAFFICKING MAFIA"
+        ],
         "PerpOrg": [],
         "Target": [
           "MAIN OFFICES IN BOGOTA OF EL ESPECTADOR"
@@ -3828,7 +4477,7 @@
           "PEOPLE"
         ],
         "Weapon": [
-          "-"
+          "CAR BOMB"
         ]
       }
     ]
@@ -3917,19 +4566,28 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "ARMY",
+          "AIR FORCE"
+        ],
         "Target": [],
         "Victim": [
           "CASUALTIES"
         ],
         "Weapon": [
-          "-"
+          "MACHINEGUN",
+          "MORTAR"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN UNIT",
+          "UNIT"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "PYLONS"
         ],
@@ -3982,7 +4640,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "COL PONCE",
+          "PRESIDENT CRISTIANI"
+        ],
         "PerpOrg": [],
         "Target": [
           "FENASTRAS"
@@ -4002,8 +4663,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN [FARABUNDO MARTI NATIONAL LIBERATION FRONT] TERRORISTS",
+          "TERRORISTS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "RESIDENCE OF THE LEGISLATIVE ASSEMBLY PRESIDENT",
           "CENTRAL ELECTIONS COUNCIL",
@@ -4023,8 +4690,14 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN [FARABUNDO MARTI NATIONAL LIBERATION FRONT] TERRORISTS",
+          "TERRORISTS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "6TH INFANTRY BRIGADE"
         ],
@@ -4044,7 +4717,10 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "ULTRARIGHTIST DEATH SQUADS",
+          "DEATH SQUADS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -4054,13 +4730,18 @@
           "WORKERS"
         ],
         "Weapon": [
-          "-"
+          "DYNAMITE"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLA FIGHTERS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "MILITARY HELICOPTERS",
           "HELICOPTERS",
@@ -4075,8 +4756,15 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "REBELS",
+          "MILITARY"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "ARMY"
+        ],
         "Target": [],
         "Victim": [
           "CIVILIANS",
@@ -4096,7 +4784,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "CIVILIANS"
@@ -4113,8 +4803,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "SOLDIERS",
@@ -4165,8 +4861,21 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN ARMED FORCES SOLDIERS",
+          "ARMED FORCES SOLDIERS",
+          "SOLDIERS",
+          "HEAVILY ARMED SOLDIERS",
+          "LARGE NUMBER OF HEAVILY ARMED SOLDIERS",
+          "TOP MILITARY AND POLITICAL FIGURES IN ALFREDO CRISTIANI'S ADMINISTRATION",
+          "TOP MILITARY AND POLITICAL FIGURES"
+        ],
+        "PerpOrg": [
+          "ALFREDO CRISTIANI'S ADMINISTRATION",
+          "CRISTIANI'S GOVERNMENT",
+          "GOVERNMENT",
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "IGNACIO ELLACURIA",
@@ -4200,8 +4909,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN DETACHMENTS",
+          "DETACHMENTS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "PRESIDENT ALFREDO CRISTIANI'S OFFICIAL AND PERSONAL RESIDENCES"
         ],
@@ -4225,7 +4940,9 @@
           "PEOPLE"
         ],
         "Weapon": [
-          "-"
+          "ARTILLERY",
+          "GUN",
+          "PROJECTILE"
         ]
       }
     ]
@@ -4319,7 +5036,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "EXTREME RIGHT DEATH SQUADS",
+          "DEATH SQUADS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -4338,8 +5058,13 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "HIGH COMMAND"
+        ],
+        "PerpOrg": [
+          "TANDONA GROUP",
+          "LA TANDONA"
+        ],
         "Target": [
           "HOMES"
         ],
@@ -4356,8 +5081,19 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "REBEL COMMANDERS",
+          "COMMANDER AMILCAR",
+          "FACUNDO GUARDADO",
+          "COMMANDER ESTEBAN",
+          "REBELS",
+          "FMLN GUERRILLAS",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "SHERATON HOTEL",
           "HOTEL"
@@ -4375,8 +5111,19 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "REBEL COMMANDERS",
+          "COMMANDER AMILCAR",
+          "FACUNDO GUARDADO",
+          "COMMANDER ESTEBAN",
+          "REBELS",
+          "FMLN GUERRILLAS",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "JOAO BAENA SOARES",
@@ -4397,8 +5144,12 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "U.S. PILOTS"
+        ],
+        "PerpOrg": [
+          "U.S. GOVERNMENT"
+        ],
         "Target": [],
         "Victim": [
           "MOTHER",
@@ -4406,13 +5157,16 @@
           "DAUGHTER"
         ],
         "Weapon": [
-          "-"
+          "-",
+          "BOMB"
         ]
       },
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "ARMY"
+        ],
         "Target": [],
         "Victim": [
           "UNION LEADERS"
@@ -4424,7 +5178,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "U.S. GOVERNMENT"
+        ],
         "Target": [],
         "Victim": [
           "SPANISH PRIESTS",
@@ -4443,7 +5199,10 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "PRESIDENTIAL HOUSE"
         ],
@@ -4458,7 +5217,10 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "PRESIDENTIAL HOUSE",
           "ARMED FORCES' JOINT CHIEFS OF STAFF",
@@ -4481,8 +5243,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN [FARABUNDO MARTI NATIONAL LIBERATION FRONT] FORCES",
+          "FORCES",
+          "BATTALIONS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "ELECTRICITY POSTS"
         ],
@@ -4493,8 +5262,15 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN [FARABUNDO MARTI NATIONAL LIBERATION FRONT] FORCES",
+          "FORCES",
+          "BATTALIONS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
         "Target": [
           "ELECTRICITY POSTS"
         ],
@@ -4541,7 +5317,8 @@
           "PEOPLE"
         ],
         "Weapon": [
-          "-"
+          "POWERFUL BOMB HIDDEN IN A TRUCK",
+          "BOMB HIDDEN IN A TRUCK"
         ]
       }
     ]
@@ -4564,7 +5341,7 @@
           "FEBE ELIZABETH VELAZQUEZ"
         ],
         "Weapon": [
-          "-"
+          "DYNAMITE"
         ]
       }
     ]
@@ -4592,7 +5369,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "GOVERNMENT"
+        ],
         "Target": [],
         "Victim": [
           "JESUIT PRIESTS",
@@ -4610,7 +5389,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "GONZALO RODRIGUEZ GACHA",
+          "DRUG TRAFFICKERS"
+        ],
         "PerpOrg": [],
         "Target": [
           "DAS"
@@ -4631,8 +5413,16 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FIVE CHILEANS",
+          "TWO CANADIANS",
+          "TWO ARGENTINES",
+          "ONE BRAZILIAN"
+        ],
+        "PerpOrg": [
+          "MIR",
+          "MOVEMENT OF THE REVOLUTIONARY LEFT"
+        ],
         "Target": [],
         "Victim": [
           "ABILIO DINIZ",
@@ -4666,8 +5456,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "MEMBERS OF THE FARABUNDO MARTI NATIONAL LIBERATION FRONT (FMLN)",
+          "MEMBERS OF THE FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "REBEL"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "COFFEE PROCESSING PLANT"
         ],
@@ -4680,8 +5477,15 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SOLDIER",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN",
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "CIVILIAN",
@@ -4695,7 +5499,10 @@
       {
         "incident_type": "BOMBING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "BUSINESSES"
         ],
@@ -4703,13 +5510,20 @@
           "MARIA LUZ LOPEZ"
         ],
         "Weapon": [
-          "-"
+          "POWERFUL BOMB",
+          "BOMB",
+          "DYNAMITE"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "ELECTRICAL POWER SYSTEM",
           "ENTIRE ELECTRICAL POWER SYSTEM"
@@ -4773,7 +5587,10 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "CRISTIANI'S GOVERNMENT",
+          "GOVERNMENT"
+        ],
         "Target": [],
         "Victim": [
           "HECTOR OQUELI",
@@ -4791,21 +5608,34 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "ELECTRICAL APPLIANCE STORE",
           "STORE"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "POWERFUL BOMB",
+          "BOMB"
         ]
       },
       {
         "incident_type": "ARSON",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "PUBLIC BUS",
           "BUS"
@@ -4823,8 +5653,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "EIGHT SOLDIERS",
+          "SOLDIERS"
+        ],
+        "PerpOrg": [
+          "ARMY"
+        ],
         "Target": [],
         "Victim": [
           "JESUITS",
@@ -4875,8 +5710,14 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLA",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "ELN",
+          "POPULAR LIBERATION ARMY"
+        ],
         "Target": [],
         "Victim": [
           "MAYOR",
@@ -4889,8 +5730,15 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLA",
+          "GUERRILLAS",
+          "LARGE COLUMN OF THE POPULAR LIBERATION ARMY"
+        ],
+        "PerpOrg": [
+          "ELN",
+          "POPULAR LIBERATION ARMY"
+        ],
         "Target": [
           "POWER SYSTEM"
         ],
@@ -4901,8 +5749,13 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "ELN",
+          "POPULAR LIBERATION ARMY"
+        ],
         "Target": [],
         "Victim": [
           "JORGE SERRANO GONZALEZ",
@@ -4953,7 +5806,11 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "TWO 23 TO 25-YEAR-OLD INDIVIDUALS",
+          "TWO INDIVIDUALS",
+          "INDIVIDUALS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -4968,7 +5825,9 @@
           "AIR FORCE GENERAL"
         ],
         "Weapon": [
-          "-"
+          "9 MM SEMIAUTOMATIC PISTOLS",
+          "SEMIAUTOMATIC PISTOLS",
+          "PISTOLS"
         ]
       }
     ]
@@ -5015,8 +5874,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN TERRORISTS",
+          "TERRORISTS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FMLN-FDR",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT-REVOLUTIONARY DEMOCRATIC FRONT"
+        ],
         "Target": [
           "VEHICLE"
         ],
@@ -5030,8 +5896,17 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TERRORISTS",
+          "FMLN TERRORISTS",
+          "PEOPLE IN A MOVING VEHICLE",
+          "PEOPLE"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FMLN-FDR",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT-REVOLUTIONARY DEMOCRATIC FRONT"
+        ],
         "Target": [],
         "Victim": [
           "MANUEL ALVARO MENDOZA",
@@ -5045,8 +5920,14 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN-FDR MEMBERS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FMLN-FDR",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT-REVOLUTIONARY DEMOCRATIC FRONT"
+        ],
         "Target": [],
         "Victim": [
           "JOSE MANUEL POSADA",
@@ -5058,8 +5939,15 @@
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN TERRORISTS",
+          "TERRORISTS"
+        ],
+        "PerpOrg": [
+          "FMLN",
+          "FMLN-FDR",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT-REVOLUTIONARY DEMOCRATIC FRONT"
+        ],
         "Target": [
           "PARAMILITARY GROUP'S OUTPOST",
           "OUTPOST"
@@ -5069,26 +5957,38 @@
           "CIVIL DEFENSE MEMBERS"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "URBAN COMMANDOS",
+          "TERRORIST SQUADS"
+        ],
+        "PerpOrg": [
+          "FMLN-FDR",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT-REVOLUTIONARY DEMOCRATIC FRONT"
+        ],
         "Target": [],
         "Victim": [
           "POLICE",
           "CIVILIAN"
         ],
         "Weapon": [
-          "-"
+          "CAR BOMB"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "URBAN COMMANDOS",
+          "TERRORIST SQUADS"
+        ],
+        "PerpOrg": [
+          "FMLN-FDR",
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT-REVOLUTIONARY DEMOCRATIC FRONT"
+        ],
         "Target": [],
         "Victim": [
           "OTTO MILLA",
@@ -5143,8 +6043,20 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILA FORCES",
+          "REBELS",
+          "GUERRILLA GROUPS",
+          "GUERRILLA GROUP",
+          "GUERRILLA MEMBERS",
+          "GOVERNMENT TROOPS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN",
+          "ARMED FORCES",
+          "ARMY"
+        ],
         "Target": [
           "HOUSES"
         ],
@@ -5176,7 +6088,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "GROUP OF SOLDIERS",
+          "SOLDIERS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -5194,8 +6109,16 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS",
+          "URBAN COMMANDOS",
+          "URBAN COMMANDOS OF THE FARABUNDO MARTI NATIONAL LIBERATION FRONT (FMLN)",
+          "URBAN COMMANDOS OF THE FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "ELECTRIC POLES",
           "POWER PYLONS",
@@ -5208,15 +6131,21 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FARABUNDO MARTI NATIONAL LIBERATION FRONT",
+          "FMLN"
+        ],
         "Target": [
           "CEL SUB-STATION",
           "TRANSFORMER"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "MORTARS",
+          "RIFLES"
         ]
       }
     ]
@@ -5227,8 +6156,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN PRESIDENT ALFREDO CRISTIANI",
+          "PRESIDENT ALFREDO CRISTIANI"
+        ],
+        "PerpOrg": [
+          "GOVERNMENT"
+        ],
         "Target": [],
         "Victim": [
           "JESUIT PRIESTS",
@@ -5246,7 +6180,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIDENTIFIED INDIVIDUALS"
+        ],
         "PerpOrg": [],
         "Target": [
           "MORMON CHURCH",
@@ -5258,7 +6194,12 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "BOMB",
+          "50 GRAMS OF AN-FO [AMMONIUM NITRATE-FUEL OIL BLASTING AGENTS] AND A SLOW FUSE",
+          "50 GRAMS OF AN-FO [AMMONIUM NITRATE-FUEL OIL BLASTING AGENTS]",
+          "50 GRAMS OF AN-FO",
+          "AN-FO",
+          "AMMONIUM NITRATE-FUEL OIL BLASTING AGENTS"
         ]
       }
     ]
@@ -5336,8 +6277,12 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "INSURGENTS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "LA NORIA BRIDGE"
         ],
@@ -5348,13 +6293,18 @@
           "CIVILIANS"
         ],
         "Weapon": [
-          "-"
+          "MINE"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "REBELS",
+          "INSURGENTS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "ELECTRIC TOWER"
         ],
@@ -5371,14 +6321,18 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "GUATEMALAN RIGHTIST SECTORS",
+          "RIGHTIST SECTORS"
+        ],
         "PerpOrg": [],
         "Target": [
           "AERONICA'S REGIONAL OFFICES"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "FRAGMENTATION GRENADES",
+          "GRENADES"
         ]
       }
     ]
@@ -5421,7 +6375,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIDENTIFIED INDIVIDUALS"
+        ],
         "PerpOrg": [],
         "Target": [
           "NATIONAL VANGUARD OFFICES",
@@ -5430,7 +6386,7 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       }
     ]
@@ -5473,7 +6429,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "FORMER CAPTAIN ALVARO SANABRIA",
+          "CAPTAIN ALVARO SANABRIA"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -5508,8 +6467,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GANG \\",
+          "/"
+        ],
+        "PerpOrg": [
+          "POPULAR LIBERATION ARMY",
+          "ARMY OF NATIONAL LIBERATION"
+        ],
         "Target": [
           "HOUSES"
         ],
@@ -5519,13 +6484,20 @@
           "CIVILIANS"
         ],
         "Weapon": [
+          "FIRE",
           "-"
         ]
       },
       {
         "incident_type": "ARSON",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GANG \\",
+          "/"
+        ],
+        "PerpOrg": [
+          "POPULAR LIBERATION ARMY",
+          "ARMY OF NATIONAL LIBERATION"
+        ],
         "Target": [
           "SHACKS",
           "HOUSES",
@@ -5549,8 +6521,15 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN URBAN GUERRILLAS",
+          "URBAN GUERRILLAS",
+          "FMLN GENERAL COMMAND"
+        ],
+        "PerpOrg": [
+          "FMLN GENERAL COMMAND",
+          "FMLN"
+        ],
         "Target": [
           "GOVERNMENT VEHICLES, LICENSE PLATES 6906 AND 6895, USED BY THE RURAL BASIC HEALTH PLAN SECTION OF THE HEALTH MINISTRY",
           "GOVERNMENT VEHICLES, LICENSE PLATES 6906 AND 6895",
@@ -5560,7 +6539,9 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "TWO POWERFUL BOMBS",
+          "POWERFUL BOMBS",
+          "BOMBS"
         ]
       }
     ]
@@ -5606,7 +6587,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [
           "LIMA AGRARIAN UNIT [UNIDAD AGRARIA DE LIMA]",
@@ -5620,7 +6603,8 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "POWERFUL BOMB",
+          "BOMB"
         ]
       }
     ]
@@ -5647,19 +6631,24 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORIST",
+          "EXTREMIST"
+        ],
         "PerpOrg": [],
         "Target": [
           "COMMUNIST PARTY HEADQUARTERS"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORIST"
+        ],
         "PerpOrg": [],
         "Target": [
           "2D ARMY DIVISION HEADQUARTERS",
@@ -5680,7 +6669,11 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "GROUP OF TERRORISTS",
+          "TERRORISTS",
+          "APPROXIMATELY 20 TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [
           "MACHINERY BELONGING TO ALBOLONES PERUANOS, INC",
@@ -5690,6 +6683,7 @@
           "WORKERS"
         ],
         "Weapon": [
+          "MOLOTOV COCKTAILS",
           "-"
         ]
       }
@@ -5717,7 +6711,11 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIDENTIFIED INDIVIDUALS",
+          "SUPPORTERS OF THE YES-VOTE",
+          "YES-VOTE SUPPORTERS"
+        ],
         "PerpOrg": [],
         "Target": [
           "CHRISTIAN DEMOCRATIC PARTY [PDC] HEADQUARTERS",
@@ -5744,7 +6742,10 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "UNIDENTIFIED INDIVIDUALS",
+          "INDIVIDUALS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -5763,7 +6764,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "ANTEL [NATIONAL ADMINISTRATION FOR TELECOMMUNICATIONS] INSTALLATIONS"
         ],
@@ -5812,7 +6815,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [
           "HIGH TENSION TOWERS",
@@ -5821,12 +6826,19 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "POWERFUL CZECHOSLOVAK-MADE PLASTIC BOMBS",
+          "CZECHOSLOVAK-MADE PLASTIC BOMBS",
+          "PLASTIC BOMBS",
+          "BOMBS",
+          "CZECHOSLOVAK BOMBS",
+          "TNT"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [
           "HIGH TENSION TOWERS",
@@ -5836,12 +6848,19 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "POWERFUL CZECHOSLOVAK-MADE PLASTIC BOMBS",
+          "CZECHOSLOVAK-MADE PLASTIC BOMBS",
+          "PLASTIC BOMBS",
+          "BOMBS",
+          "CZECHOSLOVAK BOMBS",
+          "TNT"
         ]
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [
           "HIGH TENSION TOWERS",
@@ -5850,7 +6869,12 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "POWERFUL CZECHOSLOVAK-MADE PLASTIC BOMBS",
+          "CZECHOSLOVAK-MADE PLASTIC BOMBS",
+          "PLASTIC BOMBS",
+          "BOMBS",
+          "CZECHOSLOVAK BOMBS",
+          "TNT"
         ]
       }
     ]
@@ -5861,8 +6885,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FOUR TERRORISTS WHO CLAIMED TO BE HIS STUDENTS",
+          "FOUR TERRORISTS",
+          "TERRORISTS OF THE MAOIST SHINING PATH GROUP",
+          "TERRORISTS"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "HERMINIO PARRA",
@@ -5875,8 +6906,15 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TWO SHINING PATH MEMBERS",
+          "SHINING PATH MEMBERS",
+          "TERRORISTS OF THE MAOIST SHINING PATH GROUP",
+          "TERRORISTS"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "CIVIL GUARD",
@@ -5890,7 +6928,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [
           "EMBASSY"
         ],
@@ -5923,8 +6963,12 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TERRORIST"
+        ],
+        "PerpOrg": [
+          "ELN"
+        ],
         "Target": [
           "SECTION OF THE MULTIPURPOSE PIPELINE RUNNING FROM BARRANCABERMEJA TO BUCARAMANGA",
           "MULTIPURPOSE PIPELINE RUNNING FROM BARRANCABERMEJA TO BUCARAMANGA",
@@ -5960,7 +7004,11 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "SMALL HOME-MADE BOMB",
+          "HOME-MADE BOMB",
+          "BOMB",
+          "BLACK GUNPOWDER",
+          "GUNPOWDER"
         ]
       }
     ]
@@ -5987,7 +7035,11 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "GROUP OF UNIDENTIFIED INDIVIDUALS",
+          "UNIDENTIFIED INDIVIDUALS",
+          "INDIVIDUALS"
+        ],
         "PerpOrg": [],
         "Target": [
           "HOME OF A PERUVIAN ARMY GENERAL",
@@ -6004,7 +7056,7 @@
           "MEMBERS OF THE GENERAL'S FAMILY"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       }
     ]
@@ -6047,8 +7099,13 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN URBAN GUERRILLAS",
+          "URBAN GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "RECENTLY BUILT LA TORRE DE CRISTAL BUILDING",
           "LA TORRE DE CRISTAL BUILDING",
@@ -6056,13 +7113,16 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "TWO BOMBS",
+          "BOMBS"
         ]
       },
       {
         "incident_type": "BOMBING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "ADMINISTRATIVE OFFICES OF THE [NAME INDISTINCT] SEASIDE RESORT"
         ],
@@ -6073,8 +7133,13 @@
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN GUERRILLAS",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "POWER POLE"
         ],
@@ -6091,8 +7156,15 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "EPS SOLDIERS",
+          "SOLDIERS",
+          "EPS TROOPS",
+          "TROOPS"
+        ],
+        "PerpOrg": [
+          "EPS"
+        ],
         "Target": [],
         "Victim": [
           "ROSALIO MEJIA RODRIGUEZ",
@@ -6131,7 +7203,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "MANUEL JOSE ARCE URBAN COMMAND"
+        ],
         "Target": [
           "COMMERCIAL BUILDING",
           "BUSINESSES"
@@ -6144,7 +7218,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "MANUEL JOSE ARCE URBAN COMMAND"
+        ],
         "Target": [
           "[NAME INDISTINCT] PARKING LOT",
           "PARKING LOT"
@@ -6157,7 +7233,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "MANUEL JOSE ARCE URBAN COMMAND"
+        ],
         "Target": [
           "LANCER MOTEL"
         ],
@@ -6190,8 +7268,16 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS OF THE FARC AND THE POPULAR LIBERATION ARMY (EPL)",
+          "GUERRILLAS",
+          "GUERRILLAS OF THE FARC AND THE POPULAR LIBERATION ARMY"
+        ],
+        "PerpOrg": [
+          "FARC",
+          "POPULAR LIBERATION ARMY",
+          "EPL"
+        ],
         "Target": [
           "BRIDGES"
         ],
@@ -6205,8 +7291,17 @@
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SUSPECTED GUERRILLAS",
+          "GUERRILLAS",
+          "GUERRILLAS OF THE FARC AND THE POPULAR LIBERATION ARMY",
+          "GUERRILLAS OF THE FARC AND THE POPULAR LIBERATION ARMY (EPL)"
+        ],
+        "PerpOrg": [
+          "FARC",
+          "POPULAR LIBERATION ARMY",
+          "EPL"
+        ],
         "Target": [
           "BRIDGE"
         ],
@@ -6220,8 +7315,17 @@
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SUSPECTED GUERRILLAS",
+          "GUERRILLAS",
+          "GUERRILLAS OF THE FARC AND THE POPULAR LIBERATION ARMY",
+          "GUERRILLAS OF THE FARC AND THE POPULAR LIBERATION ARMY (EPL)"
+        ],
+        "PerpOrg": [
+          "FARC",
+          "POPULAR LIBERATION ARMY",
+          "EPL"
+        ],
         "Target": [
           "BRIDGE"
         ],
@@ -6233,7 +7337,11 @@
       {
         "incident_type": "FORCED",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FARC",
+          "POPULAR LIBERATION ARMY",
+          "EPL"
+        ],
         "Target": [],
         "Victim": [
           "WORKERS",
@@ -6253,7 +7361,9 @@
       {
         "incident_type": "BOMBING",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "CHAIN OF [WORDS INDISTINCT]",
           "CHAIN",
@@ -6261,7 +7371,7 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "CAR BOMBS"
         ]
       }
     ]
@@ -6272,8 +7382,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "VICTOR DIAZ CARO",
+          "SNIPERS"
+        ],
+        "PerpOrg": [
+          "MANUEL RODRIGUEZ PATRIOTIC FRONT",
+          "FPMR"
+        ],
         "Target": [],
         "Victim": [
           "AUGUSTO PINOCHET",
@@ -6291,8 +7407,14 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "EPL [POPULAR LIBERATION ARMY] GUERRILLAS",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "EPL",
+          "POPULAR LIBERATION ARMY"
+        ],
         "Target": [
           "BRIDGE",
           "PUBLIC BUS",
@@ -6316,8 +7438,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "RIGHT-WING MEMBERS",
+          "SEVERAL RIGHT-WING MEMBERS",
+          "SOME DEATH SQUAD MEMBERS",
+          "DEATH SQUAD MEMBERS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "OSCAR ARNULFO ROMERO",
@@ -6337,7 +7466,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "CONTRAS",
+          "REBELS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -6355,8 +7487,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "PARAMILITARY DEATH SQUADS",
+          "DEATH SQUADS"
+        ],
+        "PerpOrg": [
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "PATRIOTIC UNION [UP] MEMBERS",
@@ -6407,7 +7544,12 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "FOUR MASKED INDIVIDUALS",
+          "MASKED INDIVIDUALS",
+          "INDIVIDUALS",
+          "CRIMINALS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -6465,27 +7607,37 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "INSURGENTS APPARENTLY BELONGING TO THE NATIONAL LIBERATION ARMY",
+          "INSURGENTS"
+        ],
+        "PerpOrg": [
+          "NATIONAL LIBERATION ARMY"
+        ],
         "Target": [
           "CITY'S ADMINISTRATIVE OFFICES",
           "FARMS"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "INSURGENTS APPARENTLY BELONGING TO THE NATIONAL LIBERATION ARMY",
+          "INSURGENTS"
+        ],
+        "PerpOrg": [
+          "NATIONAL LIBERATION ARMY"
+        ],
         "Target": [
           "FARMS"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       }
     ]
@@ -6506,7 +7658,8 @@
           "PRESIDENT"
         ],
         "Weapon": [
-          "-"
+          "POWERFUL BOMB",
+          "BOMB"
         ]
       }
     ]
@@ -6517,8 +7670,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "VENEZUELAN MILITARY AUTHORITIES",
+          "MILITARY AUTHORITIES"
+        ],
+        "PerpOrg": [
+          "VENEZUELAN ARMY",
+          "ARMY"
+        ],
         "Target": [],
         "Victim": [
           "FISHERMEN",
@@ -6538,7 +7697,9 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "PEASANTS"
@@ -6549,8 +7710,13 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "DEATH SQUAD"
+        ],
+        "PerpOrg": [
+          "ARMY",
+          "ARMED FORCES"
+        ],
         "Target": [],
         "Victim": [
           "PEASANTS"
@@ -6567,8 +7733,12 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TERRORISTS"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [
           "DANCE HALL"
         ],
@@ -6577,7 +7747,9 @@
           "POLICEMEN"
         ],
         "Weapon": [
-          "-"
+          "HOME-MADE BOMB CALLED \\",
+          "/",
+          "EXPLOSIVE:"
         ]
       }
     ]
@@ -6588,7 +7760,9 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [
           "POWER TOWERS OF THE NATIONAL ENERGY NETWORK",
@@ -6623,8 +7797,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "ABOUT 50 GUERRILLAS",
+          "50 GUERRILLAS",
+          "GUERRILLAS",
+          "INSURGENTS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "EL ANGEL SUGAR MILL",
           "ADMINISTRATIVE OFFICES OF THE SUGAR MILL",
@@ -6635,7 +7816,8 @@
           "PEOPLE"
         ],
         "Weapon": [
-          "-"
+          "RIFLES",
+          "MORTARS"
         ]
       }
     ]
@@ -6662,8 +7844,14 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "LARGE GROUP OF REBELS",
+          "REBELS",
+          "GROUP OF REBELS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "ANTEL [NATIONAL ADMINISTRATION FOR TELECOMMUNICATIONS] OFFICE",
           "COURT OFFICES",
@@ -6754,8 +7942,16 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "NATIONAL LIBERATION ARMY (ELN) GUERRILLAS",
+          "GUERRILLAS",
+          "ELN COMMANDO",
+          "COMMANDO"
+        ],
+        "PerpOrg": [
+          "NATIONAL LIBERATION ARMY",
+          "ELN"
+        ],
         "Target": [],
         "Victim": [
           "GUILLERMO RODRIGUEZ VELASQUEZ",
@@ -6810,8 +8006,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TWO SURVIVORS",
+          "SUBVERSIVES"
+        ],
+        "PerpOrg": [
+          "VENEZUELAN ARMED FORCES",
+          "VENEZUELAN ARMY"
+        ],
         "Target": [],
         "Victim": [
           "JOSE ANTONIO AREGUA",
@@ -6911,8 +8113,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "PRESUMED SHINING PATH MAOIST EXTREMISTS",
+          "SHINING PATH MAOIST EXTREMISTS",
+          "MAOIST EXTREMISTS",
+          "EXTREMISTS"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "PEASANT DEFENSE PATROL UNIT",
@@ -6924,8 +8133,16 @@
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "TERRORISTS",
+          "PRESUMED TERRORISTS",
+          "TERRORIST GROUPS"
+        ],
+        "PerpOrg": [
+          "SHINING PATH",
+          "TUPAC AMARU REVOLUTIONARY MOVEMENT",
+          "MRTA"
+        ],
         "Target": [
           "INNS",
           "HOTELS"
@@ -6940,8 +8157,16 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "PRESUMED TERRORISTS",
+          "TERRORISTS",
+          "TERRORIST GROUPS"
+        ],
+        "PerpOrg": [
+          "SHINING PATH",
+          "TUPAC AMARU REVOLUTIONARY MOVEMENT",
+          "MRTA"
+        ],
         "Target": [
           "BUS"
         ],
@@ -6962,8 +8187,15 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS",
+          "FMLN GUERRILLAS",
+          "FMLN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "MAYORIAL OFFICES",
           "NATIONAL ADMINISTRATION FOR TELECOMMUNICATIONS OFFICES",
@@ -6984,8 +8216,15 @@
       },
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS",
+          "FMLN GUERRILLAS",
+          "FMLN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "PEASANTS"
@@ -6996,8 +8235,15 @@
       },
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GUERRILLAS",
+          "FMLN GUERRILLAS",
+          "FMLN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "TRAINS BELONGING TO THE SALVADORAN NATIONAL RAILROAD, FENADESAL",
           "TRAINS BELONGING TO THE SALVADORAN NATIONAL RAILROAD",
@@ -7010,6 +8256,7 @@
           "OTHERS"
         ],
         "Weapon": [
+          "MINE",
           "-"
         ]
       }
@@ -7037,7 +8284,9 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "MAN"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -7052,7 +8301,8 @@
           "BODYGUARD"
         ],
         "Weapon": [
-          "-"
+          "7.65 CALIBER PISTOL",
+          "PISTOL"
         ]
       }
     ]
@@ -7063,14 +8313,20 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "INSURGENTS",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "TRAIN"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "CLAYMORE MINE",
+          "MINE"
         ]
       }
     ]
@@ -7109,7 +8365,7 @@
           "MINOR"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       }
     ]
@@ -7136,8 +8392,14 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GROUP OF TERRORISTS",
+          "TERRORISTS",
+          "MEMBERS OF THE MAOIST SHINING PATH GUERRILLA MOVEMENT"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "ADOLFO SPEZUA",
@@ -7150,8 +8412,14 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "GROUP OF TERRORISTS",
+          "TERRORISTS",
+          "MEMBERS OF THE MAOIST SHINING PATH GUERRILLA MOVEMENT"
+        ],
+        "PerpOrg": [
+          "SHINING PATH"
+        ],
         "Target": [],
         "Victim": [
           "THOMAS PELLISSIER",
@@ -7172,8 +8440,13 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "SALVADORAN GUERRILLAS",
+          "GUERRILLAS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [],
         "Victim": [
           "HECTOR AREVALO",
@@ -7191,8 +8464,19 @@
     "templates": [
       {
         "incident_type": "KIDNAPPING",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FOUR UNIDENTIFIED CIVILIANS CARRYING LARGE-CALIBER FIREARMS",
+          "FOUR UNIDENTIFIED CIVILIANS",
+          "UNIDENTIFIED CIVILIANS",
+          "ERNESTO \\",
+          "GUEVARA FRONT OF THE NATIONAL LIBERATION ARMY'S CAMILIST UNITY",
+          "GUEVARA FRONT",
+          "NATIONAL LIBERATION ARMY'S CAMILIST UNITY",
+          "CAMILIST UNITY"
+        ],
+        "PerpOrg": [
+          "NATIONAL LIBERATION ARMY"
+        ],
         "Target": [],
         "Victim": [
           "ALBERTO CELIS SANCHEZ",
@@ -7225,7 +8509,11 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "FOUR ALLEGED TERRORISTS, ALL WEARING SKI MASKS",
+          "FOUR ALLEGED TERRORISTS",
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -7238,7 +8526,9 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -7251,7 +8541,10 @@
       },
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "TERRORISTS",
+          "ALLEGED TERRORISTS"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -7281,7 +8574,10 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "MOR",
+          "WORKERS REVOLUTIONARY MOVEMENT"
+        ],
         "Target": [],
         "Victim": [
           "JUAN CARLOS VEGA LLONA",
@@ -7315,7 +8611,10 @@
     "templates": [
       {
         "incident_type": "ATTACK",
-        "PerpInd": [],
+        "PerpInd": [
+          "URBAN GUERRILLAS",
+          "URBAN GUERRILLAS OPERATING IN SANTA ANA"
+        ],
         "PerpOrg": [],
         "Target": [],
         "Victim": [
@@ -7348,7 +8647,7 @@
           "NONCOMMISSIONED OFFICERS"
         ],
         "Weapon": [
-          "-"
+          "BOMB"
         ]
       }
     ]
@@ -7359,8 +8658,13 @@
     "templates": [
       {
         "incident_type": "ARSON",
-        "PerpInd": [],
-        "PerpOrg": [],
+        "PerpInd": [
+          "FMLN REBELS",
+          "REBELS"
+        ],
+        "PerpOrg": [
+          "FMLN"
+        ],
         "Target": [
           "ANTEL [NATIONAL ADMINISTRATION FOR TELECOMMUNICATIONS] OFFICE",
           "LOCAL GARRISON",
@@ -7411,14 +8715,17 @@
     "templates": [
       {
         "incident_type": "BOMBING",
-        "PerpInd": [],
+        "PerpInd": [
+          "REBELS",
+          "ANOTHER GROUP"
+        ],
         "PerpOrg": [],
         "Target": [
           "CEL [LEMPA RIVER HYDROELECTRIC EXECUTIVE COMMISSION] SAN LUIS SUBSTATION"
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "EXPLOSIVES"
         ]
       }
     ]
@@ -7452,7 +8759,8 @@
         ],
         "Victim": [],
         "Weapon": [
-          "-"
+          "THREE BOMBS",
+          "BOMBS"
         ]
       }
     ]
@@ -7480,7 +8788,10 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "MANUEL RODRIGUEZ PATRIOTIC FRONT",
+          "FPMR"
+        ],
         "Target": [],
         "Victim": [
           "FERNANDO TORRES SILVA",
@@ -7493,7 +8804,10 @@
       {
         "incident_type": "ATTACK",
         "PerpInd": [],
-        "PerpOrg": [],
+        "PerpOrg": [
+          "MANUEL RODRIGUEZ PATRIOTIC FRONT",
+          "FPMR"
+        ],
         "Target": [],
         "Victim": [
           "FERNANDO TORRES SILVA",
