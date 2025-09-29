@@ -10,14 +10,40 @@ import { z } from "zod";
 import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
 import { runVerifier } from "./utils/verifier";
+import { getFewShotsFromTranscript } from "./utils/get-few-shots";
 
-/** ───────── types ───────── */
-type LlmFieldResult = {
-  value?: unknown | null;
-  confidence?: number;
-  evidence?: { transcriptSnippet?: string };
-};
-type LlmAllResult = Record<string, LlmFieldResult>;
+/** ───────── logging helpers ───────── */
+const DEBUG = process.env.DEBUG_FILL !== "0";
+const DUMP_FULL_PROMPT = process.env.DUMP_FULL_PROMPT === "1";
+
+function log(...args: any[]) {
+  if (DEBUG) console.log(...args);
+}
+function warn(...args: any[]) {
+  if (DEBUG) console.warn(...args);
+}
+function err(...args: any[]) {
+  if (DEBUG) console.error(...args);
+}
+function short(value: unknown, max = 400) {
+  const s = typeof value === "string" ? value : JSON.stringify(value);
+  if (!s) return "";
+  return s.length > max ? s.slice(0, max) + ` … [${s.length} chars]` : s;
+}
+function approxTokens(text: string) {
+  // VERY rough heuristic; good enough for log awareness.
+  return Math.ceil((text?.length ?? 0) / 4);
+}
+function maskSecret(s?: string | null) {
+  if (!s) return "(missing)";
+  if (s.length <= 8) return "*".repeat(s.length);
+  return s.slice(0, 4) + "…" + s.slice(-4);
+}
+
+// Fields that can be multi-valued in MUC-4 and should accept string[] too
+const MULTI_VALUE_FIELD_IDS = new Set([
+  "PerpInd", "PerpOrg", "Target", "Victim", "Weapon",
+]);
 
 /** ───────── helpers ───────── */
 function zodFieldValueSchema(field: FormTemplateField): z.ZodTypeAny {
@@ -30,10 +56,35 @@ function zodFieldValueSchema(field: FormTemplateField): z.ZodTypeAny {
       return field.options?.length
         ? z.enum(field.options as [string, ...string[]]).nullable()
         : z.string().nullable();
-    default:
-      return z.string().nullable();
+    default: {
+    // text/textarea: allow string OR string[] for known multi-value fields
+    if (MULTI_VALUE_FIELD_IDS.has(field.id)) {
+      return z.union([z.string(), z.array(z.string())]).nullable();
+    }
+    return z.string().nullable();
+  }
   }
 }
+
+
+function normalizeLLMValue(field: FormTemplateField, v: unknown) {
+  if (v == null) return null;
+
+  // For multi-value fields, turn ["A","B"] into "A, B"
+  if (MULTI_VALUE_FIELD_IDS.has(field.id) && Array.isArray(v)) {
+    const joined = v.map(x => String(x).trim()).filter(Boolean).join(", ");
+    return joined || null;
+  }
+
+  // Trim plain strings
+  if (typeof v === "string") {
+    const t = v.trim();
+    return t.length ? t : null;
+  }
+
+  return v as any;
+}
+
 
 function isDE(lang?: string) {
   return (lang ?? "en").toLowerCase().startsWith("de");
@@ -80,7 +131,7 @@ function buildPrompt({
         "Aktualisiere NUR, wenn das NEUE Transkript klare Evidenz enthält.",
         "locked=true Felder NIEMALS überschreiben.",
         "Datumsformat: YYYY-MM-DD. Zahlen ohne Einheiten.",
-        "Antwort NUR im JSON-Format: { fieldId: { value, confidence?, evidence? } }",
+        "Antwort NUR im JSON-Format: { fieldId: { value} }",
       ].join(" ")
     : [
         "Task: Produce the FINAL values for each field.",
@@ -89,7 +140,7 @@ function buildPrompt({
         "Update ONLY when the NEW transcript provides clear evidence.",
         "For locked=true fields, NEVER overwrite.",
         "Dates must be YYYY-MM-DD. Numbers plain (no units).",
-        "Answer ONLY with JSON: { fieldId: { value, confidence?, evidence? } }",
+        "Answer ONLY with JSON: { fieldId: { value} }",
       ].join(" ");
 
   const fs = (fewShots ?? [])
@@ -128,6 +179,7 @@ function buildPrompt({
     newText,
   ].join("\n");
 }
+
 export async function singleLlmAllField(
   input: GetFilledTemplateInput
 ): Promise<GetFilledTemplateResult> {
@@ -138,59 +190,113 @@ export async function singleLlmAllField(
     currentValues,
     oldTranscript,
     newTranscript,
-    fewShots,
   } = input as GetFilledTemplateInput & { oldTranscript?: string; newTranscript?: string };
 
   const oldText = (oldTranscript ?? "").trim();
   const newText = (newTranscript ?? legacyTranscript ?? "").trim();
   const combinedTranscript = oldText ? `${oldText}\n${newText}` : newText;
 
-  if (!fields?.length) throw new Error("At least one field is required.");
-  if (!newText) throw new Error("Transcript is required.");
-
   const modelName = process.env.OPENAI_FILL_MODEL || "gpt-4.1";
 
-  console.log("\n[=== singleLlmAllField START ===]");
-  console.log("Model:", modelName);
-  console.log("Fields:", fields.map(f => ({ id: f.id, label: f.label, type: f.type })));
-  console.log("Current values:", currentValues);
-  console.log("Old transcript:", oldText);
-  console.log("New transcript:", newText);
+  log("\n[=== singleLlmAllField START ===]");
+  log("env.OPENAI_FILL_MODEL:", modelName);
+  log("env.OPENAI_API_KEY present:", maskSecret(process.env.OPENAI_API_KEY));
+  log("Lang:", lang ?? "en");
+  log(
+    "Fields:",
+    fields.map((f) => ({ id: f.id, type: f.type, required: !!f.required }))
+  );
+  log("Current values keys:", Object.keys(currentValues ?? {}));
+  log("Old transcript (preview):", short(oldText, 300));
+  log("New transcript (preview):", short(newText, 300));
 
-  // Extractor returns value (+ optional evidence); no confidence here.
+  if (!fields?.length) {
+    err("[error] No fields provided");
+    throw new Error("At least one field is required.");
+  }
+  if (!newText) {
+    err("[error] No new transcript provided");
+    throw new Error("Transcript is required.");
+  }
+
+  // Retrieve few-shots with timing + error guard
+  let fewShots: any[] = [];
+  try {
+    console.time("[timer] fewShots");
+    fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 3);
+    console.timeEnd("[timer] fewShots");
+    log(
+      `fewShots: count=${fewShots.length}`,
+      fewShots.slice(0, 3).map((fs, i) => ({
+        i,
+        textPreview: short(fs.text, 160),
+        expectedKeys: Object.keys(fs.expected ?? {}),
+      }))
+    );
+  } catch (e: any) {
+    err("[fewShots] retrieval failed:", e?.message ?? e);
+    // continue without few-shots (fallback)
+    fewShots = [];
+  }
+
+  // Build Zod schema + prompt
   const schema = z.object(
     Object.fromEntries(
       fields.map((f) => [
         f.id,
         z.object({
           value: zodFieldValueSchema(f),
-          evidence: z.object({ transcriptSnippet: z.string().optional() }).optional(),
         }),
       ])
     )
   );
 
-  const prompt = buildPrompt({ fields, oldText, newText, fewShots, lang, currentValues });
-  console.log("Prompt:\n", prompt);
+  const prompt = buildPrompt({ fields, oldText, newText, fewShots, lang: lang ?? "en", currentValues });
+  const promptInfo = {
+    chars: prompt.length,
+    approxTokens: approxTokens(prompt),
+  };
+  log("Prompt size:", promptInfo);
+  if (DUMP_FULL_PROMPT) {
+    warn("[prompt FULL]\n" + prompt);
+  } else {
+    log("[prompt PREVIEW]\n" + short(prompt, 2000));
+  }
 
-  const t0 = Date.now();
-  const { object } = await generateObject({
-    model: openai(modelName),
-    schema,
-    prompt,
-  });
-  console.log(`LLM responded in ${Date.now() - t0}ms`);
-  console.log("Raw LLM output:", JSON.stringify(object, null, 2));
+  // Call the model with timing + error details
+  let object: unknown;
+  try {
+    console.time("[timer] generateObject");
+    const res = await generateObject({
+      model: openai(modelName),
+      schema,
+      prompt,
+    });
+    console.timeEnd("[timer] generateObject");
+    object = res.object;
+    const rawStr = JSON.stringify(object);
+    log("Raw LLM output size:", { chars: rawStr.length, approxTokens: approxTokens(rawStr) });
+    log("Raw LLM output (preview):", short(rawStr, 1200));
+  } catch (e: any) {
+    err("[generateObject] failed");
+    err("name:", e?.name);
+    err("message:", e?.message);
+    if (e?.status) err("status:", e.status);
+    if (e?.cause) err("cause:", e.cause);
+    // Helpful: dump the first 2k chars of the prompt for debugging
+    err("[prompt snapshot]\n" + short(prompt, 2000));
+    throw e;
+  }
 
-  // Build filled map (no confidence yet)
-  const raw = object as Record<string, { value?: unknown | null; evidence?: { transcriptSnippet?: string } }>;
+  // Build filled map
+  const raw = object as Record<string, { value?: unknown | null }>;
   const filled: Record<string, FilledField> = {};
   for (const f of fields) {
     const prev = currentValues?.[f.id];
     const prevVal = prev?.value ?? null;
     const r = raw?.[f.id] ?? {};
-    const hasNew = r.value !== undefined; // undefined => not mentioned => keep previous
-    const finalVal = hasNew ? (r.value as FilledField["value"]) : prevVal;
+    const hasNew = r.value !== undefined;
+    const finalVal = hasNew ? normalizeLLMValue(f, r.value) : prevVal;
     const changed = hasNew ? finalVal !== prevVal : false;
 
     filled[f.id] = {
@@ -198,28 +304,45 @@ export async function singleLlmAllField(
       changed,
       previousValue: changed ? prevVal : undefined,
       source: changed ? "ai" : (prev?.source ?? "ai"),
-      evidence: r.evidence,
     };
 
-    if (changed) {
-      console.log(`Field "${f.id}" changed:`, { from: prevVal, to: finalVal });
-    } else {
-      console.log(`Field "${f.id}" unchanged:`, finalVal ?? null);
-    }
+    log(
+      `Field "${f.id}" ${changed ? "changed" : "unchanged"}`,
+      changed ? { from: short(String(prevVal), 120), to: short(String(finalVal), 120) } : { value: short(String(finalVal), 120) }
+    );
   }
 
-  // Verifier pass (reusable util)
-  const verifiedFilled = await runVerifier({
-    combinedTranscript,
-    fields,
-    filled,
-    lang: lang ?? "en",
-  });
+  // Verifier pass
+  let verifiedFilled: Record<string, FilledField> = filled;
+  try {
+    console.time("[timer] verifier");
+    verifiedFilled = await runVerifier({
+      combinedTranscript,
+      fields,
+      filled,
+      lang: lang ?? "en",
+    });
+    console.timeEnd("[timer] verifier");
+  } catch (e: any) {
+    err("[verifier] failed:", e?.message ?? e);
+    // keep unverified results as fallback
+    verifiedFilled = filled;
+  }
 
-  const entries = Object.entries(verifiedFilled) as [string, FilledField][];
-  const chatResponse = await generateChatResponse(combinedTranscript, fields, currentValues, entries);
+  // Chat response
+  let chatResponse: string | undefined;
+  try {
+    console.time("[timer] chatResponse");
+    const entries = Object.entries(verifiedFilled) as [string, FilledField][];
+    chatResponse = await generateChatResponse(combinedTranscript, fields, currentValues, entries);
+    console.timeEnd("[timer] chatResponse");
+    log("chatResponse (preview):", short(chatResponse, 600));
+  } catch (e: any) {
+    err("[chatResponse] failed:", e?.message ?? e);
+    chatResponse = undefined;
+  }
 
-  console.log("[=== singleLlmAllField END ===]\n");
+  log("[=== singleLlmAllField END ===]\n");
 
   return {
     filled: verifiedFilled,
