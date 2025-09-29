@@ -11,9 +11,7 @@
         "Victim": [
           "JESUITS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -41,9 +39,7 @@
           "NEARBY STRUCTURES"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -67,9 +63,7 @@
           "BUS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -85,9 +79,7 @@
           "STUDENTS",
           "GROUP OF STUDENTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -148,9 +140,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -164,9 +154,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -218,9 +206,7 @@
           "MAYOR",
           "JOURNALISTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -237,9 +223,7 @@
           "DEATHS",
           "WOUNDED"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -253,9 +237,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -271,9 +253,7 @@
           "NEWSPAPER"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -301,9 +281,7 @@
           "JESUITS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -321,9 +299,7 @@
           "SPOKESMAN OF THE MIR",
           "SPOKESMAN OF THE MIR [MOVEMENT OF THE REVOLUTIONARY LEFT]"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -372,9 +348,7 @@
           "SCOTT HEYNDAL",
           "EDWIN RODRIGO TENEDA PARRENO"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -388,9 +362,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -429,9 +401,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -475,9 +445,7 @@
           "ROMERO",
           "MSGR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -533,9 +501,7 @@
           "VICTIMS",
           "INFORMERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -623,9 +589,7 @@
         "Victim": [
           "CARLOS PIZARRO"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -644,9 +608,7 @@
           "ARCHBISHOP OF SAN SALVADOR",
           "ARCHBISHOP"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -660,9 +622,7 @@
           "JESUIT PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -695,9 +655,7 @@
         "Victim": [
           "RELATIVE OF COLONEL LOPEZ HUILA"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -721,9 +679,7 @@
           "PRIESTS",
           "WOMEN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -760,9 +716,7 @@
           "FORMER LEADER OF THE 19 APRIL MOVEMENT (M-19)",
           "FORMER LEADER OF THE 19 APRIL MOVEMENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -781,9 +735,7 @@
           "BERNARDO JARAMILLO",
           "PRESIDENTIAL CANDIDATE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -801,9 +753,7 @@
         "Victim": [
           "YOUTHS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -815,9 +765,7 @@
         "Victim": [
           "YOUTHS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -829,9 +777,7 @@
         "Victim": [
           "YOUTHS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -872,9 +818,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -888,9 +832,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -922,9 +864,7 @@
           "ARCE BATTALION OFFICER",
           "OFFICER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -972,9 +912,7 @@
           "PRESIDENTIAL CANDIDATE OF PATRIOTIC UNION, UP",
           "UP LEADER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -991,9 +929,7 @@
           "LIBERAL PARTY CANDIDATE",
           "POLITICAL FIGURES"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1015,9 +951,7 @@
           "ADVISER TO THE GOVERNMENT COMMISSION FOR SUPPORT TO THE DIALOGUE",
           "ADVISER TO THE GOVERNMENT COMMISSION FOR SUPPORT TO THE DIALOGUE [COMISION DE APOYO GUBERNAMENTAL DE DIALOGO]"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1038,9 +972,7 @@
           "AEU MEMBERS",
           "STUDENT LEADERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1056,9 +988,7 @@
           "STUDENT LEADERS",
           "STUDENTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1069,9 +999,7 @@
           "EDUARDO ANTONIO LOPEZ PALENCIA",
           "STUDENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1085,9 +1013,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1106,9 +1032,7 @@
           "MARIO FLORES",
           "UNIVERSITY STUDENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1126,9 +1050,7 @@
           "UNIVERSITY STUDENTS",
           "UNIVERSITY STUDENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1140,9 +1062,7 @@
           "MEMBER OF THE BREAD, LAND, WORK, AND FREEDOM MOVEMENT",
           "MEMBER OF THE BREAD, LAND WORK, AND FREEDOM MOVEMENT [MPTL]"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -1163,9 +1083,7 @@
           "PEASANTS",
           "PEASANT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1185,9 +1103,7 @@
           "MARIA ASUNCION ROMERO",
           "MINOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1206,9 +1122,7 @@
           "PEASANTS",
           "PEASANT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1226,9 +1140,7 @@
           "PEASANTS",
           "PEASANT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1245,9 +1157,7 @@
           "VIRGILIO ORTIZ CRUZ",
           "VIRGILIO ORTIZ"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1262,9 +1172,7 @@
         "Victim": [
           "ROBERTO MENA"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1278,9 +1186,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1294,9 +1200,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1321,9 +1225,7 @@
           "DIRECTOR OF THE COLUMBUS SCHOOL",
           "DIRECTOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1343,9 +1245,7 @@
           "PROFESSOR OF THE COLUMBUS SCHOOL",
           "PROFESSOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1371,9 +1271,7 @@
           "PEOPLE",
           "PEOPLE WHO ARE BEING HELD HOSTAGE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1387,9 +1285,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1420,9 +1316,7 @@
           "BODYGUARDS",
           "ESCORTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1436,9 +1330,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1486,9 +1378,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1512,9 +1402,7 @@
           "PASSANGERS",
           "PASSANGERS GOING TO CALI, VALLE DEL CAUCA DEPARTMENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1528,9 +1416,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1633,9 +1519,7 @@
           "JORGE ADOLFO VARGAS GONZALEZ",
           "SECOND SECRETARY OF THE NICARAGUAN EMBASSY IN GUATEMALA"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1652,9 +1536,7 @@
           "LUIS CARLOS GALAN SARMIENTO",
           "SENATOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1668,9 +1550,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1690,9 +1570,7 @@
           "VENEZUELAN PRESIDENT CARLOS ANDRES PEREZ' BROTHER-IN-LAW",
           "BROTHER OF VENEZUELA'S FIRST LADY BLANCA RODRIGUEZ DE PEREZ"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1714,9 +1592,7 @@
           "UCA PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1748,9 +1624,7 @@
           "BODYGUARD",
           "DELGADO'S BODYGUARD"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -1772,9 +1646,7 @@
           "FORMER ADVISER TO PERUVIAN PRESIDENT ALAN GARCIA",
           "TELEVISION IMPRESARIO"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1798,9 +1670,7 @@
           "SALVADORAN REPORTER",
           "CBS REPORTER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1830,9 +1700,7 @@
           "JESUIT PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1846,9 +1714,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1915,9 +1781,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1942,9 +1806,7 @@
           "EDITOR",
           "EMPLOYEES"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1958,9 +1820,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -1984,9 +1844,7 @@
           "NATIONAL POLICE",
           "GUARDS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -1998,9 +1856,7 @@
         "Victim": [
           "UNION LEADERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2025,9 +1881,7 @@
           "FAMILY",
           "HER FAMILY"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2041,9 +1895,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2057,9 +1909,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2084,9 +1934,7 @@
           "GAS STATION OWNERS",
           "OWNERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -2101,9 +1949,7 @@
           "POWER LINES"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -2118,9 +1964,7 @@
         "Victim": [
           "ELECTION OFFICIALS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2152,9 +1996,7 @@
           "PAC PATROL",
           "17-YEAR-OLD"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2170,9 +2012,7 @@
           "BANK"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -2221,9 +2061,7 @@
           "TELEVISION JOURNALISTS",
           "JOURNALISTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2241,9 +2079,7 @@
           "PRIESTS",
           "JESUITS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2257,9 +2093,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2279,9 +2113,7 @@
           "JESUIT PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2316,9 +2148,7 @@
           "JESUIT PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ROBBERY",
@@ -2339,9 +2169,7 @@
           "RELIGIOUS CENTERS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2410,9 +2238,7 @@
         "Victim": [
           "PEOPLE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -2428,9 +2254,7 @@
           "\\",
           ":"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2452,9 +2276,7 @@
           "TRANSFORMERS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2468,9 +2290,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2486,9 +2306,7 @@
           "PRESIDENCIAL RESIDENCE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ARSON",
@@ -2500,9 +2318,7 @@
           "VEHICLES OF THE SALVADORAN RED CROSS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -2512,9 +2328,7 @@
           "AMBULANCE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2549,9 +2363,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2565,9 +2377,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2581,9 +2391,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2597,9 +2405,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2621,9 +2427,7 @@
           "PRESIDENTIAL CANDIDATES",
           "CANDIDATES"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -2634,9 +2438,7 @@
           "PRESIDENTIAL CANDIDATES",
           "CANDIDATES"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2650,9 +2452,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2666,9 +2466,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2682,9 +2480,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2715,9 +2511,7 @@
           "FACILITIES NEXT TO THE U.S. EMBASSY"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2731,9 +2525,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2747,9 +2539,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2784,9 +2574,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2821,9 +2609,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2837,9 +2623,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2864,9 +2648,7 @@
           "AEU LEADERS",
           "STUDENTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -2882,9 +2664,7 @@
           "ONE OF THE EXILED",
           "EXILED"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2908,9 +2688,7 @@
           "OIL PIPELINE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -2924,9 +2702,7 @@
           "OIL TERMINAL"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2952,9 +2728,7 @@
           "BRASPETRO [PETROBRAS INTERNATIONAL, INC.] ENGINEERS",
           "ENGINEERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2970,9 +2744,7 @@
         "Victim": [
           "JESUIT PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -2996,9 +2768,7 @@
           "JESUITS",
           "MAIDS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3021,9 +2791,7 @@
           "ENRIQUE LOPEZ ALBUJAR TRINT",
           "FORMER DEFENSE MINISTER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3037,9 +2805,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3063,9 +2829,7 @@
           "SOCIALIST INTERNATIONAL SECRETARY FOR LATIN AMERICA",
           "SOCIAL DEMOCRATIC LEADER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3089,9 +2853,7 @@
           "UNDERSECRETARY OF THE NATIONAL REVOLUTIONARY MOVEMENT",
           "MEMBER OF GUATEMALA'S SOCIAL DEMOCRATIC PARTY"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3110,9 +2872,7 @@
           "UNDERSECRETARY OF THE NATIONAL REVOLUTIONARY MOVEMENT [MNR]",
           "UNDERSECRETARY OF THE NATIONAL REVOLUTIONARY MOVEMENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3131,9 +2891,7 @@
           "MANUEL ANTONIO RUGAMA",
           "CONTRA COMMANDER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3149,9 +2907,7 @@
           "MANUEL ANTONIO RUGAMA",
           "CONTRA COMMANDER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3165,9 +2921,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3181,9 +2935,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3224,9 +2976,7 @@
           "CIVILIAN",
           "OTHERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3250,9 +3000,7 @@
           "NEWSMEN",
           "POLITICAL LEADERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3266,9 +3014,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3307,9 +3053,7 @@
           "FENASTRAS LEADERS",
           "LEADERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3328,9 +3072,7 @@
           "PRESIDENT OF THE MORTGAGE BANK",
           "MR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3352,9 +3094,7 @@
           "FENASTRAS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3390,9 +3130,7 @@
         "Victim": [
           "WOMAN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "FORCED",
@@ -3402,9 +3140,7 @@
         ],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "FORCED",
@@ -3414,9 +3150,7 @@
         ],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -3430,9 +3164,7 @@
           "LUIS MORALES",
           "REPORTER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3456,9 +3188,7 @@
           "TEAM FROM THE \\",
           "NEWSCAST"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3470,9 +3200,7 @@
           "REPORTER FOR THE BRITISH AGENCY REUTER",
           "REPORTER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3486,9 +3214,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3561,9 +3287,7 @@
           "GUARDS PROTECTING MERINO'S RESIDENCE",
           "GUARDS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3578,9 +3302,7 @@
           "GUARDS PROTECTING MERINO'S RESIDENCE",
           "GUARDS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3640,9 +3362,7 @@
           "TRANSPORTATION"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3659,9 +3379,7 @@
           "PIPELINE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3684,9 +3402,7 @@
           "U.S. CITIZENS",
           "CITIZENS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3700,9 +3416,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3730,9 +3444,7 @@
           "MAYOR",
           "WOMAN MAYOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3752,9 +3464,7 @@
           "GOVERNOR OF THE DEPARTMENT OF ANTIOQUIA",
           "GOVERNOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3789,9 +3499,7 @@
           "PIPELINE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3804,9 +3512,7 @@
           "PIPELINE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -3818,9 +3524,7 @@
           "PIPELINE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3834,9 +3538,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3850,9 +3552,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3891,9 +3591,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3907,9 +3605,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -3931,9 +3627,7 @@
           "VALENCIA'S BODYGUARDS",
           "BODYGUARDS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3948,9 +3642,7 @@
           "THIRD PUBLIC ORDER JUDGE",
           "JUDGE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3961,9 +3653,7 @@
           "HIS DAUGHTER",
           "DAUGHTER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3973,9 +3663,7 @@
         "Victim": [
           "DAS [ADMINISTRATIVE DEPARTMENT OF SECURITY] DIRECTOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -3987,9 +3675,7 @@
           "EIGHTH PUBLIC ORDER JUDGE",
           "JUDGE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4000,9 +3686,7 @@
           "GOVERNOR OF ANTIOQUIA",
           "GOVERNOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4023,9 +3707,7 @@
           "CARLOS VALENCIA",
           "JUDGE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4054,9 +3736,7 @@
           "POLICE OFFICER",
           "JUDGE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4077,9 +3757,7 @@
           "POWER LINES"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4100,9 +3778,7 @@
           "SENATOR",
           "LIBERAL PARTY PRESIDENTIAL CANDIDATE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4116,9 +3792,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4140,9 +3814,7 @@
           "ONE OF THE PERSONS KILLED",
           "ONE OF THE PERSONS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4205,9 +3877,7 @@
           "SECOND JUDGE OF PUBLIC ORDER",
           "JUDGE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4218,9 +3888,7 @@
           "ALVARO GONZALEZ SANTANA",
           "FORMER BOYACA GOVERNOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4230,9 +3898,7 @@
         "Victim": [
           "LUIS CARLOS GALAN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4246,9 +3912,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4348,9 +4012,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4367,9 +4029,7 @@
           "ARNULFO ROMERO",
           "MONSIGNOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4407,9 +4067,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4441,9 +4099,7 @@
           "MOTHER",
           "EL ESPECTATOR'S CIRCULATION MANAGER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4460,9 +4116,7 @@
           "EDITORS",
           "OFFICE PERSONNEL"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -4492,9 +4146,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4511,9 +4163,7 @@
           "DIANA MACK ORTIZ",
           "NUN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4524,9 +4174,7 @@
           "PATRICIA DENNY",
           "NUN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4537,9 +4185,7 @@
           "DIANA MACK ORTIZ",
           "NUN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4553,9 +4199,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4592,9 +4236,7 @@
           "PYLONS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4612,9 +4254,7 @@
           "JUDGE",
           "JUSTICE MINISTRY EMPLOYEES"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4628,9 +4268,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4651,9 +4289,7 @@
         "Victim": [
           "FENASTRAS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4684,9 +4320,7 @@
           "PRESIDENT OF THE REPUBLIC",
           "PRESIDENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4705,9 +4339,7 @@
           "6TH INFANTRY BRIGADE",
           "MINOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4750,9 +4382,7 @@
           "LANDING STRIP"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4771,9 +4401,7 @@
           "MORE",
           "CHILDREN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4791,9 +4419,7 @@
         "Victim": [
           "CIVILIANS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4817,9 +4443,7 @@
           "REBELS",
           "CIVILIANS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4833,9 +4457,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4849,9 +4471,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4897,9 +4517,7 @@
           "15-YEAR-OLD DAUGHTER",
           "DAUGHTER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4924,9 +4542,7 @@
           "ALFREDO CRISTIANI",
           "PRESIDENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -4957,9 +4573,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4973,9 +4587,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -4989,9 +4601,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5010,9 +4620,7 @@
           "CITIZENS",
           "WOMEN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -5024,9 +4632,7 @@
         "Victim": [
           "LEADERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5046,9 +4652,7 @@
           "JESUIT PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5069,9 +4673,7 @@
           "HOMES"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5105,9 +4707,7 @@
           "ONE FROM GUATEMALA",
           "ANOTHER ONE FROM CHILE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -5132,9 +4732,7 @@
           "ONE FROM GUATEMALA",
           "ANOTHER ONE FROM CHILE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5171,9 +4769,7 @@
         "Victim": [
           "UNION LEADERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -5186,9 +4782,7 @@
           "SPANISH PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5210,9 +4804,7 @@
           "LITTLE GIRLS",
           "GIRLS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -5231,9 +4823,7 @@
           "GIRLS",
           "ARMED FORCES' JOINT CHIEFS OF STAFF"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5256,9 +4846,7 @@
           "ELECTRICITY POSTS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -5275,9 +4863,7 @@
           "ELECTRICITY POSTS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5291,9 +4877,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5356,9 +4940,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5377,9 +4959,7 @@
           "JESUIT PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5401,9 +4981,7 @@
           "INNOCENT PEOPLE",
           "PEOPLE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5428,9 +5006,7 @@
           "ABILIO DINIZ",
           "BUSINESSMAN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5444,9 +5020,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5471,9 +5045,7 @@
         "Victim": [
           "SOLDIERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -5492,9 +5064,7 @@
           "SOLDIER",
           "GUERRILLAS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -5529,9 +5099,7 @@
           "ENTIRE ELECTRICAL POWER SYSTEM"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5554,9 +5122,7 @@
           "MILITARY ATTACHE",
           "ONE OF THE EMBASSY'S MILITARY ATTACHES"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5574,9 +5140,7 @@
           "SOACHA MUNICIPAL OFFICIAL",
           "MUNICIPAL OFFICIAL"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5596,9 +5160,7 @@
           "HECTOR OQUELI",
           "SOCIAL DEMOCRATIC LEADER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5641,9 +5203,7 @@
           "BUS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5666,9 +5226,7 @@
           "JESUIT PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5682,9 +5240,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5698,9 +5254,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5724,9 +5278,7 @@
           "GOVERNMENT OFFICIAL",
           "CANDIDATE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -5743,9 +5295,7 @@
           "POWER SYSTEM"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -5762,9 +5312,7 @@
           "SANTANDER DEPARTMENT SENATOR",
           "SENATOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5778,9 +5326,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5794,9 +5340,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5842,9 +5386,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5862,9 +5404,7 @@
           "PRESIDENTIAL CANDIDATE",
           "DR."
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -5890,9 +5430,7 @@
           "MAURICIO CAMPOS",
           "CONCEPCION HERRERA"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -5914,9 +5452,7 @@
           "AGENTS",
           "NATIONAL POLICE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -5933,9 +5469,7 @@
           "JOSE MANUEL POSADA",
           "PEASANT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -5995,9 +5529,7 @@
           "GENERAL RAFAEL HUMBERTO LARIOS'S SON-IN-LAW",
           "PILOT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6011,9 +5543,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6031,9 +5561,7 @@
           "PRESIDENTIAL CANDIDATE",
           "MR."
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6064,9 +5592,7 @@
           "GOVERNMENT TROOPS",
           "REBELS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -6076,9 +5602,7 @@
           "ELECTRICAL SYSTEMS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6097,9 +5621,7 @@
         "Victim": [
           "JESUITS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6125,9 +5647,7 @@
           "PYLONS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -6168,9 +5688,7 @@
           "JESUIT PRIESTS",
           "PRIESTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6214,9 +5732,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6230,9 +5746,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6246,9 +5760,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6265,9 +5777,7 @@
           "COLONEL [ADOLFO ARNOLDO] MAJANO'S BODYGUARDS",
           "BODYGUARDS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6309,9 +5819,7 @@
           "ELECTRIC TOWER"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6347,9 +5855,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6363,9 +5869,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6401,9 +5905,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6417,9 +5919,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6439,9 +5939,7 @@
           "OSCAR ARNULFO ROMERO",
           "MSGR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6455,9 +5953,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6509,9 +6005,7 @@
           "CIVILIANS",
           "OTHERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6556,9 +6050,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6575,9 +6067,7 @@
           "NOEL KEMPFF",
           "SCIENTIST"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6619,9 +6109,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6657,9 +6145,7 @@
         "Victim": [
           "PEOPLE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6699,9 +6185,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6722,9 +6206,7 @@
           "PDC'S PREMISES"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -6736,9 +6218,7 @@
           "FORMER CONGRESSMAN",
           "PRESIDENT OF THE PDC'S LOCAL CHAPTER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -6751,9 +6231,7 @@
         "Victim": [
           "MEMBERS OF THE PARTY'S BOARD"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6771,9 +6249,7 @@
           "ANTEL [NATIONAL ADMINISTRATION FOR TELECOMMUNICATIONS] INSTALLATIONS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6787,9 +6263,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6803,9 +6277,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6900,9 +6372,7 @@
           "PROFESSOR",
           "UNIVERSITY PROFESSOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -6921,9 +6391,7 @@
           "POLICEMAN",
           "PEDESTRIAN"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -6935,9 +6403,7 @@
           "EMBASSY"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6951,9 +6417,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -6985,9 +6449,7 @@
           "HIGHWAY"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7023,9 +6485,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7071,9 +6531,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7087,9 +6545,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7127,9 +6583,7 @@
           "ADMINISTRATIVE OFFICES OF THE [NAME INDISTINCT] SEASIDE RESORT"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -7144,9 +6598,7 @@
           "POWER POLE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7174,9 +6626,7 @@
           "SON",
           "HIS SON"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7190,9 +6640,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7211,9 +6659,7 @@
           "BUSINESSES"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -7226,9 +6672,7 @@
           "PARKING LOT"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -7240,9 +6684,7 @@
           "LANCER MOTEL"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7256,9 +6698,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7285,9 +6725,7 @@
           "GUERRILLAS",
           "SOLDIERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -7309,9 +6747,7 @@
           "PEOPLE",
           "CIVILIANS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -7330,9 +6766,7 @@
           "BRIDGE"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "FORCED",
@@ -7348,9 +6782,7 @@
           "PEASANTS",
           "BUS DRIVERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7395,9 +6827,7 @@
           "AUGUSTO PINOCHET",
           "PRESIDENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7426,9 +6856,7 @@
           "EMPLOYEES OF THE CIVIL REGISTRY OFFICE",
           "INJURED"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7454,9 +6882,7 @@
           "OTHER SALVADORANS",
           "SALVADORANS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7475,9 +6901,7 @@
         "Victim": [
           "CIVILIANS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7500,9 +6924,7 @@
           "POPULARLY ELECTED LEGISLATORS",
           "LEGISLATORS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7516,9 +6938,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7532,9 +6952,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7559,9 +6977,7 @@
           "OUTSTANDING APRA LEADER",
           "APRA LEADER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7579,9 +6995,7 @@
           "CECILIA MAGNI",
           "MEMBERS OF THE MANUEL RODRIGUEZ PATRIOTIC FRONT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7595,9 +7009,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7684,9 +7096,7 @@
           "PEASANTS OF THE BORDER AREA",
           "PEASANTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7704,9 +7114,7 @@
         "Victim": [
           "PEASANTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -7721,9 +7129,7 @@
         "Victim": [
           "PEASANTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7769,9 +7175,7 @@
           "POWER TOWERS"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7785,9 +7189,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7832,9 +7234,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7858,9 +7258,7 @@
           "COMMUNITY CENTER"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7874,9 +7272,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7890,9 +7286,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7914,9 +7308,7 @@
           "HER HUSBAND",
           "HUSBAND"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7930,9 +7322,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7962,9 +7352,7 @@
           "DEPARTMENT'S DCC RECRUITER",
           "DCC RECRUITER"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7978,9 +7366,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -7994,9 +7380,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8021,9 +7405,7 @@
           "FISHERMEN",
           "VENEZUELAN CITIZENS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8037,9 +7419,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8053,9 +7433,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8069,9 +7447,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8085,9 +7461,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8101,9 +7475,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8127,9 +7499,7 @@
           "PEASANT DEFENSE PATROL UNIT",
           "PEASANTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -8151,9 +7521,7 @@
           "18 YEAR-OLD GIRL",
           "GIRL"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -8175,9 +7543,7 @@
           "WIVES",
           "CUSCO MAYORS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8210,9 +7576,7 @@
         "Victim": [
           "PEASANTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "KIDNAPPING",
@@ -8229,9 +7593,7 @@
         "Victim": [
           "PEASANTS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "BOMBING",
@@ -8272,9 +7634,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8341,9 +7701,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8380,9 +7738,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8406,9 +7762,7 @@
           "AUGUSTO VILCAHUMAN",
           "ENGINEERS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -8428,9 +7782,7 @@
           "PERUVIANS",
           "JUSTICE OF THE PEACE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8452,9 +7804,7 @@
           "HECTOR AREVALO",
           "MAYOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8483,9 +7833,7 @@
           "MAYOR OF EL CARMEN DE ATRATO",
           "MAYOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -8497,9 +7845,7 @@
           "SIPI MAYOR",
           "MAYOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8520,9 +7866,7 @@
           "ALFREDO CHAMORRO",
           "MAYOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -8535,9 +7879,7 @@
           "ALFREDO CHAMORRO",
           "MAYOR"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -8553,9 +7895,7 @@
           "ONE OF THE BODYGUARDS",
           "BODYGUARDS"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -8567,9 +7907,7 @@
           "MAN",
           "INDIVIDUAL"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -8583,9 +7921,7 @@
           "JUAN CARLOS VEGA LLONA",
           "NAVAL ATTACHE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8599,9 +7935,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8623,9 +7957,7 @@
           "PROFESSOR",
           "HEAD OF THE LAW DEPARTMENT"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8671,9 +8003,7 @@
           "GARRISON"
         ],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8687,9 +8017,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8703,9 +8031,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8740,9 +8066,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8775,9 +8099,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8797,9 +8119,7 @@
           "FERNANDO TORRES SILVA",
           "MILITARY JUDGE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       },
       {
         "incident_type": "ATTACK",
@@ -8813,9 +8133,7 @@
           "FERNANDO TORRES SILVA",
           "MILITARY JUDGE"
         ],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   },
@@ -8829,9 +8147,7 @@
         "PerpOrg": [],
         "Target": [],
         "Victim": [],
-        "Weapon": [
-          "-"
-        ]
+        "Weapon": []
       }
     ]
   }

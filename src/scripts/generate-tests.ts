@@ -29,7 +29,7 @@ const FIELDS: DynField[] = [
     "id": "PerpInd",
     "label": "Perpetrator Individuals",
     "type": "textarea",
-    "description": "List the **individual people** suspected of, responsible for, or claiming the incident. Use one item per person, separated by commas. Use canonical personal names: “First Last” (e.g., \"Juan Pérez\"). Keep original diacritics and capitalization. **Do include** known aliases in parentheses if mentioned (e.g., \"Roberto d’Aubuisson (alias Roberto)\") only when helpful for disambiguation. **Do not include** titles/ranks (Col., Gen.), roles (Minister), or organizations here; those belong in PerpOrg. If only a role is given without a name (e.g., \"an army captain\"), leave this field empty. If perpetrators are unknown or only described as a crowd/mob, leave empty. Examples: \"Ignacio X.\", \"John Doe\"."
+    "description": "List the **individual people** responsible or claiming the incident. Use one item per person, separated by commas. Use canonical personal names when present (e.g., “First Last”). **If no personal names are given, include role-based actor phrases explicitly mentioned in the text** (e.g., “Soldiers”, “Troops”, “Gunmen”, “National Police officers”, “Guatemalan army troops”, “Cobán base troops”). **Do not** list organizations here (e.g., FMLN, MRTA, ELN, Guatemalan Army)—those belong in PerpOrg. Use only phrases that appear in the NEW transcript; don’t infer."
   },
   {
     "id": "PerpOrg",
@@ -41,7 +41,7 @@ const FIELDS: DynField[] = [
     "id": "Target",
     "label": "Target",
     "type": "textarea",
-    "description": "List the **intended target(s)** of the attack—people, institutions, facilities, or assets the perpetrators aimed at. Separate multiple entries with commas. Use concise, specific noun phrases: e.g., \"UCA campus\", \"Power lines\", \"National Guard convoy\", \"U.S. Embassy\", \"Treasury Police outpost\", \"Electrical substation\", \"Bus carrying soldiers\". **Do not** put victim names here (those go to Victim). **Do not** put weapons or methods here. If unclear whether an object was targeted or incidental, omit it. Prefer concrete entities over broad areas (\"San Miguel\" is too broad unless the city itself was the target)."
+    "description": "List the intended target(s) **explicitly named** in the text — the people, institutions, facilities, or assets the perpetrators **aimed at**. Fill this only when the text clearly states the aim using phrases like “attack against X,” “bombed X,” “attack on X,” “ambush on X convoy,” “set fire to X,” “kidnapped X,” etc. **Do not** infer targets from casualty mentions or generic actions (e.g., “fired at them,” “killed N people”) when no target is named. **Do not** copy victims into Target. In **mistaken-identity or accidental-fire** cases, leave Target empty **unless** the intended target is explicitly named (e.g., “a rebel column”). Prefer concise, specific noun phrases (e.g., “UCA campus,” “National Guard convoy,” “Electrical substation”). If unclear or not stated, leave empty."
   },
   {
     "id": "Victim",
@@ -49,11 +49,11 @@ const FIELDS: DynField[] = [
     "type": "textarea",
     "description": "List those **harmed, killed, or directly threatened**. Separate with commas. Accept both **individual names** (\"Ignacio Ellacuría\") and **category labels** when names aren’t given (\"Civilians\", \"Jesuit priests\", \"University student\", \"National Guard soldiers\"). Include role descriptors when they uniquely identify the victim group (\"UCA director\", \"UCA human rights institute director\"). **Do not** list organizations here unless the organization itself suffered as a corporate entity (those belong in Target). Avoid duplicates (e.g., if both \"Priests\" and specific priest names are present, keep the most informative items). If no victims are reported, leave empty."
   },
-  {
+    {
     "id": "Weapon",
     "label": "Weapon",
     "type": "textarea",
-    "description": "List the **weapons or methods** used. Separate multiple entries with commas. Use clear, generic names unless a specific model is given. Examples: \"Bomb\", \"Grenade\", \"RPG-7\", \"AK-47\", \"Firearms\", \"Explosive device\", \"Land mine\", \"Arson\", \"Molotov cocktail\". Prefer the **specific model** when explicitly stated (\"RPG-7\" rather than \"Rocket launcher\"). If the account only mentions effects (\"explosion\", \"blast\") without naming the device, use \"Explosive device\". **Do not** include places, targets, or perpetrator names here. If unknown, leave empty."
+    "description": "List the **weapons or methods** used. Separate multiple entries with commas. Use clear, generic names unless a specific model is given. Examples: \"Bomb\", \"Grenade\", \"RPG-7\", \"AK-47\", \"Explosive device\", \"Land mine\", \"Arson\", \"Molotov cocktail\". **Fill this field ONLY if the transcript explicitly names a weapon noun (device or method)**—e.g., bomb, grenade, mine, rifle, pistol, gun, AK-47, RPG-7, mortar, rocket, artillery, Molotov, arson. **Do NOT infer from verbs** like \"fired\", \"shot\", \"opened fire\", \"attacked\" or generic terms like \"gunfire\" if no weapon noun is named; in such cases **leave the field empty**. If the account mentions effects like \"explosion\"/\"blast\" without naming the device, use **\"Explosive device\"**. Do not include places, targets, or perpetrator names here. If unknown, leave empty. Ignore few-shot examples unless the same explicit weapon noun appears in the NEW transcript."
   }
 ]
 ;

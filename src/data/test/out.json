@@ -4,27 +4,33 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 13957
+        "duration_ms": 14561
       },
       "error": null
     },
     "answers": {
       "incident_type": "ATTACK",
-      "PerpInd": [],
+      "PerpInd": [
+        "Guatemalan army troops",
+        "Northeastern Coban base troops",
+        "Soldiers"
+      ],
       "PerpOrg": [
         "Guatemalan Army"
       ],
       "Target": [
-        "Civil Self-Defense Patrol (PAC) members"
+        "Civil self-defense patrol (PAC) members",
+        "Civilian patrol unit"
       ],
       "Victim": [
         "Indian peasants",
-        "Civil Self-Defense Patrol (PAC) members",
+        "Peasants",
+        "Civil self-defense patrol (PAC) members",
+        "Civilian patrol unit",
+        "Civilians",
         "17-year-old"
       ],
-      "Weapon": [
-        "Firearms"
-      ]
+      "Weapon": []
     }
   },
   {
@@ -32,29 +38,31 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 14440
+        "duration_ms": 11615
       },
       "error": null
     },
     "answers": {
       "incident_type": "BOMBING",
-      "PerpInd": [],
+      "PerpInd": [
+        "Members of the Colombian guerrillas",
+        "Five alleged Colombian guerrillas"
+      ],
       "PerpOrg": [
-        "Colombian drug trafficking gangs",
         "Colombian guerrillas",
-        "Army of National Liberation Army"
+        "Army of National Liberation Army",
+        "Colombian drug trafficking gangs"
       ],
       "Target": [
         "National Guard patrol",
         "National Guard jeep"
       ],
       "Victim": [
-        "Venezuelan soldiers",
-        "Guards"
+        "Five Venezuelan soldiers",
+        "Five guards"
       ],
       "Weapon": [
-        "Explosives",
-        "Remote-controlled explosive device"
+        "Explosives"
       ]
     }
   },
@@ -63,7 +71,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 11671
+        "duration_ms": 10621
       },
       "error": null
     },
@@ -90,13 +98,16 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 17410
+        "duration_ms": 14816
       },
       "error": null
     },
     "answers": {
       "incident_type": "ASSASSINATION",
-      "PerpInd": [],
+      "PerpInd": [
+        "PAID ASSASSINS",
+        "SEVERAL ARMED INDIVIDUALS"
+      ],
       "PerpOrg": [],
       "Target": [
         "TWO NATIONAL POLICE OFFICERS ASSIGNED TO THE DIJIN DIRECTORATE OF JUDIDIAL POLICE AND INVESTIGATIONS INTELLIGENCE CORPS",
@@ -106,9 +117,7 @@
         "SERGEANT CARLOS JULIO BONILLA",
         "CORPORAL LUIS ALBERTO CHAVEZ"
       ],
-      "Weapon": [
-        "Firearms"
-      ]
+      "Weapon": []
     }
   },
   {
@@ -116,7 +125,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 13105
+        "duration_ms": 10103
       },
       "error": null
     },
@@ -124,14 +133,14 @@
       "incident_type": "BOMBING",
       "PerpInd": [],
       "PerpOrg": [
-        "EXTRADITABLES"
+        "THE EXTRADITABLES"
       ],
       "Target": [
         "AVIANCA'S BOEING 727"
       ],
       "Victim": [
         "VICTIMS OF AVIANCA'S BOEING 727",
-        "FIVE INFORMERS ON THE PLANE"
+        "FIVE INFORMERS"
       ],
       "Weapon": [
         "Explosive device"
