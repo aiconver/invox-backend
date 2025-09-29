@@ -1,0 +1,141 @@
+[
+  {
+    "id": "TST2-MUC4-0068",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 13957
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ATTACK",
+      "PerpInd": [],
+      "PerpOrg": [
+        "Guatemalan Army"
+      ],
+      "Target": [
+        "Civil Self-Defense Patrol (PAC) members"
+      ],
+      "Victim": [
+        "Indian peasants",
+        "Civil Self-Defense Patrol (PAC) members",
+        "17-year-old"
+      ],
+      "Weapon": [
+        "Firearms"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0044",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 14440
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "Colombian drug trafficking gangs",
+        "Colombian guerrillas",
+        "Army of National Liberation Army"
+      ],
+      "Target": [
+        "National Guard patrol",
+        "National Guard jeep"
+      ],
+      "Victim": [
+        "Venezuelan soldiers",
+        "Guards"
+      ],
+      "Weapon": [
+        "Explosives",
+        "Remote-controlled explosive device"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0055",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 11671
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "KIDNAPPING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "TUPAC AMARU REVOLUTIONARY MOVEMENT",
+        "MRTA"
+      ],
+      "Target": [
+        "HECTOR DELGADO PARKER"
+      ],
+      "Victim": [
+        "HECTOR DELGADO PARKER",
+        "DELGADO'S DRIVER",
+        "DELGADO'S BODYGUARD"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0061",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 17410
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ASSASSINATION",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "TWO NATIONAL POLICE OFFICERS ASSIGNED TO THE DIJIN DIRECTORATE OF JUDIDIAL POLICE AND INVESTIGATIONS INTELLIGENCE CORPS",
+        "NEWSPAPER EL SIGLO'S FACILITIES"
+      ],
+      "Victim": [
+        "SERGEANT CARLOS JULIO BONILLA",
+        "CORPORAL LUIS ALBERTO CHAVEZ"
+      ],
+      "Weapon": [
+        "Firearms"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0020",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 13105
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "EXTRADITABLES"
+      ],
+      "Target": [
+        "AVIANCA'S BOEING 727"
+      ],
+      "Victim": [
+        "VICTIMS OF AVIANCA'S BOEING 727",
+        "FIVE INFORMERS ON THE PLANE"
+      ],
+      "Weapon": [
+        "Explosive device"
+      ]
+    }
+  }
+]

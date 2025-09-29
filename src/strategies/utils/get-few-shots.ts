@@ -9,13 +9,16 @@ const TEMPLATE_ID = process.env.TEMPLATE_ID      ?? "muc4-v1";
 const OS_URL      = process.env.OPENSEARCH_URL   ?? "http://opensearch:9200";
 const MODEL       = process.env.EMBEDDING_MODEL  ?? "text-embedding-3-large";
 
-// You can tweak this to keep examples concise in the prompt.
+// Keep examples short in the prompt.
 const MAX_EXAMPLE_CHARS = Number(process.env.FEWSHOT_MAX_CHARS ?? 1200);
+
+// Always skip the top-1 nearest neighbor (to avoid identical test doc leakage)
+const SKIP_TOP = 1;
 
 const os = new OpenSearch({ node: OS_URL });
 
 type FewShot = {
-  text: string; // exemplar transcript (optionally truncated)
+  text: string;
   expected: Record<string, { value: unknown | null; evidence?: { transcriptSnippet?: string } }>;
 };
 
@@ -26,10 +29,9 @@ function clampK(n?: number) {
   return Math.min(5, k);
 }
 
-
 async function embedForTemplate(text: string) {
   const { embedding } = await embed({
-    model: openaiProvider.textEmbeddingModel(MODEL), // e.g. "text-embedding-3-small" or "text-embedding-3-large"
+    model: openaiProvider.textEmbeddingModel(MODEL),
     value: `templateId=${TEMPLATE_ID}\n${text}`,
   });
   return embedding;
@@ -41,17 +43,17 @@ function toExpectedShape(
 ): FewShot["expected"] {
   const expected: FewShot["expected"] = {};
   for (const f of fields) {
-    const v = rawResult && Object.prototype.hasOwnProperty.call(rawResult, f.id)
-      ? (rawResult as any)[f.id]
-      : null;
+    const v =
+      rawResult && Object.prototype.hasOwnProperty.call(rawResult, f.id)
+        ? (rawResult as any)[f.id]
+        : null;
     expected[f.id] = { value: v ?? null };
   }
   return expected;
 }
 
 /**
- * Retrieve up to k (3..11) most similar exemplars and return few-shots:
- *   { text, expected } where expected matches your schema: { fieldId: { value } }
+ * Fetch k+1 neighbors, drop the first (closest), return the next k.
  */
 export async function getFewShotsFromTranscript(
   transcript: string,
@@ -61,9 +63,8 @@ export async function getFewShotsFromTranscript(
   const k = clampK(kInput);
   const vector = await embedForTemplate(transcript);
 
-  // Use script_score + knn_score (compatible with nmslib engine).
   const body: any = {
-    size: k,
+    size: k + SKIP_TOP, // ask for one extra
     query: {
       script_score: {
         query: {
@@ -86,18 +87,20 @@ export async function getFewShotsFromTranscript(
   };
 
   const res = await os.search({ index: INDEX, body });
-  const hits = (res as any).body?.hits?.hits ?? (res as any).hits?.hits ?? [];
+  const hits: any[] =
+    (res as any).body?.hits?.hits ?? (res as any).hits?.hits ?? [];
 
-  const fewShots: FewShot[] = hits.map((h: any) => {
+  // Drop the top-1, keep up to k
+  const chosen = hits.slice(SKIP_TOP, SKIP_TOP + k);
+
+  return chosen.map((h: any) => {
     const fullText: string = h._source?.transcript ?? "";
-    const text = fullText.length > MAX_EXAMPLE_CHARS
-      ? fullText.slice(0, MAX_EXAMPLE_CHARS)
-      : fullText;
+    const text =
+      fullText.length > MAX_EXAMPLE_CHARS
+        ? fullText.slice(0, MAX_EXAMPLE_CHARS)
+        : fullText;
 
     const expected = toExpectedShape(fields, h._source?.result);
-
     return { text, expected };
   });
-
-  return fewShots;
 }

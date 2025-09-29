@@ -153,9 +153,19 @@ function buildPrompt({
     })
     .join("\n\n");
 
+  // — replace the current fieldList builder with this —
   const fieldList = fields
-    .map((f) => `${f.id} (${f.label}, type=${f.type}${f.required ? ", required" : ""})`)
-    .join("\n");
+    .map((f) => {
+      const meta = `${f.id} (${f.label}, type=${f.type}${f.required ? ", required" : ""})`;
+      const opts = f.type === "enum" && f.options?.length
+        ? `\n  - ${de ? "Zulässige Werte" : "Allowed values"}: ${f.options.join(", ")}`
+        : "";
+      const desc = f.description
+        ? `\n  - ${de ? "Leitlinien" : "Guidelines"}: ${f.description}`
+        : "";
+      return meta + opts + desc;
+    })
+    .join("\n\n");
 
   const oldLabel = de ? "ALTES Transkript:" : "OLD transcript:";
   const newLabel = de ? "NEUES Transkript:" : "NEW transcript:";
