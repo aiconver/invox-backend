@@ -98,7 +98,7 @@ type OutRow = {
 async function run() {
   const inputPath  = process.argv[2];
   const outputPath = process.argv[3] ?? "test-output.json";
-  const limitArg   = process.argv[4] ? Number(process.argv[4]) : 5;
+  const limitArg   = process.argv[4] ? Number(process.argv[4]) : 20;
 
   if (!inputPath) {
     console.error("Usage: npx ts-node src/scripts/generate-tests.ts <input.json> [output.json] [limit=5]");
@@ -108,7 +108,7 @@ async function run() {
   const absIn  = path.resolve(inputPath);
   const raw    = fs.readFileSync(absIn, "utf8");
   const rows   = JSON.parse(raw) as InRow[];
-  const limit  = Number.isFinite(limitArg) && limitArg! > 0 ? limitArg : 5;
+  const limit  = Number.isFinite(limitArg) && limitArg! > 0 ? limitArg : 20;
 
   const out: OutRow[] = [];
   for (let i = 0; i < Math.min(limit, rows.length); i++) {
