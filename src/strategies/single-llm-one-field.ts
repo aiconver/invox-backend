@@ -1,4 +1,4 @@
-import { CurrentFieldValue, GetFilledTemplateInput, GetFilledTemplateResult } from "@/types/fill-form";
+import { CurrentFieldValue, GetFilledTemplateInput, GetFilledTemplateResult } from "../types/fill-form";
 import { runField } from "./utils/run-field";
 import { generateChatResponse } from "./utils/chatbot-helper";
 

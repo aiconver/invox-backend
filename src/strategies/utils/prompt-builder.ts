@@ -1,9 +1,7 @@
-import { FormTemplateField } from "@/types/fill-form";
+import { FormTemplateField } from "../../types/fill-form";
+import { isDE } from "../single-llm-all-field";
 
-function isDE(lang?: string) {
-  return (lang ?? "en").toLowerCase().startsWith("de");
-}
-
+// In your prompt-builder.ts - completely generic version
 export function buildPrompt({
   field,
   oldText,
@@ -21,7 +19,7 @@ export function buildPrompt({
   oldText: string;
   newText: string;
   templateId?: string;
-  lang: string;  // "en" | "de"
+  lang: string;
   locale: string;
   timezone: string;
   descLine?: string | null;
@@ -43,6 +41,27 @@ export function buildPrompt({
     ? `Aktueller Wert: ${currentValue !== undefined ? JSON.stringify(currentValue) : "null"}`
     : `Current value: ${currentValue !== undefined ? JSON.stringify(currentValue) : "null"}`;
 
+  // 🚨 GENERIC FIX: Add formatting rules based on field type, not field ID
+  const formattingRules = [...rules];
+  
+  // For textarea fields (which typically contain lists), specify comma-separated format
+  if (field.type === "textarea") {
+    formattingRules.push(
+      de 
+        ? `Bei mehreren Werten: Als komma-getrennte Zeichenkette zurückgeben (z.B. "Wert1, Wert2, Wert3"). Nicht als Array.`
+        : `For multiple values: Return as comma-separated string (e.g., "value1, value2, value3"). Not as array.`
+    );
+  }
+
+  // For enum fields, restrict to allowed values
+  if (field.type === "enum" && field.options?.length) {
+    formattingRules.push(
+      de
+        ? `Nur einer dieser Werte: ${field.options.join(", ")}`
+        : `Only one of these values: ${field.options.join(", ")}`
+    );
+  }
+
   const rulesTitle = de ? "Regeln:" : "Rules:";
 
   const oldLabel = de
@@ -53,14 +72,31 @@ export function buildPrompt({
     ? "NEUES Transkript (AUSSCHLIESSLICH hieraus extrahieren):"
     : "NEW transcript (extract ONLY from this):";
 
-  // Optional language nudge (helps the model stay in the right language in any free text)
-  const languageHint = de
-    ? "Antworten in DEUTSCH. Freitext nur wenn erforderlich."
-    : "Answer in ENGLISH. Only include free text when required.";
+  // 🚨 GENERIC OUTPUT FORMAT - works for any field type
+  const outputFormat = de
+    ? `AUSGABEFORMAT: { "value": "string_oder_null", "confidence": zahl_zwischen_0_und_1 }`
+    : `OUTPUT FORMAT: { "value": "string_or_null", "confidence": number_between_0_and_1 }`;
+
+  // 🚨 GENERIC EXAMPLES - based on field type, not specific fields
+  let examples = "";
+  if (field.type === "textarea") {
+    examples = de
+      ? `BEISPIELE:\n- Mehrere Werte: {"value": "Wert1, Wert2, Wert3", "confidence": 0.9}\n- Keine Werte: {"value": null, "confidence": 0.8}\n- Ein Wert: {"value": "Wert1", "confidence": 0.95}`
+      : `EXAMPLES:\n- Multiple values: {"value": "value1, value2, value3", "confidence": 0.9}\n- No values: {"value": null, "confidence": 0.8}\n- Single value: {"value": "value1", "confidence": 0.95}`;
+  } else if (field.type === "enum") {
+    examples = de
+      ? `BEISPIELE:\n- Gültiger Wert: {"value": "${field.options?.[0] || "OPTION"}", "confidence": 0.9}\n- Kein Wert: {"value": null, "confidence": 0.8}`
+      : `EXAMPLES:\n- Valid value: {"value": "${field.options?.[0] || "OPTION"}", "confidence": 0.9}\n- No value: {"value": null, "confidence": 0.8}`;
+  } else {
+    examples = de
+      ? `BEISPIELE:\n- Mit Wert: {"value": "Beispielwert", "confidence": 0.9}\n- Ohne Wert: {"value": null, "confidence": 0.8}`
+      : `EXAMPLES:\n- With value: {"value": "example value", "confidence": 0.9}\n- Without value: {"value": null, "confidence": 0.8}`;
+  }
 
   return [
     headerLine,
-    languageHint,
+    outputFormat,
+    examples,
     "",
     fieldLine,
     currentLine,
@@ -69,12 +105,12 @@ export function buildPrompt({
     ...(perFieldDemos.length ? ["", ...perFieldDemos] : []),
     "",
     rulesTitle,
-    ...rules.map(r => `- ${r}`),
+    ...formattingRules.map(r => `- ${r}`),
     "",
     oldLabel,
     oldText || "(leer)",
     "",
     newLabel,
     newText,
-  ].join("\n");
+  ].filter(line => line).join("\n");
 }

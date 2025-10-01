@@ -86,7 +86,7 @@ function normalizeLLMValue(field: FormTemplateField, v: unknown) {
 }
 
 
-function isDE(lang?: string) {
+export function isDE(lang?: string) {
   return (lang ?? "en").toLowerCase().startsWith("de");
 }
 

@@ -2,6 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { singleLlmAllField } from "../strategies/single-llm-all-field";
+import { singleLlmOneField } from "../strategies/single-llm-one-field";
 
 // --- fields used for extraction (same as your app) ---
 type DynFieldType = "text" | "textarea" | "date" | "number" | "enum";
@@ -23,40 +24,39 @@ const FIELDS: DynField[] = [
     "type": "enum",
     "required": true,
     "options": ["ATTACK", "BOMBING", "KIDNAPPING", "ASSASSINATION", "ARSON", "HIJACKING", "OTHER"],
-    "description": "Select exactly one category that best summarizes the event. Use domain intuition to pick the primary act (not every sub-act). • BOMBING: use when an explosive device detonated (IED, grenade, car bomb, mine, etc.). • ARSON: deliberate setting of fire without an explicit explosive device. • ASSASSINATION: targeted killing of a specific individual (political, military, civic). • KIDNAPPING: abduction, hostage-taking, detention by perpetrators. • HIJACKING: seizure of a vehicle/aircraft/vessel. • ATTACK: general armed attack (shooting, shelling, ambush, clashes) that doesn’t clearly fit the above. • OTHER: clearly violent incident that fits none of the categories. If multiple acts occur, choose the **most salient** one (e.g., bomb detonation during a broader clash → BOMBING). Keep the value exactly as one of the options (UPPERCASE)."
+    "description": "Select exactly ONE category based on explicit evidence from the CURRENT violent incident. CRITICAL RULES: • BOMBING: ONLY if 'bomb', 'explosion', 'dynamic', 'explosive', 'car bomb', or specific explosive device is explicitly mentioned in connection with the current incident. • ARSON: ONLY if 'fire', 'arson', 'burned', or 'set fire' is explicitly stated as part of the current attack. • ASSASSINATION: ONLY for targeted killings of specific named individuals where the text explicitly states it was an assassination. • KIDNAPPING: ONLY if 'kidnap', 'hostage', 'abduct' explicitly stated with current incident. • HIJACKING: ONLY if 'hijack', 'seizure of vehicle' explicitly stated. • ATTACK: general armed conflict when no specific above category fits. • OTHER: only if clearly violent but fits none above. DO NOT use categories for past incidents, metaphorical violence, or economic sabotage. If uncertain or no explicit violent incident described, leave empty."
   },
   {
     "id": "PerpInd",
     "label": "Perpetrator Individuals",
     "type": "textarea",
-    "description": "List the **individual people** responsible or claiming the incident. Use one item per person, separated by commas. Use canonical personal names when present (e.g., “First Last”). **If no personal names are given, include role-based actor phrases explicitly mentioned in the text** (e.g., “Soldiers”, “Troops”, “Gunmen”, “National Police officers”, “Guatemalan army troops”, “Cobán base troops”). **Do not** list organizations here (e.g., FMLN, MRTA, ELN, Guatemalan Army)—those belong in PerpOrg. Use only phrases that appear in the NEW transcript; don’t infer."
+    "description": "List ONLY specific named individuals EXPLICITLY identified as direct perpetrators in the CURRENT violent incident. CRITICAL RULES: 1. ONLY include people explicitly named as performing violent acts in the current incident (e.g., 'X planted the bomb', 'Y led the attack', 'Z fired weapons'). 2. NEVER include organizations, groups, or collective names - those go in PerpOrg. 3. NEVER include generic terms like 'terrorists', 'gunmen', 'attackers' without specific names. 4. NEVER include people only mentioned in organizational roles without direct action in current incident. 5. NEVER include victims, bystanders, or people only mentioned as being arrested/investigated. 6. ONLY use full personal names (e.g., 'PABLO ESCOBAR GAVIRIA') not roles or descriptions. 7. If individuals are mentioned in historical context or for other incidents, DO NOT include. Return empty if no explicit perpetrator individuals are named for the current incident."
   },
   {
-    "id": "PerpOrg",
+    "id": "PerpOrg", 
     "label": "Perpetrator Organizations",
     "type": "textarea",
-    "description": "List the **organizations or groups** suspected of, responsible for, or claiming the incident. Separate multiple entries with commas. Use the group’s canonical short name if present (e.g., \"FMLN\", \"ERP\"). Normalize dotted acronyms to plain uppercase (e.g., \"F.M.L.N.\" → \"FMLN\"). If there is **competing attribution** (e.g., police blame Group A; Group B denies), include all named groups mentioned. If a subgroup is specified, use the most specific label given (e.g., \"FMLN – Radio Venceremos\" → \"FMLN\"). Do **not** list state forces unless they are explicitly acting as perpetrators (e.g., death squads tied to security forces). If perpetrators are unknown or only described generically (\"guerrillas\", \"paramilitaries\" without a name), leave empty."
+    "description": "List ONLY specific organizations/groups EXPLICITLY identified as responsible for the CURRENT violent incident. CRITICAL RULES: 1. ONLY include groups explicitly named in connection with the current incident (e.g., 'FMLN claimed responsibility', 'police blame Group X', 'Zarate Willka group claimed the attack'). 2. NEVER include individual names - those go in PerpInd. 3. NEVER include generic terms like 'guerrillas', 'terrorists', 'gunmen', 'drug traffickers' without specific organization names. 4. NEVER include government forces, police, or military unless they are explicitly acting as perpetrators in the current incident. 5. ONLY use the canonical short names (e.g., 'FMLN' not 'Farabundo Marti National Liberation Front'). 6. DO NOT include media outlets, reporting organizations, or groups mentioned in historical context. 7. If organization is only suspected or investigated without explicit connection to current incident, DO NOT include. Return empty if no explicit perpetrator organizations are named for the current incident."
   },
   {
     "id": "Target",
     "label": "Target",
     "type": "textarea",
-    "description": "List the intended target(s) **explicitly named** in the text — the people, institutions, facilities, or assets the perpetrators **aimed at**. Fill this only when the text clearly states the aim using phrases like “attack against X,” “bombed X,” “attack on X,” “ambush on X convoy,” “set fire to X,” “kidnapped X,” etc. **Do not** infer targets from casualty mentions or generic actions (e.g., “fired at them,” “killed N people”) when no target is named. **Do not** copy victims into Target. In **mistaken-identity or accidental-fire** cases, leave Target empty **unless** the intended target is explicitly named (e.g., “a rebel column”). Prefer concise, specific noun phrases (e.g., “UCA campus,” “National Guard convoy,” “Electrical substation”). If unclear or not stated, leave empty."
+    "description": "List ONLY the specific people, buildings, or institutions EXPLICITLY stated as the intended target of the CURRENT violent incident. CRITICAL RULES: 1. ONLY include entities explicitly named as targets using phrases like 'attack on X', 'bombed X', 'targeted X', 'against X', 'attack against X'. 2. NEVER infer targets from casualty locations or generic actions. 3. NEVER include victims here - victims go in Victim field. 4. ONLY include what was clearly the intended focus of the attack. 5. If the text says 'fired at them' or 'killed people' without naming a specific target, leave empty. 6. DO NOT include metaphorical targets or economic targets. Return empty if no explicit target is named for the current incident."
   },
   {
     "id": "Victim",
     "label": "Victim",
     "type": "textarea",
-    "description": "List those **harmed, killed, or directly threatened**. Separate with commas. Accept both **individual names** (\"Ignacio Ellacuría\") and **category labels** when names aren’t given (\"Civilians\", \"Jesuit priests\", \"University student\", \"National Guard soldiers\"). Include role descriptors when they uniquely identify the victim group (\"UCA director\", \"UCA human rights institute director\"). **Do not** list organizations here unless the organization itself suffered as a corporate entity (those belong in Target). Avoid duplicates (e.g., if both \"Priests\" and specific priest names are present, keep the most informative items). If no victims are reported, leave empty."
+    "description": "List ONLY people EXPLICITLY identified as directly harmed, killed, injured, or taken hostage in the CURRENT specific incident. CRITICAL RULES: 1. ONLY include individuals/groups explicitly stated as victims of violence in the current incident. 2. NEVER include people taken hostage who were not harmed - only include if killed, injured, or explicitly harmed. 3. NEVER include economic impacts, metaphorical harm, or general suffering. 4. NEVER include perpetrators. 5. ONLY use specific names when provided, otherwise use explicit descriptions from text. 6. If victims are mentioned generically without specific identification or harm, leave empty. 7. DO NOT include people from past incidents or historical context. Return empty if no explicit direct victims are named for the current incident."
   },
-    {
+  {
     "id": "Weapon",
     "label": "Weapon",
     "type": "textarea",
-    "description": "List the **weapons or methods** used. Separate multiple entries with commas. Use clear, generic names unless a specific model is given. Examples: \"Bomb\", \"Grenade\", \"RPG-7\", \"AK-47\", \"Explosive device\", \"Land mine\", \"Arson\", \"Molotov cocktail\". **Fill this field ONLY if the transcript explicitly names a weapon noun (device or method)**—e.g., bomb, grenade, mine, rifle, pistol, gun, AK-47, RPG-7, mortar, rocket, artillery, Molotov, arson. **Do NOT infer from verbs** like \"fired\", \"shot\", \"opened fire\", \"attacked\" or generic terms like \"gunfire\" if no weapon noun is named; in such cases **leave the field empty**. If the account mentions effects like \"explosion\"/\"blast\" without naming the device, use **\"Explosive device\"**. Do not include places, targets, or perpetrator names here. If unknown, leave empty. Ignore few-shot examples unless the same explicit weapon noun appears in the NEW transcript."
+    "description": "List ONLY weapons or methods EXPLICITLY named in connection with the CURRENT violent incident. CRITICAL RULES: 1. ONLY include if the text explicitly names a specific weapon type used in the current incident (bomb, grenade, dynamite, pistol, rifle, machinegun, car bomb, etc.). 2. NEVER infer from verbs like 'explosion', 'fired', 'shot', 'attack' without specific weapon mention. 3. NEVER include metaphorical or hypothetical weapons. 4. NEVER include chemicals, substances, or methods used in economic sabotage, poisoning, or non-violent contexts. 5. Include specific quantities when mentioned (e.g., '300 kg of dynamite') but only if part of current incident. 6. DO NOT include generic terms like 'weapons', 'arms', 'ammunition', 'explosives' without specific types. 7. If the text mentions effects like 'explosion' but doesn't name the device, leave empty. Return empty if no explicit weapons are named for the current incident."
   }
-]
-;
+];
 
 // --- helpers ---
 function toArray(v: unknown): string[] {
@@ -65,13 +65,6 @@ function toArray(v: unknown): string[] {
   const s = String(v).trim();
   if (!s || s === "-") return [];
   return s.split(",").map(x => x.trim()).filter(t => t && t !== "-");
-}
-
-// normalize enum to allowed values or empty string
-function toEnum(v: unknown, allowed: string[]): string {
-  if (v == null) return "";
-  const s = String(v).trim().toUpperCase();
-  return allowed.includes(s) ? s : "";
 }
 
 type InRow =
@@ -94,21 +87,54 @@ type OutRow = {
     Weapon: string[];
   };
 };
+// Updated helper function to convert comma-separated strings to arrays
+function toStringList(v: unknown): string[] {
+  if (v == null) return [];
+  
+  // If it's already an array, clean and return
+  if (Array.isArray(v)) {
+    return v
+      .map(String)
+      .map(s => s.trim())
+      .filter(s => s && s !== "-");
+  }
+  
+  // If it's a string, split by comma
+  if (typeof v === "string") {
+    const trimmed = v.trim();
+    if (!trimmed || trimmed === "-") return [];
+    
+    // Split by comma and clean each item
+    return trimmed
+      .split(",")
+      .map(s => s.trim())
+      .filter(s => s && s !== "-");
+  }
+  
+  return [];
+}
+
+// Keep existing toEnum function
+function toEnum(v: unknown, allowed: string[]): string {
+  if (v == null) return "";
+  const s = String(v).trim().toUpperCase();
+  return allowed.includes(s) ? s : "";
+}
 
 async function run() {
-  const inputPath  = process.argv[2];
+  const inputPath = process.argv[2];
   const outputPath = process.argv[3] ?? "test-output.json";
-  const limitArg   = process.argv[4] ? Number(process.argv[4]) : 20;
+  const limitArg = process.argv[4] ? Number(process.argv[4]) : 20;
 
   if (!inputPath) {
     console.error("Usage: npx ts-node src/scripts/generate-tests.ts <input.json> [output.json] [limit=5]");
     process.exit(1);
   }
 
-  const absIn  = path.resolve(inputPath);
-  const raw    = fs.readFileSync(absIn, "utf8");
-  const rows   = JSON.parse(raw) as InRow[];
-  const limit  = Number.isFinite(limitArg) && limitArg! > 0 ? limitArg : 20;
+  const absIn = path.resolve(inputPath);
+  const raw = fs.readFileSync(absIn, "utf8");
+  const rows = JSON.parse(raw) as InRow[];
+  const limit = Number.isFinite(limitArg) && limitArg! > 0 ? limitArg : 20;
 
   const out: OutRow[] = [];
   for (let i = 0; i < Math.min(limit, rows.length); i++) {
@@ -123,7 +149,7 @@ async function run() {
 
     const started = Date.now();
     try {
-      const res = await singleLlmAllField({
+      const res = await singleLlmOneField({
         oldTranscript: "",
         newTranscript: transcript,
         transcript,            // back-compat
@@ -135,14 +161,27 @@ async function run() {
       const ms = Date.now() - started;
       const filled = res.filled || {};
 
+      // 🚨 CRITICAL: Use toStringList instead of toArray for proper conversion
       const answers = {
         incident_type: toEnum(filled["incident_type"]?.value, INCIDENT_OPTIONS),
-        PerpInd: toArray(filled["PerpInd"]?.value),
-        PerpOrg: toArray(filled["PerpOrg"]?.value),
-        Target:  toArray(filled["Target"]?.value),
-        Victim:  toArray(filled["Victim"]?.value),
-        Weapon:  toArray(filled["Weapon"]?.value),
+        PerpInd: toStringList(filled["PerpInd"]?.value),
+        PerpOrg: toStringList(filled["PerpOrg"]?.value),
+        Target: toStringList(filled["Target"]?.value),
+        Victim: toStringList(filled["Victim"]?.value),
+        Weapon: toStringList(filled["Weapon"]?.value),
       };
+
+      // Optional: Log for debugging
+      if (process.env.DEBUG) {
+        console.log(`  Raw values:`, {
+          PerpInd: filled["PerpInd"]?.value,
+          PerpOrg: filled["PerpOrg"]?.value,
+        });
+        console.log(`  Converted:`, {
+          PerpInd: answers.PerpInd,
+          PerpOrg: answers.PerpOrg,
+        });
+      }
 
       out.push({
         id,
@@ -163,7 +202,14 @@ async function run() {
           timing: { duration_ms: ms },
           error: String(e?.message || e),
         },
-        answers: { incident_type: "", PerpInd: [], PerpOrg: [], Target: [], Victim: [], Weapon: [] },
+        answers: { 
+          incident_type: "", 
+          PerpInd: [], 
+          PerpOrg: [], 
+          Target: [], 
+          Victim: [], 
+          Weapon: [] 
+        },
       });
     }
   }

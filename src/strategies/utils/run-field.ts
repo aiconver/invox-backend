@@ -8,57 +8,62 @@ import {
   FormTemplateField,
 } from "@/types/fill-form";
 
-/** ───────── helpers (inlined) ───────── */
-
-function zodFieldValueSchema(field: FormTemplateField): z.ZodTypeAny {
-  switch (field.type) {
-    case "date":
-      // ISO date YYYY-MM-DD or null
-      return z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable();
-    case "number":
-      return z.number().finite().nullable();
-    case "enum":
-      if (field.options?.length) {
-        // use enum of provided options or null
-        return z.enum(field.options as [string, ...string[]]).nullable();
-      }
-      return z.string().nullable();
-    case "text":
-    case "textarea":
-    default: {
-      if (field.pattern) {
-        try {
-          const re = new RegExp(field.pattern);
-          return z.string().regex(re).nullable();
-        } catch {
-          // bad regex → fallback to free string/null
-          return z.string().nullable();
-        }
-      }
-      return z.string().nullable();
-    }
-  }
-}
-
-function attachOffsetsFromSnippet(
-  transcript: string,
-  snippet?: string
-): { startChar?: number; endChar?: number } {
-  if (!snippet) return {};
-  const idx = transcript.indexOf(snippet);
-  if (idx < 0) return {};
-  return { startChar: idx, endChar: idx + snippet.length };
-}
-
-function isEmptyValue(v: unknown): boolean {
-  return v == null || (typeof v === "string" && v.trim() === "");
-}
-
 function isDE(lang?: string) {
   return (lang ?? "en").toLowerCase().startsWith("de");
 }
 
-/** ───────── main function ───────── */
+// 🚨 CRITICAL: Proper value normalization matching gold standard format
+function normalizeValueForField(value: any, fieldType: string): any {
+  if (value === null || value === undefined) return null;
+  
+  // For textarea fields (entity lists), ensure comma-separated string format
+  if (fieldType === "textarea") {
+    if (Array.isArray(value)) {
+      // Filter out empty strings and join with comma
+      const filtered = value.filter(v => v && String(v).trim() !== "" && String(v).trim() !== "-");
+      return filtered.length > 0 ? filtered.join(", ") : null;
+    }
+    if (typeof value === "string") {
+      const trimmed = value.trim();
+      // Already a string - just validate it's not empty or "-"
+      return (trimmed && trimmed !== "-") ? trimmed : null;
+    }
+    return null;
+  }
+  
+  // For enum fields, return uppercase string or null
+  if (fieldType === "enum") {
+    if (typeof value === "string") {
+      const trimmed = value.trim().toUpperCase();
+      return (trimmed && trimmed !== "-") ? trimmed : null;
+    }
+    return null;
+  }
+  
+  // For text fields
+  if (fieldType === "text") {
+    if (typeof value === "string") {
+      const trimmed = value.trim();
+      return (trimmed && trimmed !== "-") ? trimmed : null;
+    }
+    return String(value).trim() || null;
+  }
+  
+  // For number fields
+  if (fieldType === "number") {
+    return typeof value === "number" ? value : null;
+  }
+  
+  // For date fields
+  if (fieldType === "date") {
+    if (typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+      return value;
+    }
+    return null;
+  }
+  
+  return value;
+}
 
 export async function runField({
   field,
@@ -79,7 +84,7 @@ export async function runField({
   newText: string;
   combinedTranscript: string;
   templateId?: string;
-  lang: string; // "en" | "de"
+  lang: string;
   locale: string;
   timezone: string;
   fewShots?: any[];
@@ -87,132 +92,89 @@ export async function runField({
   current?: CurrentFieldValue;
   modelName: string;
 }): Promise<[string, FilledField]> {
+
+  // Schema accepts both strings and arrays for flexibility
   const fieldSchema = z.object({
-    value: zodFieldValueSchema(field),
+    value: z.union([
+      z.string().nullable(),
+      z.number().nullable(),
+      z.array(z.string()).nullable(),
+      z.null()
+    ]),
     confidence: z.number().min(0).max(1).optional(),
-    evidence: z
-      .object({ transcriptSnippet: z.string().min(1).max(200).optional() })
-      .optional(),
+    evidence: z.object({
+      transcriptSnippet: z.string().max(200).optional()
+    }).optional(),
   });
 
-  const de = isDE(lang);
+  try {
+    const de = isDE(lang);
 
-  // Localized few-shot demos for this field
-  const perFieldDemos = (fewShots ?? [])
-    .filter((ex: any) => ex?.expected?.hasOwnProperty(field.id))
-    .slice(0, 3)
-    .map((ex: any) => {
-      const expectedVal = ex.expected[field.id];
-      const txt = String(ex.text).trim().slice(0, 500);
-      const expectedStr = expectedVal === null ? "null" : JSON.stringify(expectedVal);
-      const exampleLabel = de ? "Beispiel" : "Example";
-      const newLabel = de ? "NEUES Transkript" : "NEW transcript";
-      const expectedLabel = de ? "Erwartet" : "Expected";
-      return `${exampleLabel}
-${newLabel}: ${txt}
-${expectedLabel} ${field.label}: ${expectedStr}`;
+    const prompt = buildPrompt({
+      field,
+      oldText, 
+      newText,
+      templateId,
+      lang,
+      locale,
+      timezone,
+      descLine: field.description,
+      perFieldDemos: [],
+      rules: [
+        "Extract from NEW transcript only",
+        "For multiple values: return comma-separated string",
+        "READ CAREFULLY: Distinguish perpetrators from victims, responders, and news sources",
+        "If unsure whether entity is perpetrator vs victim/responder → do NOT include",
+        "Empty field is better than wrong extraction"
+      ],
+      currentValue: current?.value,
     });
 
-  // Localized extraction rules
-  const rules: string[] = de
-    ? [
-        "Werte NUR aus dem NEUEN Transkript extrahieren.",
-        "Das ALTE Transkript dient nur als Kontext; NICHT daraus ableiten.",
-        "Wenn das NEUE Transkript dieses Feld nicht erwähnt, setze value auf null.",
-        "Datumsangaben MÜSSEN im ISO-Format YYYY-MM-DD sein. Zahlen als reine Dezimal-/Ganzzahlen (ohne Einheiten).",
-      ]
-    : [
-        "You must ONLY extract values from the NEW transcript.",
-        "The OLD transcript is context only; do NOT use it.",
-        "If the NEW transcript does not mention this field, set value to null.",
-        "Dates MUST be ISO YYYY-MM-DD. Numbers must be plain decimals/integers (no units).",
-      ];
+    const { object } = await generateObject({
+      model: openai(modelName),
+      schema: fieldSchema,
+      prompt,
+      temperature: 0.1, // Lower temperature for more consistent extraction
+    });
 
-  if (field.type === "enum" && field.options?.length) {
-    rules.push(
-      de
-        ? `Für Enums NUR eine der vorgegebenen Optionen exakt verwenden: ${field.options.join(
-            ", "
-          )}`
-        : `For enums, ONLY use one of the provided options exactly: ${field.options.join(", ")}`
-    );
-  }
-  if (options?.returnEvidence) {
-    rules.push(
-      de
-        ? "Wenn value nicht null ist, füge ein wörtliches Snippet aus dem NEUEN Transkript in evidence.transcriptSnippet ein (≤ 200 Zeichen)."
-        : "When value is non-null, include a literal snippet from the NEW transcript in evidence.transcriptSnippet (≤ 200 chars)."
-    );
-  }
+    // 🚨 CRITICAL: Normalize the value to match gold standard format
+    const normalizedValue = normalizeValueForField(object.value, field.type);
+    
+    const currentVal = current?.value ?? null;
+    let finalVal = currentVal;
+    let usedProposed = false;
+    
+    // Only update if not locked and we have a new value
+    if (!current?.locked && normalizedValue !== null) {
+      finalVal = normalizedValue;
+      usedProposed = true;
+    }
 
-  const descLine = field.description
-    ? (de ? "Feldbeschreibung: " : "Field description: ") +
-      field.description.slice(0, 240)
-    : null;
+    const changed = (currentVal ?? null) !== (finalVal ?? null);
 
-  const prompt = buildPrompt({
-    field,
-    oldText,
-    newText,
-    templateId,
-    lang,
-    locale,
-    timezone,
-    descLine,
-    perFieldDemos,
-    rules,
-    currentValue: current?.value,
-  });
-
-  const { object } = await generateObject({
-    model: openai(modelName),
-    schema: fieldSchema,
-    prompt,
-  });
-
-  // Proposed value from model
-  const raw = object?.value ?? null;
-  let proposed = isEmptyValue(raw) ? null : (raw as FilledField["value"]);
-
-  // Evidence must come from NEW transcript
-  const snippet = object?.evidence?.transcriptSnippet?.trim() || "";
-  const snippetFoundInNew =
-    proposed !== null &&
-    !!snippet &&
-    newText.toLowerCase().includes(snippet.toLowerCase());
-
-  if (proposed !== null && !snippetFoundInNew) {
-    // reject evidence that can't be found in NEW transcript
-    proposed = null;
-  }
-
-  // Overwrite policy
-  const currentVal = current?.value ?? null;
-  let finalVal = currentVal;
-  let usedProposed = false;
-  if (!current?.locked && proposed !== null) {
-    finalVal = proposed;
-    usedProposed = true;
-  }
-
-  const changed = (currentVal ?? null) !== (finalVal ?? null);
-  const previousValue = changed ? (currentVal ?? null) : undefined;
-
-  // Offsets (search over combined; snippet is from NEW)
-  const offsets = attachOffsetsFromSnippet(combinedTranscript, snippet || undefined);
-
-  return [
-    field.id,
-    {
-      value: finalVal,
-      confidence: usedProposed ? object?.confidence : undefined,
-      changed,
-      previousValue,
-      source: usedProposed ? "ai" : (current?.source ?? "ai"),
-      evidence: {
-        transcriptSnippet: snippet || undefined,
-        ...offsets,
+    return [
+      field.id,
+      {
+        value: finalVal,
+        confidence: object.confidence,
+        changed,
+        previousValue: changed ? currentVal : undefined,
+        source: usedProposed ? "ai" : (current?.source ?? "ai"),
+        evidence: object.evidence || {},
       },
-    },
-  ];
+    ];
+    
+  } catch (error: any) {
+    console.error(`Field ${field.id} extraction failed:`, error.message);
+    
+    // Return current value as fallback
+    return [
+      field.id,
+      {
+        value: current?.value ?? null,
+        changed: false,
+        source: current?.source ?? "ai",
+      },
+    ];
+  }
 }

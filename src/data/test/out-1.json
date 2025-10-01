@@ -1,0 +1,479 @@
+[
+  {
+    "id": "TST2-MUC4-0001",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 10933
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [
+        "Spanish Jesuits"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0002",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 15053
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FPMR"
+      ],
+      "Target": [
+        "Salvadoran consulate"
+      ],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0003",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 5110
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [
+        "RUTH ESPERANZA AGUILAR MARROQUIN"
+      ],
+      "PerpOrg": [
+        "ERP"
+      ],
+      "Target": [
+        "urban public bus near Juan Pablo II Boulevard",
+        "military garrisons",
+        "buses",
+        "telephone distribution boxes",
+        "power pylons"
+      ],
+      "Victim": [],
+      "Weapon": [
+        ".45-caliber pistol",
+        "bullets",
+        "cartridges",
+        "two fragmentation grenades",
+        "hand grenades"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0004",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 3488
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "Zarate Willka Armed Forces of Liberation"
+      ],
+      "Target": [
+        "U.S. Embassy"
+      ],
+      "Victim": [],
+      "Weapon": [
+        "dynamite charge"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0005",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 2554
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "the Chilean nation"
+      ],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0006",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 3414
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [
+        "mothers who have lost their sons",
+        "innocent children who could kick a mine and end up without an arm or a leg"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0007",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 6001
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [
+        "PABLO ESCOBAR GAVIRIA"
+      ],
+      "PerpOrg": [
+        "Medellin cartel"
+      ],
+      "Target": [
+        "Medellin policemen"
+      ],
+      "Victim": [
+        "20 persons killed",
+        "approximately 100 injured",
+        "policemen in the truck",
+        "passengers on several public buses",
+        "residents or occupants of houses and businesses hit by the blast"
+      ],
+      "Weapon": [
+        "car bomb (containing 300 kg of dynamite)"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0008",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 3796
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FMLN"
+      ],
+      "Target": [
+        "the capital"
+      ],
+      "Victim": [
+        "deaths and wounded in San Salvador"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0009",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 2661
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [
+        "GERSON PALERMO",
+        "ARSENIO BENITEZ GONZALEZ"
+      ],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0010",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 2663
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "a newspaper in Bogota"
+      ],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0011",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 3285
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [
+        "GUILLERMO ALFREDO BENAVIDES MORENO"
+      ],
+      "PerpOrg": [],
+      "Target": [
+        "six Jesuit priests"
+      ],
+      "Victim": [
+        "six Jesuit priests"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0012",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 3163
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ASSASSINATION",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [
+        "Jecar Neghme"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0013",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 7170
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "Ecuadoran flagship working with the Imanco Mining Company"
+      ],
+      "Victim": [
+        "Julio Torres",
+        "Luis Antonio Meneses Benavides"
+      ],
+      "Weapon": [
+        "automatic weapons"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0014",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 4812
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ATTACK",
+      "PerpInd": [],
+      "PerpOrg": [
+        "Radio Venceremos does not explicitly name a perpetrator organization in this transcript. The text refers to 'our fighters",
+        "' but does not specify an organization by name. Therefore",
+        "no explicit perpetrator organization can be listed."
+      ],
+      "Target": [
+        "DMIFA unit",
+        "military position at Santa Teresa Hospital",
+        "communications relay station"
+      ],
+      "Victim": [
+        "20 soldiers killed",
+        "10 soldiers wounded",
+        "two sergeants",
+        "unit chief (lieutenant)"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0015",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 4812
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "Banco Cafetero branches and its offices"
+      ],
+      "Victim": [],
+      "Weapon": [
+        "55 kg of dynamite",
+        "20 kg of explosives with slow burning fuses"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0016",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 2355
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ATTACK",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FMLN"
+      ],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0017",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 2760
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "federal police building"
+      ],
+      "Victim": [
+        "at least 23 people killed",
+        "1",
+        "000 injured"
+      ],
+      "Weapon": [
+        "truck rigged with dynamite"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0018",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 2359
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ATTACK",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FMLN"
+      ],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0019",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 3380
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ASSASSINATION",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FMLN"
+      ],
+      "Target": [
+        "National Fire Department Director Colonel Roberto Armando Rivera Escobar"
+      ],
+      "Victim": [
+        "Colonel Roberto Armando Rivera Escobar"
+      ],
+      "Weapon": [
+        "machinegun"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0020",
+    "meta": {
+      "model_id": "gpt-4.1",
+      "timing": {
+        "duration_ms": 4118
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "Extraditables"
+      ],
+      "Target": [
+        "Avianca's Boeing 727"
+      ],
+      "Victim": [
+        "107 victims of Avianca's Boeing 727 explosion"
+      ],
+      "Weapon": []
+    }
+  }
+]
