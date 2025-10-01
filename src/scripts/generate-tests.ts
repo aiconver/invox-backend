@@ -4,6 +4,7 @@ import path from "node:path";
 import { singleLlmAllField } from "../strategies/single-llm-all-field";
 import { singleLlmOneField } from "../strategies/single-llm-one-field";
 import { dualLlmAllField } from "../strategies/dual-llm-all-field";
+import { multiLlmOneField } from "../strategies/multi-llm-one-field";
 
 // --- fields used for extraction (same as your app) ---
 type DynFieldType = "text" | "textarea" | "date" | "number" | "enum";
@@ -150,7 +151,7 @@ async function run() {
 
     const started = Date.now();
     try {
-      const res = await singleLlmOneField({
+      const res = await multiLlmOneField({
         oldTranscript: "",
         newTranscript: transcript,
         transcript,            // back-compat
