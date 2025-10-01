@@ -4,12 +4,12 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 2857
+        "duration_ms": 4072
       },
       "error": null
     },
     "answers": {
-      "incident_type": "ASSASSINATION",
+      "incident_type": "",
       "PerpInd": [],
       "PerpOrg": [],
       "Target": [],
@@ -24,7 +24,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3231
+        "duration_ms": 3566
       },
       "error": null
     },
@@ -32,7 +32,7 @@
       "incident_type": "BOMBING",
       "PerpInd": [],
       "PerpOrg": [
-        "MANUEL RODRIGUEZ PATRIOTIC FRONT (FPMR)"
+        "FPMR"
       ],
       "Target": [
         "Salvadoran Consulate",
@@ -47,14 +47,14 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 4194
+        "duration_ms": 4616
       },
       "error": null
     },
     "answers": {
       "incident_type": "KIDNAPPING",
       "PerpInd": [
-        "RUTH ESPERANZA AGUILAR MARROQUIN"
+        "Ruth Esperanza Aguilar Marroquin"
       ],
       "PerpOrg": [
         "ERP",
@@ -65,11 +65,11 @@
       ],
       "Victim": [],
       "Weapon": [
-        "hand grenades",
         ".45-caliber pistol",
         "bullets",
         "cartridges",
-        "two fragmentation grenades"
+        "two fragmentation grenades",
+        "hand grenades"
       ]
     }
   },
@@ -78,7 +78,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3377
+        "duration_ms": 4407
       },
       "error": null
     },
@@ -103,7 +103,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3488
+        "duration_ms": 5428
       },
       "error": null
     },
@@ -123,7 +123,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 4296
+        "duration_ms": 7819
       },
       "error": null
     },
@@ -137,7 +137,11 @@
         "innocent children who could kick a mine and end up without an arm or a leg",
         "those who",
         "because of violence",
-        "cannot find a job"
+        "cannot find a job",
+        "mothers",
+        "children",
+        "and families who continue to suffer in our country",
+        "those who suffer so very much from violence"
       ],
       "Weapon": []
     }
@@ -147,7 +151,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 5736
+        "duration_ms": 5292
       },
       "error": null
     },
@@ -158,23 +162,22 @@
         "ADOLFO MESA MENESES"
       ],
       "PerpOrg": [
-        "DRUG CARTEL",
-        "MAFIA"
+        "DRUG CARTEL"
       ],
       "Target": [
-        "Medellin policemen",
         "truck full of policemen",
-        "public buses",
+        "several public buses",
         "houses",
         "businesses"
       ],
       "Victim": [
         "20 persons",
         "approximately 100 injured",
+        "policemen in the truck",
         "policemen",
-        "truck full of policemen",
-        "several public bus passengers",
-        "residents of houses and businesses hit by the blast"
+        "passengers of public buses",
+        "residents of houses",
+        "people in businesses"
       ],
       "Weapon": [
         "car bomb (containing 300 kg of dynamite)"
@@ -186,7 +189,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3706
+        "duration_ms": 4195
       },
       "error": null
     },
@@ -197,9 +200,7 @@
         "FMLN",
         "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
       ],
-      "Target": [
-        "the capital"
-      ],
+      "Target": [],
       "Victim": [
         "deaths and wounded in San Salvador"
       ],
@@ -211,7 +212,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 4997
+        "duration_ms": 4308
       },
       "error": null
     },
@@ -219,14 +220,13 @@
       "incident_type": "",
       "PerpInd": [
         "Gerson Palermo",
-        "Arsenio Benitez Gonzalez",
-        "Vilhar"
+        "Arsenio Benitez Gonzalez"
       ],
       "PerpOrg": [
-        "Cambaralamaia's Organization",
+        "Cambarlamaia's Organization",
         "Gerson Palermo's gang",
-        "Bolivian traffickers",
-        "group of traffickers led by Arsenio Benitez Gonzalez"
+        "group of traffickers led by Arsenio Benitez Gonzalez",
+        "Bolivian traffickers"
       ],
       "Target": [],
       "Victim": [],
@@ -238,7 +238,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 5015
+        "duration_ms": 3986
       },
       "error": null
     },
@@ -256,7 +256,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3787
+        "duration_ms": 4199
       },
       "error": null
     },
@@ -278,7 +278,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 2868
+        "duration_ms": 2970
       },
       "error": null
     },
@@ -298,12 +298,12 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3583
+        "duration_ms": 4395
       },
       "error": null
     },
     "answers": {
-      "incident_type": "",
+      "incident_type": "KIDNAPPING",
       "PerpInd": [],
       "PerpOrg": [],
       "Target": [
@@ -323,7 +323,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3789
+        "duration_ms": 4202
       },
       "error": null
     },
@@ -334,12 +334,11 @@
       "Target": [
         "DMIFA unit",
         "military position at Santa Teresa Hospital",
-        "army communications center",
         "communications relay station"
       ],
       "Victim": [
         "soldiers",
-        "lieutenant who was the unit chief",
+        "lieutenant (unit chief)",
         "two sergeants"
       ],
       "Weapon": []
@@ -350,7 +349,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3993
+        "duration_ms": 4712
       },
       "error": null
     },
@@ -364,8 +363,7 @@
       ],
       "Victim": [],
       "Weapon": [
-        "dynamite",
-        "explosives"
+        "dynamite"
       ]
     }
   },
@@ -374,7 +372,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 4917
+        "duration_ms": 3683
       },
       "error": null
     },
@@ -394,7 +392,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3070
+        "duration_ms": 3720
       },
       "error": null
     },
@@ -419,7 +417,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3584
+        "duration_ms": 3138
       },
       "error": null
     },
@@ -439,7 +437,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3481
+        "duration_ms": 5179
       },
       "error": null
     },
@@ -465,7 +463,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3890
+        "duration_ms": 5739
       },
       "error": null
     },
@@ -479,7 +477,8 @@
         "AVIANCA'S BOEING 727"
       ],
       "Victim": [
-        "107 disfigured bodies of the victims of Avianca's Boeing 727 that exploded in midair"
+        "107 disfigured bodies of the victims",
+        "victims of Avianca's Boeing 727 that exploded in midair"
       ],
       "Weapon": []
     }

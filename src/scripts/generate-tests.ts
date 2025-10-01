@@ -150,7 +150,7 @@ async function run() {
 
     const started = Date.now();
     try {
-      const res = await dualLlmAllField({
+      const res = await singleLlmOneField({
         oldTranscript: "",
         newTranscript: transcript,
         transcript,            // back-compat
