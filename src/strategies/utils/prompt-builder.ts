@@ -1,7 +1,20 @@
+// utils/prompt-builder.ts
 import { FormTemplateField } from "../../types/fill-form";
 import { isDE } from "../single-llm-all-field";
 
-// In your prompt-builder.ts - completely generic version
+/** ───────── logging helpers ───────── */
+const DEBUG = process.env.DEBUG_FILL !== "0";
+
+function log(...args: any[]) {
+  if (DEBUG) console.log(...args);
+}
+
+function short(value: unknown, max = 400) {
+  const s = typeof value === "string" ? value : JSON.stringify(value);
+  if (!s) return "";
+  return s.length > max ? s.slice(0, max) + ` … [${s.length} chars]` : s;
+}
+
 export function buildPrompt({
   field,
   oldText,
@@ -11,7 +24,7 @@ export function buildPrompt({
   locale,
   timezone,
   descLine,
-  perFieldDemos,
+  perFieldDemos = [],
   rules,
   currentValue,
 }: {
@@ -23,11 +36,16 @@ export function buildPrompt({
   locale: string;
   timezone: string;
   descLine?: string | null;
-  perFieldDemos: string[];
+  perFieldDemos: any[];
   rules: string[];
   currentValue?: any;
 }) {
   const de = isDE(lang);
+
+  log(`[prompt-builder] Building prompt for field: ${field.id}`, {
+    perFieldDemosCount: perFieldDemos.length,
+    currentValue: short(currentValue, 100)
+  });
 
   const headerLine = de
     ? `Vorlagen-ID: ${templateId ?? "(nicht angegeben)"} | Gebietsschema: ${locale} | Zeitzone: ${timezone}`
@@ -77,32 +95,47 @@ export function buildPrompt({
     ? `AUSGABEFORMAT: { "value": "string_oder_null", "confidence": zahl_zwischen_0_und_1 }`
     : `OUTPUT FORMAT: { "value": "string_or_null", "confidence": number_between_0_and_1 }`;
 
+  // Add few-shot examples if available
+  let fewShotSection = "";
+  if (perFieldDemos.length > 0) {
+    log(`[prompt-builder] Adding ${perFieldDemos.length} few-shot examples for field: ${field.id}`);
+    
+    const exampleTitle = de ? "BEISPIELE:" : "EXAMPLES:";
+    const examples = perFieldDemos.map((demo, index) => {
+      const textLabel = de ? `Text ${index + 1}:` : `Text ${index + 1}:`;
+      const expectedLabel = de ? `Erwartet:` : `Expected:`;
+      return `${textLabel} ${short(demo.text, 300)}\n${expectedLabel} ${JSON.stringify(demo.expected)}`;
+    }).join("\n\n");
+    
+    fewShotSection = `\n\n${exampleTitle}\n${examples}`;
+  }
+
   // 🚨 GENERIC EXAMPLES - based on field type, not specific fields
-  let examples = "";
+  let genericExamples = "";
   if (field.type === "textarea") {
-    examples = de
+    genericExamples = de
       ? `BEISPIELE:\n- Mehrere Werte: {"value": "Wert1, Wert2, Wert3", "confidence": 0.9}\n- Keine Werte: {"value": null, "confidence": 0.8}\n- Ein Wert: {"value": "Wert1", "confidence": 0.95}`
       : `EXAMPLES:\n- Multiple values: {"value": "value1, value2, value3", "confidence": 0.9}\n- No values: {"value": null, "confidence": 0.8}\n- Single value: {"value": "value1", "confidence": 0.95}`;
   } else if (field.type === "enum") {
-    examples = de
+    genericExamples = de
       ? `BEISPIELE:\n- Gültiger Wert: {"value": "${field.options?.[0] || "OPTION"}", "confidence": 0.9}\n- Kein Wert: {"value": null, "confidence": 0.8}`
       : `EXAMPLES:\n- Valid value: {"value": "${field.options?.[0] || "OPTION"}", "confidence": 0.9}\n- No value: {"value": null, "confidence": 0.8}`;
   } else {
-    examples = de
+    genericExamples = de
       ? `BEISPIELE:\n- Mit Wert: {"value": "Beispielwert", "confidence": 0.9}\n- Ohne Wert: {"value": null, "confidence": 0.8}`
       : `EXAMPLES:\n- With value: {"value": "example value", "confidence": 0.9}\n- Without value: {"value": null, "confidence": 0.8}`;
   }
 
-  return [
+  const promptSections = [
     headerLine,
     outputFormat,
-    examples,
+    genericExamples,
+    fewShotSection,
     "",
     fieldLine,
     currentLine,
     "",
     ...(descLine ? [descLine, ""] : []),
-    ...(perFieldDemos.length ? ["", ...perFieldDemos] : []),
     "",
     rulesTitle,
     ...formattingRules.map(r => `- ${r}`),
@@ -112,5 +145,7 @@ export function buildPrompt({
     "",
     newLabel,
     newText,
-  ].filter(line => line).join("\n");
+  ].filter(line => line !== "");
+
+  return promptSections.join("\n");
 }

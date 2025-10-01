@@ -1,3 +1,4 @@
+// utils/run-field.ts
 import { z } from "zod";
 import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
@@ -7,6 +8,28 @@ import {
   FilledField,
   FormTemplateField,
 } from "@/types/fill-form";
+
+/** ───────── logging helpers ───────── */
+const DEBUG = process.env.DEBUG_FILL !== "0";
+const DUMP_FULL_PROMPT = process.env.DUMP_FULL_PROMPT === "1";
+
+function log(...args: any[]) {
+  if (DEBUG) console.log(...args);
+}
+function warn(...args: any[]) {
+  if (DEBUG) console.warn(...args);
+}
+function err(...args: any[]) {
+  if (DEBUG) console.error(...args);
+}
+function short(value: unknown, max = 400) {
+  const s = typeof value === "string" ? value : JSON.stringify(value);
+  if (!s) return "";
+  return s.length > max ? s.slice(0, max) + ` … [${s.length} chars]` : s;
+}
+function approxTokens(text: string) {
+  return Math.ceil((text?.length ?? 0) / 4);
+}
 
 function isDE(lang?: string) {
   return (lang ?? "en").toLowerCase().startsWith("de");
@@ -65,6 +88,17 @@ function normalizeValueForField(value: any, fieldType: string): any {
   return value;
 }
 
+// Get field-specific few-shot examples
+function getFieldFewShots(fieldId: string, fewShots: any[] = []) {
+  return fewShots
+    .filter(shot => shot.expected && shot.expected[fieldId] !== undefined)
+    .map(shot => ({
+      text: shot.text,
+      expected: shot.expected[fieldId]
+    }))
+    .slice(0, 2); // Limit to 2 examples per field
+}
+
 export async function runField({
   field,
   oldText,
@@ -74,7 +108,7 @@ export async function runField({
   lang,
   locale,
   timezone,
-  fewShots,
+  fewShots = [],
   options,
   current,
   modelName,
@@ -92,6 +126,9 @@ export async function runField({
   current?: CurrentFieldValue;
   modelName: string;
 }): Promise<[string, FilledField]> {
+
+  const fieldFewShots = getFieldFewShots(field.id, fewShots);
+  log(`[${field.id}] Field-specific few-shots:`, fieldFewShots.length);
 
   // Schema accepts both strings and arrays for flexibility
   const fieldSchema = z.object({
@@ -119,7 +156,7 @@ export async function runField({
       locale,
       timezone,
       descLine: field.description,
-      perFieldDemos: [],
+      perFieldDemos: fieldFewShots,
       rules: [
         "Extract from NEW transcript only",
         "For multiple values: return comma-separated string",
@@ -130,15 +167,48 @@ export async function runField({
       currentValue: current?.value,
     });
 
-    const { object } = await generateObject({
-      model: openai(modelName),
-      schema: fieldSchema,
-      prompt,
-      temperature: 0.1, // Lower temperature for more consistent extraction
-    });
+    const promptInfo = {
+      chars: prompt.length,
+      approxTokens: approxTokens(prompt),
+    };
+    log(`[${field.id}] Prompt size:`, promptInfo);
+    
+    if (DUMP_FULL_PROMPT) {
+      warn(`[${field.id} prompt FULL]\n` + prompt);
+    } else {
+      log(`[${field.id} prompt PREVIEW]\n` + short(prompt, 1500));
+    }
+
+    let object: any;
+    try {
+      console.time(`[timer] generateObject-${field.id}`);
+      const res = await generateObject({
+        model: openai(modelName),
+        schema: fieldSchema,
+        prompt,
+        temperature: 0.1, // Lower temperature for more consistent extraction
+      });
+      console.timeEnd(`[timer] generateObject-${field.id}`);
+      object = res.object;
+      
+      const rawStr = JSON.stringify(object);
+      log(`[${field.id}] Raw LLM output:`, {
+        value: short(object.value, 200),
+        confidence: object.confidence,
+        size: { chars: rawStr.length, approxTokens: approxTokens(rawStr) }
+      });
+    } catch (e: any) {
+      err(`[${field.id}] generateObject failed:`, e?.message);
+      if (e?.status) err("status:", e.status);
+      throw e;
+    }
 
     // 🚨 CRITICAL: Normalize the value to match gold standard format
     const normalizedValue = normalizeValueForField(object.value, field.type);
+    log(`[${field.id}] Normalized value:`, { 
+      raw: short(object.value, 100), 
+      normalized: short(normalizedValue, 100) 
+    });
     
     const currentVal = current?.value ?? null;
     let finalVal = currentVal;
@@ -151,6 +221,14 @@ export async function runField({
     }
 
     const changed = (currentVal ?? null) !== (finalVal ?? null);
+    
+    log(`[${field.id}] Final decision:`, {
+      current: short(currentVal, 100),
+      final: short(finalVal, 100),
+      changed,
+      locked: current?.locked,
+      usedProposed
+    });
 
     return [
       field.id,
@@ -165,7 +243,7 @@ export async function runField({
     ];
     
   } catch (error: any) {
-    console.error(`Field ${field.id} extraction failed:`, error.message);
+    err(`[${field.id}] Field extraction failed:`, error.message);
     
     // Return current value as fallback
     return [

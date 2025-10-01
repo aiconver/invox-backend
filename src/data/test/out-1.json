@@ -4,7 +4,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 10933
+        "duration_ms": 4291
       },
       "error": null
     },
@@ -14,7 +14,7 @@
       "PerpOrg": [],
       "Target": [],
       "Victim": [
-        "Spanish Jesuits"
+        "SPANISH JESUITS"
       ],
       "Weapon": []
     }
@@ -24,7 +24,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 15053
+        "duration_ms": 3742
       },
       "error": null
     },
@@ -35,7 +35,8 @@
         "FPMR"
       ],
       "Target": [
-        "Salvadoran consulate"
+        "Salvadoran Consulate",
+        "Salvadoran Embassy building"
       ],
       "Victim": [],
       "Weapon": []
@@ -46,7 +47,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 5110
+        "duration_ms": 3950
       },
       "error": null
     },
@@ -59,7 +60,7 @@
         "ERP"
       ],
       "Target": [
-        "urban public bus near Juan Pablo II Boulevard",
+        "an urban public bus",
         "military garrisons",
         "buses",
         "telephone distribution boxes",
@@ -67,11 +68,11 @@
       ],
       "Victim": [],
       "Weapon": [
+        "hand grenades",
         ".45-caliber pistol",
         "bullets",
         "cartridges",
-        "two fragmentation grenades",
-        "hand grenades"
+        "two fragmentation grenades"
       ]
     }
   },
@@ -80,7 +81,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3488
+        "duration_ms": 3462
       },
       "error": null
     },
@@ -88,7 +89,8 @@
       "incident_type": "BOMBING",
       "PerpInd": [],
       "PerpOrg": [
-        "Zarate Willka Armed Forces of Liberation"
+        "ZARATE WILLKA ARMED FORCES OF LIBERATION",
+        "ZARATE WILLKA"
       ],
       "Target": [
         "U.S. Embassy"
@@ -104,7 +106,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 2554
+        "duration_ms": 3978
       },
       "error": null
     },
@@ -113,7 +115,7 @@
       "PerpInd": [],
       "PerpOrg": [],
       "Target": [
-        "the Chilean nation"
+        "Chilean nation"
       ],
       "Victim": [],
       "Weapon": []
@@ -124,7 +126,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3414
+        "duration_ms": 5232
       },
       "error": null
     },
@@ -135,7 +137,10 @@
       "Target": [],
       "Victim": [
         "mothers who have lost their sons",
-        "innocent children who could kick a mine and end up without an arm or a leg"
+        "innocent children who could kick a mine and end up without an arm or a leg",
+        "those who",
+        "because of violence",
+        "cannot find a job"
       ],
       "Weapon": []
     }
@@ -145,27 +150,33 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 6001
+        "duration_ms": 5935
       },
       "error": null
     },
     "answers": {
       "incident_type": "BOMBING",
       "PerpInd": [
-        "PABLO ESCOBAR GAVIRIA"
+        "PABLO ESCOBAR GAVIRIA",
+        "ADOLFO MESA MENESES"
       ],
       "PerpOrg": [
-        "Medellin cartel"
+        "MEDELLIN CARTEL"
       ],
       "Target": [
-        "Medellin policemen"
+        "truck full of policemen",
+        "public buses",
+        "houses",
+        "businesses"
       ],
       "Victim": [
-        "20 persons killed",
+        "20 persons",
         "approximately 100 injured",
         "policemen in the truck",
-        "passengers on several public buses",
-        "residents or occupants of houses and businesses hit by the blast"
+        "policemen",
+        "passengers of public buses",
+        "residents of houses",
+        "people in businesses"
       ],
       "Weapon": [
         "car bomb (containing 300 kg of dynamite)"
@@ -177,7 +188,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3796
+        "duration_ms": 4665
       },
       "error": null
     },
@@ -191,7 +202,9 @@
         "the capital"
       ],
       "Victim": [
-        "deaths and wounded in San Salvador"
+        "deaths",
+        "wounded in San Salvador",
+        "priests"
       ],
       "Weapon": []
     }
@@ -201,7 +214,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 2661
+        "duration_ms": 3893
       },
       "error": null
     },
@@ -222,7 +235,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 2663
+        "duration_ms": 3402
       },
       "error": null
     },
@@ -242,19 +255,17 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3285
+        "duration_ms": 3351
       },
       "error": null
     },
     "answers": {
-      "incident_type": "",
+      "incident_type": "ASSASSINATION",
       "PerpInd": [
         "GUILLERMO ALFREDO BENAVIDES MORENO"
       ],
       "PerpOrg": [],
-      "Target": [
-        "six Jesuit priests"
-      ],
+      "Target": [],
       "Victim": [
         "six Jesuit priests"
       ],
@@ -266,7 +277,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3163
+        "duration_ms": 2969
       },
       "error": null
     },
@@ -286,7 +297,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 7170
+        "duration_ms": 3799
       },
       "error": null
     },
@@ -295,11 +306,11 @@
       "PerpInd": [],
       "PerpOrg": [],
       "Target": [
-        "Ecuadoran flagship working with the Imanco Mining Company"
+        "Ecuadoran flagship working with the IMANCO mining company"
       ],
       "Victim": [
-        "Julio Torres",
-        "Luis Antonio Meneses Benavides"
+        "JULIO TORRES",
+        "LUIS ANTONIO MENESES BENAVIDES"
       ],
       "Weapon": [
         "automatic weapons"
@@ -311,28 +322,24 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 4812
+        "duration_ms": 3786
       },
       "error": null
     },
     "answers": {
       "incident_type": "ATTACK",
       "PerpInd": [],
-      "PerpOrg": [
-        "Radio Venceremos does not explicitly name a perpetrator organization in this transcript. The text refers to 'our fighters",
-        "' but does not specify an organization by name. Therefore",
-        "no explicit perpetrator organization can be listed."
-      ],
+      "PerpOrg": [],
       "Target": [
         "DMIFA unit",
         "military position at Santa Teresa Hospital",
+        "army communications center",
         "communications relay station"
       ],
       "Victim": [
-        "20 soldiers killed",
-        "10 soldiers wounded",
-        "two sergeants",
-        "unit chief (lieutenant)"
+        "soldiers",
+        "lieutenant (unit chief)",
+        "two sergeants"
       ],
       "Weapon": []
     }
@@ -342,7 +349,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 4812
+        "duration_ms": 3169
       },
       "error": null
     },
@@ -351,12 +358,13 @@
       "PerpInd": [],
       "PerpOrg": [],
       "Target": [
-        "Banco Cafetero branches and its offices"
+        "BANCO CAFETERO BRANCHES",
+        "BANCO CAFETERO OFFICES"
       ],
       "Victim": [],
       "Weapon": [
-        "55 kg of dynamite",
-        "20 kg of explosives with slow burning fuses"
+        "dynamite",
+        "explosives"
       ]
     }
   },
@@ -365,7 +373,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 2355
+        "duration_ms": 3176
       },
       "error": null
     },
@@ -385,7 +393,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 2760
+        "duration_ms": 3069
       },
       "error": null
     },
@@ -397,11 +405,10 @@
         "federal police building"
       ],
       "Victim": [
-        "at least 23 people killed",
-        "1",
-        "000 injured"
+        "people"
       ],
       "Weapon": [
+        "truck-bomb",
         "truck rigged with dynamite"
       ]
     }
@@ -411,7 +418,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 2359
+        "duration_ms": 4609
       },
       "error": null
     },
@@ -431,7 +438,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 3380
+        "duration_ms": 3890
       },
       "error": null
     },
@@ -457,7 +464,7 @@
     "meta": {
       "model_id": "gpt-4.1",
       "timing": {
-        "duration_ms": 4118
+        "duration_ms": 3477
       },
       "error": null
     },
@@ -468,10 +475,10 @@
         "Extraditables"
       ],
       "Target": [
-        "Avianca's Boeing 727"
+        "AVIANCA'S BOEING 727"
       ],
       "Victim": [
-        "107 victims of Avianca's Boeing 727 explosion"
+        "107 disfigured bodies of the victims of Avianca's Boeing 727"
       ],
       "Weapon": []
     }
