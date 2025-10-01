@@ -1,0 +1,485 @@
+[
+  {
+    "id": "TST2-MUC4-0001",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 38279
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0002",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 44028
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FPMR"
+      ],
+      "Target": [
+        "SALVADORAN CONSULATE",
+        "SALVADORAN EMBASSY BUILDING"
+      ],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0003",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 76290
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "KIDNAPPING",
+      "PerpInd": [
+        "RUTH ESPERANZA AGUILAR MARROQUIN"
+      ],
+      "PerpOrg": [
+        "ERP",
+        "WORKERS JUSTICE COMMAND"
+      ],
+      "Target": [
+        "urban public bus near Juan Pablo II Boulevard"
+      ],
+      "Victim": [
+        "a group of students"
+      ],
+      "Weapon": [
+        ".45-caliber pistol",
+        "hand grenades",
+        "two fragmentation grenades",
+        ".45-CALIBER PISTOL",
+        "fragmentation grenades"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0004",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 54787
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "ZARATE WILLKA ARMED FORCES OF LIBERATION",
+        "ZARATE WILLKA"
+      ],
+      "Target": [],
+      "Victim": [],
+      "Weapon": [
+        "DYNAMITE CHARGE"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0005",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 42179
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "OTHER",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0006",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 24009
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0007",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 74399
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [
+        "PABLO ESCOBAR GAVIRIA"
+      ],
+      "PerpOrg": [
+        "MEDELLIN CARTEL"
+      ],
+      "Target": [],
+      "Victim": [
+        "20 PERSONS KILLED",
+        "APPROXIMATELY 100 INJURED",
+        "POLICEMEN"
+      ],
+      "Weapon": [
+        "CAR BOMB",
+        "300 KG OF DYNAMITE",
+        "REMOTE CONTROL"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0008",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 51613
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "MILITARY DICTATORSHIP"
+      ],
+      "Target": [
+        "SAN SALVADOR"
+      ],
+      "Victim": [
+        "DEATHS",
+        "WOUNDED",
+        "PRIESTS",
+        "DEATHS AND WOUNDED"
+      ],
+      "Weapon": [
+        "BOMB"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0009",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 45876
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [
+        "VALDEMIR LOPEZ PRAZERES",
+        "LUIS JOSE DA CONCEICAO",
+        "PAULO MASSANHYO",
+        "CARLOS ANGEL SERRANO CASTILESSO",
+        "GERSON PALERMO",
+        "ARSENIO BENITEZ GONZALEZ"
+      ],
+      "PerpOrg": [
+        "CAMBARALAMAIA'S ORGANIZATION"
+      ],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0010",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 62875
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "NEWSPAPER IN BOGOTA"
+      ],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0011",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 53450
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "",
+      "PerpInd": [
+        "COLONEL GUILLERMO ALFREDO BENAVIDES MORENO"
+      ],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0012",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 29082
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ASSASSINATION",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [
+        "JECAR NEGHME"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0013",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 63074
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ATTACK",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "SMALL ECUADORAN FLAGSHIP WORKING WITH THE IMANCO MINING COMPANY"
+      ],
+      "Victim": [
+        "SCOTT HEYNDAL",
+        "LUIS ANTONIO MENESES BENAVIDES",
+        "EDWIN RODRIGO TENEDA PARRENO",
+        "JULIO TORRES"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0014",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 51411
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ATTACK",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [],
+      "Victim": [
+        "20 soldiers killed",
+        "10 soldiers wounded",
+        "a lieutenant (unit chief)",
+        "two sergeants",
+        "SOLDIERS",
+        "LIEUTENANT",
+        "SERGEANTS",
+        "UNIT CHIEF"
+      ],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0015",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 37272
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "BANCO CAFETERO BRANCHES",
+        "BANCO CAFETERO OFFICES",
+        "BANCO CAFETERO"
+      ],
+      "Victim": [],
+      "Weapon": [
+        "OVER 55 KG OF DYNAMITE",
+        "20 KG OF EXPLOSIVES WITH SLOW BURNING FUSES"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0016",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 32661
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ATTACK",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FMLN"
+      ],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0017",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 29292
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [],
+      "Target": [
+        "FEDERAL POLICE BUILDING IN DOWNTOWN BOGOTA",
+        "FEDERAL POLICE BUILDING",
+        "FEDERAL POLICE"
+      ],
+      "Victim": [
+        "AT LEAST 23 PEOPLE KILLED",
+        "1",
+        "000 PEOPLE INJURED"
+      ],
+      "Weapon": [
+        "TRUCK RIGGED WITH DYNAMITE",
+        "TRUCK-BOMB",
+        "DYNAMITE"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0018",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 40244
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ATTACK",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FMLN",
+        "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+      ],
+      "Target": [],
+      "Victim": [],
+      "Weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0019",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 32924
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "ASSASSINATION",
+      "PerpInd": [],
+      "PerpOrg": [
+        "FMLN"
+      ],
+      "Target": [
+        "COLONEL ROBERTO ARMANDO RIVERA ESCOBAR"
+      ],
+      "Victim": [
+        "COLONEL ROBERTO ARMANDO RIVERA ESCOBAR"
+      ],
+      "Weapon": [
+        "machinegun"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0020",
+    "meta": {
+      "model_id": "ensemble:gpt-5-mini+gemini-2.5-flash",
+      "timing": {
+        "duration_ms": 58723
+      },
+      "error": null
+    },
+    "answers": {
+      "incident_type": "BOMBING",
+      "PerpInd": [],
+      "PerpOrg": [
+        "EXTRADITABLES"
+      ],
+      "Target": [
+        "AVIANCA'S BOEING 727",
+        "BOEING 727",
+        "PLANE"
+      ],
+      "Victim": [
+        "107 DISFIGURED BODIES",
+        "VICTIMS OF AVIANCA'S BOEING 727",
+        "PASSENGERS"
+      ],
+      "Weapon": [
+        "bomb"
+      ]
+    }
+  }
+]

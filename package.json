@@ -9,6 +9,7 @@
     "start": "pm2-runtime -r tsconfig-paths/register ./dist/index.js"
   },
   "dependencies": {
+    "@ai-sdk/google": "^1.1.13",
     "@ai-sdk/openai": "^1.1.13",
     "@keycloak/keycloak-admin-client": "^26.3.2",
     "@opensearch-project/opensearch": "^3.5.1",
