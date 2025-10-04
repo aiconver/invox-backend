@@ -1,4 +1,3 @@
-// src/lib/retrieval/getFewShots.ts
 import { embed } from "ai";
 import { openai as openaiProvider } from "@ai-sdk/openai";
 import { Client as OpenSearch } from "@opensearch-project/opensearch";
@@ -11,9 +10,6 @@ const MODEL       = process.env.EMBEDDING_MODEL  ?? "text-embedding-3-large";
 
 // Keep examples short in the prompt.
 const MAX_EXAMPLE_CHARS = Number(process.env.FEWSHOT_MAX_CHARS ?? 1200);
-
-// Always skip the top-1 nearest neighbor (to avoid identical test doc leakage)
-const SKIP_TOP = 1;
 
 const os = new OpenSearch({ node: OS_URL });
 
@@ -53,7 +49,7 @@ function toExpectedShape(
 }
 
 /**
- * Fetch k+1 neighbors, drop the first (closest), return the next k.
+ * Fetch the top-k nearest neighbors (no skipping).
  */
 export async function getFewShotsFromTranscript(
   transcript: string,
@@ -64,7 +60,7 @@ export async function getFewShotsFromTranscript(
   const vector = await embedForTemplate(transcript);
 
   const body: any = {
-    size: k + SKIP_TOP, // ask for one extra
+    size: k, // request exactly k now
     query: {
       script_score: {
         query: {
@@ -90,8 +86,8 @@ export async function getFewShotsFromTranscript(
   const hits: any[] =
     (res as any).body?.hits?.hits ?? (res as any).hits?.hits ?? [];
 
-  // Drop the top-1, keep up to k
-  const chosen = hits.slice(SKIP_TOP, SKIP_TOP + k);
+  // Just take top-k
+  const chosen = hits.slice(0, k);
 
   return chosen.map((h: any) => {
     const fullText: string = h._source?.transcript ?? "";
