@@ -92,9 +92,18 @@ function normalizeRecord(r: any): { id?: string; transcript: string; result: any
 /** ---- 4) Get an embedding for a transcript (AI SDK) ---- */
 async function embedTranscript(transcript: string) {
   const { embedding } = await embed({
-    model: openaiProvider.textEmbeddingModel(EMBEDDING_MODEL), // e.g. "text-embedding-3-small" or "text-embedding-3-large"
+    model: openaiProvider.textEmbeddingModel(EMBEDDING_MODEL),
     value: `templateId=${TEMPLATE_ID}\n${transcript}`,
   });
+  if (!Array.isArray(embedding)) {
+    throw new Error("Embedding not an array — check your AI SDK/OpenAI config");
+  }
+  if (embedding.length !== VECTOR_DIM) {
+    throw new Error(
+      `Embedding dim mismatch: got ${embedding.length}, expected ${VECTOR_DIM}. ` +
+      `Model="${EMBEDDING_MODEL}". Update VECTOR_DIM or model to match.`
+    );
+  }
   return embedding;
 }
 
@@ -107,13 +116,33 @@ async function bulkIndex(docs: ExemplarDoc[]) {
     ops.push(d);
   }
   const res = await os.bulk({ index: INDEX, refresh: true, body: ops });
-  // @ts-ignore
-  if (res.body?.errors || res.errors) {
-    console.error(res.body ?? res);
+
+  // Normalize body across client versions
+  const body: any = (res as any).body ?? res;
+
+  if (body?.errors) {
+    const items = body.items ?? [];
+    const errs = [];
+    for (let i = 0; i < items.length; i++) {
+      const it = items[i]?.index;
+      if (it?.error) {
+        errs.push({
+          i,
+          _id: it?._id,
+          status: it?.status,
+          type: it?.error?.type,
+          reason: it?.error?.reason,
+          caused_by: it?.error?.caused_by,
+        });
+        if (errs.length >= 10) break; // print first 10 for readability
+      }
+    }
+    console.error("[bulk] first errors:", JSON.stringify(errs, null, 2));
     throw new Error("Bulk indexing reported errors");
   }
   console.log(`[bulk] indexed ${docs.length} docs into "${INDEX}"`);
 }
+
 
 /** ---- 6) Main: file path via CLI ---- */
 async function main() {
@@ -124,6 +153,22 @@ async function main() {
   }
 
   await ensureIndex();
+
+  // ---- Optional: clean existing exemplars before reimport ----
+  console.log(`[cleanup] deleting all existing docs in "${INDEX}"...`);
+  try {
+    await os.deleteByQuery({
+      index: INDEX,
+      body: { query: { match_all: {} } },
+    });
+    console.log(`[cleanup] all old exemplars removed from "${INDEX}".`);
+  } catch (err) {
+    if (err) {
+      console.log(`[cleanup] index "${INDEX}" not found, nothing to delete.`);
+    } else {
+      console.error("[cleanup] error while deleting docs:", err);
+    }
+  }
 
   const rows = loadRecords(file);
   console.log(`[ingest] loaded ${rows.length} records from ${file}`);
