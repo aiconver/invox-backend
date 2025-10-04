@@ -42,7 +42,11 @@ function maskSecret(s?: string | null) {
 
 // Fields that can be multi-valued in MUC-4 and should accept string[] too
 const MULTI_VALUE_FIELD_IDS = new Set([
-  "PerpInd", "PerpOrg", "Target", "Victim", "Weapon",
+  "perpetratorIndividual",
+  "perpetratorOrganization",
+  "target",
+  "victim",
+  "weapon",
 ]);
 
 /** ───────── helpers ───────── */
@@ -206,7 +210,7 @@ export async function singleLlmAllField(
   const newText = (newTranscript ?? legacyTranscript ?? "").trim();
   const combinedTranscript = oldText ? `${oldText}\n${newText}` : newText;
 
-  const modelName = process.env.OPENAI_FILL_MODEL || "gpt-4.1";
+  const modelName = process.env.OPENAI_FILL_MODEL || "gpt-5";
 
   log("\n[=== singleLlmAllField START ===]");
   log("env.OPENAI_FILL_MODEL:", modelName);

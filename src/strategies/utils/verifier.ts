@@ -94,7 +94,7 @@ export async function runVerifier({
   console.log("[verify] Prompt:\n", prompt);
 
   // keep simple & loud logging (no env flags)
-  const modelName = process.env.OPENAI_VERIFY_MODEL || "gpt-4.1-mini";
+  const modelName = process.env.OPENAI_VERIFY_MODEL || "gpt-5-mini";
   const t0 = Date.now();
   const { object } = await generateObject({
     model: openai(modelName),

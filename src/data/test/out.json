@@ -2,519 +2,245 @@
   {
     "id": "TST2-MUC4-0001",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 7294
+        "duration_ms": 43473
       },
       "error": null
     },
     "answers": {
-      "incident_type": "",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [],
-      "Weapon": []
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "SPANISH JESUITS"
+      ],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0002",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 9743
+        "duration_ms": 95637
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "CHILE: SANTIAGO (PROVIDENCIA NEIGHBORHOOD)",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
         "FPMR"
       ],
-      "Target": [
-        "Salvadoran Consulate"
+      "target": [
+        "SALVADORAN CONSULATE"
       ],
-      "Victim": [],
-      "Weapon": [
-        "Explosive device"
-      ]
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0003",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 9718
+        "duration_ms": 80487
       },
       "error": null
     },
     "answers": {
-      "incident_type": "KIDNAPPING",
-      "PerpInd": [
-        "Ruth Esperanza Aguilar Marroquin"
+      "incidentType": "KIDNAPPING",
+      "incidentDate": "1989-12-09",
+      "incidentLocation": "SALVADORAN ALBERTO MASFERRER UNIVERSITY",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "RUTH ESPERANZA AGUILAR MARROQUIN"
       ],
-      "PerpOrg": [
-        "ERP"
+      "perpetratorOrganization": [
+        "ERP",
+        "WORKERS JUSTICE COMMAND"
       ],
-      "Target": [
-        "Group of students"
-      ],
-      "Victim": [
-        "Group of students"
-      ],
-      "Weapon": [
-        ".45-caliber pistol",
-        "Bullets",
-        "Cartridges",
-        "Fragmentation grenades"
+      "target": [],
+      "victim": [],
+      "weapon": [
+        ".45-CALIBER PISTOL",
+        "FRAGMENTATION GRENADES"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0004",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 10946
+        "duration_ms": 58060
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [
-        "UNIDENTIFIED PERSON"
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-12-20",
+      "incidentLocation": "JUAN DE LA RIVA STREET, LA PAZ",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "ZARATE WILLKA ARMED FORCES OF LIBERATION"
       ],
-      "PerpOrg": [
-        "ZARATE WILLKA ARMED FORCES OF LIBERATION",
-        "ZARATE WILLKA"
+      "target": [
+        "U.S. EMBASSY"
       ],
-      "Target": [
-        "AMERICAN EMBASSY",
-        "BOOK STORE",
-        "PEOPLE'S PERUVIAN BANK",
-        "STATE BANK",
-        "MARISCAL BALLIVIAN BUILDING",
-        "SHOPS"
-      ],
-      "Victim": [],
-      "Weapon": [
-        "Dynamite"
+      "victim": [],
+      "weapon": [
+        "DYNAMITE CHARGE"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0005",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 9830
+        "duration_ms": 34916
       },
       "error": null
     },
     "answers": {
-      "incident_type": "OTHER",
-      "PerpInd": [
-        "Certain politicians",
-        "Labor leaders",
-        "Communist labor unions"
-      ],
-      "PerpOrg": [],
-      "Target": [
-        "Chilean nation",
-        "National economy"
-      ],
-      "Victim": [
-        "Workers",
-        "Families",
-        "500",
-        "000 fellow citizens who work in this agricultural activity",
-        "Thousands of homes of fellow countrymen whose jobs and right to a livelihood have been jeopardized"
-      ],
-      "Weapon": [
-        "Cyanide"
-      ]
+      "incidentType": "OTHER",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0006",
     "meta": {
-      "model_id": "unknown-model",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 2819
+        "duration_ms": 18939
       },
-      "error": "No object generated: response did not match schema."
+      "error": null
     },
     "answers": {
-      "incident_type": "",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [],
-      "Weapon": []
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0007",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 12684
+        "duration_ms": 90014
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [
-        "PABLO ESCOBAR GAVIRIA"
+      "incidentType": "BOMBING",
+      "incidentDate": "1990-04-11",
+      "incidentLocation": "NEAR ITAGUI MUNICIPALITY",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "ELITE FORCE PATROL",
+        "TRUCK FULL OF POLICEMEN"
       ],
-      "PerpOrg": [
-        "DRUG CARTEL"
-      ],
-      "Target": [
-        "TRUCK FULL OF POLICEMEN",
-        "SEVERAL PUBLIC BUSES",
-        "HOUSES",
-        "BUSINESSES"
-      ],
-      "Victim": [
-        "20 PERSONS",
-        "APPROXIMATELY 100 INJURED",
+      "victim": [
+        "PERSONS",
         "POLICEMEN"
       ],
-      "Weapon": [
-        "Car bomb",
-        "Dynamite"
+      "weapon": [
+        "CAR BOMB",
+        "300 KG OF DYNAMITE",
+        "REMOTE CONTROL"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0008",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 8686
+        "duration_ms": 41674
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [
-        "Armed Forces"
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "SAN SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "MILITARY DICTATORSHIP"
       ],
-      "PerpOrg": [],
-      "Target": [
-        "the capital"
-      ],
-      "Victim": [
-        "deaths",
-        "wounded"
-      ],
-      "Weapon": []
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0009",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 9291
+        "duration_ms": 26217
       },
       "error": null
     },
     "answers": {
-      "incident_type": "OTHER",
-      "PerpInd": [
-        "Gerson Palermo",
-        "Arsenio Benitez Gonzalez",
-        "Valdemir Lopez Prazeres",
-        "Luis Jose da Conceicao",
-        "Paulo Massanhyo",
-        "Carlos Angel Serrano Castiless",
-        "Traffickers",
-        "Bolivian traffickers",
-        "Federal agents"
-      ],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [],
-      "Weapon": [
-        "Ether",
-        "Acetone"
-      ]
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0010",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 7475
+        "duration_ms": 29695
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [
-        "a newspaper in Bogota"
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "BOGOTA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "a newspaper"
       ],
-      "Victim": [],
-      "Weapon": [
-        "Explosive device"
-      ]
-    }
-  },
-  {
-    "id": "TST2-MUC4-0011",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 8969
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "ASSASSINATION",
-      "PerpInd": [
-        "Colonel Guillermo Alfredo Benavides Moreno",
-        "One colonel",
-        "Two lieutenants",
-        "Six soldiers"
-      ],
-      "PerpOrg": [],
-      "Target": [
-        "Jesuit priests"
-      ],
-      "Victim": [
-        "Jesuit priests"
-      ],
-      "Weapon": []
-    }
-  },
-  {
-    "id": "TST2-MUC4-0012",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 6903
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "ASSASSINATION",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [
-        "Jecar Neghme"
-      ],
-      "Weapon": []
-    }
-  },
-  {
-    "id": "TST2-MUC4-0013",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 8298
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "ATTACK",
-      "PerpInd": [
-        "attackers who wore field uniforms of the Colombian military"
-      ],
-      "PerpOrg": [],
-      "Target": [
-        "Ecuadoran flagship working with the IMANCO mining company"
-      ],
-      "Victim": [
-        "Scott Heyndal",
-        "Luis Antonio Meneses Benavides",
-        "Edwin Rodrigo Teneda Parreno",
-        "Julio Torres"
-      ],
-      "Weapon": [
-        "Automatic weapons"
-      ]
-    }
-  },
-  {
-    "id": "TST2-MUC4-0014",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 11265
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "ATTACK",
-      "PerpInd": [
-        "Fighters"
-      ],
-      "PerpOrg": [],
-      "Target": [
-        "DMIFA armed forces engineers' military detachment unit",
-        "Communications relay station"
-      ],
-      "Victim": [
-        "Soldiers",
-        "Lieutenant (unit chief)",
-        "Sergeants"
-      ],
-      "Weapon": []
-    }
-  },
-  {
-    "id": "TST2-MUC4-0015",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 9228
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [
-        "BANCO CAFETERO BRANCHES",
-        "BANCO CAFETERO OFFICES"
-      ],
-      "Victim": [],
-      "Weapon": [
-        "EXPLOSIVES",
-        "DYNAMITE"
-      ]
-    }
-  },
-  {
-    "id": "TST2-MUC4-0016",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 9196
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "ATTACK",
-      "PerpInd": [],
-      "PerpOrg": [
-        "FMLN"
-      ],
-      "Target": [],
-      "Victim": [],
-      "Weapon": []
-    }
-  },
-  {
-    "id": "TST2-MUC4-0017",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 10546
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [
-        "FEDERAL POLICE BUILDING"
-      ],
-      "Victim": [
-        "PEOPLE"
-      ],
-      "Weapon": [
-        "TRUCK RIGGED WITH DYNAMITE",
-        "TRUCK-BOMB"
-      ]
-    }
-  },
-  {
-    "id": "TST2-MUC4-0018",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 8398
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "ATTACK",
-      "PerpInd": [
-        "FMLN fighters"
-      ],
-      "PerpOrg": [
-        "FMLN"
-      ],
-      "Target": [],
-      "Victim": [],
-      "Weapon": []
-    }
-  },
-  {
-    "id": "TST2-MUC4-0019",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 10549
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "ASSASSINATION",
-      "PerpInd": [],
-      "PerpOrg": [
-        "FMLN"
-      ],
-      "Target": [
-        "National Fire Department director Colonel Roberto Armando Rivera Escobar"
-      ],
-      "Victim": [
-        "National Fire Department director Colonel Roberto Armando Rivera Escobar"
-      ],
-      "Weapon": [
-        "Machinegun"
-      ]
-    }
-  },
-  {
-    "id": "TST2-MUC4-0020",
-    "meta": {
-      "model_id": "gpt-4.1",
-      "timing": {
-        "duration_ms": 11572
-      },
-      "error": null
-    },
-    "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [
-        "ANONYMOUS CALLER",
-        "MAN WHO CALLED THE CARACOL NETWORK NEWS OFFICE"
-      ],
-      "PerpOrg": [
-        "THE EXTRADITABLES"
-      ],
-      "Target": [
-        "AVIANCA'S BOEING 727"
-      ],
-      "Victim": [
-        "VICTIMS OF AVIANCA'S BOEING 727",
-        "FIVE INFORMERS ON THE PLANE"
-      ],
-      "Weapon": [
-        "Explosive device"
-      ]
+      "victim": [],
+      "weapon": []
     }
   }
 ]
