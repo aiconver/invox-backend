@@ -4,21 +4,19 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 43473
+        "duration_ms": 35270
       },
       "error": null
     },
     "answers": {
-      "incidentType": "ATTACK",
+      "incidentType": "",
       "incidentDate": null,
       "incidentLocation": "",
-      "incidentStage": "ACCOMPLISHED",
+      "incidentStage": "",
       "perpetratorIndividual": [],
       "perpetratorOrganization": [],
       "target": [],
-      "victim": [
-        "SPANISH JESUITS"
-      ],
+      "victim": [],
       "weapon": []
     }
   },
@@ -27,21 +25,21 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 95637
+        "duration_ms": 46793
       },
       "error": null
     },
     "answers": {
       "incidentType": "BOMBING",
       "incidentDate": null,
-      "incidentLocation": "CHILE: SANTIAGO (PROVIDENCIA NEIGHBORHOOD)",
+      "incidentLocation": "PROVIDENCIA NEIGHORHOOD, SANTIAGO",
       "incidentStage": "ACCOMPLISHED",
       "perpetratorIndividual": [],
       "perpetratorOrganization": [
         "FPMR"
       ],
       "target": [
-        "SALVADORAN CONSULATE"
+        "THE SALVADORAN CONSULATE IN SANTIAGO"
       ],
       "victim": [],
       "weapon": []
@@ -52,14 +50,14 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 80487
+        "duration_ms": 105062
       },
       "error": null
     },
     "answers": {
       "incidentType": "KIDNAPPING",
       "incidentDate": "1989-12-09",
-      "incidentLocation": "SALVADORAN ALBERTO MASFERRER UNIVERSITY",
+      "incidentLocation": "SAN SALVADOR",
       "incidentStage": "ACCOMPLISHED",
       "perpetratorIndividual": [
         "RUTH ESPERANZA AGUILAR MARROQUIN"
@@ -68,11 +66,13 @@
         "ERP",
         "WORKERS JUSTICE COMMAND"
       ],
-      "target": [],
+      "target": [
+        "a group of students"
+      ],
       "victim": [],
       "weapon": [
-        ".45-CALIBER PISTOL",
-        "FRAGMENTATION GRENADES"
+        ".45-caliber pistol",
+        "fragmentation grenades"
       ]
     }
   },
@@ -81,25 +81,26 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 58060
+        "duration_ms": 31127
       },
       "error": null
     },
     "answers": {
       "incidentType": "BOMBING",
       "incidentDate": "1989-12-20",
-      "incidentLocation": "JUAN DE LA RIVA STREET, LA PAZ",
+      "incidentLocation": "BOLIVIA: LA PAZ (CITY)",
       "incidentStage": "ACCOMPLISHED",
       "perpetratorIndividual": [],
       "perpetratorOrganization": [
         "ZARATE WILLKA ARMED FORCES OF LIBERATION"
       ],
       "target": [
-        "U.S. EMBASSY"
+        "U.S. EMBASSY",
+        "DIPLOMAT OFFICE OR RESIDENCE"
       ],
       "victim": [],
       "weapon": [
-        "DYNAMITE CHARGE"
+        "BOMB"
       ]
     }
   },
@@ -108,7 +109,7 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 34916
+        "duration_ms": 28671
       },
       "error": null
     },
@@ -129,15 +130,15 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 18939
+        "duration_ms": 9215
       },
       "error": null
     },
     "answers": {
-      "incidentType": "",
+      "incidentType": "OTHER",
       "incidentDate": null,
       "incidentLocation": "",
-      "incidentStage": "",
+      "incidentStage": "THREATENED",
       "perpetratorIndividual": [],
       "perpetratorOrganization": [],
       "target": [],
@@ -150,7 +151,7 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 90014
+        "duration_ms": 38398
       },
       "error": null
     },
@@ -162,8 +163,8 @@
       "perpetratorIndividual": [],
       "perpetratorOrganization": [],
       "target": [
-        "ELITE FORCE PATROL",
-        "TRUCK FULL OF POLICEMEN"
+        "TRUCK FULL OF POLICEMEN",
+        "ELITE FORCE PATROL"
       ],
       "victim": [
         "PERSONS",
@@ -171,8 +172,7 @@
       ],
       "weapon": [
         "CAR BOMB",
-        "300 KG OF DYNAMITE",
-        "REMOTE CONTROL"
+        "300 KG OF DYNAMITE"
       ]
     }
   },
@@ -181,18 +181,18 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 41674
+        "duration_ms": 52839
       },
       "error": null
     },
     "answers": {
       "incidentType": "BOMBING",
-      "incidentDate": null,
+      "incidentDate": "1989-11-17",
       "incidentLocation": "SAN SALVADOR",
       "incidentStage": "ACCOMPLISHED",
       "perpetratorIndividual": [],
       "perpetratorOrganization": [
-        "MILITARY DICTATORSHIP"
+        "THE MURDEROUS MILITARY DICTATORSHIP"
       ],
       "target": [],
       "victim": [],
@@ -204,16 +204,21 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 26217
+        "duration_ms": 20786
       },
       "error": null
     },
     "answers": {
-      "incidentType": "",
+      "incidentType": "OTHER",
       "incidentDate": null,
-      "incidentLocation": "",
-      "incidentStage": "",
-      "perpetratorIndividual": [],
+      "incidentLocation": "RIO DE JANEIRO (BRAZIL)",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "VALDEMIR LOPEZ PRAZERES",
+        "LUIS JOSE DA CONCEICAO",
+        "PAULO MASSANHYO",
+        "CARLOS ANGEL SERRANO CASTILESSO"
+      ],
       "perpetratorOrganization": [],
       "target": [],
       "victim": [],
@@ -225,7 +230,7 @@
     "meta": {
       "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 29695
+        "duration_ms": 24985
       },
       "error": null
     },
@@ -237,7 +242,7 @@
       "perpetratorIndividual": [],
       "perpetratorOrganization": [],
       "target": [
-        "a newspaper"
+        "a newspaper in BOGOTA"
       ],
       "victim": [],
       "weapon": []

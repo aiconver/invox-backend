@@ -237,11 +237,11 @@ export async function singleLlmAllField(
   let fewShots: any[] = [];
   try {
     console.time("[timer] fewShots");
-    fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 3);
+    fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
     console.timeEnd("[timer] fewShots");
     log(
       `fewShots: count=${fewShots.length}`,
-      fewShots.slice(0, 3).map((fs, i) => ({
+      fewShots.slice(0, 2).map((fs, i) => ({
         i,
         textPreview: short(fs.text, 160),
         expectedKeys: Object.keys(fs.expected ?? {}),
