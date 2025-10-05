@@ -174,7 +174,7 @@ async function run() {
 
     const started = Date.now();
     try {
-      const res = await singleLlmAllField({
+      const res = await singleLlmOneField({
         oldTranscript: "",
         newTranscript: transcript,
         transcript,            // back-compat

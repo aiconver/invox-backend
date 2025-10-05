@@ -33,7 +33,14 @@ function maskSecret(s?: string | null) {
 }
 
 // ───────── multi-value fields (MUC-4) ─────────
-const MULTI_VALUE_FIELD_IDS = new Set(["PerpInd", "PerpOrg", "Target", "Victim", "Weapon"]);
+// Fields that can be multi-valued in MUC-4 and should accept string[] too
+const MULTI_VALUE_FIELD_IDS = new Set([
+  "perpetratorIndividual",
+  "perpetratorOrganization",
+  "target",
+  "victim",
+  "weapon",
+]);
 
 export function isDE(lang?: string) {
   return (lang ?? "en").toLowerCase().startsWith("de");
@@ -373,7 +380,7 @@ export async function dualLlmAllField(
   let fewShots: any[] = [];
   try {
     console.time("[timer] fewShots");
-    fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 3);
+    fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
     console.timeEnd("[timer] fewShots");
     log("fewShots count:", fewShots.length);
   } catch (e: any) {
