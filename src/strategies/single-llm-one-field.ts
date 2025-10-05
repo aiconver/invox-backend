@@ -424,7 +424,7 @@ export async function singleLlmOneField(input: GetFilledTemplateInput): Promise<
   if (!newText) throw new Error("Transcript is required.");
 
   const combinedTranscript = oldText ? `${oldText}\n${newText}` : newText;
-  const modelName = process.env.OPENAI_FILL_MODEL || "gpt-4.1";
+  const modelName = process.env.OPENAI_FILL_MODEL || "gpt-5";
 
   log("\n[=== singleLlmOneField START ===]");
   log("env.OPENAI_FILL_MODEL:", modelName);
@@ -442,7 +442,7 @@ export async function singleLlmOneField(input: GetFilledTemplateInput): Promise<
   if (!fewShots.length) {
     try {
       console.time("[timer] fewShots");
-      fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 3);
+      fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
       console.timeEnd("[timer] fewShots");
       log(`Retrieved fewShots: count=${fewShots.length}`);
       if (fewShots.length > 0) {

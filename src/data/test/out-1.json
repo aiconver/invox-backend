@@ -2,485 +2,2536 @@
   {
     "id": "TST2-MUC4-0001",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4072
+        "duration_ms": 34261
       },
       "error": null
     },
     "answers": {
-      "incident_type": "",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
         "SPANISH JESUITS"
       ],
-      "Weapon": []
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0002",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 3566
+        "duration_ms": 42689
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "PROVIDENCIA NEIGHBORHOOD IN EASTERN SANTIAGO",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
         "FPMR"
       ],
-      "Target": [
-        "Salvadoran Consulate",
-        "Salvadoran Embassy building"
+      "target": [
+        "THE SALVADORAN CONSULATE"
       ],
-      "Victim": [],
-      "Weapon": []
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0003",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4616
+        "duration_ms": 90516
       },
       "error": null
     },
     "answers": {
-      "incident_type": "KIDNAPPING",
-      "PerpInd": [
-        "Ruth Esperanza Aguilar Marroquin"
+      "incidentType": "KIDNAPPING",
+      "incidentDate": "1989-12-09",
+      "incidentLocation": "SAN SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "RUTH ESPERANZA AGUILAR MARROQUIN"
       ],
-      "PerpOrg": [
-        "ERP",
-        "Workers Justice Command"
+      "perpetratorOrganization": [],
+      "target": [
+        "GROUP OF STUDENTS"
       ],
-      "Target": [
-        "urban public bus"
+      "victim": [
+        "GROUP OF STUDENTS"
       ],
-      "Victim": [],
-      "Weapon": [
-        ".45-caliber pistol",
-        "bullets",
-        "cartridges",
-        "two fragmentation grenades",
-        "hand grenades"
+      "weapon": [
+        ".45-CALIBER PISTOL",
+        "FRAGMENTATION GRENADES"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0004",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4407
+        "duration_ms": 49660
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [
-        "ZARATE WILLKA ARMED FORCES OF LIBERATION",
-        "ZARATE WILLKA"
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-12-20",
+      "incidentLocation": "LA PAZ",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "ZARATE WILLKA ARMED FORCES OF LIBERATION"
       ],
-      "Target": [
-        "U.S. Embassy"
-      ],
-      "Victim": [],
-      "Weapon": [
-        "dynamite charge"
+      "target": [],
+      "victim": [],
+      "weapon": [
+        "BOMB",
+        "DYNAMITE"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0005",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 5428
+        "duration_ms": 40548
       },
       "error": null
     },
     "answers": {
-      "incident_type": "OTHER",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [
-        "Chilean nation"
-      ],
-      "Victim": [],
-      "Weapon": []
+      "incidentType": "OTHER",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0006",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 7819
+        "duration_ms": 26994
       },
       "error": null
     },
     "answers": {
-      "incident_type": "",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [
-        "mothers who have lost their sons",
-        "innocent children who could kick a mine and end up without an arm or a leg",
-        "those who",
-        "because of violence",
-        "cannot find a job",
-        "mothers",
-        "children",
-        "and families who continue to suffer in our country",
-        "those who suffer so very much from violence"
-      ],
-      "Weapon": []
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0007",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 5292
+        "duration_ms": 58409
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [
-        "PABLO ESCOBAR GAVIRIA",
-        "ADOLFO MESA MENESES"
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "NEAR ITAGUI MUNICIPALITY",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "ELITE FORCE PATROL",
+        "TRUCK FULL OF POLICEMEN"
       ],
-      "PerpOrg": [
-        "DRUG CARTEL"
+      "victim": [
+        "PERSONS"
       ],
-      "Target": [
-        "truck full of policemen",
-        "several public buses",
-        "houses",
-        "businesses"
-      ],
-      "Victim": [
-        "20 persons",
-        "approximately 100 injured",
-        "policemen in the truck",
-        "policemen",
-        "passengers of public buses",
-        "residents of houses",
-        "people in businesses"
-      ],
-      "Weapon": [
-        "car bomb (containing 300 kg of dynamite)"
+      "weapon": [
+        "CAR BOMB",
+        "300 KG OF DYNAMITE",
+        "REMOTE CONTROL"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0008",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4195
+        "duration_ms": 46775
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [
-        "FMLN",
-        "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-11-17",
+      "incidentLocation": "SAN SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "MURDEROUS MILITARY DICTATORSHIP"
       ],
-      "Target": [],
-      "Victim": [
-        "deaths and wounded in San Salvador"
-      ],
-      "Weapon": []
+      "target": [],
+      "victim": [],
+      "weapon": [
+        "BOMBS"
+      ]
     }
   },
   {
     "id": "TST2-MUC4-0009",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4308
+        "duration_ms": 21837
       },
       "error": null
     },
     "answers": {
-      "incident_type": "",
-      "PerpInd": [
-        "Gerson Palermo",
-        "Arsenio Benitez Gonzalez"
+      "incidentType": "OTHER",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "VALDEMIR LOPEZ PRAZERES",
+        "LUIS JOSE DA CONCEICAO",
+        "PAULO MASSANHYO",
+        "CARLOS ANGEL SERRANO CASTILESSO"
       ],
-      "PerpOrg": [
-        "Cambarlamaia's Organization",
-        "Gerson Palermo's gang",
-        "group of traffickers led by Arsenio Benitez Gonzalez",
-        "Bolivian traffickers"
-      ],
-      "Target": [],
-      "Victim": [],
-      "Weapon": []
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0010",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 3986
+        "duration_ms": 40452
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [],
-      "Weapon": []
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "BOGOTA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "a newspaper"
+      ],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0011",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4199
+        "duration_ms": 42084
       },
       "error": null
     },
     "answers": {
-      "incident_type": "ASSASSINATION",
-      "PerpInd": [
-        "GUILLERMO ALFREDO BENAVIDES MORENO"
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "COLONEL GUILLERMO ALFREDO BENAVIDES MORENO"
       ],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [
-        "six Jesuit priests"
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "SIX JESUIT PRIESTS",
+        "JESUIT PRIESTS"
       ],
-      "Weapon": []
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0012",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 2970
+        "duration_ms": 24779
       },
       "error": null
     },
     "answers": {
-      "incident_type": "ASSASSINATION",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [],
-      "Victim": [
-        "Jecar Neghme"
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "SANTIAGO",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "JECAR NEGHME"
       ],
-      "Weapon": []
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0013",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4395
+        "duration_ms": 43311
       },
       "error": null
     },
     "answers": {
-      "incident_type": "KIDNAPPING",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [
-        "Ecuadoran flagship working with the IMANCO mining company"
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "BERMEJA RIVER, SUCUMBIOS PROVINCE, ECUADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "SMALL ECUADORAN FLAGSHIP WORKING WITH THE IMANCO MINING COMPANY"
       ],
-      "Victim": [
+      "victim": [
         "JULIO TORRES",
         "LUIS ANTONIO MENESES BENAVIDES"
       ],
-      "Weapon": [
-        "automatic weapons"
+      "weapon": [
+        "AUTOMATIC WEAPONS"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0014",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4202
+        "duration_ms": 42704
       },
       "error": null
     },
     "answers": {
-      "incident_type": "ATTACK",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-11-14",
+      "incidentLocation": "ZACATELUCA, LA PAZ DEPARTMENT",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
         "DMIFA unit",
-        "military position at Santa Teresa Hospital",
-        "communications relay station"
+        "military position at Santa Teresa Hospital"
       ],
-      "Victim": [
-        "soldiers",
-        "lieutenant (unit chief)",
-        "two sergeants"
+      "victim": [
+        "20 soldiers",
+        "10 soldiers",
+        "two sergeants",
+        "a lieutenant"
       ],
-      "Weapon": []
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0015",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 4712
+        "duration_ms": 35556
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-08-27",
+      "incidentLocation": "MEDELLIN, COLOMBIA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
         "BANCO CAFETERO BRANCHES",
-        "BANCO CAFETERO OFFICES"
+        "BANCO CAFETERO OFFICES",
+        "FINANCIAL"
       ],
-      "Victim": [],
-      "Weapon": [
-        "dynamite"
+      "victim": [],
+      "weapon": [
+        "DYNAMITE",
+        "OVER 55 KG OF DYNAMITE"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0016",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 3683
+        "duration_ms": 32742
       },
       "error": null
     },
     "answers": {
-      "incident_type": "ATTACK",
-      "PerpInd": [],
-      "PerpOrg": [
+      "incidentType": "ATTACK",
+      "incidentDate": "1990-05-01",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
         "FMLN"
       ],
-      "Target": [],
-      "Victim": [],
-      "Weapon": []
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0017",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 3720
+        "duration_ms": 61750
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [],
-      "Target": [
-        "federal police building"
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-12-06",
+      "incidentLocation": "BOGOTA, COLOMBIA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "FEDERAL POLICE BUILDING"
       ],
-      "Victim": [
-        "people"
+      "victim": [
+        "PEOPLE"
       ],
-      "Weapon": [
-        "truck rigged with dynamite",
-        "dynamite"
+      "weapon": [
+        "DYNAMITE",
+        "TRUCK"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0018",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 3138
+        "duration_ms": 27132
       },
       "error": null
     },
     "answers": {
-      "incident_type": "ATTACK",
-      "PerpInd": [],
-      "PerpOrg": [
-        "FMLN"
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-11-12",
+      "incidentLocation": "SAN SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FMLN",
+        "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
       ],
-      "Target": [],
-      "Victim": [],
-      "Weapon": []
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   },
   {
     "id": "TST2-MUC4-0019",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 5179
+        "duration_ms": 48025
       },
       "error": null
     },
     "answers": {
-      "incident_type": "ASSASSINATION",
-      "PerpInd": [],
-      "PerpOrg": [
-        "FMLN"
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-06-26",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FMLN",
+        "FARABUNDO MARTI NATIONAL LIBERATION FRONT"
       ],
-      "Target": [
-        "National Fire Department Director Colonel Roberto Armando Rivera Escobar"
+      "target": [],
+      "victim": [
+        "COLONEL ROBERTO ARMANDO RIVERA ESCOBAR"
       ],
-      "Victim": [
-        "Colonel Roberto Armando Rivera Escobar"
-      ],
-      "Weapon": [
-        "machinegun"
+      "weapon": [
+        "MACHINEGUN"
       ]
     }
   },
   {
     "id": "TST2-MUC4-0020",
     "meta": {
-      "model_id": "gpt-4.1",
+      "model_id": "gpt-5",
       "timing": {
-        "duration_ms": 5739
+        "duration_ms": 84993
       },
       "error": null
     },
     "answers": {
-      "incident_type": "BOMBING",
-      "PerpInd": [],
-      "PerpOrg": [
-        "The Extraditables"
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "near Bogota",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "THE EXTRADITABLES"
       ],
-      "Target": [
-        "AVIANCA'S BOEING 727"
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0021",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 47820
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1990-03-08",
+      "incidentLocation": "SAN SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "electricity poles"
       ],
-      "Victim": [
-        "107 disfigured bodies of the victims",
-        "victims of Avianca's Boeing 727 that exploded in midair"
+      "victim": [],
+      "weapon": [
+        "rifle",
+        "machinegun",
+        "dynamite"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0022",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 21400
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0023",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 42092
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "THREATENED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "ARTURO RIVERA Y DAMAS"
       ],
-      "Weapon": []
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0024",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 76698
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "the capital",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FMLN"
+      ],
+      "target": [
+        "residence of Ruben Zamora",
+        "residence of Aronete Diaz"
+      ],
+      "victim": [],
+      "weapon": [
+        "bomb"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0025",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 38023
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-11-16",
+      "incidentLocation": "SAN SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "JESUIT PRIESTS",
+        "IGNACIO ELLACURRIA",
+        "WOMEN"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0026",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 63967
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1990-04-26",
+      "incidentLocation": "COLOMBIA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "FIDEL CASTANO",
+        "HENRY PEREZ"
+      ],
+      "perpetratorOrganization": [
+        "THE EXTRADITABLES"
+      ],
+      "target": [],
+      "victim": [
+        "CARLOS PIZARRO"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0027",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 47819
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "ZACATECOLUCA AREA",
+      "incidentStage": "FAILED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": [
+        "SA-7"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0028",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 63900
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-07-22",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "ALFREDO CRISTIANI'S GOVERNMENT",
+        "ARMED FORCES HIGH COMMAND"
+      ],
+      "target": [
+        "CENTRAL AMERICAN UNIVERSITY (UCA)"
+      ],
+      "victim": [],
+      "weapon": [
+        "BOMB"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0029",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 30107
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "OTHER",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "THREATENED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0030",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 69317
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-01-19",
+      "incidentLocation": "CANTO GRANDE, LIMA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "JOSE FELIX AGUIRRE"
+      ],
+      "weapon": [
+        "firearms with silencers"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0031",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 62767
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-05-27",
+      "incidentLocation": "SAN ANDRES, SAN MIGUEL DEPARTMENT, EL SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "HONDURAN ARMY",
+        "ARCE BATTALION",
+        "SALVADORAN AIR FORCE"
+      ],
+      "target": [
+        "HONDURAN HELICOPTER"
+      ],
+      "victim": [
+        "CIVILIANS",
+        "SOLDIERS",
+        "ARCE BATTALION OFFICER"
+      ],
+      "weapon": [
+        "ROCKETS",
+        "MACHINEGUNS"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0032",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 56024
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1990-03-22",
+      "incidentLocation": "BOGOTA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "PABLO ESCOBAR GAVIRIA"
+      ],
+      "perpetratorOrganization": [
+        "MEDELLIN CARTEL"
+      ],
+      "target": [
+        "BERNARDO JARAMILLO OSSA"
+      ],
+      "victim": [
+        "BERNARDO JARAMILLO OSSA"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0033",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 57759
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-11-28",
+      "incidentLocation": "SAN SALVADOR: INTERSECTION OF BOULEVARD DE LOS HEROES AND ALAMEDA JUAN PABLO II",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "FRANCISCO JOSE GUERRERO"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0034",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 41264
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-09-15",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "EDUARDO ANTONIO LOPEZ PALENCIA"
+      ],
+      "victim": [
+        "EDUARDO ANTONIO LOPEZ PALENCIA"
+      ],
+      "weapon": [
+        "TORTURE"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0035",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 34898
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0036",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 57263
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-01-31",
+      "incidentLocation": "HORCONES DE BERLIN CANTON",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "LIEUTENANT PACHECHO"
+      ],
+      "perpetratorOrganization": [
+        "OROMONTIQUE BATTALION",
+        "6TH INFANTRY BRIGADE"
+      ],
+      "target": [],
+      "victim": [
+        "VICTOR MANUEL VASQUEZ",
+        "RAFAEL ROMERO"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0037",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 20377
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-11-17",
+      "incidentLocation": "SAN SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FMLN"
+      ],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0038",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 55809
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-12-14",
+      "incidentLocation": "CHILE",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "MEMBER OF CARABINEROS"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0039",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 49454
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "KIDNAPPING",
+      "incidentDate": null,
+      "incidentLocation": "MEDELLIN",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "ELN",
+        "ARMY OF NATIONAL LIBERATION",
+        "NELSON MANDELA CELL OF THE ELN"
+      ],
+      "target": [],
+      "victim": [
+        "DAVID LECKY",
+        "JAMES ARTHUR DONNELLY",
+        "LESLIE KENT"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0040",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 33908
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "KIDNAPPING",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "THE EXTRADITABLES"
+      ],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0001",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 43200
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "JESUIT PRIESTS"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0002",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 45260
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "ARMED FORCES"
+      ],
+      "target": [],
+      "victim": [
+        "SIX JESUITS",
+        "TWO MAIDS"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0003",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 47413
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "PERU: LIMA (SAN ISIDRO DISTRICT)",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "GERARDO OLIVOS SILVA"
+      ],
+      "perpetratorOrganization": [
+        "SHINING PATH"
+      ],
+      "target": [
+        "ENRIQUE LOPEZ ALBUJAR TRINT"
+      ],
+      "victim": [
+        "ENRIQUE LOPEZ ALBUJAR TRINT"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0004",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 32455
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "OTHER",
+      "incidentDate": null,
+      "incidentLocation": "BOGOTA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "BOGOTA CARTEL"
+      ],
+      "target": [
+        "BOGOTA CARTEL"
+      ],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0005",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 41068
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "KIDNAPPING",
+      "incidentDate": "1990-01-12",
+      "incidentLocation": "GUATEMALA CITY",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "HECTOR OQUELI COLINDRES",
+        "GILDA FLORES"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0006",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 58270
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "KIDNAPPING",
+      "incidentDate": "1990-01-12",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "HEAVILY ARMED MEN IN CIVILIAN CLOTHES"
+      ],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "HECTOR OQUELI",
+        "GILDA FLORES"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0007",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 72806
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-01-07",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "CONTRA COMMANDER",
+        "MANUEL ANTONIO RUGAMA"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0008",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 51093
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-02-07",
+      "incidentLocation": "BUENOS AIRES",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "SENTRY POST OF THE LA TABLADA 3D INFANTRY REGIMENT"
+      ],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0009",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 74958
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-02-06",
+      "incidentLocation": "SANTIAGO",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": [
+        "stones"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0010",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 69025
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-10-31",
+      "incidentLocation": "EL SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "COMMITTEE OF MOTHERS OF POLITICAL PRISONERS AND MISSING IN EL SALVADOR",
+        "SALVADORAN WORKERS NATIONAL UNION FEDERATION"
+      ],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0011",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 42652
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "KIDNAPPING",
+      "incidentDate": "1988-05-04",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "ELN",
+        "ARMY OF NATIONAL LIBERATION",
+        "MANUEL GUSTAVO CHACON SOVEREIGNTY OPERATION"
+      ],
+      "target": [],
+      "victim": [
+        "HONORARY CONSULS",
+        "NEWSMEN",
+        "POLITICAL LEADERS"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0012",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 13661
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0013",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 55772
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "EMILIO PONCE",
+        "CRISTIANI",
+        "ELENA FUENTE"
+      ],
+      "perpetratorOrganization": [
+        "MORBID DEATH SQUAD OF THE ARMY'S 1ST INFANTRY BRIGADE"
+      ],
+      "target": [
+        "FENASTRAS"
+      ],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0014",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 50726
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-01-19",
+      "incidentLocation": "SAN JUAN BAUTISTA MUNICIPALITY",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "SHINING PATH"
+      ],
+      "target": [],
+      "victim": [
+        "TWO PEOPLE"
+      ],
+      "weapon": [
+        "BOMB"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0015",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 39221
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-03-19",
+      "incidentLocation": "EL SALVADOR: MORAZAN DEPARTMENT",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "MAURICIO PINEDA"
+      ],
+      "weapon": [
+        "MACHINEGUN"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0016",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 31736
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-03-26",
+      "incidentLocation": "EL JICOTE",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "IFA TRUCK BELONGING TO THE INTERIOR MINISTRY"
+      ],
+      "victim": [
+        "INTERIOR MINISTRY WORKER",
+        "FIVE OTHERS"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0017",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 100560
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-04-14",
+      "incidentLocation": "SAN SALVADOR: MACHILIGUAS (NEIGHBORHOOD)",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "URBAN COMMANDOS"
+      ],
+      "target": [
+        "VICE PRESIDENT-ELECT FRANCISCO MERINO'S HOME"
+      ],
+      "victim": [
+        "15-YEAR-OLD GIRL"
+      ],
+      "weapon": [
+        "THREE EXPLOSIVE DEVICES"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0018",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 69740
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-05-25",
+      "incidentLocation": "EL SALVADOR: SAN SALVADOR (CITY): SACAMIL (NEIGHBORHOOD)",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FMLN"
+      ],
+      "target": [
+        "1ST INFANTRY BRIGADE GARRISON",
+        "NATIONAL POLICE STATION"
+      ],
+      "victim": [
+        "THREE POLICEMEN",
+        "A SOLDIER OF THE 1ST INFANTRY BRIGADE",
+        "FOUR CIVILIANS"
+      ],
+      "weapon": [
+        "60-MM MORTARS",
+        "RPG-18 ROCKET LAUNCHERS",
+        "MACHINEGUNS",
+        "M-79 SHELLS"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0019",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 65224
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1989-05-28",
+      "incidentLocation": "NEAR URUM MUNICIPALITY, NORTE DE SANTANDER DEPARTMENT",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "CANO LIMON-COVENAS PIPELINE"
+      ],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0020",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 25196
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "TWO YOUNG U.S. CITIZENS"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0021",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 48537
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "DR JOSE ANTONIO RODRIGUEZ PORTH"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0022",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 52220
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-06-30",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "SHINING PATH"
+      ],
+      "target": [],
+      "victim": [
+        "DOLORES HINOSTROZA"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0023",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 66302
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "COLOMBIA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "ANTONIO ROLDAN BETANCUR"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0024",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 54524
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "APPROXIMATELY 30 KM FROM NATAGAIMA, IN NORTHERN HUILA DEPARTMENT",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "VINA-PUERTO SALGAR OIL PIPELINE",
+        "OIL PIPELINE BETWEEN HUILA DEPARTMENT AND BARRANCABERMEJA"
+      ],
+      "victim": [],
+      "weapon": [
+        "DYNAMITE"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0025",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 38509
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0026",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 66155
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "SALVADOR ALLENDE"
+      ],
+      "victim": [
+        "SALVADOR ALLENDE"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0027",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 39936
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-08-01",
+      "incidentLocation": "GUATEMALA CITY",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "DANILO BARILLAS"
+      ],
+      "weapon": [
+        "MACHINEGUN"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0028",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 23856
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0029",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 66048
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-08-07",
+      "incidentLocation": "NORTHERN METAPAN",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FELICIANO AMA WESTERN FRONT"
+      ],
+      "target": [
+        "2D INFANTRY BRIGADE"
+      ],
+      "victim": [],
+      "weapon": [
+        "mines",
+        "rifles",
+        "rockets"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0030",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 51815
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "DOWNTOWN BOGOTA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "CARLOS VALENCIA GARCIA"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0001",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 33795
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-08-23",
+      "incidentLocation": "TALCAHUANO DISTRICT",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "A MORMON CHURCH",
+        "A CHAPEL OF THE CHURCH OF JESUS CHRIST OF LATTER-DAY SAINTS"
+      ],
+      "victim": [],
+      "weapon": [
+        "BOMB",
+        "50 GRAMS OF AN-FO",
+        "SLOW FUSE"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0002",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 48026
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1986-06-19",
+      "incidentLocation": "LURIGANCHO PRISON",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "ROLANDO CABEZAS ALARCON",
+        "OSWALDO MARQUINA"
+      ],
+      "perpetratorOrganization": [
+        "REPUBLICAN GUARD"
+      ],
+      "target": [
+        "SAN PEDRO PRISON INMATES"
+      ],
+      "victim": [
+        "124 INMATES",
+        "INMATES WHO HAD BEEN RIOTING IN THE INDUSTRIAL WING OF THE PRISON"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0003",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 57551
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "POLICE HELICOPTER"
+      ],
+      "victim": [
+        "POLICE OFFICER"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0004",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 41346
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "KIDNAPPING",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "COLONEL CARRENO"
+      ],
+      "victim": [
+        "COLONEL CARRENO"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0005",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 81472
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "OTHER",
+      "incidentDate": "1988-08-26",
+      "incidentLocation": "INTERSECTION OF WEST 1ST STREET AND NORTH 51ST AVENUE",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "RINALDO GOLCHER"
+      ],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "AMINTA PLATERO"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0006",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 61267
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-08-25",
+      "incidentLocation": "SAN MARCOS LEMPA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "LA NORIA BRIDGE"
+      ],
+      "victim": [
+        "CORPORAL ALEXANDER MOLINA GRANADOS",
+        "A LIEUTENANT",
+        "FIVE CIVILIANS"
+      ],
+      "weapon": [
+        "MINE"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0007",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 39450
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-08-26",
+      "incidentLocation": "GUATEMALA CITY",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "AERONICA'S REGIONAL OFFICES IN GUATEMALA CITY"
+      ],
+      "victim": [],
+      "weapon": [
+        "TWO FRAGMENTATION GRENADES"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0008",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 54784
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-08-30",
+      "incidentLocation": "",
+      "incidentStage": "PLANNED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0009",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 44137
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "CHILE",
+      "incidentStage": "PLANNED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FPMR"
+      ],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0010",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 33598
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-07-29",
+      "incidentLocation": "RANCAGUA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "THE NATIONAL VANGUARD OFFICES"
+      ],
+      "victim": [],
+      "weapon": [
+        "BOMB"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0011",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 28772
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0012",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 70729
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "ATE-VITARTE DISTRICT OF LIMA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "CARLOS ALONSO RIVERA",
+        "GUILLERMO ZEVALLOS"
+      ],
+      "perpetratorOrganization": [
+        "THE GREEN LEAF"
+      ],
+      "target": [],
+      "victim": [],
+      "weapon": [
+        "TWO U.S.-MADE 45 CALIBER AUTOMATIC PISTOLS"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0013",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 51738
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "OSCAR ARNULFO ROMERO"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0014",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 30205
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0015",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 77824
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ARSON",
+      "incidentDate": null,
+      "incidentLocation": "EL TOMATE, CANALETES MUNICIPALITY, CORDOBA DEPARTMENT",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "EL TOMATE"
+      ],
+      "victim": [
+        "CIVILIANS"
+      ],
+      "weapon": [
+        "GASOLINE"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0016",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 103021
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-09-05",
+      "incidentLocation": "FIRST STREET WEST AND 21ST AVENUE NORTH, SAN SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FMLN"
+      ],
+      "target": [
+        "TWO GOVERNMENT VEHICLES USED BY THE RURAL BASIC HEALTH PLAN SECTION OF THE HEALTH MINISTRY"
+      ],
+      "victim": [],
+      "weapon": [
+        "BOMB"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0017",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 65019
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "NEAR LA ARANA HILL IN ESTANZUELAS, USULUTAN DEPARTMENT",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "6TH INFANTRY BRIGADE"
+      ],
+      "target": [],
+      "victim": [
+        "ONE REBEL"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0018",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 28259
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0019",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 87765
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-09-21",
+      "incidentLocation": "LIMA: BLOCK NO 5 OF URUGUAY AVENUE",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "DEPARTMENTAL AGRARIAN UNIT NO 6"
+      ],
+      "victim": [],
+      "weapon": [
+        "BOMB"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0020",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 23343
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0021",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 50285
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1988-09-22",
+      "incidentLocation": "BARRANQUILLA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "COLOMBIAN AIR FORCE INSTALLATIONS"
+      ],
+      "victim": [],
+      "weapon": [
+        "MACHINEGUNS"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0022",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 51632
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "SAN CLEMENTE DISTRICT, 9 KM NORTH OF PISCO",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "MACHINERY BELONGING TO ALBOLONES PERUANOS",
+        "INC."
+      ],
+      "victim": [],
+      "weapon": [
+        "DYNAMITE",
+        "SUBMACHINEGUNS",
+        "MOLOTOV COCKTAILS"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0023",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 101551
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "KIDNAPPING",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "FAILED",
+      "perpetratorIndividual": [
+        "ALBERTO CONTE",
+        "FRED BOYD"
+      ],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0024",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 53864
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1988-09-28",
+      "incidentLocation": "ARICA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "CHRISTIAN DEMOCRATIC PARTY [PDC] HEADQUARTERS IN THE CITY OF ARICA"
+      ],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0025",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 80386
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "SAN FRANCISCO CHINAMECA, LA PAZ DEPARTMENT",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FMLN"
+      ],
+      "target": [
+        "ANTEL INSTALLATIONS"
+      ],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0026",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 51847
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1988-10-02",
+      "incidentLocation": "BETWEEN PAUGUIL AND CARTAGENA DEL CHIARA, CAQUETA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FARC"
+      ],
+      "target": [
+        "MILITARY PATROL"
+      ],
+      "victim": [
+        "FIFTEEN SOLDIERS KILLED",
+        "THIRTEEN SOLDIERS WOUNDED"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0027",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 70311
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "JUANJUI",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "JUAN ANTONIO LEON MONTERO"
+      ],
+      "perpetratorOrganization": [
+        "MRTA"
+      ],
+      "target": [
+        "CIVIL GUARD"
+      ],
+      "victim": [
+        "JORGE CIEZA LACHO"
+      ],
+      "weapon": [
+        "GRENADES"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0028",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 59083
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-10-01",
+      "incidentLocation": "CHILE: CENTRAL REGION",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "FOUR HIGH TENSION TOWERS",
+        "HIGH TENSION TOWER AT KM 24 OF THE MELIPILLA-RAPEL HIGHWAY",
+        "HIGH TENSION TOWER IN THE MAITENES SECTOR",
+        "TOWER NO 430 IN THE ITAHUA-ALTO JAHUEL SECTOR"
+      ],
+      "victim": [],
+      "weapon": [
+        "CZECHOSLOVAK-MADE PLASTIC BOMBS",
+        "TNT",
+        "BOMBS"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0029",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 75368
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": null,
+      "incidentLocation": "PAUCARBAMBILLA, HUANUCO",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "SHINING PATH"
+      ],
+      "target": [],
+      "victim": [
+        "CIVIL GUARD",
+        "PEDESTRIAN"
+      ],
+      "weapon": [
+        "MACHINEGUN",
+        "CAR BOMB"
+      ]
+    }
+  },
+  {
+    "id": "TST4-MUC4-0030",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 52534
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "ATACAMA REGION",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
     }
   }
 ]
