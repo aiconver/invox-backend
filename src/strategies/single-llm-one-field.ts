@@ -111,10 +111,9 @@ export function buildPrompt({
     ? "NEUES Transkript (AUSSCHLIESSLICH hieraus extrahieren):"
     : "NEW transcript (extract ONLY from this):";
 
-  // 🚨 GENERIC OUTPUT FORMAT - works for any field type
   const outputFormat = de
-    ? `AUSGABEFORMAT: { "value": "string_oder_null", "confidence": zahl_zwischen_0_und_1 }`
-    : `OUTPUT FORMAT: { "value": "string_or_null", "confidence": number_between_0_and_1 }`;
+    ? `AUSGABEFORMAT: { "value": "string_oder_null", "confidence": zahl_zwischen_0_und_1 (ERFORDERLICH) }`
+    : `OUTPUT FORMAT: { "value": "string_or_null", "confidence": number_between_0_and_1 (REQUIRED) }`;
 
   // Add few-shot examples if available
   let fewShotSection = "";
@@ -273,17 +272,14 @@ export async function runField({
   log(`[${field.id}] Field-specific few-shots:`, fieldFewShots.length);
 
   // Schema accepts both strings and arrays for flexibility
-  const fieldSchema = z.object({
+    const fieldSchema = z.object({
     value: z.union([
       z.string().nullable(),
       z.number().nullable(),
       z.array(z.string()).nullable(),
       z.null()
     ]),
-    confidence: z.number().min(0).max(1).optional(),
-    evidence: z.object({
-      transcriptSnippet: z.string().max(200).optional()
-    }).optional(),
+    confidence: z.number().min(0).max(1),
   });
 
   try {

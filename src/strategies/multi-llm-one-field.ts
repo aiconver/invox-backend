@@ -36,8 +36,14 @@ function maskSecret(s?: string | null) {
   return s.slice(0, 4) + "…" + s.slice(-4);
 }
 
-// Multi-value fields in MUC-4
-const MULTI_VALUE_FIELD_IDS = new Set(["PerpInd", "PerpOrg", "Target", "Victim", "Weapon"]);
+// Fields that can be multi-valued in MUC-4 and should accept string[] too
+const MULTI_VALUE_FIELD_IDS = new Set([
+  "perpetratorIndividual",
+  "perpetratorOrganization",
+  "target",
+  "victim",
+  "weapon",
+]);
 
 function isDE(lang?: string) {
   return (lang ?? "en").toLowerCase().startsWith("de");
@@ -249,7 +255,7 @@ function buildFieldPrompt({
 // Generation (per model, per field): no evidence
 const fieldGenSchema = z.object({
   value: z.union([z.string(), z.number(), z.array(z.string())]).nullable(),
-  confidence: z.number().min(0).max(1).optional(),
+  confidence: z.number().min(0).max(1),
 });
 
 // Verifier (per field) → decision only (we merge locally)
@@ -533,9 +539,9 @@ export async function multiLlmOneField(
     newTranscript,
   } = input as GetFilledTemplateInput & { oldTranscript?: string; newTranscript?: string };
 
-  const gptModel = process.env.OPENAI_FILL_MODEL_GPT || "gpt-5-mini";
-  const geminiModel = process.env.OPENAI_FILL_MODEL_GEMINI || "gemini-2.5-flash";
-  const verifierModel = process.env.OPENAI_VERIFIER_MODEL || "gpt-4.1-mini";
+  const gptModel = process.env.OPENAI_FILL_MODEL_GPT || "gpt-5";
+  const geminiModel = process.env.OPENAI_FILL_MODEL_GEMINI || "gemini-2.5-pro";
+  const verifierModel = process.env.OPENAI_VERIFIER_MODEL || "gpt-5-mini";
 
   const oldText = (oldTranscript ?? "").trim();
   const newText = (newTranscript ?? legacyTranscript ?? "").trim();
