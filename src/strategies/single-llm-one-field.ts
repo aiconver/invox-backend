@@ -407,6 +407,7 @@ export async function singleLlmOneField(input: GetFilledTemplateInput): Promise<
     templateId,
     oldTranscript,
     newTranscript,
+    needFewshotExamples,
     fewShots: providedFewShots, // Allow pre-provided few shots
   } = input as GetFilledTemplateInput & {
     oldTranscript?: string;
@@ -437,16 +438,22 @@ export async function singleLlmOneField(input: GetFilledTemplateInput): Promise<
   let fewShots: any[] = providedFewShots ?? [];
   if (!fewShots.length) {
     try {
-      console.time("[timer] fewShots");
-      fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
-      console.timeEnd("[timer] fewShots");
-      log(`Retrieved fewShots: count=${fewShots.length}`);
-      if (fewShots.length > 0) {
-        log("Few-shot examples preview:", fewShots.slice(0, 2).map((fs, i) => ({
-          i,
-          textPreview: short(fs.text, 160),
-          expectedKeys: Object.keys(fs.expected ?? {}),
-        })));
+      if (!needFewshotExamples) {
+        log("Skipping few-shot examples as not needed.");
+        fewShots = [];
+      }
+      else{
+        console.time("[timer] fewShots");
+        fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
+        console.timeEnd("[timer] fewShots");
+        log(`Retrieved fewShots: count=${fewShots.length}`);
+        if (fewShots.length > 0) {
+          log("Few-shot examples preview:", fewShots.slice(0, 2).map((fs, i) => ({
+            i,
+            textPreview: short(fs.text, 160),
+            expectedKeys: Object.keys(fs.expected ?? {}),
+          })));
+        }
       }
     } catch (e: any) {
       err("[fewShots] retrieval failed:", e?.message ?? e);

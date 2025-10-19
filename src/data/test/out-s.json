@@ -1,0 +1,267 @@
+[
+  {
+    "id": "TST4-MUC4-0095",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 79104
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-12-20",
+      "incidentLocation": "SANTA ANA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "FELICIANO AMA FRONT"
+      ],
+      "target": [
+        "CEL San Luis Substation"
+      ],
+      "victim": [],
+      "weapon": [
+        "EXPLOSIVES"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0061",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 55789
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-09-15",
+      "incidentLocation": "WESTERN BOGOTA, COLOMBIA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "SERGEANT CARLOS JULIO BONILLA",
+        "CORPORAL LUIS ALBERTO CHAVEZ"
+      ],
+      "victim": [
+        "SERGEANT CARLOS JULIO BONILLA",
+        "CORPORAL LUIS ALBERTO CHAVEZ"
+      ],
+      "weapon": [
+        "FIREARMS"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0012",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 32872
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": null,
+      "incidentLocation": "SANTIAGO",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [
+        "JECAR NEGHME"
+      ],
+      "victim": [
+        "JECAR NEGHME",
+        "SPOKESMAN OF THE MIR"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0038",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 60029
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST3-MUC4-0022",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 62134
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-06-30",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "SHINING PATH"
+      ],
+      "target": [],
+      "victim": [
+        "GOVERNMENT OFFICIAL",
+        "DOLORES HINOSTROZA"
+      ],
+      "weapon": [
+        "GUN"
+      ]
+    }
+  },
+  {
+    "id": "TST3-MUC4-0013",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 69676
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": null,
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [
+        "EMILIO PONCE",
+        "CRISTIANI",
+        "ELENA FUENTE"
+      ],
+      "perpetratorOrganization": [
+        "ARMY'S 1ST INFANTRY BRIGADE"
+      ],
+      "target": [
+        "FENASTRAS",
+        "FENASTRAS LEADERS"
+      ],
+      "victim": [],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0071",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 39702
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ATTACK",
+      "incidentDate": "1989-11-16",
+      "incidentLocation": "SAN SALVADOR, EL SALVADOR",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "SIX JESUIT PRIESTS"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST2-MUC4-0055",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 42507
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "KIDNAPPING",
+      "incidentDate": "1989-10-04",
+      "incidentLocation": "DOWNTOWN LIMA",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "MRTA",
+        "TUPAC AMARU REVOLUTIONARY MOVEMENT"
+      ],
+      "target": [
+        "HECTOR DELGADO PARKER"
+      ],
+      "victim": [
+        "HECTOR DELGADO PARKER",
+        "DELGADO'S DRIVER",
+        "DELGADO'S BODYGUARD"
+      ],
+      "weapon": []
+    }
+  },
+  {
+    "id": "TST4-MUC4-0054",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 88995
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "BOMBING",
+      "incidentDate": "1988-11-27",
+      "incidentLocation": "CIUDAD BOLIVAR, ANTIOQUIA DEPARTMENT",
+      "incidentStage": "ATTEMPTED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [
+        "NATIONAL LIBERATION ARMY"
+      ],
+      "target": [
+        "THE CITY'S ADMINISTRATIVE OFFICES",
+        "FOUR FARMS"
+      ],
+      "victim": [],
+      "weapon": [
+        "BOMB"
+      ]
+    }
+  },
+  {
+    "id": "TST2-MUC4-0051",
+    "meta": {
+      "model_id": "gpt-5",
+      "timing": {
+        "duration_ms": 73187
+      },
+      "error": null
+    },
+    "answers": {
+      "incidentType": "ASSASSINATION",
+      "incidentDate": "1989-08-18",
+      "incidentLocation": "",
+      "incidentStage": "ACCOMPLISHED",
+      "perpetratorIndividual": [],
+      "perpetratorOrganization": [],
+      "target": [],
+      "victim": [
+        "LUIS CARLOS GALAN SARMIENTO"
+      ],
+      "weapon": []
+    }
+  }
+]

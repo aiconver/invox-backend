@@ -537,10 +537,11 @@ export async function multiLlmOneField(
     templateId,
     oldTranscript,
     newTranscript,
+    needFewshotExamples
   } = input as GetFilledTemplateInput & { oldTranscript?: string; newTranscript?: string };
 
-  const gptModel = process.env.OPENAI_FILL_MODEL_GPT || "gpt-5";
-  const geminiModel = process.env.OPENAI_FILL_MODEL_GEMINI || "gemini-2.5-pro";
+  const gptModel = process.env.OPENAI_FILL_MODEL_GPT || "gpt-5-mini";
+  const geminiModel = process.env.OPENAI_FILL_MODEL_GEMINI || "gemini-2.5-flash";
   const verifierModel = process.env.OPENAI_VERIFIER_MODEL || "gpt-5-mini";
 
   const oldText = (oldTranscript ?? "").trim();
@@ -564,10 +565,16 @@ export async function multiLlmOneField(
   // Few-shots once per document (reused for each field)
   let fewShots: any[] = [];
   try {
-    console.time("[timer] fewShots");
-    fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 3);
-    console.timeEnd("[timer] fewShots");
-    log("fewShots count:", fewShots.length);
+    if (!needFewshotExamples) {
+      log("Skipping few-shot examples as not needed.");
+      fewShots = [];
+    }
+    else{
+      console.time("[timer] fewShots");
+      fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 3);
+      console.timeEnd("[timer] fewShots");
+      log("fewShots count:", fewShots.length);
+    }
   } catch (e: any) {
     err("[fewShots] retrieval failed:", e?.message ?? e);
     fewShots = [];

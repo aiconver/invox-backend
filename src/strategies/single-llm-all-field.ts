@@ -147,6 +147,21 @@ function buildPrompt({
         "Answer ONLY with JSON: { fieldId: { value} }",
       ].join(" ");
 
+      const GLOBAL_EN = [
+        "Scope: Use only the CURRENT incident described in the NEW transcript; ignore background unless the text says it is the same incident.",
+        "Primary-incident selection when multiple are present: (1) most detailed about method/casualties, else (2) most recent in the doc, else (3) headline/lead focus.",
+        "Formatting: Enums in UPPERCASE using allowed values. Text/list fields verbatim, deduplicate, trim, no brackets/notes. Prefer canonical short org names if given (e.g., 'FMLN').",
+        "No guesses: leave empty/null if not clearly supported."
+      ].join(" ");
+
+      const GLOBAL_DE = [
+        "Geltungsbereich: Nur das AKTUELLE Ereignis im NEUEN Transkript verwenden; Hintergrund ignorieren, außer der Text sagt, es ist dasselbe Ereignis.",
+        "Primärereignis bei mehreren: (1) am detailliertesten (Methode/Opfer), sonst (2) jüngstes im Dokument, sonst (3) Überschrift/Lead.",
+        "Formatierung: Enums GROSSSCHRIEBEN und zulässige Werte. Text/Liste wörtlich, deduplizieren, trimmen, keine Klammern/Notizen. Bevorzuge kanonische Kurzformen (z. B. 'FMLN').",
+        "Keine Vermutungen: leer/null, wenn nicht klar gestützt."
+      ].join(" ");
+
+
   const fs = (fewShots ?? [])
     .slice(0, 2)
     .map((ex: any, i: number) => {
@@ -178,6 +193,8 @@ function buildPrompt({
   return [
     header,
     "",
+    de ? GLOBAL_DE : GLOBAL_EN,              // ⬅️ add this line
+    "",
     fs,
     "",
     de ? "Felder:" : "Fields:",
@@ -204,6 +221,7 @@ export async function singleLlmAllField(
     currentValues,
     oldTranscript,
     newTranscript,
+    needFewshotExamples,
   } = input as GetFilledTemplateInput & { oldTranscript?: string; newTranscript?: string };
 
   const oldText = (oldTranscript ?? "").trim();
@@ -237,16 +255,22 @@ export async function singleLlmAllField(
   let fewShots: any[] = [];
   try {
     console.time("[timer] fewShots");
-    fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
-    console.timeEnd("[timer] fewShots");
-    log(
-      `fewShots: count=${fewShots.length}`,
-      fewShots.slice(0, 2).map((fs, i) => ({
-        i,
-        textPreview: short(fs.text, 160),
-        expectedKeys: Object.keys(fs.expected ?? {}),
-      }))
-    );
+    if (!needFewshotExamples) {
+      log("Skipping few-shot examples as not needed.");
+      fewShots = [];
+    }
+    else{
+      fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
+      console.timeEnd("[timer] fewShots");
+      log(
+        `fewShots: count=${fewShots.length}`,
+        fewShots.slice(0, 2).map((fs, i) => ({
+          i,
+          textPreview: short(fs.text, 160),
+          expectedKeys: Object.keys(fs.expected ?? {}),
+        }))
+      );
+    }
   } catch (e: any) {
     err("[fewShots] retrieval failed:", e?.message ?? e);
     // continue without few-shots (fallback)

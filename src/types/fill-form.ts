@@ -48,6 +48,7 @@ export type GetFilledTemplateInput = {
   lang: string;
   locale?: string;
   timezone?: string;
+  needFewshotExamples?: boolean;
   fewShots?: FewShotExample[];
   options?: {
     mode?: "incremental" | "fresh";

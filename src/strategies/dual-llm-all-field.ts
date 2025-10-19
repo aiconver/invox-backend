@@ -286,7 +286,7 @@ async function runEnsembleVerifier({
     combinedTranscript.slice(0, 6000),
   ].join("\n");
 
-  const verifierModel = process.env.OPENAI_VERIFIER_MODEL || "gpt-4.1-mini";
+  const verifierModel = process.env.OPENAI_VERIFIER_MODEL || "gpt-5-mini";
   const res = await generateObject({
     model: openai(verifierModel),
     schema: outSchema,
@@ -356,6 +356,7 @@ export async function dualLlmAllField(
     currentValues,
     oldTranscript,
     newTranscript,
+    needFewshotExamples,
   } = input as GetFilledTemplateInput & { oldTranscript?: string; newTranscript?: string };
 
   const oldText = (oldTranscript ?? "").trim();
@@ -363,9 +364,9 @@ export async function dualLlmAllField(
   const combinedTranscript = oldText ? `${oldText}\n${newText}` : newText;
 
   log("\n[=== dualLlmAllField START ===]");
-  log("env.OPENAI_FILL_MODEL_GPT:", process.env.OPENAI_FILL_MODEL_GPT || "gpt-5-mini");
+  log("env.OPENAI_FILL_MODEL_GPT:", process.env.OPENAI_FILL_MODEL_GPT || "gpt-5");
   log("env.OPENAI_FILL_MODEL_GEMINI:", process.env.OPENAI_FILL_MODEL_GEMINI || "gemini-2.5-flash");
-  log("env.OPENAI_VERIFIER_MODEL:", process.env.OPENAI_VERIFIER_MODEL || "gpt-5-mini");
+  log("env.OPENAI_VERIFIER_MODEL:", process.env.OPENAI_VERIFIER_MODEL || "gpt-5");
   log("env.OPENAI_API_KEY present:", maskSecret(process.env.OPENAI_API_KEY));
   log("Lang:", lang ?? "en");
   log("Fields:", fields.map((f) => ({ id: f.id, type: f.type, required: !!f.required })));
@@ -380,9 +381,15 @@ export async function dualLlmAllField(
   let fewShots: any[] = [];
   try {
     console.time("[timer] fewShots");
-    fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
-    console.timeEnd("[timer] fewShots");
-    log("fewShots count:", fewShots.length);
+    if (!needFewshotExamples) {
+      log("Skipping few-shot examples as not needed.");
+      fewShots = [];
+    }
+    else{
+      fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
+      console.timeEnd("[timer] fewShots");
+      log("fewShots count:", fewShots.length);
+    }
   } catch (e: any) {
     err("[fewShots] retrieval failed:", e?.message ?? e);
     fewShots = [];
@@ -407,7 +414,7 @@ export async function dualLlmAllField(
   else log("[prompt PREVIEW]\n" + short(prompt, 2000));
 
   // Models (configure via env)
-  const gptModel = process.env.OPENAI_FILL_MODEL_GPT || "gpt-5-mini";
+  const gptModel = process.env.OPENAI_FILL_MODEL_GPT || "gpt-5";
   const geminiModel = process.env.OPENAI_FILL_MODEL_GEMINI || "gemini-2.5-flash"; // If routed via another provider, swap below.
 
   // Run GPT
