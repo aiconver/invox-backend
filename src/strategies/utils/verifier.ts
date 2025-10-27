@@ -83,8 +83,8 @@ export async function runVerifier({
         f.id,
         z.object({
           confidence: z.number().min(0).max(1),
-          quote: z.string().max(240).optional(),
-          reason: z.string().max(240).optional(),
+          quote: z.string().max(240).default(""),
+          reason: z.string().max(240).default(""),
         }),
       ])
     )
@@ -94,7 +94,7 @@ export async function runVerifier({
   console.log("[verify] Prompt:\n", prompt);
 
   // keep simple & loud logging (no env flags)
-  const modelName = process.env.OPENAI_VERIFY_MODEL || "gpt-5-mini";
+  const modelName = process.env.OPENAI_VERIFY_MODEL || "gpt-4o-mini";
   const t0 = Date.now();
   const { object } = await generateObject({
     model: openai(modelName),
@@ -114,7 +114,7 @@ export async function runVerifier({
       confidence: score?.confidence,
       evidence: {
         ...(base.evidence ?? {}),
-        transcriptSnippet: score?.quote || base.evidence?.transcriptSnippet,
+        transcriptSnippet: score?.quote?.trim() || base.evidence?.transcriptSnippet,
       },
     };
   }

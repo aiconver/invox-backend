@@ -61,12 +61,12 @@ function zodFieldValueSchema(field: FormTemplateField): z.ZodTypeAny {
         ? z.enum(field.options as [string, ...string[]]).nullable()
         : z.string().nullable();
     default: {
-    // text/textarea: allow string OR string[] for known multi-value fields
-    if (MULTI_VALUE_FIELD_IDS.has(field.id)) {
-      return z.union([z.string(), z.array(z.string())]).nullable();
+      // text/textarea: allow string OR string[] for known multi-value fields
+      if (MULTI_VALUE_FIELD_IDS.has(field.id)) {
+        return z.union([z.string(), z.array(z.string())]).nullable();
+      }
+      return z.string().nullable();
     }
-    return z.string().nullable();
-  }
   }
 }
 
@@ -129,37 +129,37 @@ function buildPrompt({
 
   const header = de
     ? [
-        "Aufgabe: Erstelle die endgültigen Feldwerte.",
-        "Nur das NEUE Transkript ist Quelle für neue Informationen.",
-        "Wenn das NEUE Transkript für ein Feld KEINE Information liefert, BEHALTE den aktuellen Wert.",
-        "Aktualisiere NUR, wenn das NEUE Transkript klare Evidenz enthält.",
-        "locked=true Felder NIEMALS überschreiben.",
-        "Datumsformat: YYYY-MM-DD. Zahlen ohne Einheiten.",
-        "Antwort NUR im JSON-Format: { fieldId: { value} }",
-      ].join(" ")
+      "Aufgabe: Erstelle die endgültigen Feldwerte.",
+      "Nur das NEUE Transkript ist Quelle für neue Informationen.",
+      "Wenn das NEUE Transkript für ein Feld KEINE Information liefert, BEHALTE den aktuellen Wert.",
+      "Aktualisiere NUR, wenn das NEUE Transkript klare Evidenz enthält.",
+      "locked=true Felder NIEMALS überschreiben.",
+      "Datumsformat: YYYY-MM-DD. Zahlen ohne Einheiten.",
+      "Antwort NUR im JSON-Format: { fieldId: { value} }",
+    ].join(" ")
     : [
-        "Task: Produce the FINAL values for each field.",
-        "Only the NEW transcript is the source for new info.",
-        "If the NEW transcript does NOT mention a field, KEEP the current value.",
-        "Update ONLY when the NEW transcript provides clear evidence.",
-        "For locked=true fields, NEVER overwrite.",
-        "Dates must be YYYY-MM-DD. Numbers plain (no units).",
-        "Answer ONLY with JSON: { fieldId: { value} }",
-      ].join(" ");
+      "Task: Produce the FINAL values for each field.",
+      "Only the NEW transcript is the source for new info.",
+      "If the NEW transcript does NOT mention a field, KEEP the current value.",
+      "Update ONLY when the NEW transcript provides clear evidence.",
+      "For locked=true fields, NEVER overwrite.",
+      "Dates must be YYYY-MM-DD. Numbers plain (no units).",
+      "Answer ONLY with JSON: { fieldId: { value} }",
+    ].join(" ");
 
-      const GLOBAL_EN = [
-        "Scope: Use only the CURRENT incident described in the NEW transcript; ignore background unless the text says it is the same incident.",
-        "Primary-incident selection when multiple are present: (1) most detailed about method/casualties, else (2) most recent in the doc, else (3) headline/lead focus.",
-        "Formatting: Enums in UPPERCASE using allowed values. Text/list fields verbatim, deduplicate, trim, no brackets/notes. Prefer canonical short org names if given (e.g., 'FMLN').",
-        "No guesses: leave empty/null if not clearly supported."
-      ].join(" ");
+  const GLOBAL_EN = [
+    "Scope: Use only the CURRENT incident described in the NEW transcript; ignore background unless the text says it is the same incident.",
+    "Primary-incident selection when multiple are present: (1) most detailed about method/casualties, else (2) most recent in the doc, else (3) headline/lead focus.",
+    "Formatting: Enums in UPPERCASE using allowed values. Text/list fields verbatim, deduplicate, trim, no brackets/notes. Prefer canonical short org names if given (e.g., 'FMLN').",
+    "No guesses: leave empty/null if not clearly supported."
+  ].join(" ");
 
-      const GLOBAL_DE = [
-        "Geltungsbereich: Nur das AKTUELLE Ereignis im NEUEN Transkript verwenden; Hintergrund ignorieren, außer der Text sagt, es ist dasselbe Ereignis.",
-        "Primärereignis bei mehreren: (1) am detailliertesten (Methode/Opfer), sonst (2) jüngstes im Dokument, sonst (3) Überschrift/Lead.",
-        "Formatierung: Enums GROSSSCHRIEBEN und zulässige Werte. Text/Liste wörtlich, deduplizieren, trimmen, keine Klammern/Notizen. Bevorzuge kanonische Kurzformen (z. B. 'FMLN').",
-        "Keine Vermutungen: leer/null, wenn nicht klar gestützt."
-      ].join(" ");
+  const GLOBAL_DE = [
+    "Geltungsbereich: Nur das AKTUELLE Ereignis im NEUEN Transkript verwenden; Hintergrund ignorieren, außer der Text sagt, es ist dasselbe Ereignis.",
+    "Primärereignis bei mehreren: (1) am detailliertesten (Methode/Opfer), sonst (2) jüngstes im Dokument, sonst (3) Überschrift/Lead.",
+    "Formatierung: Enums GROSSSCHRIEBEN und zulässige Werte. Text/Liste wörtlich, deduplizieren, trimmen, keine Klammern/Notizen. Bevorzuge kanonische Kurzformen (z. B. 'FMLN').",
+    "Keine Vermutungen: leer/null, wenn nicht klar gestützt."
+  ].join(" ");
 
 
   const fs = (fewShots ?? [])
@@ -228,7 +228,7 @@ export async function singleLlmAllField(
   const newText = (newTranscript ?? legacyTranscript ?? "").trim();
   const combinedTranscript = oldText ? `${oldText}\n${newText}` : newText;
 
-  const modelName = process.env.OPENAI_FILL_MODEL || "gpt-5";
+  const modelName = process.env.OPENAI_FILL_MODEL || "gpt-4o-mini";
 
   log("\n[=== singleLlmAllField START ===]");
   log("env.OPENAI_FILL_MODEL:", modelName);
@@ -259,7 +259,7 @@ export async function singleLlmAllField(
       log("Skipping few-shot examples as not needed.");
       fewShots = [];
     }
-    else{
+    else {
       fewShots = await getFewShotsFromTranscript(combinedTranscript, fields, 2);
       console.timeEnd("[timer] fewShots");
       log(
@@ -361,8 +361,17 @@ export async function singleLlmAllField(
       lang: lang ?? "en",
     });
     console.timeEnd("[timer] verifier");
+
+    // Log which fields got confidence scores
+    const withConfidence = Object.entries(verifiedFilled).filter(([_, v]) => v.confidence !== undefined);
+    log(`[verify] Added confidence to ${withConfidence.length}/${fields.length} fields`);
   } catch (e: any) {
-    err("[verifier] failed:", e?.message ?? e);
+
+    err("[verifier] FAILED - using unverified results:", e?.message ?? e);
+
+    // More detailed error logging
+    if (e?.status) err("[verifier] HTTP status:", e.status);
+    if (e?.cause) err("[verifier] Cause:", e.cause);
     // keep unverified results as fallback
     verifiedFilled = filled;
   }
