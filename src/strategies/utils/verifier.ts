@@ -4,12 +4,21 @@ import { openai } from "@ai-sdk/openai";
 import { generateObject } from "ai";
 import type { FilledField, FormTemplateField } from "@/types/fill-form";
 
-/** Shape returned by the verifier LLM for each field */
-export type VerifierScore = {
-  confidence: number;          // 0..1
-  quote?: string;              // short supporting snippet (<= ~120 chars)
-  reason?: string;             // optional brief rationale
+// src/strategies/utils/verifier.ts
+type ReasonType = "CONTRADICTED";
+
+export type VerifierReason = {
+  type: ReasonType;
+  message: string;
 };
+
+export type VerifierScore = {
+  confidence: number;        // 0..1 support strength (even when contradicted)
+  quote?: string;            // ≤120 chars, best fragment showing the contradiction/support
+  contradicted: boolean;     // <-- explicit signal
+  reason?: VerifierReason;   // present iff contradicted === true
+};
+
 export type VerifierResult = Record<string, VerifierScore>;
 
 function isDE(lang?: string) {
@@ -29,20 +38,24 @@ function buildVerifierPrompt({
 }) {
   const de = isDE(lang);
   const header = de
-    ? [
-        "Bewerte für jedes Feld, wie gut der ausgefüllte Wert durch das Transkript belegt ist.",
-        "Gib eine Vertrauensbewertung zwischen 0 und 1 zurück (0=sehr unsicher, 1=sehr sicher).",
-        "Füge wenn möglich ein kurzes Zitat (≤120 Zeichen) hinzu.",
-        "Ändere die Werte NICHT, nur bewerten.",
-        "Antworte NUR als JSON: { fieldId: { confidence, quote?, reason? } }",
-      ].join(" ")
-    : [
-        "For each field, rate how well the filled value is supported by the transcript.",
-        "Return a confidence between 0 and 1 (0=very uncertain, 1=very certain).",
-        "Include a short quote (≤120 chars) when possible.",
-        "Do NOT change values; only score them.",
-        "Answer ONLY as JSON: { fieldId: { confidence, quote?, reason? } }",
-      ].join(" ");
+  ? [
+      "Bewerte für jedes Feld, wie gut der ausgefüllte Wert durch das Transkript BELEGT ist (confidence 0..1).",
+      "Markiere 'contradicted=true' NUR wenn der Transkriptinhalt dem Wert widerspricht.",
+      "Typische Widersprüche: explizite Negation, gegenteiliger Wert (Zahl/Datum), Rollenvertauschung (Täter/Opfer), gegenseitig ausschließende Kategorien, Ort/Zeit-Konflikt.",
+      "Wenn contradicted=true, gib reason { type: CONTRADICTED, message } und ein kurzes Zitat (≤120 Zeichen).",
+      "Wenn KEIN Widerspruch: contradicted=false und KEIN reason.",
+      "Ändere die Werte NICHT, nur bewerten.",
+      "Antworte NUR als JSON: { fieldId: { confidence, quote?, contradicted, reason? } }",
+    ].join(" ")
+  : [
+      "For each field, rate how well the filled value is SUPPORTED by the transcript (confidence 0..1).",
+      "Set 'contradicted=true' ONLY if the transcript contradicts the value.",
+      "Typical contradictions: explicit negation, opposite number/date, role reversal (perpetrator/victim), mutually exclusive enums, location/date conflict.",
+      "If contradicted=true, include reason { type: CONTRADICTED, message } and a short quote (≤120 chars).",
+      "If NO contradiction: contradicted=false and NO reason.",
+      "Do NOT change values; only score.",
+      "Answer ONLY as JSON: { fieldId: { confidence, quote?, contradicted, reason? } }",
+    ].join(" ");
 
   const fieldsCompact = fields.map(f => `${f.id} (${f.label}, type=${f.type})`).join("\n");
 
@@ -77,18 +90,26 @@ export async function runVerifier({
   lang: string;
 }): Promise<Record<string, FilledField>> {
   // zod schema that mirrors { fieldId: { confidence, quote?, reason? } }
-  const verifySchema = z.object(
-    Object.fromEntries(
-      fields.map((f) => [
-        f.id,
-        z.object({
-          confidence: z.number().min(0).max(1),
-          quote: z.string().max(240).default(""),
-          reason: z.string().max(240).default(""),
-        }),
-      ])
-    )
-  );
+ const reasonEnum = z.enum(["CONTRADICTED"] as const);
+
+const verifySchema = z.object(
+  Object.fromEntries(
+    fields.map((f) => [
+      f.id,
+      z.object({
+        confidence: z.number().min(0).max(1),
+        quote: z.string().max(240).default(""),
+        contradicted: z.boolean().default(false),
+        reason: z
+          .object({
+            type: reasonEnum,
+            message: z.string().max(240),
+          })
+          .optional(),
+      }),
+    ])
+  )
+);
 
   const prompt = buildVerifierPrompt({ fields, combinedTranscript, filled, lang });
   console.log("[verify] Prompt:\n", prompt);
@@ -116,6 +137,7 @@ export async function runVerifier({
         ...(base.evidence ?? {}),
         transcriptSnippet: score?.quote?.trim() || base.evidence?.transcriptSnippet,
       },
+      reason: score?.contradicted ? score?.reason : undefined,
     };
   }
   return verified;

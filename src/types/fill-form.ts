@@ -69,6 +69,10 @@ export type FilledField = {
     startChar?: number;
     endChar?: number;
   };
+  reason?: {
+    type: "CONTRADICTED";
+    message: string;
+  };
 };
 
 export type GetFilledTemplateResult = {
