@@ -9,6 +9,7 @@ export async function generateChatResponse(
   fields: FormTemplateField[],
   currentValues: Record<string, CurrentFieldValue | undefined> | undefined,
   entries: Entry[],
+  lang?: string,
 ): Promise<string> {
   const fieldById = new Map(fields.map(f => [f.id, f]));
 
@@ -52,6 +53,7 @@ export async function generateChatResponse(
     "If required fields are still missing, ask for them politely in one sentence.",
     "Keep to 2–5 sentences total.",
     `Tone: ${styleHint}.`,
+    `Respond in this language: ${lang}.`,
   ].join(" ");
 
   const userPayload = {

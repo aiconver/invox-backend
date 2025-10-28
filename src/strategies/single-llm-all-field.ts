@@ -381,7 +381,7 @@ export async function singleLlmAllField(
   try {
     console.time("[timer] chatResponse");
     const entries = Object.entries(verifiedFilled) as [string, FilledField][];
-    chatResponse = await generateChatResponse(combinedTranscript, fields, currentValues, entries);
+    chatResponse = await generateChatResponse(combinedTranscript, fields, currentValues, entries, lang);
     console.timeEnd("[timer] chatResponse");
     log("chatResponse (preview):", short(chatResponse, 600));
   } catch (e: any) {
