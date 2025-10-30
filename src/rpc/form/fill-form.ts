@@ -3,6 +3,8 @@ import type { JwtUser } from "@/types/typed-request";
 import type { GetFilledTemplateResult } from "@/types/fill-form";
 import { singleLlmOneField } from "@/strategies/single-llm-one-field";
 import { singleLlmAllField } from "@/strategies/single-llm-all-field";
+import { dualLlmAllField } from "@/strategies/dual-llm-all-field";
+import { multiLlmOneField } from "@/strategies/multi-llm-one-field";
 
 /** CurrentFieldValue (loose) */
 const zCurrentFieldValue = z.object({
@@ -87,14 +89,19 @@ export async function fillForm(
   }
 
   const approach = normalized.approach ?? "singleLlmAllField";
-
   let result: GetFilledTemplateResult;
   if (approach === "singleLlmOneField") {
     // ensure currentValues is forwarded
-    result = await singleLlmOneField(normalized as any);
+    result = await singleLlmOneField({...normalized, needFewshotExamples: false} as any);
   } else if (approach === "singleLlmAllField") {
     // ensure currentValues is forwarded
-    result = await singleLlmAllField(normalized as any);
+    result = await singleLlmAllField({...normalized, needFewshotExamples: false} as any);
+  } else if (approach === "multiLlmAllField") {
+    // ensure currentValues is forwarded
+    result = await dualLlmAllField({...normalized, needFewshotExamples: false} as any);
+  } else if (approach === "multiLlmOneField") {
+    // ensure currentValues is forwarded
+    result = await multiLlmOneField({...normalized, needFewshotExamples: false} as any);
   } else {
     throw new Error(`Unsupported filler approach: ${approach}`);
   }
