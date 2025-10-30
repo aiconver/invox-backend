@@ -22,7 +22,7 @@ FROM default AS npm_dev_install
 
 ENV NODE_ENV=development
 
-RUN npm ci
+RUN npm install
 
 #############################
 
